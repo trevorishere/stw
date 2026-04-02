@@ -49,20 +49,25 @@ export default function Nav() {
       </nav>
 
       {/* Mobile drawer */}
-      {open && (
-        <div className="tablet:hidden flex flex-col bg-cream border-b-2 border-dark sticky top-16 z-[99]">
-          {links.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={close}
-              className="block px-6 py-[18px] border-t border-black/10 font-rubik font-normal text-base tracking-[0.5px] uppercase text-dark no-underline"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
+      <div
+        className="tablet:hidden flex flex-col bg-cream border-b-2 border-dark fixed top-16 left-0 w-full z-[99] overflow-hidden"
+        style={{
+          maxHeight: open ? '400px' : '0',
+          borderBottomWidth: open ? '2px' : '0',
+          transition: 'max-height 150ms ease-in-out',
+        }}
+      >
+        {links.map(link => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={close}
+            className="block px-6 py-[18px] border-t border-black/10 font-rubik font-normal text-base tracking-[0.5px] uppercase text-dark no-underline"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </>
   )
 }
