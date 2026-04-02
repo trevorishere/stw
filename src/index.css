@@ -18,9 +18,9 @@
  */
 .hero-text-block {
   position: relative;
-  height: 788px;
+  height: 756px;
 }
-.hero-save { position: absolute; top: 176px; left: 0; }
+.hero-save { position: absolute; top: 224px; left: 0; }
 .hero-save-wrapper { position: relative; display: inline-block; }
 .hero-save-word {
   font-family: 'Syne', sans-serif;
@@ -35,15 +35,15 @@
 }
 .strike-bar {
   position: absolute;
-  left: -4px; right: -4px;
-  height: 22.5px;
+  left: -12px; right: -12px;
+  height: 22px;
   background: #c0392b;
 }
-.strike-1 { top: calc(11.86% + 11.86px); transform: rotate(-8.72deg); }
-.strike-2 { top: calc(34.25% + 34.25px); transform: rotate(12deg); }
+.strike-1 { top: calc(12% + 24px); transform: rotate(-10deg); }
+.strike-2 { top: calc(12% + 24px); transform: rotate(10deg); }
 .hero-fck {
   position: absolute;
-  top: 24px; left: -6px;
+  top: 0px; left: -6px;
   transform: rotate(-3deg);
   font-family: 'Syne', sans-serif;
   font-weight: 800;

@@ -20,7 +20,7 @@ export default function Nav() {
           className="flex items-baseline gap-2.5 font-rubik font-semibold text-xl tracking-[2px] uppercase text-dark no-underline"
         >
           Stein's Total Wellness
-          <sup className="align-baseline relative bottom-[0.8em] font-normal text-[10px]">©™©</sup>
+          <sup className="align-baseline relative bottom-[0.7em] font-normal text-[10px]">©™©</sup>
         </a>
 
         {/* Desktop nav */}
@@ -53,8 +53,8 @@ export default function Nav() {
         className="tablet:hidden flex flex-col bg-cream border-b-2 border-dark fixed top-16 left-0 w-full z-[99] overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
-          borderBottomWidth: open ? '2px' : '0',
-          transition: 'max-height 150ms ease-in-out',
+          borderBottomWidth: open ? '1px' : '0',
+          transition: 'max-height 200ms ease-in-out',
         }}
       >
         {links.map(link => (
