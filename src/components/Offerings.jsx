@@ -48,10 +48,10 @@ export default function Offerings() {
           Transformational Offerings
         </p>
         <div className="flex flex-col gap-[22px]">
-          <h2 className="font-syne font-extrabold [font-size:clamp(34px,5.2vw,64px)] [line-height:clamp(34px,4.8vw,60px)] tracking-[-0.6px] uppercase text-dark">
+          <h2 className="font-syne font-extrabold [font-size:clamp(22px,7vw,64px)] [line-height:clamp(24px,7vw,60px)] tracking-[-0.6px] uppercase text-dark">
             Proprietary<br />Frameworks
           </h2>
-          <p className="font-syne font-bold [font-size:clamp(20px,3.2vw,40px)] [line-height:clamp(24px,3vw,40px)] text-grey23">
+          <p className="font-syne font-bold [font-size:clamp(16px,5vw,40px)] [line-height:clamp(20px,5.5vw,40px)] text-grey23">
             Delivered Through Revolutionary Containers
           </p>
         </div>

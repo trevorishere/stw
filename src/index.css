@@ -93,3 +93,10 @@
   .hero-save { top: 60px; }
   .strike-bar { height: 12px; }
 }
+@media (max-width: 360px) {
+  .hero-text-block { height: 248px; }
+  .hero-fck, .hero-save-word, .hero-the-world { font-size: 52px; line-height: 48px; letter-spacing: -1px; }
+  .hero-fck { top: 18px; left: -3px; }
+  .hero-save { top: 48px; }
+  .strike-bar { height: 10px; }
+}
