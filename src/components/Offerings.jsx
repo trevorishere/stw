@@ -75,14 +75,14 @@ export default function Offerings() {
       </div>
 
       {/* Row 3 — card 5, half-width centered */}
-      <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
-        <ProgramCard {...CARDS[4]} />
-        {/* empty second column to maintain half-width on desktop */}
-        <div className="max-tablet:hidden" aria-hidden="true" />
+      <div className="flex justify-center">
+        <div className="w-1/2 max-tablet:w-full">
+          <ProgramCard {...CARDS[4]} />
+        </div>
       </div>
 
       {/* Wide signature card */}
-      <ProgramCard {...WIDE_CARD} wide />
+      <ProgramCard {...WIDE_CARD} wide noBorder />
 
     </section>
   )
