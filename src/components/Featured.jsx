@@ -11,7 +11,8 @@ const logos = [
 
 export default function Featured() {
   return (
-    <section className="bg-black/[0.06] px-12 py-20 flex flex-col gap-8 items-center max-tablet:px-6 max-tablet:py-12 max-phone:px-5 max-phone:py-8">
+    <section className="bg-black/[0.06]">
+      <div className="max-w-[1440px] mx-auto w-full px-12 py-20 flex flex-col gap-8 items-center max-tablet:px-6 max-tablet:py-12 max-phone:px-5 max-phone:py-8">
       <p className="font-dmMono text-[20px] leading-7 tracking-[4px] uppercase text-center text-grey23 w-full max-phone:text-sm max-phone:tracking-[2px]">
         As featured manifesting in…
       </p>
@@ -25,6 +26,7 @@ export default function Featured() {
             {logo}
           </span>
         ))}
+      </div>
       </div>
     </section>
   )

@@ -14,38 +14,40 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-[100] flex items-center justify-between bg-cream border-b border-dark px-12 h-16 max-tablet:px-6">
-        <a
-          href="#"
-          className="flex items-baseline gap-2.5 font-rubik font-semibold text-xl tracking-[2px] uppercase text-dark no-underline"
-        >
-          Stein's Total Wellness
-          <sup className="align-baseline relative bottom-[0.7em] font-normal text-[10px]">©™©</sup>
-        </a>
+      <nav className="sticky top-0 z-[100] bg-cream border-b border-dark">
+        <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-12 h-16 max-tablet:px-6">
+          <a
+            href="#"
+            className="flex items-baseline gap-2.5 font-rubik font-semibold text-xl tracking-[2px] uppercase text-dark no-underline"
+          >
+            Stein's Total Wellness
+            <sup className="align-baseline relative bottom-[0.7em] font-normal text-[10px]">©™©</sup>
+          </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden tablet:flex list-none h-[62px]">
-          {links.map(link => (
-            <li key={link.href} className="flex">
-              <a
-                href={link.href}
-                className="flex items-center px-5 border-l border-dark font-rubik font-normal text-sm tracking-[0.5px] uppercase text-dark no-underline hover:bg-black/[0.04]"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop nav */}
+          <ul className="hidden tablet:flex list-none h-[62px]">
+            {links.map(link => (
+              <li key={link.href} className="flex">
+                <a
+                  href={link.href}
+                  className="flex items-center px-5 border-l border-dark font-rubik font-normal text-sm tracking-[0.5px] uppercase text-dark no-underline hover:bg-black/[0.04]"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        {/* Hamburger */}
-        <button
-          className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-dark p-1"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen(o => !o)}
-        >
-          {open ? '✕' : '☰'}
-        </button>
+          {/* Hamburger */}
+          <button
+            className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-dark p-1"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen(o => !o)}
+          >
+            {open ? '✕' : '☰'}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile drawer */}

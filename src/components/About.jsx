@@ -2,9 +2,9 @@ const CREDS = 'DD · MA · PCC · CPCC · CSE · NTP · CPT · CNC · CWC · BPB
 
 export default function About() {
   return (
-    <section id="about" className="bg-accent p-24 flex justify-center
-                                   max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
-      <div className="flex flex-col gap-4 w-full">
+    <section id="about" className="bg-accent">
+      <div className="max-w-[1440px] mx-auto w-full p-24 flex flex-col gap-4
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
 
         <p className="font-dmMono text-[16px] leading-6 tracking-[2px] uppercase text-grey23">
           about

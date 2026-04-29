@@ -47,7 +47,8 @@ const WIDE_CARD = {
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="px-12 pt-20 pb-24 flex flex-col gap-6 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
+    <section id="offerings">
+      <div className="max-w-[1440px] mx-auto w-full px-12 pt-20 pb-24 flex flex-col gap-6 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
 
       {/* Section header */}
       <div className="flex flex-col gap-4 items-center text-center mb-6">
@@ -82,8 +83,9 @@ export default function Offerings() {
       </div>
 
       {/* Wide signature card */}
-      <ProgramCard {...WIDE_CARD} wide noBorder />
+      <ProgramCard {...WIDE_CARD} wide noBorder className="!pt-[99px]" />
 
+      </div>
     </section>
   )
 }

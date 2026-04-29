@@ -2,9 +2,10 @@ const scratchout = `${import.meta.env.BASE_URL}scratchout.svg`
 
 export default function Hero() {
   return (
-    <section className="bg-cream px-24 pt-[176px] pb-24 overflow-x-hidden relative
-                        max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-16
-                        max-phone:px-5 max-phone:pt-14 max-phone:pb-12">
+    <section className="bg-cream overflow-x-hidden relative">
+      <div className="max-w-[1440px] mx-auto w-full px-24 pt-[176px] pb-24
+                      max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-16
+                      max-phone:px-5 max-phone:pt-14 max-phone:pb-12">
 
       {/* Display text block */}
       <div className="hero-text-block">
@@ -71,6 +72,7 @@ export default function Hero() {
             begin your initiation
           </a>
         </div>
+      </div>
       </div>
     </section>
   )

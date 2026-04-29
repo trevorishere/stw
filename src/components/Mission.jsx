@@ -1,7 +1,8 @@
 export default function Mission() {
   return (
-    <section className="bg-accent px-24 pb-28 pt-24 flex flex-col gap-4
-                        max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
+    <section className="bg-accent">
+      <div className="max-w-[1440px] mx-auto w-full px-24 pb-28 pt-24 flex flex-col gap-4
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
 
       <h2 className="font-rubik font-semibold text-[48px] leading-16 tracking-[2px] uppercase text-dark
                      max-tablet:text-[36px] max-tablet:leading-[44px] max-phone:text-[28px] max-phone:leading-9">
@@ -25,6 +26,7 @@ export default function Mission() {
         </p>
       </div>
 
+      </div>
     </section>
   )
 }
