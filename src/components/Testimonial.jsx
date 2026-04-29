@@ -1,7 +1,8 @@
 export default function Testimonial() {
   return (
-    <section className="bg-dark px-24 py-28 flex flex-col gap-8
-                        max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
+    <section className="bg-dark">
+      <div className="max-w-[1440px] mx-auto w-full px-24 py-28 flex flex-col gap-8
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
       <div className="flex flex-col gap-8">
         <blockquote className="blockquote-hanging font-slab font-normal text-[40px] leading-[56px] text-accent
                                max-w-[886px]
@@ -14,6 +15,7 @@ export default function Testimonial() {
           <span>Steve B.</span>
           <span className="font-normal text-cream/60">&nbsp;&nbsp;·&nbsp;&nbsp;Verified Client&nbsp;&nbsp;·&nbsp;&nbsp;Entrepreneur, Thought Leader, and Speaker</span>
         </p>
+      </div>
       </div>
     </section>
   )

@@ -19,8 +19,9 @@ const PRODUCTS = [
 
 export default function Products() {
   return (
-    <section id="products" className="bg-cream flex flex-col gap-12 p-24
-                                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
+    <section id="products" className="bg-cream">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col gap-12 p-24
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
       {/* Section header */}
       <div className="flex flex-col gap-4 text-center">
         <p className="font-dmMono text-[16px] leading-6 tracking-[2px] uppercase text-grey23">
@@ -36,6 +37,7 @@ export default function Products() {
         {PRODUCTS.map(product => (
           <ProgramCard key={product.id} {...product} />
         ))}
+      </div>
       </div>
     </section>
   )

@@ -26,7 +26,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-dark px-12 py-24 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
+    <section id="contact" className="bg-dark">
+      <div className="max-w-[1440px] mx-auto w-full px-12 py-24 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
       <div className="max-w-[640px] max-phone:max-w-full flex flex-col gap-0">
 
         <p className="font-syne font-bold text-base tracking-[3px] uppercase text-white/60 mb-4">
@@ -111,6 +112,7 @@ export default function Contact() {
             </button>
           </form>
         )}
+      </div>
       </div>
     </section>
   )
