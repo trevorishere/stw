@@ -82,7 +82,7 @@ export default function Offerings() {
       </div>
 
       {/* Wide signature card */}
-      <ProgramCard {...WIDE_CARD} wide noBorder />
+      <ProgramCard {...WIDE_CARD} wide noBorder className="!pt-[99px]" />
 
     </section>
   )
