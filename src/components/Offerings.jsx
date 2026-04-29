@@ -1,13 +1,12 @@
 import ProgramCard from './ProgramCard'
 
-// Title is a ReactNode so <sup> renders correctly
-const GRID_CARDS = [
+const CARDS = [
   {
     id: 1,
-    category: 'Health & Authenticity',
-    title: <>The TRUTH About Medication!<sup>©™©</sup></>,
-    description: `After thousands of hours of independent research from his toilet, Dr. Steinberg has uncovered what Big Pharma, Big Wellness, and Big Yoga DESPERATELY don't want you to know. The findings are SHOCKING. The implications are STAGGERING. The revelation? Medications are only... SOMEWHAT EFFECTIVE. That's right. Not miraculous. Not poison. Just... moderately helpful, sometimes, for some people, with side effects. A comprehensive treatise on the heartbreaking banality of clinical effect sizes.`,
-    cta: "Discover What They Don't Want You To Know",
+    category: 'Relationships & Intimacy',
+    title: <>Seven Minute Wellness<sup>©™©</sup></>,
+    description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
+    cta: 'start your seven minutes',
   },
   {
     id: 2,
@@ -18,13 +17,20 @@ const GRID_CARDS = [
   },
   {
     id: 3,
+    category: 'Health & Authenticity',
+    title: <>The TRUTH About Medication!<sup>©™©</sup></>,
+    description: `After thousands of hours of independent research from his toilet, Dr. Steinberg has uncovered what Big Pharma, Big Wellness, and Big Yoga DESPERATELY don't want you to know. The findings are SHOCKING. The implications are STAGGERING. The revelation? Medications are only... SOMEWHAT EFFECTIVE. That's right. Not miraculous. Not poison. Just... moderately helpful, sometimes, for some people, with side effects. A comprehensive treatise on the heartbreaking banality of clinical effect sizes.`,
+    cta: "Discover What They Don't Want You To Know",
+  },
+  {
+    id: 4,
     category: 'Power & Performance',
     title: <>From Bogeys to Breakthroughs<sup>©™©</sup></>,
     description: `How to Get Great at Golf and Your Wife O! Your Back. A revolutionary 6-module quantum golf consciousness course that uses the ancient wisdom of the back nine to unlock your leadership potential. Includes HRV-tracked swing analysis and a breathwork protocol for the putting green. But here's the thing: you'll also learn real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer AND a better partner, and she'll never complain about your tee time again. Because the only handicap holding you back is your belief system.`,
     cta: 'Unlock Your Swing',
   },
   {
-    id: 4,
+    id: 5,
     category: 'Teamwork & Accomplishment',
     title: <>Going Down Together<sup>©™©</sup></>,
     description: `The world is f***ed; your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
@@ -34,47 +40,49 @@ const GRID_CARDS = [
 
 const WIDE_CARD = {
   category: <>STW's Signature Container<sup className="text-[10px]">©™©</sup></>,
-  title: <>The Steinberg STW Empire Builder &amp; Dependency Cultivation Accelerator<sup>©™©</sup></>,
+  title: <>The STW<sup>©™©</sup> Empire Builder &amp; Dependency Cultivation Accelerator<sup>©™©</sup></>,
   description: `This is a 12-month embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate transformation in others — and build your own STW-certified coaching empire while doing it. Master the art of advanced dependency cultivation so your clients can't leave even if they want to. Dr. Steinberg only accepts 2 people per year and there are only 2 spots left. ACT FAST. You cannot apply unless you have completed at least 3 other STW offerings and submitted a 500-word essay on why you deserve to evolve.`,
-  cta: 'Apply Now',
+  cta: 'Submit Your Application for Consideration',
 }
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="bg-cream px-12 pt-20 pb-24 flex flex-col gap-12 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
+    <section id="offerings" className="px-12 pt-20 pb-24 flex flex-col gap-6 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
 
-      <div className="flex flex-col gap-6">
-        <p className="font-syne font-bold text-base tracking-[3px] uppercase text-grey23">
+      {/* Section header */}
+      <div className="flex flex-col gap-4 items-center text-center mb-6">
+        <p className="font-dmMono text-[16px] leading-6 tracking-[2px] uppercase text-dark">
           Transformational Offerings
         </p>
-        <div className="flex flex-col gap-[22px]">
-          <h2 className="font-syne font-extrabold [font-size:clamp(22px,7vw,64px)] [line-height:clamp(24px,7vw,60px)] tracking-[-0.6px] uppercase text-dark">
-            Proprietary<br />Frameworks
-          </h2>
-          <p className="font-syne font-bold [font-size:clamp(16px,5vw,40px)] [line-height:clamp(20px,5.5vw,40px)] text-grey23">
-            Delivered Through Revolutionary Containers
-          </p>
-        </div>
+        <h2 className="font-rubik font-semibold text-[48px] leading-16 tracking-[2px] uppercase text-grey23
+                       max-tablet:text-[32px] max-tablet:leading-[40px] max-phone:text-[26px] max-phone:leading-8">
+          Proprietary Frameworks Delivered Through Revolutionary Containers
+        </h2>
       </div>
 
-      <div className="flex flex-col gap-6">
-        {/* Row 1 */}
-        <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
-          {GRID_CARDS.slice(0, 2).map(card => (
-            <ProgramCard key={card.id} compact {...card} />
-          ))}
-        </div>
-
-        {/* Row 2 */}
-        <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
-          {GRID_CARDS.slice(2, 4).map(card => (
-            <ProgramCard key={card.id} compact {...card} />
-          ))}
-        </div>
-
-        {/* Wide signature card */}
-        <ProgramCard {...WIDE_CARD} />
+      {/* Row 1 — cards 1 & 2, equal height via CSS grid auto rows */}
+      <div className="grid grid-cols-2 grid-rows-[1fr] gap-6 max-tablet:grid-cols-1 max-tablet:grid-rows-none">
+        {CARDS.slice(0, 2).map(card => (
+          <ProgramCard key={card.id} {...card} />
+        ))}
       </div>
+
+      {/* Row 2 — cards 3 & 4, equal height */}
+      <div className="grid grid-cols-2 grid-rows-[1fr] gap-6 max-tablet:grid-cols-1 max-tablet:grid-rows-none">
+        {CARDS.slice(2, 4).map(card => (
+          <ProgramCard key={card.id} {...card} />
+        ))}
+      </div>
+
+      {/* Row 3 — card 5, half-width centered */}
+      <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
+        <ProgramCard {...CARDS[4]} />
+        {/* empty second column to maintain half-width on desktop */}
+        <div className="max-tablet:hidden" aria-hidden="true" />
+      </div>
+
+      {/* Wide signature card */}
+      <ProgramCard {...WIDE_CARD} wide />
 
     </section>
   )

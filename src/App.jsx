@@ -17,8 +17,8 @@ export default function App() {
       <main>
         <Hero />
         <Featured />
-        <Mission />
         <Quote />
+        <Mission />
         <Offerings />
         <Testimonial />
         <Products />

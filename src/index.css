@@ -11,58 +11,100 @@
 }
 
 /*
- * Hero overlay typography lives here because:
- * - Font sizes are non-standard (200px) and need calc()-based strike positions
- * - Four responsive breakpoints all targeting the same classes
- * - Encoding this as Tailwind arbitrary values would be extremely verbose
+ * Hero typography — uses a flex-row layout so F*CK and SAVE are
+ * always side-by-side at every viewport width. The scratchout SVG
+ * is absolutely positioned inside .hero-fck-wrapper and scales
+ * with it, so it always covers the text at any size.
+ *
+ * Font size variables drive every breakpoint from one place.
  */
-.hero-text-block {
-  position: relative;
-  height: 756px;
+
+/* ── Shared font size (used by both .hero-fck and .hero-save) ── */
+:root {
+  --hero-fs: 192px;
+  --hero-lh: 0.875;   /* line-height as a ratio of font-size */
+  --hero-ls-fck:  5px;
+  --hero-ls-save: 2px;
 }
-.hero-save { position: absolute; top: 224px; left: 0; }
-.hero-save-wrapper { position: relative; display: inline-block; }
-.hero-save-word {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 200px;
-  line-height: 176px;
-  letter-spacing: -4px;
-  text-transform: uppercase;
-  color: #0d0d0d;
+
+/* Outer block — natural height, no absolute positioning needed */
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* ── Line 1: [F*CK wrapper] + [SAVE] ── */
+.hero-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+/* Relative wrapper so the scratchout SVG can be absolutely positioned over the text */
+.hero-fck-wrapper {
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
+  line-height: 0; /* collapse any extra inline gap */
 }
-.strike-bar {
-  position: absolute;
-  left: -12px; right: -12px;
-  height: 22px;
-  background: #c0392b;
-}
-.strike-1 { top: calc(12% + 24px); transform: rotate(-10deg); }
-.strike-2 { top: calc(12% + 24px); transform: rotate(10deg); }
+
 .hero-fck {
-  position: absolute;
-  top: 0px; left: -6px;
-  transform: rotate(-3deg);
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 200px;
-  line-height: 176px;
-  letter-spacing: -4px;
+  display: block;
+  font-family: 'Rubik One', sans-serif;
+  font-size: var(--hero-fs);
+  line-height: var(--hero-lh);
+  letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #c0392b;
+  color: #3a3a3a;
+  white-space: nowrap;
 }
-.hero-the-world {
+
+/*
+ * Scratchout SVG — covers F*CK at any size.
+ * Width slightly wider than the wrapper so the marks bleed
+ * a little past each edge for a natural hand-drawn feel.
+ * Height auto-scales from the SVG aspect ratio (621:186 ≈ 3.34).
+ * translateY centres it vertically over the cap-height of the text.
+ */
+.hero-scratchout {
   position: absolute;
-  bottom: 0; left: 0;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 200px;
-  line-height: 176px;
-  letter-spacing: -4px;
+  top: 50%;
+  left: -6%;
+  width: 112%;
+  transform: translateY(-48%);
+  pointer-events: none;
+  display: block;
+  /* keep it above the text so marks are visible */
+  z-index: 1;
+}
+
+/* ── SAVE ── */
+.hero-save {
+  display: block;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: var(--hero-fs);
+  line-height: var(--hero-lh);
+  letter-spacing: var(--hero-ls-save);
   text-transform: uppercase;
-  color: #0d0d0d;
+  color: #9e2bcb;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transform: rotate(-3deg);
+  transform-origin: left top;
+}
+
+/* ── THE WORLD ── */
+.hero-the-world {
+  display: block;
+  font-family: 'Rubik One', sans-serif;
+  font-size: var(--hero-fs);
+  line-height: var(--hero-lh);
+  letter-spacing: var(--hero-ls-fck);
+  text-transform: uppercase;
+  color: #3a3a3a;
 }
 
 /* CSS sibling combinators — can't express these in Tailwind */
@@ -72,31 +114,43 @@
 /* hanging-punctuation has no Tailwind utility */
 .blockquote-hanging { hanging-punctuation: first; }
 
-/* Hero responsive overrides */
+/* ── Hero responsive overrides ── */
+
+/* Tablet: ≤900px */
 @media (max-width: 900px) {
-  .hero-text-block { height: 500px; }
-  .hero-fck, .hero-save-word, .hero-the-world { font-size: 120px; line-height: 110px; }
-  .hero-fck { top: 50px; }
-  .hero-save { top: 110px; }
+  :root {
+    --hero-fs: 120px;
+    --hero-ls-fck: 3px;
+    --hero-ls-save: 1px;
+  }
 }
+
+/* Large phone: ≤600px */
 @media (max-width: 600px) {
-  .hero-text-block { height: 360px; }
-  .hero-fck, .hero-save-word, .hero-the-world { font-size: 84px; line-height: 78px; letter-spacing: -2px; }
-  .hero-fck { top: 32px; left: -4px; }
-  .hero-save { top: 78px; }
-  .strike-bar { height: 15px; }
+  :root {
+    --hero-fs: 80px;
+    --hero-ls-fck: 2px;
+    --hero-ls-save: 1px;
+  }
+  .hero-top-row { gap: 8px; }
 }
+
+/* Small phone: ≤400px */
 @media (max-width: 400px) {
-  .hero-text-block { height: 300px; }
-  .hero-fck, .hero-save-word, .hero-the-world { font-size: 64px; line-height: 60px; letter-spacing: -1px; }
-  .hero-fck { top: 24px; }
-  .hero-save { top: 60px; }
-  .strike-bar { height: 12px; }
+  :root {
+    --hero-fs: 60px;
+    --hero-ls-fck: 1px;
+    --hero-ls-save: 0px;
+  }
+  .hero-top-row { gap: 6px; }
 }
+
+/* XS: ≤360px */
 @media (max-width: 360px) {
-  .hero-text-block { height: 248px; }
-  .hero-fck, .hero-save-word, .hero-the-world { font-size: 52px; line-height: 48px; letter-spacing: -1px; }
-  .hero-fck { top: 18px; left: -3px; }
-  .hero-save { top: 48px; }
-  .strike-bar { height: 10px; }
+  :root {
+    --hero-fs: 50px;
+    --hero-ls-fck: 1px;
+    --hero-ls-save: 0px;
+  }
+  .hero-top-row { gap: 4px; }
 }

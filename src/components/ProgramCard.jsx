@@ -1,51 +1,52 @@
+import ArrowRight from './ArrowRight'
+
 /**
  * ProgramCard — used in both Offerings and Products.
  *
- * compact=true  → smaller title (40px), larger desc (20px), smaller link (16px)
- *               Used for the 2-column offering cards.
- * compact=false → larger title (48px), standard desc (16px), larger link (20px)
- *               Used for the wide offering card and all product cards.
+ * wide=true  → centered text, used for the signature container card
+ * wide=false → left-aligned text, used for all grid cards
  *
  * title accepts a ReactNode so callers can embed <sup> elements.
+ *
+ * Layout: content area is flex-1 (grows to fill available space),
+ * which naturally pushes the CTA to the bottom. This avoids
+ * justify-between overflow issues when cards share a grid row.
  */
-export default function ProgramCard({ category, title, description, cta, href = '#contact', compact = false }) {
+export default function ProgramCard({ category, title, description, cta, href = '#contact', wide = false }) {
   return (
-    <article className="bg-cream border border-dark flex flex-col p-0.5">
-      <div className="bg-pearl flex items-center justify-center flex-shrink-0 h-[400px] max-tablet:h-[280px] max-phone:h-[200px]">
-        <span className="font-syne font-bold text-[10px] tracking-[2px] uppercase text-black/20">
-          Program image
-        </span>
-      </div>
+    <article className={`border border-dark flex flex-col pt-8 pb-10 px-8 overflow-hidden
+                         max-phone:px-5 max-phone:pt-6 max-phone:pb-8
+                         ${wide ? 'text-center' : ''}`}>
 
-      <div className="p-8 pb-12 max-phone:p-6 max-phone:pb-9 flex flex-col gap-4 flex-1">
-        <p className="font-syne font-bold text-base tracking-[3px] uppercase text-grey23">
-          {category}
-        </p>
+      {/* Content — flex-1 pushes CTA to the bottom regardless of card height */}
+      <div className={`flex flex-col gap-6 w-full flex-1 ${wide ? 'items-center' : 'items-start'}`}>
+        <div className={`flex flex-col gap-4 w-full ${wide ? 'items-center' : 'items-start'}`}>
+          <p className="font-dmMono text-[16px] leading-6 tracking-[2px] uppercase text-grey23">
+            {category}
+          </p>
+          <h3 className="font-rubik font-semibold text-[40px] leading-[48px] text-grey10
+                         max-phone:text-[28px] max-phone:leading-9">
+            {title}
+          </h3>
+        </div>
 
-        <h3 className={`font-rubik font-bold text-grey10 leading-[1.08] ${
-          compact
-            ? 'text-[40px] tracking-[-0.8px] max-phone:text-[28px]'
-            : 'text-[48px] tracking-[-1px] max-phone:text-[32px]'
-        }`}>
-          {title}
-        </h3>
-
-        <p className={`font-rubik font-normal text-grey23 ${
-          compact ? 'text-xl leading-8 max-phone:text-base max-phone:leading-[26px]' : 'text-base leading-[26px]'
-        }`}>
+        <p className="font-dmSans font-medium text-[20px] leading-8 text-grey23
+                      max-phone:text-base max-phone:leading-7">
           {description}
         </p>
+      </div>
 
-        <div className="mt-auto pt-[47px]">
-          <a
-            href={href}
-            className={`block border-t border-dark pt-[17px] font-rubik font-bold uppercase text-dark no-underline hover:opacity-70 ${
-              compact ? 'text-base font-extrabold' : 'text-xl'
-            }`}
-          >
-            {cta} →
-          </a>
-        </div>
+      {/* CTA — sits below flex-1 content, no mt-auto or justify-between needed */}
+      <div className={`pt-8 flex-shrink-0 ${wide ? 'flex justify-center' : ''}`}>
+        <a
+          href={href}
+          className="inline-flex items-center gap-1 font-rubik font-bold italic text-[20px] leading-[30px]
+                     tracking-[0.6px] uppercase text-dark no-underline hover:opacity-70
+                     max-phone:text-base"
+        >
+          {cta}
+          <ArrowRight className="w-5 h-5 flex-shrink-0" />
+        </a>
       </div>
     </article>
   )

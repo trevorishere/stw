@@ -1,35 +1,74 @@
+const scratchout = `${import.meta.env.BASE_URL}scratchout.svg`
+
 export default function Hero() {
   return (
-    <section className="bg-cream border-b-2 border-dark px-12 pt-24 pb-[148px] overflow-hidden max-tablet:px-6 max-tablet:pt-16 max-tablet:pb-16 max-phone:px-5 max-phone:pt-12 max-phone:pb-12">
+    <section className="bg-cream px-24 pt-[176px] pb-24 overflow-x-hidden relative
+                        max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-16
+                        max-phone:px-5 max-phone:pt-14 max-phone:pb-12">
 
-      {/* Layered display text — sizes/positions managed in index.css */}
+      {/* Display text block */}
       <div className="hero-text-block">
-        <div className="hero-save">
-          <div className="hero-save-wrapper">
-            <span className="hero-save-word">F**K</span>
-            <div className="strike-bar strike-1" />
-            <div className="strike-bar strike-2" />
+
+        {/* Line 1: [F*CK scratched out] [SAVE] — always side by side */}
+        <div className="hero-top-row">
+          <div className="hero-fck-wrapper">
+            <span className="hero-fck">F*CK</span>
+            {/* SVG scales with the wrapper width, always covers the text */}
+            <img
+              src={scratchout}
+              className="hero-scratchout"
+              aria-hidden="true"
+              alt=""
+            />
           </div>
+          <span className="hero-save">SAVE</span>
         </div>
-        <div className="hero-fck">SAVE</div>
+
+        {/* Lines 2–3: THE WORLD */}
         <div className="hero-the-world">THE<br />WORLD</div>
+
       </div>
 
-      {/* Tagline + CTAs */}
-      <div className="mt-[88px] pt-16 border-t-0 flex items-start justify-between gap-12 max-tablet:flex-col max-tablet:gap-8 max-tablet:mt-14 max-tablet:pt-10 max-phone:mt-12 max-phone:pt-10">
-        <p className="max-w-[904px] font-rubik font-black italic text-[36px] leading-[48px] tracking-[-0.72px] uppercase text-grey23
-                      max-tablet:text-2xl max-tablet:leading-[34px] max-phone:text-lg max-phone:leading-[26px] max-xs:text-base max-xs:leading-6">
-          Step Into Your Optimized Embodied Legacy of Radical Alignment And Finally Unlock Your Highest-Potential Purpose-Driven Self
+      {/* Content below display text */}
+      <div className="relative mt-12 flex flex-col gap-12 border-t border-grey23 pt-16
+                      max-tablet:mt-8 max-tablet:pt-10 max-tablet:gap-8">
+
+        {/* Subtitle */}
+        <p className="font-rubik font-black italic text-[36px] leading-[48px] tracking-[0.75px] uppercase text-grey23
+                      max-tablet:text-2xl max-tablet:leading-8 max-phone:text-lg max-phone:leading-7">
+          Step Into Your Optimized Embodied Legacy of Radical Alignment
+          <sup className="text-[18px] not-italic font-semibold">©™©</sup>
+          {' '}And Finally Unlock Your Highest-Potential Purpose-Driven Self
         </p>
 
-        <div className="flex flex-col flex-shrink-0 max-tablet:w-full">
-          <a href="#about"
-             className="inline-block px-[34px] py-[18px] font-syne font-bold text-[13px] tracking-[1.98px] uppercase no-underline cursor-pointer border-2 border-dark bg-transparent text-dark hover:bg-black/5 max-tablet:text-center">
-            About Dr. Steinberg
-          </a>
-          <a href="#contact"
-             className="inline-block px-[34px] py-[18px] font-syne font-bold text-[13px] tracking-[1.98px] uppercase no-underline cursor-pointer border-2 border-dark -mt-0.5 bg-dark text-accent hover:opacity-90 max-tablet:text-center">
-            Start Today
+        {/* 2-column body copy */}
+        <div className="grid grid-cols-2 gap-12 max-tablet:grid-cols-1 max-tablet:gap-6">
+          <p className="font-dmSans font-medium text-[20px] leading-8 text-grey23
+                        max-phone:text-base max-phone:leading-7">
+            We help high-performing visionaries (and normies who think wellness means meditating for three days and
+            saying you 'tried everything') optimize their quantum potential, scale their purpose-driven entrepreneurial
+            legacy, and finally achieve root-cause alignment across all dimensions of their functional self — mind,
+            body, spirit, business, relationship, mitochondria, inner child, morning routine, and personal brand.
+          </p>
+          <p className="font-dmSans font-medium text-[20px] leading-8 text-grey23
+                        max-phone:text-base max-phone:leading-7">
+            After decades of Hyper-Gold-Standard<sup>©™©</sup> clinical research, twelve-week containers, breathwork
+            certifications, cold plunge protocols, and mastermind facilitation, Stein's Total Wellness<sup>©™©</sup> has
+            distilled the entire human experience into a proprietary framework that will disrupt your collective nervous
+            system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence, and
+            optimize your leadership capacity — sustainably.
+          </p>
+        </div>
+
+        {/* CTA button */}
+        <div>
+          <a
+            href="#contact"
+            className="inline-block px-[34px] py-5 border-2 border-grey23 font-rubik font-extrabold
+                       text-[16px] leading-4 tracking-[2px] uppercase text-grey23 no-underline
+                       hover:bg-grey23 hover:text-cream transition-colors"
+          >
+            begin your initiation
           </a>
         </div>
       </div>

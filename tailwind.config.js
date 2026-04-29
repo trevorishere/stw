@@ -12,11 +12,16 @@ export default {
         brand:  '#c0392b',
         accent: '#e8ff00',
         pearl:  '#eae4d8',
+        purple: '#9e2bcb',
       },
       fontFamily: {
-        syne:  ['Syne', 'sans-serif'],
-        rubik: ['Rubik', 'sans-serif'],
-        slab:  ['"Roboto Slab"', 'serif'],
+        syne:      ['Syne', 'sans-serif'],
+        rubik:     ['Rubik', 'sans-serif'],
+        rubikOne:  ['"Rubik One"', 'sans-serif'],
+        rubikMono: ['"Rubik Mono One"', 'sans-serif'],
+        dmSans:    ['"DM Sans"', 'sans-serif'],
+        dmMono:    ['"DM Mono"', 'monospace'],
+        slab:      ['"Roboto Slab"', 'serif'],
       },
       screens: {
         // min-width (mobile-first) breakpoint for "desktop-like" nav etc.
