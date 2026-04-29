@@ -12,10 +12,11 @@ import ArrowRight from './ArrowRight'
  * which naturally pushes the CTA to the bottom. This avoids
  * justify-between overflow issues when cards share a grid row.
  */
-export default function ProgramCard({ category, title, description, cta, href = '#contact', wide = false }) {
+export default function ProgramCard({ category, title, description, cta, href = '#contact', wide = false, noBorder = false }) {
   return (
-    <article className={`border border-dark flex flex-col pt-8 pb-10 px-8 overflow-hidden
+    <article className={`flex flex-col pt-8 pb-10 px-8 overflow-hidden
                          max-phone:px-5 max-phone:pt-6 max-phone:pb-8
+                         ${noBorder ? '' : 'border border-dark'}
                          ${wide ? 'text-center' : ''}`}>
 
       {/* Content — flex-1 pushes CTA to the bottom regardless of card height */}
