@@ -8,9 +8,8 @@ export default function Hero() {
   return (
     <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-phone:pb-0">
       <img src={gradientsImg} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" aria-hidden="true" alt="" />
-      <div className="page-container px-28 pt-28 pb-[136px]
-                      max-tablet:px-6 max-tablet:pt-[48px] max-tablet:pb-[48px]
-                      max-phone:px-6 max-phone:pt-12 max-phone:pb-12">
+      <div className="page-container px-28 pt-[88px] pb-[136px]
+                      max-tablet:px-6 max-tablet:pt-[48px] max-tablet:pb-[48px]">
 
         <div className="hero-text-block">
           <div className="hero-top-row">
@@ -25,7 +24,7 @@ export default function Hero() {
 
         <div className="relative mt-[72px] flex gap-0 max-phone:mt-8">
 
-          <div className="flex flex-col gap-16 max-w-[600px] max-tablet:max-w-full max-tablet:gap-10">
+          <div className="flex flex-col gap-4 max-w-[600px] max-tablet:max-w-full">
 
             <p className="font-figtree font-black text-[36px] leading-[40px] tracking-[1.5px] uppercase text-accent
                           max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
@@ -34,7 +33,7 @@ export default function Hero() {
               {' '}And Unlock Your Highest-Potential Purpose-Driven Self
             </p>
 
-            <div className="flex flex-col gap-16 max-tablet:gap-10">
+            <div className="flex flex-col gap-12 max-tablet:gap-8">
               <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
                             max-phone:text-[14px] max-phone:leading-6">
                 After decades of Hyper-Gold-Standard<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> clinical research,

@@ -47,13 +47,15 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   const textBlock = (
     <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
                     max-phone:gap-4 max-phone:order-last">
-      <div className="flex flex-col gap-4 max-phone:gap-2">
-        <p className="eyebrow text-purple opacity-60">
-          {category}
-        </p>
-        <h3 className="card-heading text-dark">
-          {title}
-        </h3>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4 max-phone:gap-2">
+          <p className="eyebrow text-purple opacity-60">
+            {category}
+          </p>
+          <h3 className="card-heading text-dark">
+            {title}
+          </h3>
+        </div>
         <p className="body-copy text-dark">
           {description}
         </p>
@@ -120,7 +122,7 @@ export default function Offerings() {
               />
             </div>
 
-            <div className="bg-dark px-28 py-24 flex flex-col gap-8
+            <div className="bg-dark px-28 py-24 flex flex-col gap-2
                             max-tablet:px-8 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
               <div className="flex flex-col gap-4 max-phone:gap-1">
                 <p className="eyebrow text-pink">
