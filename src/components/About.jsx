@@ -5,7 +5,7 @@ const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
 
 export default function About() {
   return (
-    <section id="about" className="bg-purple">
+    <section id="about" className="bg-purple scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 pt-[112px] pb-[120px] flex flex-col gap-20
                       max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:pt-12 max-phone:pb-20 max-phone:gap-8">
 

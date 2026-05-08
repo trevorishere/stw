@@ -19,7 +19,7 @@ const PRODUCTS = [
 
 export default function Products() {
   return (
-    <section id="products">
+    <section id="products" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 pt-[48px] pb-[136px] flex flex-col gap-12
                       max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 

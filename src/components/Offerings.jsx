@@ -85,7 +85,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 
 export default function Offerings() {
   return (
-    <section id="offerings">
+    <section id="offerings" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
                       max-tablet:px-6 max-tablet:py-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
@@ -110,6 +110,7 @@ export default function Offerings() {
             ))}
           </div>
 
+          <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
           <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
             <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[236px]">
               <img
@@ -148,6 +149,7 @@ export default function Offerings() {
                 </a>
               </div>
             </div>
+          </div>
           </div>
 
         </div>

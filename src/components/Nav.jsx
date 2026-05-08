@@ -2,10 +2,9 @@ import { useState } from 'react'
 
 const links = [
   { href: '#offerings', label: 'Transformations' },
-  { href: '#offerings', label: 'Embodiments' },
+  { href: '#empire',    label: 'Embodiments' },
   { href: '#products',  label: 'Shop' },
   { href: '#about',     label: 'About' },
-  { href: '#contact',   label: 'Connect' },
 ]
 
 export default function Nav() {
