@@ -16,7 +16,7 @@ export default function Nav() {
   return (
     <>
       <nav className="sticky top-0 z-[100] bg-dark">
-        <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-24 h-[72px] max-tablet:px-6 max-phone:h-[56px]">
+        <div className="page-container flex items-center justify-between px-24 h-[72px] max-tablet:px-6 max-phone:h-[56px]">
           <a
             href="#"
             className="flex items-baseline gap-1 font-figtree font-extrabold text-[16px] tracking-[1.5px] uppercase text-muted no-underline"

@@ -1,3 +1,5 @@
+import ArrowRight from './ArrowRight'
+
 const BASE = import.meta.env.BASE_URL
 
 const OFFERINGS = [
@@ -46,40 +48,30 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
     <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
                     max-phone:gap-4 max-phone:order-last">
       <div className="flex flex-col gap-4 max-phone:gap-2">
-        <p className="font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase text-purple opacity-60
-                      max-phone:text-[10px] max-phone:leading-4">
+        <p className="eyebrow text-purple opacity-60">
           {category}
         </p>
-        <h3 className="font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px] text-dark
-                       max-tablet:text-[36px] max-tablet:leading-[42px] max-phone:text-2xl max-phone:leading-7">
+        <h3 className="card-heading text-dark">
           {title}
         </h3>
-        <p className="font-dmSans text-[18px] leading-[26px] tracking-[0.1px] text-dark
-                      max-phone:text-[14px] max-phone:leading-[22px]">
+        <p className="body-copy text-dark">
           {description}
         </p>
       </div>
-      <div>
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
-                     font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                     uppercase text-dark no-underline hover:bg-dark hover:text-cream transition-colors
-                     max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:leading-4 max-phone:tracking-[1.5px]"
-        >
-          {cta}
-          <svg className="w-4 h-4 ml-1 flex-shrink-0 max-phone:w-3 max-phone:h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
-      </div>
+      <a
+        href="#contact"
+        className="btn-outline border-dark text-dark hover:bg-dark hover:text-cream self-start"
+      >
+        {cta}
+        <ArrowRight />
+      </a>
     </div>
   )
 
   const imageBlock = (
     <div className="flex-1 min-w-0 rounded-3xl overflow-hidden max-tablet:order-first
                     max-phone:flex-none max-phone:w-[248px] max-phone:h-[200px] max-phone:rounded-3xl max-phone:mx-auto max-phone:order-first">
-      <img src={image} alt="" className="w-full h-full object-cover block" style={{ aspectRatio: '596/480' }} />
+      <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480]" />
     </div>
   )
 
@@ -94,14 +86,12 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 export default function Offerings() {
   return (
     <section id="offerings">
-      <div className="max-w-[1440px] mx-auto w-full px-28 py-[120px] flex flex-col gap-[48px]
+      <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
                       max-tablet:px-6 max-tablet:py-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
 
-        {/* Section header */}
         <div className="flex flex-col gap-1">
-          <h2 className="font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-                         max-tablet:text-[44px] max-tablet:leading-[48px] max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px]">
+          <h2 className="section-heading">
             <span className="text-purple">Transformational</span>
             <br />
             <span className="text-dark"> Offerings</span>
@@ -112,17 +102,14 @@ export default function Offerings() {
           </p>
         </div>
 
-        {/* Rows + Empire Builder */}
         <div className="flex flex-col gap-[136px] max-tablet:gap-16 max-phone:gap-16">
 
-          {/* Four offering rows */}
           <div className="flex flex-col gap-8 max-phone:gap-12 max-phone:pb-8">
             {OFFERINGS.map(offering => (
               <OfferingRow key={offering.id} {...offering} />
             ))}
           </div>
 
-          {/* Empire Builder */}
           <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
             <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[236px]">
               <img
@@ -135,19 +122,16 @@ export default function Offerings() {
             <div className="bg-dark px-28 py-24 flex flex-col gap-8
                             max-tablet:px-8 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
               <div className="flex flex-col gap-4 max-phone:gap-1">
-                <p className="font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase text-pink
-                              max-phone:text-[10px] max-phone:leading-4">
+                <p className="eyebrow text-pink">
                   STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[6px]">©™©</sup>
                 </p>
-                <h3 className="font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px] text-cream
-                               max-tablet:text-[36px] max-tablet:leading-[42px] max-phone:text-2xl max-phone:leading-7">
+                <h3 className="card-heading text-cream">
                   The STW<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>{' '}
                   Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>
                 </h3>
               </div>
-              <div className="flex flex-col gap-8 max-phone:gap-8">
-                <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream
-                              max-phone:text-[14px] max-phone:leading-[22px]">
+              <div className="flex flex-col gap-8">
+                <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-phone:text-[14px] max-phone:leading-[22px]">
                   Master the art of advanced dependency cultivation so your clients can't leave even if they
                   want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
                   transformation in others—all while building your own STW-certified coaching empire. Enrollment
@@ -155,20 +139,13 @@ export default function Offerings() {
                   submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
                   Act fast.
                 </p>
-                <div>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
-                               font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                               uppercase text-cream no-underline hover:bg-cream hover:text-dark transition-colors
-                               max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:leading-4 max-phone:tracking-[1.5px]"
-                  >
-                    APPLY NOW
-                    <svg className="w-4 h-4 ml-1 flex-shrink-0 max-phone:w-3 max-phone:h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
+                <a
+                  href="#contact"
+                  className="btn-outline border-cream text-cream hover:bg-cream hover:text-dark self-start"
+                >
+                  APPLY NOW
+                  <ArrowRight />
+                </a>
               </div>
             </div>
           </div>

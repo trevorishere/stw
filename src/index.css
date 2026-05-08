@@ -10,6 +10,48 @@
   }
 }
 
+@layer components {
+  /* Centered max-width content wrapper used by every section */
+  .page-container {
+    @apply max-w-site mx-auto w-full;
+  }
+
+  /* Primary section h2 — large display heading with responsive sizes */
+  .section-heading {
+    @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
+           max-tablet:text-[44px] max-tablet:leading-[48px]
+           max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px];
+  }
+
+  /* Card / offering h3 */
+  .card-heading {
+    @apply font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px]
+           max-tablet:text-[36px] max-tablet:leading-[42px]
+           max-phone:text-2xl max-phone:leading-7;
+  }
+
+  /* Small uppercase eyebrow label above card titles */
+  .eyebrow {
+    @apply font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase
+           max-phone:text-[10px] max-phone:leading-4;
+  }
+
+  /* Body copy in DM Sans — 18px desktop, 14px mobile */
+  .body-copy {
+    @apply font-dmSans text-[18px] leading-[26px] tracking-[0.1px]
+           max-phone:text-[14px] max-phone:leading-[22px];
+  }
+
+  /* Bordered arrow-link button (color + hover set per usage) */
+  .btn-outline {
+    @apply inline-flex items-center gap-1 pl-6 pr-4 py-3 border
+           font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+           uppercase no-underline transition-colors
+           max-phone:border-0 max-phone:p-0 max-phone:text-[11px]
+           max-phone:leading-4 max-phone:tracking-[1.5px];
+  }
+}
+
 /*
  * Hero typography — uses a flex-row layout so F*CK and SAVE are
  * always side-by-side at every viewport width. The crossout SVG
@@ -77,7 +119,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-save);
   text-transform: uppercase;
-  color: #ffa3a3;
+  color: theme('colors.pink');
   white-space: nowrap;
   flex-shrink: 0;
 }
