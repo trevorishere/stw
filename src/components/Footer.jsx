@@ -3,7 +3,6 @@ const NAV_LINKS = [
   { href: '#offerings', label: 'Embodiments' },
   { href: '#about',     label: 'About' },
   { href: '#products',  label: 'Shop' },
-  { href: '#contact',   label: 'Contact' },
 ]
 
 export default function Footer() {

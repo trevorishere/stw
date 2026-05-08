@@ -110,7 +110,8 @@ export default function Offerings() {
             ))}
           </div>
 
-          <div id="empire" className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px] scroll-mt-[72px] max-phone:scroll-mt-[56px]">
+          <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
+          <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
             <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[236px]">
               <img
                 src={empireImg}
@@ -148,6 +149,7 @@ export default function Offerings() {
                 </a>
               </div>
             </div>
+          </div>
           </div>
 
         </div>
