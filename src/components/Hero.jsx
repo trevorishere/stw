@@ -9,8 +9,7 @@ export default function Hero() {
     <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-phone:pb-0">
       <img src={gradientsImg} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" aria-hidden="true" alt="" />
       <div className="page-container px-28 pt-28 pb-[136px]
-                      max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-20
-                      max-phone:px-6 max-phone:pt-12 max-phone:pb-12">
+                      max-tablet:px-6 max-tablet:pt-[48px] max-tablet:pb-[48px]">
 
         <div className="hero-text-block">
           <div className="hero-top-row">
