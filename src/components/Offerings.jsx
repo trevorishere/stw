@@ -77,8 +77,8 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 
   const imageBlock = (
     <div className="flex-1 min-w-0 rounded-3xl overflow-hidden max-tablet:order-first
-                    max-phone:w-full max-phone:h-[200px] max-phone:flex-none max-phone:order-first">
-      <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480]" />
+                    max-phone:w-full max-phone:flex-none max-phone:order-first">
+      <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480] max-phone:h-auto" />
     </div>
   )
 
