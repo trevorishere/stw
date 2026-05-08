@@ -34,7 +34,7 @@ export default function Mission() {
           </div>
 
           <div className="flex-1 min-w-0 flex flex-col gap-6 pl-24 max-tablet:pl-0 max-tablet:pt-4">
-            <blockquote className="blockquote-hanging font-bitter font-normal text-[28px] leading-[40px] text-dark">
+            <blockquote className="blockquote-hanging font-bitter font-normal text-[28px] leading-[40px] text-dark max-tablet:text-[22px] max-tablet:leading-[32px]">
               "True wellness isn't about doing the work. It's about embodying the work. And then monetizing
               the embodiment. And then disrupting the monetization. Sustainably."
             </blockquote>

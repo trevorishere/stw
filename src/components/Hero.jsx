@@ -29,7 +29,7 @@ export default function Hero() {
             <p className="font-figtree font-black text-[36px] leading-[40px] tracking-[1.5px] uppercase text-accent
                           max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
               Step Into Your Optimized Embodied Legacy of Radical Alignment
-              <sup className="text-[23px] font-normal not-italic max-phone:text-[10px]">©TM©</sup>
+              <sup className="text-[23px] font-normal not-italic max-tablet:text-[15px] max-phone:text-[10px]">©TM©</sup>
               {' '}And Unlock Your Highest-Potential Purpose-Driven Self
             </p>
 

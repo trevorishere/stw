@@ -8,7 +8,7 @@ const OFFERINGS = [
     image: `${BASE}smw.png`,
     imageLeft: true,
     category: 'Relationships & Intimacy',
-    title: <>Seven Minute Wellness<sup className="font-normal text-[28px] max-phone:text-[15px]">©™©</sup></>,
+    title: <>Seven Minute Wellness<sup className="font-normal text-[28px] max-tablet:text-[21px] max-phone:text-[15px]">©™©</sup></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
@@ -129,8 +129,8 @@ export default function Offerings() {
                   STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[6px]">©™©</sup>
                 </p>
                 <h3 className="card-heading text-cream">
-                  The STW<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>{' '}
-                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>
+                  The STW<sup className="text-[31px] font-normal max-tablet:text-[23px] max-phone:text-[16px]">©™©</sup>{' '}
+                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[31px] font-normal max-tablet:text-[23px] max-phone:text-[16px]">©™©</sup>
                 </h3>
               </div>
               <div className="flex flex-col gap-8">
