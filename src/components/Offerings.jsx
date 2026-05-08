@@ -48,7 +48,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
     <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
                     max-phone:gap-4 max-phone:order-last">
       <div className="flex flex-col gap-2">
-        <div className="flex flex-col gap-4 max-phone:gap-2">
+        <div className="flex flex-col gap-4 max-phone:gap-3">
           <p className="eyebrow text-purple opacity-60">
             {category}
           </p>
@@ -62,7 +62,12 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
       </div>
       <a
         href="#contact"
-        className="btn-outline border-dark text-dark hover:bg-dark hover:text-cream self-start"
+        className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
+                   font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+                   uppercase text-dark no-underline hover:bg-dark hover:text-cream
+                   self-start transition-colors
+                   max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
+                   max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
       >
         {cta}
         <ArrowRight />
@@ -72,14 +77,14 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 
   const imageBlock = (
     <div className="flex-1 min-w-0 rounded-3xl overflow-hidden max-tablet:order-first
-                    max-phone:flex-none max-phone:w-[248px] max-phone:h-[200px] max-phone:rounded-3xl max-phone:mx-auto max-phone:order-first">
+                    max-phone:w-full max-phone:h-[200px] max-phone:flex-none max-phone:order-first">
       <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480]" />
     </div>
   )
 
   return (
     <div className="flex gap-6 items-center py-[48px] max-tablet:flex-col max-tablet:py-8
-                    max-phone:py-0 max-phone:px-4 max-phone:gap-6">
+                    max-phone:py-0 max-phone:px-0 max-phone:gap-6">
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
