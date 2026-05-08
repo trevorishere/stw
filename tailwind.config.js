@@ -4,29 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream:  '#f5f0e8',
-        dark:   '#0d0d0d',
-        grey23: '#3a3a3a',
-        grey10: '#1a1a1a',
-        grey16: '#2a2a2a',
-        brand:  '#c0392b',
-        accent: '#e8ff00',
-        pearl:  '#eae4d8',
-        purple: '#9e2bcb',
+        cream:     '#eff2dd',
+        dark:      '#202020',
+        grey23:    '#3a3a3a',
+        grey10:    '#1a1a1a',
+        grey16:    '#2a2a2a',
+        accent:    '#ffe52c',
+        pearl:     '#eae4d8',
+        purple:    '#5c3551',
+        muted:     '#b0b2a5',
+        pink:      '#ffa3a3',
+        productBg: '#e8ebd5',
       },
       fontFamily: {
-        syne:      ['Syne', 'sans-serif'],
-        rubik:     ['Rubik', 'sans-serif'],
-        rubikOne:  ['"Rubik One"', 'sans-serif'],
-        rubikMono: ['"Rubik Mono One"', 'sans-serif'],
+        figtree:   ['Figtree', 'sans-serif'],
+        bitter:    ['Bitter', 'serif'],
         dmSans:    ['"DM Sans"', 'sans-serif'],
         dmMono:    ['"DM Mono"', 'monospace'],
-        slab:      ['"Roboto Slab"', 'serif'],
       },
       screens: {
-        // min-width (mobile-first) breakpoint for "desktop-like" nav etc.
-        tablet: '900px',
-        // max-width breakpoints to mirror the original responsive CSS
+        tablet:       '900px',
         'max-tablet': { max: '900px' },
         'max-phone':  { max: '600px' },
         'max-xs':     { max: '400px' },

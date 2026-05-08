@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
 const links = [
+  { href: '#offerings', label: 'Transformations' },
   { href: '#offerings', label: 'Embodiments' },
   { href: '#products',  label: 'Shop' },
-  { href: '#about',     label: 'Dr. Steinberg' },
+  { href: '#about',     label: 'About' },
   { href: '#contact',   label: 'Connect' },
 ]
 
@@ -14,23 +15,24 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-[100] bg-cream border-b border-dark">
-        <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-12 h-16 max-tablet:px-6">
+      <nav className="sticky top-0 z-[100] bg-dark">
+        <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-24 h-[72px] max-tablet:px-6 max-phone:h-[56px]">
           <a
             href="#"
-            className="flex items-baseline gap-2.5 font-rubik font-semibold text-xl tracking-[2px] uppercase text-dark no-underline"
+            className="flex items-baseline gap-1 font-figtree font-extrabold text-[16px] tracking-[1.5px] uppercase text-muted no-underline"
           >
-            Stein's Total Wellness
-            <sup className="align-baseline relative bottom-[0.7em] font-normal text-[10px]">©™©</sup>
+            <span className="max-phone:hidden">Stein's Total Wellness</span>
+            <span className="hidden max-phone:inline">STW</span>
+            <sup className="align-baseline relative bottom-[0.5em] font-normal text-[10px]">©TM©</sup>
           </a>
 
           {/* Desktop nav */}
-          <ul className="hidden tablet:flex list-none h-[62px]">
+          <ul className="hidden tablet:flex list-none h-full">
             {links.map(link => (
-              <li key={link.href} className="flex">
+              <li key={link.label} className="flex">
                 <a
                   href={link.href}
-                  className="flex items-center px-5 border-l border-dark font-rubik font-normal text-sm tracking-[0.5px] uppercase text-dark no-underline hover:bg-black/[0.04]"
+                  className="flex items-center px-4 font-figtree font-semibold text-[14px] tracking-[1.25px] uppercase text-muted no-underline hover:text-cream transition-colors"
                 >
                   {link.label}
                 </a>
@@ -40,7 +42,7 @@ export default function Nav() {
 
           {/* Hamburger */}
           <button
-            className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-dark p-1"
+            className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-muted p-1"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen(o => !o)}
@@ -52,19 +54,18 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       <div
-        className="tablet:hidden flex flex-col bg-cream border-b-2 border-dark fixed top-16 left-0 w-full z-[99] overflow-hidden"
+        className="tablet:hidden flex flex-col bg-dark fixed top-[72px] max-phone:top-[56px] left-0 w-full z-[99] overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
-          borderBottomWidth: open ? '1px' : '0',
           transition: 'max-height 200ms ease-in-out',
         }}
       >
         {links.map(link => (
           <a
-            key={link.href}
+            key={link.label}
             href={link.href}
             onClick={close}
-            className="block px-6 py-[18px] border-t border-black/10 font-rubik font-normal text-base tracking-[0.5px] uppercase text-dark no-underline"
+            className="block px-6 py-[18px] font-figtree font-semibold text-base tracking-[1.25px] uppercase text-muted no-underline text-right"
           >
             {link.label}
           </a>

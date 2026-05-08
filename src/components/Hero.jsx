@@ -1,78 +1,75 @@
-const scratchout = `${import.meta.env.BASE_URL}scratchout.svg`
+const crossout    = `${import.meta.env.BASE_URL}crossout.svg`
+const heroImg     = `${import.meta.env.BASE_URL}hero.png`
+const gradientsImg = `${import.meta.env.BASE_URL}gradients.svg`
 
 export default function Hero() {
   return (
-    <section className="bg-cream overflow-x-hidden relative">
-      <div className="max-w-[1440px] mx-auto w-full px-24 pt-[176px] pb-24
-                      max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-16
-                      max-phone:px-5 max-phone:pt-14 max-phone:pb-12">
+    <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-phone:pb-0">
+      <img src={gradientsImg} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" aria-hidden="true" alt="" />
+      <div className="max-w-[1440px] mx-auto w-full px-28 pt-28 pb-34
+                      max-tablet:px-6 max-tablet:pt-20 max-tablet:pb-20
+                      max-phone:px-6 max-phone:pt-12 max-phone:pb-12">
 
-      {/* Display text block */}
-      <div className="hero-text-block">
-
-        {/* Line 1: [F*CK scratched out] [SAVE] — always side by side */}
-        <div className="hero-top-row">
-          <div className="hero-fck-wrapper">
-            <span className="hero-fck">F*CK</span>
-            {/* SVG scales with the wrapper width, always covers the text */}
-            <img
-              src={scratchout}
-              className="hero-scratchout"
-              aria-hidden="true"
-              alt=""
-            />
+        {/* Display text block */}
+        <div className="hero-text-block">
+          <div className="hero-top-row">
+            <div className="hero-fck-wrapper">
+              <span className="hero-fck">F*CK</span>
+              <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
+            </div>
+            <span className="hero-save">SAVE</span>
           </div>
-          <span className="hero-save">SAVE</span>
+          <div className="hero-the-world">THE WORLD</div>
         </div>
 
-        {/* Lines 2–3: THE WORLD */}
-        <div className="hero-the-world">THE<br />WORLD</div>
+        {/* Content row below display text */}
+        <div className="relative mt-18 flex gap-0 max-tablet:mt-10 max-phone:mt-8">
 
-      </div>
+          {/* Left: tagline + body + CTA */}
+          <div className="flex flex-col gap-16 max-w-[600px] max-tablet:max-w-full max-tablet:gap-10">
 
-      {/* Content below display text */}
-      <div className="relative mt-12 flex flex-col gap-12 border-t border-grey23 pt-16
-                      max-tablet:mt-8 max-tablet:pt-10 max-tablet:gap-8">
+            <p className="font-figtree font-black text-[36px] leading-[40px] tracking-[1.5px] uppercase text-accent
+                          max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
+              Step Into Your Optimized Embodied Legacy of Radical Alignment
+              <sup className="text-[23px] font-normal not-italic max-phone:text-[10px]">©TM©</sup>
+              {' '}And Unlock Your Highest-Potential Purpose-Driven Self
+            </p>
 
-        {/* Subtitle */}
-        <p className="font-rubik font-black italic text-[36px] leading-[48px] tracking-[0.75px] uppercase text-grey23
-                      max-tablet:text-2xl max-tablet:leading-8 max-phone:text-lg max-phone:leading-7">
-          Step Into Your Optimized Embodied Legacy of Radical Alignment
-          <sup className="text-[18px] not-italic font-semibold">©™©</sup>
-          {' '}And Finally Unlock Your Highest-Potential Purpose-Driven Self
-        </p>
+            <div className="flex flex-col gap-16 max-tablet:gap-10">
+              <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
+                            max-phone:text-[14px] max-phone:leading-6">
+                After decades of Hyper-Gold-Standard<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> clinical research,
+                twelve-week containers, breathwork certifications, cold plunge protocols, and mastermind
+                facilitation, Stein's Total Wellness<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> has distilled the
+                entire human experience into a proprietary framework that will disrupt your collective nervous
+                system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence,
+                and optimize your leadership capacity—sustainably.
+              </p>
 
-        {/* 2-column body copy */}
-        <div className="grid grid-cols-2 gap-12 max-tablet:grid-cols-1 max-tablet:gap-6">
-          <p className="font-dmSans font-medium text-[20px] leading-8 text-grey23
-                        max-phone:text-base max-phone:leading-7">
-            We help high-performing visionaries (and normies who think wellness means meditating for three days and
-            saying you 'tried everything') optimize their quantum potential, scale their purpose-driven entrepreneurial
-            legacy, and finally achieve root-cause alignment across all dimensions of their functional self — mind,
-            body, spirit, business, relationship, mitochondria, inner child, morning routine, and personal brand.
-          </p>
-          <p className="font-dmSans font-medium text-[20px] leading-8 text-grey23
-                        max-phone:text-base max-phone:leading-7">
-            After decades of Hyper-Gold-Standard<sup>©™©</sup> clinical research, twelve-week containers, breathwork
-            certifications, cold plunge protocols, and mastermind facilitation, Stein's Total Wellness<sup>©™©</sup> has
-            distilled the entire human experience into a proprietary framework that will disrupt your collective nervous
-            system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence, and
-            optimize your leadership capacity — sustainably.
-          </p>
+              <div>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-1 pl-8 pr-5 py-5 border border-white
+                             font-figtree font-extrabold text-[16px] leading-4 tracking-[2px]
+                             uppercase text-white no-underline hover:bg-white hover:text-dark transition-colors
+                             max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:tracking-[1.5px] max-phone:leading-4"
+                >
+                  begin your inititation
+                  <svg className="w-4 h-4 ml-1 flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: hero photo (hidden on small screens) */}
+          <div className="absolute right-0 bottom-[-192px] w-[449px] h-[816px] pointer-events-none
+                          max-tablet:hidden">
+            <img src={heroImg} alt="" className="w-full h-full object-cover object-top" />
+          </div>
+
         </div>
-
-        {/* CTA button */}
-        <div>
-          <a
-            href="#contact"
-            className="inline-block px-[34px] py-5 border-2 border-grey23 font-rubik font-extrabold
-                       text-[16px] leading-4 tracking-[2px] uppercase text-grey23 no-underline
-                       hover:bg-grey23 hover:text-cream transition-colors"
-          >
-            begin your initiation
-          </a>
-        </div>
-      </div>
       </div>
     </section>
   )

@@ -1,90 +1,179 @@
-import ProgramCard from './ProgramCard'
+const BASE = import.meta.env.BASE_URL
 
-const CARDS = [
+const OFFERINGS = [
   {
     id: 1,
+    image: `${BASE}smw.png`,
+    imageLeft: true,
     category: 'Relationships & Intimacy',
-    title: <>Seven Minute Wellness<sup>©™©</sup></>,
+    title: <>Seven Minute Wellness<sup className="font-normal text-[28px] max-phone:text-[15px]">©™©</sup></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
   {
     id: 2,
+    image: `${BASE}rhwp.png`,
+    imageLeft: false,
     category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet Pussy<sup>©™©</sup></>,
-    description: `If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special BONUS chapter (a $1,297 value!!) on whether your attachment style is ruining your orgasms. (It is.)`,
+    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[28px] max-phone:text-[15px]">©™©</sup></>,
+    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
   {
     id: 3,
-    category: 'Health & Authenticity',
-    title: <>The TRUTH About Medication!<sup>©™©</sup></>,
-    description: `After thousands of hours of independent research from his toilet, Dr. Steinberg has uncovered what Big Pharma, Big Wellness, and Big Yoga DESPERATELY don't want you to know. The findings are SHOCKING. The implications are STAGGERING. The revelation? Medications are only... SOMEWHAT EFFECTIVE. That's right. Not miraculous. Not poison. Just... moderately helpful, sometimes, for some people, with side effects. A comprehensive treatise on the heartbreaking banality of clinical effect sizes.`,
-    cta: "Discover What They Don't Want You To Know",
-  },
-  {
-    id: 4,
+    image: `${BASE}btb.png`,
+    imageLeft: true,
     category: 'Power & Performance',
-    title: <>From Bogeys to Breakthroughs<sup>©™©</sup></>,
-    description: `How to Get Great at Golf and Your Wife O! Your Back. A revolutionary 6-module quantum golf consciousness course that uses the ancient wisdom of the back nine to unlock your leadership potential. Includes HRV-tracked swing analysis and a breathwork protocol for the putting green. But here's the thing: you'll also learn real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer AND a better partner, and she'll never complain about your tee time again. Because the only handicap holding you back is your belief system.`,
+    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[28px] max-phone:text-[15px]">©™©</sup></>,
+    description: <>Unlock your leadership potential with this revolutionary quantum golf consciousness course powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. Because the only handicap holding you back is your belief system.</>,
     cta: 'Unlock Your Swing',
   },
   {
-    id: 5,
+    id: 4,
+    image: `${BASE}gdt.png`,
+    imageLeft: false,
     category: 'Teamwork & Accomplishment',
-    title: <>Going Down Together<sup>©™©</sup></>,
-    description: `The world is f***ed; your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
+    title: <>Going Down Together<sup className="font-normal text-[28px] max-phone:text-[15px]">©™©</sup></>,
+    description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
 ]
 
-const WIDE_CARD = {
-  category: <>STW's Signature Container<sup className="text-[10px]">©™©</sup></>,
-  title: <>The STW<sup>©™©</sup> Empire Builder &amp; Dependency Cultivation Accelerator<sup>©™©</sup></>,
-  description: `This is a 12-month embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate transformation in others — and build your own STW-certified coaching empire while doing it. Master the art of advanced dependency cultivation so your clients can't leave even if they want to. Dr. Steinberg only accepts 2 people per year and there are only 2 spots left. ACT FAST. You cannot apply unless you have completed at least 3 other STW offerings and submitted a 500-word essay on why you deserve to evolve.`,
-  cta: 'Submit Your Application for Consideration',
+const empireImg = `${BASE}empire.png`
+
+function OfferingRow({ image, imageLeft, category, title, description, cta }) {
+  const textBlock = (
+    <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
+                    max-phone:gap-4 max-phone:order-last">
+      <div className="flex flex-col gap-4 max-phone:gap-2">
+        <p className="font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase text-purple opacity-60
+                      max-phone:text-[10px] max-phone:leading-4">
+          {category}
+        </p>
+        <h3 className="font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px] text-dark
+                       max-tablet:text-[36px] max-tablet:leading-[42px] max-phone:text-2xl max-phone:leading-7">
+          {title}
+        </h3>
+        <p className="font-dmSans text-[18px] leading-[26px] tracking-[0.1px] text-dark
+                      max-phone:text-[14px] max-phone:leading-[22px]">
+          {description}
+        </p>
+      </div>
+      <div>
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
+                     font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+                     uppercase text-dark no-underline hover:bg-dark hover:text-cream transition-colors
+                     max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:leading-4 max-phone:tracking-[1.5px]"
+        >
+          {cta}
+          <svg className="w-4 h-4 ml-1 flex-shrink-0 max-phone:w-3 max-phone:h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  )
+
+  const imageBlock = (
+    <div className="flex-1 min-w-0 rounded-3xl overflow-hidden max-tablet:order-first
+                    max-phone:flex-none max-phone:w-[248px] max-phone:h-[200px] max-phone:rounded-3xl max-phone:mx-auto max-phone:order-first">
+      <img src={image} alt="" className="w-full h-full object-cover block" style={{ aspectRatio: '596/480' }} />
+    </div>
+  )
+
+  return (
+    <div className="flex gap-6 items-center py-[48px] max-tablet:flex-col max-tablet:py-8
+                    max-phone:py-0 max-phone:px-4 max-phone:gap-6">
+      {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
+    </div>
+  )
 }
 
 export default function Offerings() {
   return (
     <section id="offerings">
-      <div className="max-w-[1440px] mx-auto w-full px-12 pt-20 pb-24 flex flex-col gap-6 max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-12">
+      <div className="max-w-[1440px] mx-auto w-full px-28 py-[120px] flex flex-col gap-[48px]
+                      max-tablet:px-6 max-tablet:py-16
+                      max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
 
-      {/* Section header */}
-      <div className="flex flex-col gap-4 items-center text-center mb-6">
-        <p className="font-dmMono text-[16px] leading-6 tracking-[2px] uppercase text-dark">
-          Transformational Offerings
-        </p>
-        <h2 className="font-rubik font-semibold text-[48px] leading-16 tracking-[2px] uppercase text-grey23
-                       max-tablet:text-[32px] max-tablet:leading-[40px] max-phone:text-[26px] max-phone:leading-8">
-          Proprietary Frameworks Delivered Through Revolutionary Containers
-        </h2>
-      </div>
-
-      {/* Row 1 — cards 1 & 2, equal height via CSS grid auto rows */}
-      <div className="grid grid-cols-2 grid-rows-[1fr] gap-6 max-tablet:grid-cols-1 max-tablet:grid-rows-none">
-        {CARDS.slice(0, 2).map(card => (
-          <ProgramCard key={card.id} {...card} />
-        ))}
-      </div>
-
-      {/* Row 2 — cards 3 & 4, equal height */}
-      <div className="grid grid-cols-2 grid-rows-[1fr] gap-6 max-tablet:grid-cols-1 max-tablet:grid-rows-none">
-        {CARDS.slice(2, 4).map(card => (
-          <ProgramCard key={card.id} {...card} />
-        ))}
-      </div>
-
-      {/* Row 3 — card 5, half-width centered */}
-      <div className="flex justify-center">
-        <div className="w-1/2 max-tablet:w-full">
-          <ProgramCard {...CARDS[4]} />
+        {/* Section header */}
+        <div className="flex flex-col gap-1">
+          <h2 className="font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
+                         max-tablet:text-[44px] max-tablet:leading-[48px] max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px]">
+            <span className="text-purple">Transformational</span>
+            <br />
+            <span className="text-dark"> Offerings</span>
+          </h2>
+          <p className="font-figtree font-bold text-[16px] leading-8 tracking-[1px] uppercase text-dark opacity-60
+                        max-phone:text-[12px] max-phone:leading-4">
+            Proprietary Frameworks Delivered Through Revolutionary Containers
+          </p>
         </div>
-      </div>
 
-      {/* Wide signature card */}
-      <ProgramCard {...WIDE_CARD} wide noBorder className="!pt-[99px]" />
+        {/* Rows + Empire Builder */}
+        <div className="flex flex-col gap-[136px] max-tablet:gap-16 max-phone:gap-16">
 
+          {/* Four offering rows */}
+          <div className="flex flex-col gap-8 max-phone:gap-12 max-phone:pb-8">
+            {OFFERINGS.map(offering => (
+              <OfferingRow key={offering.id} {...offering} />
+            ))}
+          </div>
+
+          {/* Empire Builder */}
+          <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
+            <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[236px]">
+              <img
+                src={empireImg}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+            </div>
+
+            <div className="bg-dark px-28 py-24 flex flex-col gap-8
+                            max-tablet:px-8 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
+              <div className="flex flex-col gap-4 max-phone:gap-1">
+                <p className="font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase text-pink
+                              max-phone:text-[10px] max-phone:leading-4">
+                  STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[6px]">©™©</sup>
+                </p>
+                <h3 className="font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px] text-cream
+                               max-tablet:text-[36px] max-tablet:leading-[42px] max-phone:text-2xl max-phone:leading-7">
+                  The STW<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>{' '}
+                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[31px] font-normal max-phone:text-[16px]">©™©</sup>
+                </h3>
+              </div>
+              <div className="flex flex-col gap-8 max-phone:gap-8">
+                <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream
+                              max-phone:text-[14px] max-phone:leading-[22px]">
+                  Master the art of advanced dependency cultivation so your clients can't leave even if they
+                  want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
+                  transformation in others—all while building your own STW-certified coaching empire. Enrollment
+                  is limited to only 2 individuals who've completed 3 or more previous STW offerings. To apply,
+                  submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
+                  Act fast.
+                </p>
+                <div>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
+                               font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+                               uppercase text-cream no-underline hover:bg-cream hover:text-dark transition-colors
+                               max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:leading-4 max-phone:tracking-[1.5px]"
+                  >
+                    APPLY NOW
+                    <svg className="w-4 h-4 ml-1 flex-shrink-0 max-phone:w-3 max-phone:h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   )
