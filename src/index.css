@@ -41,7 +41,7 @@
   .body-copy {
     @apply font-dmSans text-[18px] leading-[26px] tracking-[0.1px]
            max-tablet:leading-[26px]
-           max-phone:text-[14px] max-phone:leading-[22px];
+           max-phone:text-[15px] max-phone:leading-[22px];
   }
 
   /* Bordered arrow-link button (color + hover set per usage) */
