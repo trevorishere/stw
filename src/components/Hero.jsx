@@ -35,7 +35,7 @@ export default function Hero() {
 
             <div className="flex flex-col gap-12 max-tablet:gap-8">
               <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
-                            max-phone:text-[14px] max-phone:leading-6">
+                            max-tablet:leading-[30px] max-phone:text-[14px] max-phone:leading-6">
                 After decades of Hyper-Gold-Standard<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> clinical research,
                 twelve-week containers, breathwork certifications, cold plunge protocols, and mastermind
                 facilitation, Stein's Total Wellness<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> has distilled the

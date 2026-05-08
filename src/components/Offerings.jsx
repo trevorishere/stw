@@ -129,8 +129,8 @@ export default function Offerings() {
                   STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[6px]">©™©</sup>
                 </p>
                 <h3 className="card-heading text-cream">
-                  The STW<sup className="text-[31px] font-normal max-tablet:text-[23px] max-phone:text-[16px]">©™©</sup>{' '}
-                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[31px] font-normal max-tablet:text-[23px] max-phone:text-[16px]">©™©</sup>
+                  The STW<sup className="text-[32px] font-normal max-tablet:text-[24px] max-phone:text-[16px]">©™©</sup>{' '}
+                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[32px] font-normal max-tablet:text-[24px] max-phone:text-[16px]">©™©</sup>
                 </h3>
               </div>
               <div className="flex flex-col gap-8">

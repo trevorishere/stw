@@ -33,12 +33,14 @@
   /* Small uppercase eyebrow label above card titles */
   .eyebrow {
     @apply font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase
+           max-tablet:leading-5
            max-phone:text-[10px] max-phone:leading-4;
   }
 
   /* Body copy in DM Sans — 18px desktop, 14px mobile */
   .body-copy {
     @apply font-dmSans text-[18px] leading-[26px] tracking-[0.1px]
+           max-tablet:leading-[26px]
            max-phone:text-[14px] max-phone:leading-[22px];
   }
 
@@ -47,6 +49,7 @@
     @apply inline-flex items-center gap-1 pl-6 pr-4 py-3 border
            font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
            uppercase no-underline transition-colors
+           max-tablet:leading-5
            max-phone:border-0 max-phone:p-0 max-phone:text-[11px]
            max-phone:leading-4 max-phone:tracking-[1.5px];
   }

@@ -4,14 +4,14 @@ const PRODUCTS = [
   {
     id: 1,
     category: 'Empowering Product',
-    title: <>The Quantum Empowerment Black Card<sup className="font-normal text-[31px] max-tablet:text-[23px] max-phone:text-[15px]">©™©</sup></>,
+    title: <>The Quantum Empowerment Black Card<sup className="font-normal text-[32px] max-tablet:text-[24px] max-phone:text-[15px]">©™©</sup></>,
     description: `A premium metal card that certifies you have 'Done The Work' and grants you access to the VIP frequency of life. Use it to purchase your next level of consciousness. Or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine (the universe doesn't judge evolutionary medicine use when you're in integrity). Comes with a QR code linking to your personal Consciousness Portfolio and the quiet satisfaction of knowing you are further along than everyone else at the dinner party.`,
     cta: 'apply now',
   },
   {
     id: 2,
     category: 'Divination & Clarity',
-    title: <>The STW Tarot<sup className="font-normal text-[31px] max-tablet:text-[23px] max-phone:text-[15px]">©™©</sup></>,
+    title: <>The STW Tarot<sup className="font-normal text-[32px] max-tablet:text-[24px] max-phone:text-[15px]">©™©</sup></>,
     description: `A secular divination deck featuring seventy-eight of Dr. Steinberg's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Functional Medicine for literally any question about your gut. Includes a 40-page guidebook written entirely in therapeutic jargon.`,
     cta: 'read your future',
   },

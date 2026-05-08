@@ -12,10 +12,10 @@ export default function Testimonial() {
         </blockquote>
 
         <div className="flex flex-col">
-          <p className="font-figtree font-bold text-[16px] leading-7 text-cream max-phone:text-[12px] max-phone:leading-5">
+          <p className="font-figtree font-bold text-[16px] leading-7 text-cream max-tablet:leading-7 max-phone:text-[12px] max-phone:leading-5">
             Steve B.
           </p>
-          <p className="font-figtree font-normal text-[16px] leading-7 text-cream max-phone:text-[12px] max-phone:leading-5">
+          <p className="font-figtree font-normal text-[16px] leading-7 text-cream max-tablet:leading-7 max-phone:text-[12px] max-phone:leading-5">
             Verified Client, Entrepreneur, Thought Leader, and Speaker
           </p>
         </div>
