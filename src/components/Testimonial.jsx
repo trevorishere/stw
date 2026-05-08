@@ -2,7 +2,7 @@ export default function Testimonial() {
   return (
     <section className="bg-dark">
       <div className="page-container px-[316px] py-[136px] flex flex-col gap-6
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-12 max-phone:py-16">
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-[48px] max-phone:py-16">
 
         <blockquote className="blockquote-hanging font-bitter font-normal text-[32px] leading-[48px] text-accent
                                max-w-[806px]
