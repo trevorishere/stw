@@ -1,3 +1,5 @@
+import ArrowRight from './ArrowRight'
+
 const PRODUCTS = [
   {
     id: 1,
@@ -18,13 +20,11 @@ const PRODUCTS = [
 export default function Products() {
   return (
     <section id="products">
-      <div className="max-w-[1440px] mx-auto w-full px-28 pt-[48px] pb-[272px] flex flex-col gap-12
+      <div className="page-container px-28 pt-[48px] pb-[136px] flex flex-col gap-12
                       max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 
-        {/* Section header */}
         <div className="flex flex-col gap-1">
-          <h2 className="font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-                         max-tablet:text-[44px] max-tablet:leading-[48px] max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px]">
+          <h2 className="section-heading">
             <span className="text-purple">Transformational</span>
             <br />
             <span className="text-dark">Products</span>
@@ -40,32 +40,24 @@ export default function Products() {
               <div className="flex flex-col gap-8 px-16 pb-16 pt-16 flex-1 max-phone:px-5 max-phone:pb-8 max-phone:pt-8">
                 <div className="flex flex-col gap-4 flex-1">
                   <div className="flex flex-col gap-1">
-                    <p className="font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase text-dark">
+                    <p className="eyebrow text-dark">
                       {product.category}
                     </p>
-                    <h3 className="font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px] text-dark
-                                   max-phone:text-2xl max-phone:leading-7">
+                    <h3 className="card-heading text-dark">
                       {product.title}
                     </h3>
                   </div>
-                  <p className="font-dmSans text-[18px] leading-[26px] tracking-[0.1px] text-dark
-                                max-phone:text-[14px] max-phone:leading-[22px]">
+                  <p className="body-copy text-dark">
                     {product.description}
                   </p>
                 </div>
-                <div>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
-                               font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                               uppercase text-dark no-underline hover:bg-dark hover:text-cream transition-colors"
-                  >
-                    {product.cta}
-                    <svg className="w-4 h-4 ml-1 flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
+                <a
+                  href="#contact"
+                  className="btn-outline border-dark text-dark hover:bg-dark hover:text-cream"
+                >
+                  {product.cta}
+                  <ArrowRight />
+                </a>
               </div>
             </article>
           ))}

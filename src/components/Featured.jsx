@@ -15,7 +15,7 @@ const marqueeItems = [...logos, ...logos]
 export default function Featured() {
   return (
     <section className="bg-dark">
-      <div className="max-w-[1440px] mx-auto w-full px-28 pt-24 pb-8
+      <div className="page-container px-28 pt-24 pb-8
                       max-tablet:px-6 max-tablet:pt-16 max-tablet:pb-6
                       max-phone:pl-6 max-phone:pr-0 max-phone:pt-12 max-phone:pb-4">
         <p className="font-figtree font-black text-[32px] leading-8 tracking-[2px] uppercase text-cream max-w-[500px]
@@ -24,7 +24,6 @@ export default function Featured() {
         </p>
       </div>
 
-      {/* Full-bleed marquee strip */}
       <div className="overflow-hidden pb-[120px] max-tablet:pb-16 max-phone:pb-12">
         <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
           {marqueeItems.map((logo, i) => (

@@ -1,24 +1,20 @@
-const CREDS = 'DD, MA, PCC, CPCC, CSE, NTP, CPT, CNC, CWC, BPBJJ, BDSW, L1PG, RLT, DMCC, LMA, L12GCC'
+import { CREDS } from '../constants'
 
 export default function Mission() {
   return (
     <section className="bg-productBg">
-      <div className="max-w-[1440px] mx-auto w-full px-28 pt-[120px] pb-[136px] flex flex-col gap-8
+      <div className="page-container px-28 pt-[120px] pb-[136px] flex flex-col gap-8
                       max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-16 max-phone:gap-12">
 
-        <h2 className="font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-                       max-tablet:text-[44px] max-tablet:leading-[48px] max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px]">
+        <h2 className="section-heading">
           <span className="text-dark">We're On<br />a </span>
           <span className="text-purple">Mission</span>
         </h2>
 
-        {/* Two-column layout */}
         <div className="flex gap-6 items-start max-tablet:flex-col">
 
-          {/* Left: mission body copy */}
           <div className="flex-1 min-w-0">
-            <div className="mission-body font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-dark
-                            max-phone:text-[14px] max-phone:leading-[22px]">
+            <div className="mission-body body-copy text-dark">
               <p>
                 When you claim your thought leadership—when you own your mission, articulate your vision,
                 resource your nervous system, optimize your protocols, scale your containers, stop eating{' '}
@@ -37,7 +33,6 @@ export default function Mission() {
             </div>
           </div>
 
-          {/* Right: blockquote + attribution */}
           <div className="flex-1 min-w-0 flex flex-col gap-6 pl-24 max-tablet:pl-0 max-tablet:pt-4">
             <blockquote className="blockquote-hanging font-bitter font-normal text-[28px] leading-[40px] text-dark">
               "True wellness isn't about doing the work. It's about embodying the work. And then monetizing
