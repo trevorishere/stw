@@ -8,44 +8,42 @@ const NAV_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-grey10 border-t-2 border-grey16">
-      <div className="max-w-[1440px] mx-auto w-full p-24 flex flex-col gap-10
-                      max-tablet:px-6 max-tablet:py-12 max-phone:px-5 max-phone:py-8">
+    <footer className="bg-dark">
+      <div className="max-w-[1440px] mx-auto w-full px-28 py-[120px] flex flex-col gap-16
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12">
 
-      <div className="flex items-start justify-between gap-8 max-tablet:flex-col">
-        {/* Brand */}
-        <div className="flex flex-col gap-2 max-w-[680px]">
-          <p className="font-rubik font-medium text-[20px] leading-7 tracking-[2px] uppercase text-cream whitespace-nowrap">
-            Stein's Total Wellness<sup className="font-normal text-[12.9px] tracking-normal">©TM©</sup>
-          </p>
-          <p className="font-rubik font-normal text-[11px] leading-4 tracking-[0.3px] text-cream">
-            A Dr. Aaron Steinberg Joint
-          </p>
+        <div className="flex items-start justify-between gap-8 max-tablet:flex-col">
+          {/* Brand */}
+          <div className="flex flex-col gap-2 max-w-[680px]">
+            <p className="font-figtree font-extrabold text-[20px] leading-7 tracking-[2px] uppercase text-muted whitespace-nowrap">
+              Stein's Total Wellness<sup className="font-medium text-[12.9px] tracking-normal max-phone:text-[8px]">©TM©</sup>
+            </p>
+            <p className="font-figtree font-normal text-[12px] leading-4 tracking-[0.3px] text-muted">
+              A Dr. Aaron Steinberg Joint
+            </p>
+          </div>
+
+          {/* Nav links */}
+          <ul className="flex flex-wrap gap-6 list-none max-phone:flex-col max-phone:gap-2">
+            {NAV_LINKS.map(link => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="font-figtree font-bold text-[13px] leading-[15px] tracking-[1.5px] uppercase
+                             text-muted no-underline hover:text-cream transition-colors max-phone:text-[10px]"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Nav links */}
-        <ul className="flex flex-wrap gap-6 list-none max-phone:gap-4">
-          {NAV_LINKS.map(link => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="font-rubik font-semibold text-[10px] leading-[15px] tracking-[1.8px] uppercase
-                           text-cream no-underline hover:opacity-70"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Copyright */}
-      <div className="border-t border-cream/50 pt-6">
-        <p className="font-rubik font-normal text-[11px] leading-4 tracking-[0.3px] text-cream">
-          <span className="text-[7px]">© TM © </span>
+        {/* Copyright */}
+        <p className="font-figtree font-normal text-[12px] leading-4 tracking-[0.3px] text-muted max-phone:text-[10px]">
+          <span className="text-[7.74px]">© TM © </span>
           2026 Stein's Total Wellness. All rights reserved. All lefts reserved. All frequencies aligned.
         </p>
-      </div>
 
       </div>
     </footer>

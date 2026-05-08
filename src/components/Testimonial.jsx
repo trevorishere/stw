@@ -1,21 +1,25 @@
 export default function Testimonial() {
   return (
     <section className="bg-dark">
-      <div className="max-w-[1440px] mx-auto w-full px-24 py-28 flex flex-col gap-8
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-5 max-phone:py-14">
-      <div className="flex flex-col gap-8">
-        <blockquote className="blockquote-hanging font-slab font-normal text-[40px] leading-[56px] text-accent
-                               max-w-[886px]
-                               max-tablet:text-[28px] max-tablet:leading-[42px] max-phone:text-[22px] max-phone:leading-[34px]">
+      <div className="max-w-[1440px] mx-auto w-full px-[316px] py-[136px] flex flex-col gap-6
+                      max-tablet:px-6 max-tablet:py-16 max-phone:px-12 max-phone:py-16">
+
+        <blockquote className="blockquote-hanging font-bitter font-normal text-[32px] leading-[48px] text-accent
+                               max-w-[806px]
+                               max-tablet:text-[24px] max-tablet:leading-[36px] max-phone:text-[20px] max-phone:leading-8">
           "I came for the golf jokes and stayed because I actually learned how to talk to my wife without us both
           wanting to die. Five stars."
         </blockquote>
 
-        <p className="font-rubik font-medium text-[16px] leading-5 tracking-[0.3px] text-cream">
-          <span>Steve B.</span>
-          <span className="font-normal text-cream/60">&nbsp;&nbsp;·&nbsp;&nbsp;Verified Client&nbsp;&nbsp;·&nbsp;&nbsp;Entrepreneur, Thought Leader, and Speaker</span>
-        </p>
-      </div>
+        <div className="flex flex-col gap-0">
+          <p className="font-figtree font-bold text-[16px] leading-7 text-cream max-phone:text-[12px] max-phone:leading-5">
+            Steve B.
+          </p>
+          <p className="font-figtree font-normal text-[16px] leading-7 text-cream max-phone:text-[12px] max-phone:leading-5">
+            Verified Client, Entrepreneur, Thought Leader, and Speaker
+          </p>
+        </div>
+
       </div>
     </section>
   )

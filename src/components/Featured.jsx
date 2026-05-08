@@ -9,24 +9,33 @@ const logos = [
   'TheJoeRoganBlog.geocities',
 ]
 
+// Duplicate for seamless loop — translateX(-50%) lands back on the start
+const marqueeItems = [...logos, ...logos]
+
 export default function Featured() {
   return (
-    <section className="bg-black/[0.06]">
-      <div className="max-w-[1440px] mx-auto w-full px-12 py-20 flex flex-col gap-8 items-center max-tablet:px-6 max-tablet:py-12 max-phone:px-5 max-phone:py-8">
-      <p className="font-dmMono text-[20px] leading-7 tracking-[4px] uppercase text-center text-grey23 w-full max-phone:text-sm max-phone:tracking-[2px]">
-        As featured manifesting in…
-      </p>
-
-      <div className="flex flex-wrap items-start justify-center w-full gap-12 max-tablet:gap-6">
-        {logos.map(logo => (
-          <span
-            key={logo}
-            className="font-rubik font-bold text-[20px] leading-5 tracking-[1px] uppercase text-grey23"
-          >
-            {logo}
-          </span>
-        ))}
+    <section className="bg-dark">
+      <div className="max-w-[1440px] mx-auto w-full px-28 pt-24 pb-8
+                      max-tablet:px-6 max-tablet:pt-16 max-tablet:pb-6
+                      max-phone:pl-6 max-phone:pr-0 max-phone:pt-12 max-phone:pb-4">
+        <p className="font-figtree font-black text-[32px] leading-8 tracking-[2px] uppercase text-cream max-w-[500px]
+                      max-phone:text-[13px] max-phone:leading-[13px] max-phone:tracking-[1px] max-phone:max-w-[172px]">
+          As Featured<br />Manifesting In…
+        </p>
       </div>
+
+      {/* Full-bleed marquee strip */}
+      <div className="overflow-hidden pb-[120px] max-tablet:pb-16 max-phone:pb-12">
+        <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
+          {marqueeItems.map((logo, i) => (
+            <span
+              key={i}
+              className="font-dmSans font-medium text-[16px] leading-normal tracking-[4px] uppercase text-cream whitespace-nowrap flex-shrink-0 max-phone:text-[13px] max-phone:tracking-[3px]"
+            >
+              {logo}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   )
