@@ -70,7 +70,8 @@
 .hero-top-row {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  column-gap: 16px;
+  row-gap: 0;
   flex-wrap: wrap;
 }
 
