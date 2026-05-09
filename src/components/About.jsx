@@ -5,9 +5,9 @@ const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
 
 export default function About() {
   return (
-    <section id="about" className="bg-purple">
+    <section id="about" className="bg-purple scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 pt-[112px] pb-[120px] flex flex-col gap-20
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:pt-12 max-phone:pb-20 max-phone:gap-8">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-12 max-phone:pb-20 max-phone:gap-8">
 
         <div className="flex flex-col gap-2">
           <h2 className="section-heading text-cream">
@@ -18,9 +18,9 @@ export default function About() {
           </p>
         </div>
 
-        <div className="flex items-start justify-between gap-12 max-tablet:flex-col max-tablet:gap-10">
+        <div className="grid grid-cols-[1fr_2fr] gap-[116px] max-tablet:grid-cols-1 max-tablet:gap-10">
 
-          <div className="w-[389px] flex-shrink-0 max-tablet:w-full max-tablet:max-w-[300px] max-phone:w-[112px] max-phone:max-w-[112px]">
+          <div className="max-tablet:max-w-[300px] max-phone:w-[112px] max-phone:max-w-[112px]">
             <img
               src={aaronImg}
               alt="Dr. Aaron Steinberg"

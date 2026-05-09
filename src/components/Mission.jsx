@@ -3,8 +3,8 @@ import { CREDS } from '../constants'
 export default function Mission() {
   return (
     <section className="bg-productBg">
-      <div className="page-container px-28 pt-[120px] pb-[136px] flex flex-col gap-8
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-16 max-phone:gap-12">
+      <div className="page-container px-28 pt-[120px] pb-[136px] flex flex-col gap-6
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-[48px] max-phone:pb-16 max-phone:gap-4">
 
         <h2 className="section-heading">
           <span className="text-dark">We're On<br />a </span>
@@ -28,22 +28,22 @@ export default function Mission() {
               </p>
               <p>
                 <strong>We won't stop until we Save The World.</strong>
-                <sup className="text-[13px] font-normal max-phone:text-[9px]">©™©</sup>
+                <sup className="text-[11px] font-normal max-phone:text-[10px]">©TM©</sup>
               </p>
             </div>
           </div>
 
-          <div className="flex-1 min-w-0 flex flex-col gap-6 pl-24 max-tablet:pl-0 max-tablet:pt-4">
-            <blockquote className="blockquote-hanging font-bitter font-normal text-[28px] leading-[40px] text-dark">
+          <div className="flex-1 min-w-0 flex flex-col gap-6 pl-24 max-tablet:pl-0 max-tablet:pt-4 max-phone:pt-0 max-phone:gap-4">
+            <blockquote className="blockquote-hanging font-bitter font-normal text-[28px] leading-[40px] text-dark max-tablet:text-[22px] max-tablet:leading-[32px] max-phone:text-[16px] max-phone:leading-[24px]">
               "True wellness isn't about doing the work. It's about embodying the work. And then monetizing
               the embodiment. And then disrupting the monetization. Sustainably."
             </blockquote>
 
             <div className="flex flex-col gap-1">
-              <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark max-phone:text-[12px]">
+              <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark max-phone:text-[14px] max-phone:leading-[22px]">
                 Dr. Aaron Steinberg
               </p>
-              <p className="font-figtree font-normal text-[14px] leading-[22px] text-dark opacity-70 max-phone:text-[10px]">
+              <p className="font-figtree font-normal text-[14px] leading-[22px] text-dark opacity-70 max-phone:font-semibold max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-[0.2px]">
                 {CREDS}
               </p>
             </div>

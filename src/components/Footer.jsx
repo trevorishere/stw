@@ -3,19 +3,18 @@ const NAV_LINKS = [
   { href: '#offerings', label: 'Embodiments' },
   { href: '#about',     label: 'About' },
   { href: '#products',  label: 'Shop' },
-  { href: '#contact',   label: 'Contact' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-dark">
       <div className="page-container px-28 py-[120px] flex flex-col gap-16
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:py-12">
 
         <div className="flex items-start justify-between gap-8 max-tablet:flex-col">
           <div className="flex flex-col gap-2 max-w-[680px]">
             <p className="font-figtree font-extrabold text-[20px] leading-7 tracking-[2px] uppercase text-muted whitespace-nowrap">
-              Stein's Total Wellness<sup className="font-medium text-[12.9px] tracking-normal max-phone:text-[8px]">©TM©</sup>
+              Stein's Total Wellness<sup className="font-medium text-[11px] tracking-normal max-phone:text-[8px]">©TM©</sup>
             </p>
             <p className="font-figtree font-normal text-[12px] leading-4 tracking-[0.3px] text-muted">
               A Dr. Aaron Steinberg Joint
