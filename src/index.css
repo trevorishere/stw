@@ -39,8 +39,8 @@
 
   /* Body copy in DM Sans — 18px desktop, 14px mobile */
   .body-copy {
-    @apply font-dmSans text-[18px] leading-[26px] tracking-[0.1px]
-           max-tablet:leading-[26px]
+    @apply font-dmSans text-[18px] leading-[28px] tracking-[0.1px]
+           max-tablet:leading-[28px]
            max-phone:text-[16px] max-phone:leading-[24px];
   }
 
