@@ -77,7 +77,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   )
 
   const imageBlock = (
-    <div className="flex-1 min-w-0 rounded-3xl overflow-hidden max-tablet:order-first
+    <div className="flex-1 min-w-0 overflow-hidden max-tablet:order-first
                     max-phone:w-full max-phone:flex-none max-phone:order-first">
       <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480] max-phone:h-auto" />
     </div>
@@ -121,7 +121,7 @@ export default function Offerings() {
           </div>
 
           <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
-          <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
+          <div className="overflow-hidden">
             <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[330px]">
               <img
                 src={empireImg}

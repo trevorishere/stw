@@ -37,7 +37,7 @@ export default function Products() {
 
         <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
           {PRODUCTS.map(product => (
-            <article key={product.id} className="bg-productBg rounded-2xl overflow-hidden flex flex-col">
+            <article key={product.id} className="bg-productBg overflow-hidden flex flex-col">
               <div className="w-full aspect-[596/480] bg-white" />
               <div className="flex flex-col gap-8 px-16 pb-16 pt-16 flex-1 max-phone:px-5 max-phone:pb-8 max-phone:pt-8 max-phone:gap-8">
                 <div className="flex flex-col gap-2 flex-1">
