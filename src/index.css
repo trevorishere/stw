@@ -89,7 +89,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgba(32, 32, 32, 0.8);
   white-space: nowrap;
 }
 
@@ -113,7 +113,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-save);
   text-transform: uppercase;
-  color: theme('colors.pink');
+  color: theme('colors.accent');
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -126,7 +126,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgba(32, 32, 32, 0.8);
 }
 
 @keyframes marquee {

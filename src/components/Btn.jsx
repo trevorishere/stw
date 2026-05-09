@@ -4,9 +4,10 @@
 //          "default" → standard:             px-5 py-4 text-[14px] tracking-[1px]
 //          Mobile is always the same for both variants.
 //
-// color    "dark"  → dark border + text, hover: bg-dark  / text-cream
-//          "cream" → cream border + text, hover: bg-cream / text-dark
-//          "white" → white border + text, hover: bg-white / text-dark
+// color    "dark"      → dark border + text, hover: bg-dark      / text-cream
+//          "cream"     → cream border + text, hover: bg-cream     / text-dark
+//          "white"     → white border + text, hover: bg-white     / text-dark
+//          "productBg" → filled productBg bg, subtle border, hover: bg-dark / text-cream
 //
 // hoverText  optional token override for hover text color only
 //            e.g. hoverText="purple" for the About CTA
@@ -14,9 +15,10 @@
 // Pass href for <a>, omit for <button>.
 
 const COLOR_PRESETS = {
-  dark:  { base: 'border-dark text-dark',   hoverBg: 'hover:bg-dark',  defaultHoverText: 'hover:text-cream' },
-  cream: { base: 'border-cream text-cream', hoverBg: 'hover:bg-cream', defaultHoverText: 'hover:text-dark'  },
-  white: { base: 'border-white text-white', hoverBg: 'hover:bg-white', defaultHoverText: 'hover:text-dark'  },
+  dark:      { base: 'border-dark text-dark',                              hoverBg: 'hover:bg-dark',      defaultHoverText: 'hover:text-cream' },
+  cream:     { base: 'border-cream text-cream',                            hoverBg: 'hover:bg-cream',     defaultHoverText: 'hover:text-dark'  },
+  white:     { base: 'border-white text-white',                            hoverBg: 'hover:bg-white',     defaultHoverText: 'hover:text-dark'  },
+  productBg: { base: 'bg-productBg border-[#d6d9c5] text-dark',           hoverBg: 'hover:bg-dark',      defaultHoverText: 'hover:text-cream' },
 }
 
 // Explicit strings so Tailwind's scanner always includes every class.
