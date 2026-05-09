@@ -18,9 +18,9 @@ export default function About() {
           </p>
         </div>
 
-        <div className="flex items-start justify-between gap-[116px] max-tablet:flex-col max-tablet:gap-10">
+        <div className="grid grid-cols-[1fr_2fr] gap-[116px] max-tablet:grid-cols-1 max-tablet:gap-10">
 
-          <div className="w-[389px] flex-shrink-0 max-tablet:w-full max-tablet:max-w-[300px] max-phone:w-[112px] max-phone:max-w-[112px]">
+          <div className="max-tablet:max-w-[300px] max-phone:w-[112px] max-phone:max-w-[112px]">
             <img
               src={aaronImg}
               alt="Dr. Aaron Steinberg"

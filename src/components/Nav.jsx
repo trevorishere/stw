@@ -26,7 +26,7 @@ export default function Nav() {
           </a>
 
           {/* Desktop nav */}
-          <ul className="hidden tablet:flex list-none h-full">
+          <ul className="hidden min-[1024px]:flex list-none h-full">
             {links.map(link => (
               <li key={link.label} className="flex">
                 <a
@@ -41,7 +41,7 @@ export default function Nav() {
 
           {/* Hamburger */}
           <button
-            className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-muted p-1"
+            className="min-[1024px]:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-muted p-1"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen(o => !o)}
@@ -53,7 +53,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       <div
-        className="tablet:hidden flex flex-col bg-dark fixed top-[72px] max-phone:top-[56px] left-0 w-full z-[99] overflow-hidden"
+        className="min-[1024px]:hidden flex flex-col bg-dark fixed top-[72px] max-phone:top-[56px] left-0 w-full z-[99] overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
           transition: 'max-height 200ms ease-in-out',
