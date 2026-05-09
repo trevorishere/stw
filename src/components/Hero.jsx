@@ -6,7 +6,7 @@ const gradientsImg = `${import.meta.env.BASE_URL}gradients.svg`
 
 export default function Hero() {
   return (
-    <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-phone:pb-0">
+    <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-tablet:pb-0 max-phone:pb-0">
       <img src={gradientsImg} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" aria-hidden="true" alt="" />
       <div className="page-container px-28 pt-[88px] pb-[136px]
                       max-tablet:px-12 max-tablet:pt-[48px] max-tablet:pb-[48px] max-phone:px-6">
@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="hero-the-world">THE WORLD</div>
         </div>
 
-        <div className="relative mt-[72px] flex gap-0 max-phone:mt-8">
+        <div className="relative mt-[72px] max-tablet:mt-[48px] flex gap-0 max-phone:mt-8">
 
           <div className="flex flex-col gap-4 max-w-[600px] max-tablet:max-w-full">
 
