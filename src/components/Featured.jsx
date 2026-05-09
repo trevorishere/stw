@@ -14,24 +14,24 @@ const marqueeItems = [...logos, ...logos]
 
 export default function Featured() {
   return (
-    <section className="bg-dark">
+    <section className="bg-cream">
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
-      <div className="page-container px-28 pt-[88px] pb-[104px] flex flex-col gap-6
+      <div className="page-container px-28 pt-[80px] pb-[96px] flex flex-col gap-4
                       max-tablet:px-16 max-tablet:pt-16 max-tablet:pb-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-12">
 
-        <p className="font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-muted
+        <p className="font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-dark opacity-80
                       max-tablet:text-[18px] max-tablet:leading-[24px]
                       max-phone:text-[14px] max-phone:leading-[20px] max-phone:tracking-[1px]">
           As Featured Manifesting In…
         </p>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden opacity-60">
           <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
             {marqueeItems.map((logo, i) => (
               <span
                 key={i}
-                className="font-dmSans font-medium text-[16px] leading-normal tracking-[3px] uppercase text-muted whitespace-nowrap flex-shrink-0 max-phone:text-[13px]"
+                className="font-dmSans font-semibold text-[16px] leading-normal tracking-[3px] uppercase text-dark whitespace-nowrap flex-shrink-0 max-phone:text-[13px]"
               >
                 {logo}
               </span>
