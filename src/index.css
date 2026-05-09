@@ -44,15 +44,6 @@
            max-phone:text-[16px] max-phone:leading-[24px];
   }
 
-  /* Bordered arrow-link button (color + hover set per usage) */
-  .btn-outline {
-    @apply inline-flex items-center gap-1 pl-6 pr-4 py-3 border
-           font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-           uppercase no-underline transition-colors
-           max-tablet:leading-5
-           max-phone:border-0 max-phone:p-0 max-phone:text-[11px]
-           max-phone:leading-4 max-phone:tracking-[1.5px];
-  }
 }
 
 /*

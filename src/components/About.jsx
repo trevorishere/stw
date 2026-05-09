@@ -25,6 +25,7 @@ export default function About() {
               src={aaronImg}
               alt="Dr. Aaron Steinberg"
               className="w-full aspect-square object-cover rounded-full"
+              loading="lazy"
             />
           </div>
 
@@ -59,8 +60,12 @@ export default function About() {
             </div>
             <a
               href="#contact"
-              className="btn-outline border-cream text-cream hover:bg-cream hover:text-purple
-                         max-phone:border max-phone:p-3 max-phone:border-2"
+              className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
+                         font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+                         uppercase text-cream no-underline hover:bg-cream hover:text-purple
+                         self-start transition-colors
+                         max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
+                         max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
             >
               Book Your Free Discovery Session
               <ArrowRight />
