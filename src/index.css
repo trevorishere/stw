@@ -19,7 +19,7 @@
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
     @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-           max-tablet:text-[44px] max-tablet:leading-[48px]
+           max-tablet:text-[44px] max-tablet:leading-[44px]
            max-phone:text-[28px] max-phone:leading-[28px] max-phone:tracking-[1px];
   }
 

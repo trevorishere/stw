@@ -105,7 +105,7 @@ export default function Offerings() {
             <span className="text-dark"> Offerings</span>
           </h2>
           <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-60
-                        max-phone:text-[12px] max-phone:leading-4">
+                        max-tablet:leading-[18px] max-phone:text-[12px] max-phone:leading-4">
             Proprietary Frameworks Delivered
             <span className="max-phone:block hidden"> </span>
             {' '}Through Revolutionary Containers

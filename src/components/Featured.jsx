@@ -19,6 +19,7 @@ export default function Featured() {
                       max-tablet:px-12 max-tablet:pt-16 max-tablet:pb-6
                       max-phone:pl-6 max-phone:pr-0 max-phone:pt-12 max-phone:pb-4">
         <p className="font-figtree font-black text-[32px] leading-8 tracking-[2px] uppercase text-cream max-w-[500px]
+                      max-tablet:text-[16px] max-tablet:leading-[18px]
                       max-phone:text-[13px] max-phone:leading-[13px] max-phone:tracking-[1px] max-phone:max-w-[172px]">
           As Featured<br />Manifesting In…
         </p>

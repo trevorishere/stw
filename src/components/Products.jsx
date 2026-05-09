@@ -30,7 +30,7 @@ export default function Products() {
             <span className="text-dark">Products</span>
           </h2>
           <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-50
-                        max-phone:text-[12px] max-phone:leading-4">
+                        max-tablet:leading-[18px] max-phone:text-[12px] max-phone:leading-4">
             Carry the Work With You
           </p>
         </div>
