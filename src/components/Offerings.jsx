@@ -146,7 +146,7 @@ export default function Offerings() {
                   Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[26px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>
                 </h3>
               </div>
-              <div className="flex flex-col gap-8 max-phone:gap-4">
+              <div className="flex flex-col gap-8 max-phone:gap-8">
                 <p className="body-copy text-cream">
                   Master the art of advanced dependency cultivation so your clients can't leave even if they
                   want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
@@ -157,9 +157,12 @@ export default function Offerings() {
                 </p>
                 <a
                   href="#contact"
-                  className="btn-outline border-cream text-cream hover:bg-cream hover:text-dark self-start
-                             max-phone:border max-phone:border-cream max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
-                             max-phone:text-[12px] max-phone:tracking-[1.25px]"
+                  className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
+                             font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
+                             uppercase text-cream no-underline hover:bg-cream hover:text-dark
+                             self-start transition-colors
+                             max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
+                             max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
                 >
                   APPLY NOW
                   <ArrowRight />
