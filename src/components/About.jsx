@@ -1,4 +1,4 @@
-import ArrowRight from './ArrowRight'
+import Btn from './Btn'
 import { CREDS } from '../constants'
 
 const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
@@ -58,18 +58,9 @@ export default function About() {
                 to laugh about it. Sustainably.
               </p>
             </div>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
-                         font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                         uppercase text-cream no-underline hover:bg-cream hover:text-purple
-                         self-start transition-colors
-                         max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
-                         max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
-            >
+            <Btn color="cream" hoverText="purple" href="#contact" className="self-start">
               Book Your Free Discovery Session
-              <ArrowRight />
-            </a>
+            </Btn>
           </div>
 
         </div>

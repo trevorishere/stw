@@ -1,4 +1,4 @@
-import ArrowRight from './ArrowRight'
+import Btn from './Btn'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -61,18 +61,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
           {description}
         </p>
       </div>
-      <a
-        href="#contact"
-        className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
-                   font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                   uppercase text-dark no-underline hover:bg-dark hover:text-cream
-                   self-start transition-colors
-                   max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
-                   max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
-      >
-        {cta}
-        <ArrowRight />
-      </a>
+      <Btn color="dark" href="#contact" className="self-start">{cta}</Btn>
     </div>
   )
 
@@ -157,18 +146,7 @@ export default function Offerings() {
                   submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
                   Act fast.
                 </p>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-cream
-                             font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                             uppercase text-cream no-underline hover:bg-cream hover:text-dark
-                             self-start transition-colors
-                             max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
-                             max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
-                >
-                  APPLY NOW
-                  <ArrowRight />
-                </a>
+                <Btn color="cream" href="#contact" className="self-start">APPLY NOW</Btn>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import ArrowRight from './ArrowRight'
+import Btn from './Btn'
 
 const PRODUCTS = [
   {
@@ -53,18 +53,7 @@ export default function Products() {
                     {product.description}
                   </p>
                 </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1 pl-6 pr-4 py-3 border border-dark
-                             font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-                             uppercase text-dark no-underline hover:bg-dark hover:text-cream
-                             self-start transition-colors
-                             max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
-                             max-phone:text-[12px] max-phone:leading-4 max-phone:tracking-[1.25px]"
-                >
-                  {product.cta}
-                  <ArrowRight />
-                </a>
+                <Btn color="dark" href="#contact" className="self-start">{product.cta}</Btn>
               </div>
             </article>
           ))}

@@ -1,4 +1,4 @@
-import ArrowRight from './ArrowRight'
+import Btn from './Btn'
 
 const crossout    = `${import.meta.env.BASE_URL}crossout.svg`
 const heroImg     = `${import.meta.env.BASE_URL}hero.png`
@@ -44,17 +44,9 @@ export default function Hero() {
                 and optimize your leadership capacity—sustainably.
               </p>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 pl-8 pr-5 py-5 border border-white
-                           font-figtree font-extrabold text-[16px] leading-4 tracking-[2px]
-                           uppercase text-white no-underline hover:bg-white hover:text-dark transition-colors
-                           max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:tracking-[1.5px] max-phone:leading-4
-                           self-start"
-              >
+              <Btn variant="hero" color="white" href="#contact" className="self-start">
                 begin your inititation
-                <ArrowRight />
-              </a>
+              </Btn>
             </div>
           </div>
 
