@@ -106,7 +106,9 @@ export default function Offerings() {
           </h2>
           <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-60
                         max-phone:text-[12px] max-phone:leading-4">
-            Proprietary Frameworks Delivered Through Revolutionary Containers
+            Proprietary Frameworks Delivered
+            <span className="max-phone:block hidden"> </span>
+            {' '}Through Revolutionary Containers
           </p>
         </div>
 

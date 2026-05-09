@@ -29,7 +29,8 @@ export default function Products() {
             <br />
             <span className="text-dark">Products</span>
           </h2>
-          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-50">
+          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-50
+                        max-phone:text-[12px] max-phone:leading-4">
             Carry the Work With You
           </p>
         </div>
@@ -37,9 +38,9 @@ export default function Products() {
         <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
           {PRODUCTS.map(product => (
             <article key={product.id} className="bg-productBg rounded-2xl overflow-hidden flex flex-col">
-              <div className="flex flex-col gap-8 px-16 pb-16 pt-16 flex-1 max-phone:px-5 max-phone:pb-8 max-phone:pt-8">
+              <div className="flex flex-col gap-8 px-16 pb-16 pt-16 flex-1 max-phone:px-5 max-phone:pb-8 max-phone:pt-8 max-phone:gap-4">
                 <div className="flex flex-col gap-2 flex-1">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1 max-phone:gap-3">
                     <p className="eyebrow text-dark">
                       {product.category}
                     </p>
@@ -53,7 +54,9 @@ export default function Products() {
                 </div>
                 <a
                   href="#contact"
-                  className="btn-outline border-dark text-dark hover:bg-dark hover:text-cream"
+                  className="btn-outline border-dark text-dark hover:bg-dark hover:text-cream
+                             max-phone:border max-phone:border-dark max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
+                             max-phone:text-[12px] max-phone:tracking-[1.25px]"
                 >
                   {product.cta}
                   <ArrowRight />
