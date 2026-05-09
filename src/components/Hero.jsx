@@ -36,9 +36,9 @@ export default function Hero() {
             <div className="flex flex-col gap-12 max-tablet:gap-8">
               <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
                             max-tablet:leading-[30px] max-phone:text-[14px] max-phone:leading-6">
-                After decades of Hyper-Gold-Standard<sup className="text-[11px] max-phone:text-[9px]">©TM©</sup> clinical research,
+                After decades of Hyper-Gold-Standard<sup className="text-[12px] max-phone:text-[9px]">©TM©</sup> clinical research,
                 twelve-week containers, breathwork certifications, cold plunge protocols, and mastermind
-                facilitation, Stein's Total Wellness<sup className="text-[11px] max-phone:text-[9px]">©TM©</sup> has distilled the
+                facilitation, Stein's Total Wellness<sup className="text-[12px] max-phone:text-[9px]">©TM©</sup> has distilled the
                 entire human experience into a proprietary framework that will disrupt your collective nervous
                 system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence,
                 and optimize your leadership capacity—sustainably.

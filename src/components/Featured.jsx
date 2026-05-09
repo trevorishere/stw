@@ -25,7 +25,7 @@ export default function Featured() {
         </p>
       </div>
 
-      <div className="overflow-hidden pb-[120px] max-tablet:pb-16 max-phone:pb-12">
+      <div className="max-w-site mx-auto overflow-hidden pb-[120px] max-tablet:pb-16 max-phone:pb-12">
         <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
           {marqueeItems.map((logo, i) => (
             <span

@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex items-start justify-between gap-8 max-tablet:flex-col">
           <div className="flex flex-col gap-2 max-w-[680px]">
             <p className="font-figtree font-extrabold text-[20px] leading-7 tracking-[2px] uppercase text-muted whitespace-nowrap">
-              Stein's Total Wellness<sup className="font-medium text-[11px] tracking-normal max-phone:text-[8px]">©TM©</sup>
+              Stein's Total Wellness<sup className="font-medium text-[12px] tracking-normal">©TM©</sup>
             </p>
             <p className="font-figtree font-normal text-[12px] leading-4 tracking-[0.3px] text-muted">
               A Dr. Aaron Steinberg Joint
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         <p className="font-figtree font-normal text-[12px] leading-4 tracking-[0.3px] text-muted max-phone:text-[10px]">
-          <span className="text-[7.74px]">© TM © </span>
+          <span className="text-[8px]">© TM © </span>
           2026 Stein's Total Wellness. All rights reserved. All lefts reserved. All frequencies aligned.
         </p>
 
