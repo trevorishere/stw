@@ -25,7 +25,7 @@
 
   /* Card / offering h3 */
   .card-heading {
-    @apply font-figtree font-extrabold text-[48px] leading-[52px] tracking-[0.3px]
+    @apply font-figtree font-extrabold text-[44px] leading-[48px] tracking-[0.3px]
            max-tablet:text-[36px] max-tablet:leading-[42px]
            max-phone:text-2xl max-phone:leading-7;
   }
