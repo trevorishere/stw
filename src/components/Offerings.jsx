@@ -42,6 +42,7 @@ const OFFERINGS = [
 ]
 
 const empireImg = `${BASE}empire.png`
+const empireImgMobile = `${BASE}empire-mobile.png`
 
 function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   const textBlock = (
@@ -123,7 +124,12 @@ export default function Offerings() {
               <img
                 src={empireImg}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-top max-phone:hidden"
+              />
+              <img
+                src={empireImgMobile}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover object-top hidden max-phone:block"
               />
             </div>
 
