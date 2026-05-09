@@ -129,7 +129,7 @@ export default function Offerings() {
               <img
                 src={empireImgMobile}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover object-bottom hidden max-phone:block"
+                className="absolute inset-0 w-full h-full object-fill hidden max-phone:block"
               />
             </div>
 
