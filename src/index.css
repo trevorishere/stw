@@ -138,11 +138,6 @@
   animation: marquee 35s linear infinite;
 }
 
-.mission-body p + p { margin-top: 16px; }
-
-@media (max-width: 600px) {
-  .mission-body p + p { margin-top: 4px; }
-}
 .about-bio-text p + p { margin-top: 12px; }
 
 .blockquote-hanging { hanging-punctuation: first; }
