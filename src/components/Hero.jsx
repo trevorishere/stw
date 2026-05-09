@@ -24,7 +24,7 @@ export default function Hero() {
           <div className="hero-the-world">THE WORLD</div>
         </div>
 
-        <div className="flex items-end justify-between mt-14 max-tablet:mt-12 max-phone:mt-8">
+        <div className="relative flex items-end justify-between mt-[-64px] max-tablet:mt-[-32px] max-phone:mt-[-20px]">
 
           <div className="flex flex-col gap-6 max-w-[802px] max-tablet:max-w-full">
 

@@ -55,7 +55,7 @@
 
 :root {
   --hero-fs: 190px;
-  --hero-lh: 0.889;
+  --hero-lh: 170px;
   --hero-ls-fck:  8px;
   --hero-ls-save: 8px;
 }
@@ -147,6 +147,7 @@
 @media (max-width: 900px) {
   :root {
     --hero-fs: 110px;
+    --hero-lh: 98px;   /* 110 × (170/190) */
     --hero-ls-fck: 5px;
     --hero-ls-save: 5px;
   }
@@ -155,6 +156,7 @@
 @media (max-width: 600px) {
   :root {
     --hero-fs: 72px;
+    --hero-lh: 64px;   /* 72 × (170/190) */
     --hero-ls-fck: 12px;
     --hero-ls-save: 12px;
   }
@@ -169,6 +171,7 @@
 @media (max-width: 400px) {
   :root {
     --hero-fs: 54px;
+    --hero-lh: 48px;   /* 54 × (170/190) */
     --hero-ls-fck: 2px;
     --hero-ls-save: 2px;
   }
@@ -178,6 +181,7 @@
 @media (max-width: 360px) {
   :root {
     --hero-fs: 44px;
+    --hero-lh: 39px;   /* 44 × (170/190) */
     --hero-ls-fck: 1px;
     --hero-ls-save: 1px;
   }
