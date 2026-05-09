@@ -95,10 +95,11 @@
 
 .hero-scratchout {
   position: absolute;
-  top: 50%;
-  left: -6%;
-  width: 112%;
-  transform: translateY(-52%);
+  top: 0;
+  left: 0;
+  /* SVG is 545px at 190px font-size → ratio ≈ 2.87 */
+  width: calc(var(--hero-fs) * 2.87);
+  height: auto;
   pointer-events: none;
   display: block;
   z-index: 1;

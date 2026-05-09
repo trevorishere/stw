@@ -13,11 +13,11 @@ export default function Hero() {
                       max-tablet:px-12 max-tablet:pt-[48px] max-tablet:pb-[80px]
                       max-phone:px-6 max-phone:pb-12">
 
-        <div className="hero-text-block">
+        <div className="hero-text-block relative">
+          <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
           <div className="hero-top-row">
             <div className="hero-fck-wrapper">
               <span className="hero-fck">F*CK</span>
-              <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
             </div>
             <span className="hero-save">SAVE</span>
           </div>
