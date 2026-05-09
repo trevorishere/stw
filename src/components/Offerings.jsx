@@ -129,13 +129,13 @@ export default function Offerings() {
               <img
                 src={empireImgMobile}
                 alt=""
-                className="absolute inset-0 w-full h-full object-fill hidden max-phone:block"
+                className="absolute inset-0 w-full h-full object-cover object-top hidden max-phone:block"
               />
             </div>
 
             <div className="bg-dark px-28 py-24 flex flex-col gap-2
-                            max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
-              <div className="flex flex-col gap-4 max-phone:gap-1">
+                            max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-2">
+              <div className="flex flex-col gap-4 max-phone:gap-3">
                 <p className="eyebrow text-pink">
                   STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[7px]">©TM©</sup>
                 </p>
@@ -144,7 +144,7 @@ export default function Offerings() {
                   Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[26px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>
                 </h3>
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-8 max-phone:gap-4">
                 <p className="body-copy text-cream">
                   Master the art of advanced dependency cultivation so your clients can't leave even if they
                   want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
@@ -155,7 +155,9 @@ export default function Offerings() {
                 </p>
                 <a
                   href="#contact"
-                  className="btn-outline border-cream text-cream hover:bg-cream hover:text-dark self-start"
+                  className="btn-outline border-cream text-cream hover:bg-cream hover:text-dark self-start
+                             max-phone:border max-phone:border-cream max-phone:pl-3 max-phone:pr-[10px] max-phone:py-2
+                             max-phone:text-[12px] max-phone:tracking-[1.25px]"
                 >
                   APPLY NOW
                   <ArrowRight />
