@@ -28,7 +28,7 @@ export default function Mission() {
               </p>
               <p>
                 <strong>We won't stop until we Save The World.</strong>
-                <sup className="text-[13px] font-normal max-phone:text-[9px]">©TM©</sup>
+                <sup className="text-[11px] font-normal max-phone:text-[10px]">©TM©</sup>
               </p>
             </div>
           </div>

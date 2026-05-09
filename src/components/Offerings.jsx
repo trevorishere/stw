@@ -8,7 +8,7 @@ const OFFERINGS = [
     image: `${BASE}smw.png`,
     imageLeft: true,
     category: 'Relationships & Intimacy',
-    title: <>Seven Minute Wellness<sup className="font-normal text-[28px] max-tablet:text-[21px] max-phone:text-[15px]">©TM©</sup></>,
+    title: <>Seven Minute Wellness<sup className="font-normal text-[26px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
@@ -17,7 +17,7 @@ const OFFERINGS = [
     image: `${BASE}rhwp.png`,
     imageLeft: false,
     category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[28px] max-tablet:text-[21px] max-phone:text-[15px]">©TM©</sup></>,
+    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[26px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
     description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
@@ -26,7 +26,7 @@ const OFFERINGS = [
     image: `${BASE}btb.png`,
     imageLeft: true,
     category: 'Power & Performance',
-    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[28px] max-tablet:text-[21px] max-phone:text-[15px]">©TM©</sup></>,
+    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[26px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
     description: <>Unlock your leadership potential with this revolutionary quantum golf consciousness course powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. Because the only handicap holding you back is your belief system.</>,
     cta: 'Unlock Your Swing',
   },
@@ -35,7 +35,7 @@ const OFFERINGS = [
     image: `${BASE}gdt.png`,
     imageLeft: false,
     category: 'Teamwork & Accomplishment',
-    title: <>Going Down Together<sup className="font-normal text-[28px] max-tablet:text-[21px] max-phone:text-[15px]">©TM©</sup></>,
+    title: <>Going Down Together<sup className="font-normal text-[26px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
@@ -131,11 +131,11 @@ export default function Offerings() {
                             max-tablet:px-8 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
               <div className="flex flex-col gap-4 max-phone:gap-1">
                 <p className="eyebrow text-pink">
-                  STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[6px]">©TM©</sup>
+                  STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[7px]">©TM©</sup>
                 </p>
                 <h3 className="card-heading text-cream">
-                  The STW<sup className="text-[32px] font-normal max-tablet:text-[24px] max-phone:text-[16px]">©TM©</sup>{' '}
-                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[32px] font-normal max-tablet:text-[24px] max-phone:text-[16px]">©TM©</sup>
+                  The STW<sup className="text-[26px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>{' '}
+                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[26px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>
                 </h3>
               </div>
               <div className="flex flex-col gap-8">

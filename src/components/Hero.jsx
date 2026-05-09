@@ -29,16 +29,16 @@ export default function Hero() {
             <p className="font-figtree font-black text-[36px] leading-[40px] tracking-[1.5px] uppercase text-accent
                           max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
               Step Into Your Optimized Embodied Legacy of Radical Alignment
-              <sup className="text-[23px] font-normal not-italic max-tablet:text-[15px] max-phone:text-[10px]">©TM©</sup>
+              <sup className="text-[20px] font-normal not-italic max-tablet:text-[13px] max-phone:text-[10px]">©TM©</sup>
               {' '}And Unlock Your Highest-Potential Purpose-Driven Self
             </p>
 
             <div className="flex flex-col gap-12 max-tablet:gap-8">
               <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
                             max-tablet:leading-[30px] max-phone:text-[14px] max-phone:leading-6">
-                After decades of Hyper-Gold-Standard<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> clinical research,
+                After decades of Hyper-Gold-Standard<sup className="text-[11px] max-phone:text-[9px]">©TM©</sup> clinical research,
                 twelve-week containers, breathwork certifications, cold plunge protocols, and mastermind
-                facilitation, Stein's Total Wellness<sup className="text-[13px] max-phone:text-[9px]">©TM©</sup> has distilled the
+                facilitation, Stein's Total Wellness<sup className="text-[11px] max-phone:text-[9px]">©TM©</sup> has distilled the
                 entire human experience into a proprietary framework that will disrupt your collective nervous
                 system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence,
                 and optimize your leadership capacity—sustainably.
