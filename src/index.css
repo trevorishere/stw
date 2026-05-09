@@ -20,7 +20,7 @@
   .section-heading {
     @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
            max-tablet:text-[44px] max-tablet:leading-[48px]
-           max-phone:text-2xl max-phone:leading-6 max-phone:tracking-[1px];
+           max-phone:text-[28px] max-phone:leading-[28px] max-phone:tracking-[1px];
   }
 
   /* Card / offering h3 */
@@ -148,6 +148,10 @@
 }
 
 .mission-body p + p { margin-top: 16px; }
+
+@media (max-width: 600px) {
+  .mission-body p + p { margin-top: 4px; }
+}
 .about-bio-text p + p { margin-top: 12px; }
 
 .blockquote-hanging { hanging-punctuation: first; }
