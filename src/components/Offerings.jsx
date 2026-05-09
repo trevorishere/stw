@@ -145,7 +145,7 @@ export default function Offerings() {
                 </h3>
               </div>
               <div className="flex flex-col gap-8">
-                <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-phone:text-[15px] max-phone:leading-[22px]">
+                <p className="body-copy text-cream">
                   Master the art of advanced dependency cultivation so your clients can't leave even if they
                   want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
                   transformation in others—all while building your own STW-certified coaching empire. Enrollment
