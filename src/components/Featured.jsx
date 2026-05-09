@@ -17,7 +17,7 @@ export default function Featured() {
     <section className="bg-dark">
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
       <div className="page-container px-28 pt-[88px] pb-[104px] flex flex-col gap-6
-                      max-tablet:px-12 max-tablet:pt-16 max-tablet:pb-16
+                      max-tablet:px-16 max-tablet:pt-16 max-tablet:pb-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-12">
 
         <p className="font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-muted
