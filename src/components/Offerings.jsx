@@ -95,7 +95,7 @@ export default function Offerings() {
   return (
     <section id="offerings" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
-                      max-tablet:px-6 max-tablet:py-16
+                      max-tablet:px-12 max-tablet:py-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
 
         <div className="flex flex-col gap-4">
@@ -134,7 +134,7 @@ export default function Offerings() {
             </div>
 
             <div className="bg-dark px-28 py-24 flex flex-col gap-2
-                            max-tablet:px-8 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
+                            max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-1">
               <div className="flex flex-col gap-4 max-phone:gap-1">
                 <p className="eyebrow text-pink">
                   STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[7px]">©TM©</sup>

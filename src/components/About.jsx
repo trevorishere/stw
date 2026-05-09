@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="bg-purple scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 pt-[112px] pb-[120px] flex flex-col gap-20
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:pt-12 max-phone:pb-20 max-phone:gap-8">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-12 max-phone:pb-20 max-phone:gap-8">
 
         <div className="flex flex-col gap-2">
           <h2 className="section-heading text-cream">

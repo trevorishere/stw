@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark">
       <div className="page-container px-28 py-[120px] flex flex-col gap-16
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:py-12">
 
         <div className="flex items-start justify-between gap-8 max-tablet:flex-col">
           <div className="flex flex-col gap-2 max-w-[680px]">

@@ -21,7 +21,7 @@ export default function Products() {
   return (
     <section id="products" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 pt-[48px] pb-[136px] flex flex-col gap-12
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 
         <div className="flex flex-col gap-4">
           <h2 className="section-heading">

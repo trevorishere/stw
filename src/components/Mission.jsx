@@ -4,7 +4,7 @@ export default function Mission() {
   return (
     <section className="bg-productBg">
       <div className="page-container px-28 pt-[120px] pb-[136px] flex flex-col gap-6
-                      max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-16 max-phone:gap-12">
+                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:py-16 max-phone:gap-12">
 
         <h2 className="section-heading">
           <span className="text-dark">We're On<br />a </span>
