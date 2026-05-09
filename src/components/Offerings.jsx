@@ -98,13 +98,13 @@ export default function Offerings() {
                       max-tablet:px-6 max-tablet:py-16
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-4">
           <h2 className="section-heading">
             <span className="text-purple">Transformational</span>
             <br />
             <span className="text-dark"> Offerings</span>
           </h2>
-          <p className="font-figtree font-bold text-[16px] leading-8 tracking-[1px] uppercase text-dark opacity-60
+          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-60
                         max-phone:text-[12px] max-phone:leading-4">
             Proprietary Frameworks Delivered Through Revolutionary Containers
           </p>
@@ -120,7 +120,7 @@ export default function Offerings() {
 
           <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
           <div className="rounded-t-[48px] overflow-hidden max-phone:rounded-t-[13px]">
-            <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[236px]">
+            <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[330px]">
               <img
                 src={empireImg}
                 alt=""
@@ -129,7 +129,7 @@ export default function Offerings() {
               <img
                 src={empireImgMobile}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover object-top hidden max-phone:block"
+                className="absolute inset-0 w-full h-full object-cover object-bottom hidden max-phone:block"
               />
             </div>
 

@@ -23,13 +23,13 @@ export default function Products() {
       <div className="page-container px-28 pt-[48px] pb-[136px] flex flex-col gap-12
                       max-tablet:px-6 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-4">
           <h2 className="section-heading">
             <span className="text-purple">Transformational</span>
             <br />
             <span className="text-dark">Products</span>
           </h2>
-          <p className="font-figtree font-bold text-[16px] leading-8 tracking-[1px] uppercase text-dark opacity-50">
+          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-50">
             Carry the Work With You
           </p>
         </div>
