@@ -114,7 +114,7 @@ export default function Offerings() {
 
         <div className="flex flex-col gap-[136px] max-tablet:gap-16 max-phone:gap-16">
 
-          <div className="flex flex-col gap-8 max-phone:gap-12 max-phone:pb-8">
+          <div className="flex flex-col gap-8 max-phone:gap-[48px] max-phone:pb-8">
             {OFFERINGS.map(offering => (
               <OfferingRow key={offering.id} {...offering} />
             ))}
