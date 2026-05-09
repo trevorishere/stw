@@ -47,7 +47,7 @@ const empireImgMobile = `${BASE}empire-mobile.png`
 function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   const textBlock = (
     <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
-                    max-phone:gap-4 max-phone:order-last">
+                    max-phone:gap-8 max-phone:order-last">
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-4 max-phone:gap-3">
           <p className="eyebrow text-purple opacity-60">
