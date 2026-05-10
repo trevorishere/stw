@@ -24,9 +24,9 @@ export default function Hero() {
           <div className="hero-the-world">THE WORLD</div>
         </div>
 
-        <div className="flex items-start gap-24 max-tablet:flex-col max-tablet:gap-12 max-phone:gap-10">
+        <div className="flex items-center gap-24 max-tablet:flex-col max-tablet:items-start max-tablet:gap-12 max-phone:gap-10">
 
-          <div className="flex flex-col gap-6 flex-1 min-w-0 pt-[64px] max-tablet:pt-10 max-phone:pt-0">
+          <div className="flex flex-col gap-6 flex-1 min-w-0">
 
             <p className="font-figtree font-black text-[32px] leading-[40px] tracking-[1px] uppercase text-dark opacity-80
                           max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[24px] max-phone:leading-7 max-phone:tracking-[0.75px]">
