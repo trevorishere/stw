@@ -1,6 +1,6 @@
 // Three-size button component — no arrow icon.
 //
-// variant  "hero"    → large (desktop only): px-6 py-5 text-[16px] tracking-[1.5px]
+// variant  "hero"    → large (desktop only): px-8 py-6 text-[16px] tracking-[1.5px]
 //          "default" → standard:             px-5 py-4 text-[14px] tracking-[1px]
 //          Mobile is always the same for both variants.
 //
@@ -34,7 +34,7 @@ export default function Btn({ variant = 'default', color = 'dark', hoverText, hr
   const hoverTextClass = hoverText ? HOVER_TEXT[hoverText] : preset.defaultHoverText
 
   const sizeClasses = variant === 'hero'
-    ? 'px-6 py-5 text-[16px] leading-4 tracking-[1.5px]'
+    ? 'px-8 py-6 text-[16px] leading-4 tracking-[1.5px]'
     : 'px-5 py-4 text-[14px] leading-4 tracking-[1px]'
 
   const classes = [

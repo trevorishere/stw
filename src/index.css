@@ -54,8 +54,10 @@
  */
 
 :root {
-  --hero-fs: 190px;
-  --hero-lh: 170px;
+  /* Fluid scaling: 80px (min, ~600px vp) → 190px (cap, 1440px vp).
+     F*CK and SAVE stay on one row at every size above the mobile breakpoint. */
+  --hero-fs: clamp(80px, 13.2vw, 190px);
+  --hero-lh: clamp(76px, 11.8vw, 170px);
   --hero-ls-fck:  8px;
   --hero-ls-save: 8px;
 }
@@ -70,7 +72,7 @@
 .hero-top-row {
   display: flex;
   align-items: flex-start;
-  column-gap: 16px;
+  column-gap: calc(var(--hero-fs) * 0.295); /* 56px at 190px per Figma */
   row-gap: 0;
   flex-wrap: wrap;
 }
@@ -146,46 +148,18 @@
 
 /* ── Hero responsive overrides ── */
 
-@media (max-width: 900px) {
-  :root {
-    --hero-fs: 110px;
-    --hero-lh: 98px;   /* 110 × (170/190) */
-    --hero-ls-fck: 5px;
-    --hero-ls-save: 5px;
-  }
-}
-
+/* Mobile: stack F*CK above SAVE, Figma spec 80px / 76px lh */
 @media (max-width: 600px) {
   :root {
-    --hero-fs: 72px;
-    --hero-lh: 64px;   /* 72 × (170/190) */
-    --hero-ls-fck: 12px;
-    --hero-ls-save: 12px;
+    --hero-fs: 80px;
+    --hero-lh: 76px;
+    --hero-ls-fck: 3px;
+    --hero-ls-save: 3px;
   }
   .hero-top-row {
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 0;
   }
-  .hero-the-world { letter-spacing: 8px; }
-}
-
-@media (max-width: 400px) {
-  :root {
-    --hero-fs: 54px;
-    --hero-lh: 48px;   /* 54 × (170/190) */
-    --hero-ls-fck: 2px;
-    --hero-ls-save: 2px;
-  }
-  .hero-top-row { gap: 6px; }
-}
-
-@media (max-width: 360px) {
-  :root {
-    --hero-fs: 44px;
-    --hero-lh: 39px;   /* 44 × (170/190) */
-    --hero-ls-fck: 1px;
-    --hero-ls-save: 1px;
-  }
-  .hero-top-row { gap: 4px; }
+  .hero-the-world { letter-spacing: 3px; }
 }

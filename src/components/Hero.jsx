@@ -7,11 +7,11 @@ export default function Hero() {
   return (
     <section
       className="[overflow-x:clip] relative"
-      style={{ background: 'linear-gradient(to bottom, #96978D 14%, #eff2dd 53%)' }}
+      style={{ background: 'linear-gradient(to bottom, #96978D 23.62%, transparent 65.13%)' }}
     >
       <div className="page-container px-28 pt-[88px] pb-4
                       max-tablet:px-12 max-tablet:pt-[48px] max-tablet:pb-[80px]
-                      max-phone:px-6 max-phone:pb-12">
+                      max-phone:px-6 max-phone:pt-[64px] max-phone:pb-12">
 
         <div className="hero-text-block relative">
           <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
@@ -24,20 +24,20 @@ export default function Hero() {
           <div className="hero-the-world">THE WORLD</div>
         </div>
 
-        <div className="relative flex items-end justify-between mt-[-64px] max-tablet:mt-[-32px] max-phone:mt-[-20px]">
+        <div className="flex items-start gap-24 max-tablet:flex-col max-tablet:gap-12 max-phone:gap-10">
 
-          <div className="flex flex-col gap-6 max-w-[802px] max-tablet:max-w-full">
+          <div className="flex flex-col gap-6 flex-1 min-w-0 pt-[64px] max-tablet:pt-10 max-phone:pt-0">
 
             <p className="font-figtree font-black text-[32px] leading-[40px] tracking-[1px] uppercase text-dark opacity-80
-                          max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
+                          max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[24px] max-phone:leading-7 max-phone:tracking-[0.75px]">
               Step Into Your Optimized Embodied Legacy of Radical Alignment
-              <sup className="text-[20px] font-normal not-italic max-tablet:text-[13px] max-phone:text-[10px]">©TM©</sup>
+              <sup className="text-[20px] font-normal not-italic max-tablet:text-[13px] max-phone:text-[15px]">©TM©</sup>
               {' '}And Unlock Your Highest-Potential Purpose-Driven Self
             </p>
 
             <div className="flex flex-col gap-8">
-              <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-dark
-                            max-phone:text-[14px] max-phone:leading-6">
+              <p className="font-dmSans font-semibold text-[20px] leading-[32px] text-dark
+                            max-phone:text-[20px] max-phone:leading-[32px]">
                 We help high-performing visionaries (and normies who think wellness means meditating
                 for three days and saying you 'tried everything') optimize their quantum potential,
                 scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause
@@ -45,7 +45,7 @@ export default function Hero() {
                 relationship, mitochondria, inner child, morning routine, and personal brand.
               </p>
 
-              <Btn variant="hero" color="productBg" href="#contact" className="self-start">
+              <Btn variant="hero" color="productBg" href="#contact" className="self-start max-tablet:w-full max-tablet:justify-center">
                 begin your inititation
               </Btn>
             </div>
