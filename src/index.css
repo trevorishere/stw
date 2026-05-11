@@ -137,6 +137,10 @@
   .hero-the-world { white-space: normal; }
 }
 
+@media (max-width: 600px) {
+  .hero-top-row { flex-wrap: wrap; }
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
