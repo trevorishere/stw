@@ -130,7 +130,6 @@
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
   color: rgba(32, 32, 32, 0.8);
-  white-space: nowrap;
 }
 
 @keyframes marquee {
@@ -149,7 +148,7 @@
 /* ── Hero responsive overrides ── */
 
 /* Mobile: stack F*CK above SAVE, Figma spec 80px / 76px lh */
-@media (max-width: 600px) {
+@media (max-width: 390px) {
   :root {
     --hero-fs: 84px;
     --hero-lh: 80px;
