@@ -55,8 +55,8 @@
 
 :root {
   /* Fluid scaling: 84px (min, ~611px vp) → 198px (cap, 1440px vp). */
-  --hero-fs: clamp(84px, 13.75vw, 194px);
-  --hero-lh: clamp(80px, 12.3vw, 173px);  /* proportional: 173px at 194px */
+  --hero-fs: clamp(84px, 13.75vw, 190px);
+  --hero-lh: clamp(80px, 12.3vw, 170px);  /* proportional: 170px at 190px */
   --hero-ls-fck:  3px;
   --hero-ls-save: 3px;
 }
