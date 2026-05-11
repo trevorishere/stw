@@ -71,9 +71,9 @@
 .hero-top-row {
   display: flex;
   align-items: flex-start;
-  column-gap: calc(var(--hero-fs) * 0.295); /* 56px at 190px per Figma */
+  column-gap: calc(var(--hero-fs) * 0.295);
   row-gap: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .hero-fck-wrapper {
