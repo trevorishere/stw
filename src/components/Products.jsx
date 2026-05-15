@@ -37,6 +37,7 @@ export default function Products() {
             imageLeft={true}
             image={`${BASE}tarot.png`}
             imageClassName="object-right max-tablet:object-center"
+            textClassName="tablet:pr-[112px]"
             category="Divination & Clarity"
             title={<>The STW Tarot<sup className="font-normal text-[23px] max-phone:text-[22px]">©TM©</sup></>}
             description="A secular divination deck featuring seventy-eight of Dr. Steinberg's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Functional Medicine for literally any question about your gut. Includes a 40-page guidebook written entirely in therapeutic jargon."
