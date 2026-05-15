@@ -58,15 +58,15 @@ export default function ProductCard({
                        ${txtOrder}`}>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
-            <p className="eyebrow text-cream opacity-70">{category}</p>
-            <h3 className="font-figtree font-extrabold text-[36px] leading-[44px] tracking-[0.2px] text-cream
+            <p className="eyebrow text-white opacity-70">{category}</p>
+            <h3 className="font-figtree font-extrabold text-[36px] leading-[44px] tracking-[0.2px] text-white
                            max-phone:leading-[40px]">
               {title}
             </h3>
           </div>
-          <p className="body-copy text-cream">{description}</p>
+          <p className="body-copy text-white">{description}</p>
         </div>
-        <Btn color="mutedOnDark" href={href} className="self-start">{cta}</Btn>
+        <Btn color="white" href={href} className="self-start">{cta}</Btn>
       </div>
 
     </div>
