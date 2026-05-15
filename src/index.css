@@ -19,8 +19,8 @@
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
     @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-           max-tablet:text-[44px] max-tablet:leading-[44px]
-           max-phone:text-[28px] max-phone:leading-[28px] max-phone:tracking-[1px];
+           max-tablet:text-[40px] max-tablet:leading-[40px] max-tablet:tracking-[1px]
+           max-phone:text-[28px] max-phone:leading-[28px];
   }
 
   /* Card / offering h3 */
@@ -33,8 +33,15 @@
   /* Small uppercase eyebrow label above card titles */
   .eyebrow {
     @apply font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase
-           max-tablet:leading-5
-           max-phone:text-[11px] max-phone:leading-4;
+           max-tablet:text-[14px] max-tablet:font-medium
+           max-phone:text-[11px] max-phone:leading-4 max-phone:font-extrabold;
+  }
+
+  /* Section subheading — appears below .section-heading in Offerings and Products */
+  .section-subheading {
+    @apply font-figtree font-medium text-[28px] leading-[36px] tracking-[0.1px] text-dark opacity-60
+           max-tablet:text-[20px] max-tablet:leading-[24px]
+           max-phone:text-[16px] max-phone:leading-[22px];
   }
 
   /* Body copy in DM Sans — 18px desktop, 14px mobile */
@@ -44,15 +51,6 @@
            max-phone:text-[16px] max-phone:leading-[24px];
   }
 
-  /* Bordered arrow-link button (color + hover set per usage) */
-  .btn-outline {
-    @apply inline-flex items-center gap-1 pl-6 pr-4 py-3 border
-           font-figtree font-extrabold text-[14px] leading-5 tracking-[1px]
-           uppercase no-underline transition-colors
-           max-tablet:leading-5
-           max-phone:border-0 max-phone:p-0 max-phone:text-[11px]
-           max-phone:leading-4 max-phone:tracking-[1.5px];
-  }
 }
 
 /*
@@ -63,10 +61,11 @@
  */
 
 :root {
-  --hero-fs: 190px;
-  --hero-lh: 0.889;
-  --hero-ls-fck:  8px;
-  --hero-ls-save: 8px;
+  /* Fluid scaling: 76px (600px vp) → 190px (1440px vp). */
+  --hero-fs: clamp(76px, calc(13.571vw - 5.43px), 190px);
+  --hero-lh: clamp(72px, calc(12.857vw - 5.14px), 180px);
+  --hero-ls-fck:  1.52px;
+  --hero-ls-save: 1.52px;
 }
 
 .hero-text-block {
@@ -79,8 +78,9 @@
 .hero-top-row {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
+  column-gap: 48px;
+  row-gap: 0;
+  flex-wrap: nowrap;
 }
 
 .hero-fck-wrapper {
@@ -98,16 +98,16 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: #202020;
   white-space: nowrap;
 }
 
 .hero-scratchout {
   position: absolute;
-  top: 50%;
-  left: -6%;
-  width: 112%;
-  transform: translateY(-52%);
+  top: 0;
+  left: 0;
+  height: var(--hero-lh); /* matches F*CK line-height exactly */
+  width: auto;
   pointer-events: none;
   display: block;
   z-index: 1;
@@ -116,13 +116,13 @@
 .hero-save {
   display: block;
   font-family: 'Figtree', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: italic;
   font-size: var(--hero-fs);
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-save);
   text-transform: uppercase;
-  color: theme('colors.pink');
+  color: theme('colors.accent');
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -135,7 +135,18 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: #202020;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero-the-world { white-space: normal; }
+  .hero-top-row { column-gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  :root { --hero-fs: 76px; --hero-lh: 72px; }
+  .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
 @keyframes marquee {
@@ -147,54 +158,8 @@
   animation: marquee 35s linear infinite;
 }
 
-.mission-body p + p { margin-top: 16px; }
-
-@media (max-width: 600px) {
-  .mission-body p + p { margin-top: 4px; }
-}
 .about-bio-text p + p { margin-top: 12px; }
 
 .blockquote-hanging { hanging-punctuation: first; }
 
-/* ── Hero responsive overrides ── */
-
-@media (max-width: 900px) {
-  :root {
-    --hero-fs: 110px;
-    --hero-ls-fck: 5px;
-    --hero-ls-save: 5px;
-  }
-}
-
-@media (max-width: 600px) {
-  :root {
-    --hero-fs: 72px;
-    --hero-ls-fck: 12px;
-    --hero-ls-save: 12px;
-  }
-  .hero-top-row {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
-  }
-  .hero-save { font-weight: 800; }
-  .hero-the-world { letter-spacing: 8px; }
-}
-
-@media (max-width: 400px) {
-  :root {
-    --hero-fs: 54px;
-    --hero-ls-fck: 2px;
-    --hero-ls-save: 2px;
-  }
-  .hero-top-row { gap: 6px; }
-}
-
-@media (max-width: 360px) {
-  :root {
-    --hero-fs: 44px;
-    --hero-ls-fck: 1px;
-    --hero-ls-save: 1px;
-  }
-  .hero-top-row { gap: 4px; }
-}
+/* ── Hero responsive overrides — see media queries above ── */

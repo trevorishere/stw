@@ -1,66 +1,62 @@
-import ArrowRight from './ArrowRight'
+import Btn from './Btn'
 
-const crossout    = `${import.meta.env.BASE_URL}crossout.svg`
-const heroImg     = `${import.meta.env.BASE_URL}hero.png`
-const gradientsImg = `${import.meta.env.BASE_URL}gradients.svg`
+const crossout = `${import.meta.env.BASE_URL}crossout.svg`
+const heroImg  = `${import.meta.env.BASE_URL}hero.png`
 
 export default function Hero() {
   return (
-    <section className="bg-dark [overflow-x:clip] relative pb-[136px] max-tablet:pb-0 max-phone:pb-0">
-      <img src={gradientsImg} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" aria-hidden="true" alt="" />
-      <div className="page-container px-28 pt-[88px] pb-[136px]
-                      max-tablet:px-12 max-tablet:pt-[48px] max-tablet:pb-[80px] max-phone:px-6">
+    <section
+      className="[overflow-x:clip] relative"
+      style={{ background: 'linear-gradient(to bottom, #96978D 23.62%, transparent 65.13%)' }}
+    >
+      <div className="page-container px-28 pt-[104px] pb-4
+                      max-tablet:px-16 max-tablet:pt-[104px] max-tablet:pb-[80px]
+                      max-phone:px-6 max-phone:pt-[120px] max-phone:pb-4">
 
-        <div className="hero-text-block">
-          <div className="hero-top-row">
-            <div className="hero-fck-wrapper">
-              <span className="hero-fck">F*CK</span>
-              <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
+        <div className="flex flex-col gap-[64px] max-tablet:gap-12 max-phone:gap-[136px]">
+
+          <div className="hero-text-block relative">
+            <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
+            <div className="hero-top-row">
+              <div className="hero-fck-wrapper">
+                <span className="hero-fck">F*CK</span>
+              </div>
+              <span className="hero-save">SAVE</span>
             </div>
-            <span className="hero-save">SAVE</span>
+            <div className="hero-the-world">THE WORLD</div>
           </div>
-          <div className="hero-the-world">THE WORLD</div>
-        </div>
 
-        <div className="relative mt-[72px] max-tablet:mt-[48px] flex gap-0 max-phone:mt-8">
+          <div className="flex items-start justify-between max-phone:flex-col max-phone:gap-8">
 
-          <div className="flex flex-col gap-4 max-w-[600px] max-tablet:max-w-full">
+            <div className="flex flex-col gap-4 flex-1 min-w-0 pt-8 max-tablet:pr-8 max-phone:pt-0 max-phone:pr-0">
 
-            <p className="font-figtree font-black text-[36px] leading-[40px] tracking-[1.5px] uppercase text-accent
-                          max-tablet:text-2xl max-tablet:leading-8 max-phone:text-[16px] max-phone:leading-5 max-phone:tracking-[1.5px]">
-              Step Into Your Optimized Embodied Legacy of Radical Alignment
-              <sup className="text-[20px] font-normal not-italic max-tablet:text-[13px] max-phone:text-[10px]">©TM©</sup>
-              {' '}And Unlock Your Highest-Potential Purpose-Driven Self
-            </p>
-
-            <div className="flex flex-col gap-12 max-tablet:gap-8">
-              <p className="font-dmSans text-[20px] leading-[30px] tracking-[0.2px] text-cream max-w-[595px]
-                            max-tablet:leading-[30px] max-phone:text-[14px] max-phone:leading-6">
-                After decades of Hyper-Gold-Standard<sup className="text-[12px] max-phone:text-[9px]">©TM©</sup> clinical research,
-                twelve-week containers, breathwork certifications, cold plunge protocols, and mastermind
-                facilitation, Stein's Total Wellness<sup className="text-[12px] max-phone:text-[9px]">©TM©</sup> has distilled the
-                entire human experience into a proprietary framework that will disrupt your collective nervous
-                system, shatter your limiting beliefs, monetize your trauma, resource your somatic intelligence,
-                and optimize your leadership capacity—sustainably.
+              <p className="font-figtree font-black text-[40px] leading-[48px] tracking-[1px] uppercase text-dark
+                            max-tablet:text-[26px] max-tablet:leading-[30px] max-phone:text-[28px] max-phone:leading-[34px] max-phone:tracking-[0.75px]">
+                Step Into Your Optimized Embodied Legacy of Radical Alignment
+                <sup className="text-[26px] font-normal not-italic max-tablet:text-[17px] max-phone:text-[18px]">©TM©</sup>
+                {' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 pl-8 pr-5 py-5 border border-white
-                           font-figtree font-extrabold text-[16px] leading-4 tracking-[2px]
-                           uppercase text-white no-underline hover:bg-white hover:text-dark transition-colors
-                           max-phone:border-0 max-phone:p-0 max-phone:text-[11px] max-phone:tracking-[1.5px] max-phone:leading-4
-                           self-start"
-              >
-                begin your inititation
-                <ArrowRight />
-              </a>
-            </div>
-          </div>
+              <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-[16px]">
+                <p className="font-dmSans font-semibold text-[20px] leading-[30px] text-dark opacity-80
+                              max-phone:text-[20px] max-phone:leading-[30px]">
+                  We help high-performing visionaries (and normies who think wellness means meditating
+                  for three days and saying you 'tried everything') optimize their quantum potential,
+                  scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause
+                  alignment across all dimensions of their functional self—mind, body, spirit, business,
+                  relationship, mitochondria, inner child, morning routine, and personal brand.
+                </p>
 
-          <div className="absolute right-0 bottom-[-192px] w-[449px] h-[816px] pointer-events-none
-                          max-tablet:hidden">
-            <img src={heroImg} alt="" className="w-full h-full object-cover object-top" />
+                <Btn variant="hero" color="productBg" href="#contact" className="self-start">
+                  begin your inititation
+                </Btn>
+              </div>
+            </div>
+
+            <div className="w-[294px] h-[534px] shrink-0 max-tablet:w-[140px] max-tablet:h-[255px] max-phone:hidden">
+              <img src={heroImg} alt="" className="w-full h-full object-cover object-top" />
+            </div>
+
           </div>
 
         </div>
