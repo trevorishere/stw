@@ -17,8 +17,8 @@ export default function App() {
         <Featured />
         <Mission />
         <Offerings />
-        <Products />
         <Testimonial />
+        <Products />
         <About />
       </main>
       <Footer />

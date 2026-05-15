@@ -1,8 +1,10 @@
+import TradeMark from './TradeMark'
+
 export default function Mission() {
   return (
     <section className="bg-productBg">
       <div className="page-container px-28 pt-[112px] pb-[120px]
-                      max-tablet:px-16 max-tablet:py-16
+                      max-tablet:px-16
                       max-phone:px-6 max-phone:py-12">
 
         <div className="grid grid-cols-[1fr_2fr] gap-6
@@ -10,7 +12,7 @@ export default function Mission() {
 
           <h2 className="section-heading text-dark">Mission</h2>
 
-          <div className="flex flex-col gap-1 body-copy text-dark">
+          <div className="flex flex-col gap-1 lead-copy text-dark">
             <p>
               <strong className="font-bold">True wellness isn't about doing the work.</strong>
               {' '}It's about embodying the work. And then monetizing the embodiment. And then
@@ -29,7 +31,7 @@ export default function Mission() {
             </p>
             <p className="font-bold">
               We won't stop until we Save The World.
-              <sup className="font-normal text-[11px] max-phone:text-[10px]">©TM©</sup>
+              <TradeMark size="body" />
             </p>
           </div>
 

@@ -18,36 +18,35 @@
 
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
-    @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
+    @apply font-figtree font-black text-[64px] leading-[64px] tracking-[2px] uppercase
            max-tablet:text-[40px] max-tablet:leading-[40px] max-tablet:tracking-[1px]
-           max-phone:text-[28px] max-phone:leading-[28px];
-  }
-
-  /* Card / offering h3 */
-  .card-heading {
-    @apply font-figtree font-extrabold text-[44px] leading-[48px] tracking-[0.3px]
-           max-tablet:text-[36px] max-tablet:leading-[42px]
-           max-phone:text-2xl max-phone:leading-7;
+           max-phone:text-[30px] max-phone:leading-[30px] max-phone:tracking-[0.5px];
   }
 
   /* Small uppercase eyebrow label above card titles */
   .eyebrow {
-    @apply font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase
-           max-tablet:text-[14px] max-tablet:font-medium
-           max-phone:text-[11px] max-phone:leading-4 max-phone:font-extrabold;
+    @apply font-figtree font-medium text-[13px] leading-5 tracking-[2px] uppercase
+           max-tablet:text-[14px]
+           max-phone:text-[11px] max-phone:leading-4;
   }
 
   /* Section subheading — appears below .section-heading in Offerings and Products */
   .section-subheading {
-    @apply font-figtree font-medium text-[28px] leading-[36px] tracking-[0.1px] text-dark opacity-60
-           max-tablet:text-[20px] max-tablet:leading-[24px]
-           max-phone:text-[16px] max-phone:leading-[22px];
+    @apply font-figtree font-medium text-[24px] leading-[28px] tracking-[0.1px] text-dark opacity-60
+           max-tablet:text-[18px] max-tablet:leading-[20px]
+           max-phone:text-[18px] max-phone:leading-[22px];
   }
 
-  /* Body copy in DM Sans — 18px desktop, 14px mobile */
+  /* Body copy in DM Sans — 18px desktop, 16px mobile */
   .body-copy {
     @apply font-dmSans text-[18px] leading-[28px] tracking-[0.1px]
            max-tablet:leading-[28px]
+           max-phone:text-[16px] max-phone:leading-[24px];
+  }
+
+  /* Lead copy — Hero and Mission body text. DM Sans SemiBold, larger than body-copy. */
+  .lead-copy {
+    @apply font-dmSans font-semibold text-[20px] leading-[30px]
            max-phone:text-[16px] max-phone:leading-[24px];
   }
 
@@ -160,6 +159,10 @@
 
 .about-bio-text p + p { margin-top: 12px; }
 
-.blockquote-hanging { hanging-punctuation: first; }
+.blockquote-hanging {
+  hanging-punctuation: first;  /* Safari */
+  padding-left: 1rem;          /* 16px — body text starts here */
+  text-indent: -1rem;          /* pulls " back to hang at the container's left edge */
+}
 
 /* ── Hero responsive overrides — see media queries above ── */

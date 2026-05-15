@@ -10,7 +10,8 @@ export default {
         purple:    '#5c3551',
         muted:     '#b0b2a5',
         pink:      '#ffa3a3',
-        productBg: '#e8ebd5',
+        productBg:       '#e8ebd5',
+        productBgBorder: '#d6d9c5',
       },
       fontFamily: {
         figtree: ['Figtree', 'sans-serif'],
@@ -19,6 +20,14 @@ export default {
       },
       maxWidth: {
         site: '1440px',
+      },
+      scrollMargin: {
+        nav:       '72px',
+        navMobile: '56px',
+      },
+      zIndex: {
+        nav:       '100',
+        navDrawer: '99',
       },
       screens: {
         tablet:       '900px',
