@@ -1,4 +1,5 @@
 import Btn from './Btn'
+import TradeMark from './TradeMark'
 
 const crossout = `${import.meta.env.BASE_URL}crossout.svg`
 const heroImg  = `${import.meta.env.BASE_URL}hero.png`
@@ -33,13 +34,12 @@ export default function Hero() {
               <p className="font-figtree font-black text-[40px] leading-[48px] tracking-[1px] uppercase text-dark
                             max-tablet:text-[26px] max-tablet:leading-[30px] max-phone:text-[28px] max-phone:leading-[34px] max-phone:tracking-[0.75px]">
                 Step Into Your Optimized Embodied Legacy of Radical Alignment
-                <sup className="text-[26px] font-normal not-italic max-tablet:text-[17px] max-phone:text-[18px]">©TM©</sup>
+                <TradeMark size="lg" />
                 {' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
               <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-[16px]">
-                <p className="font-dmSans font-semibold text-[20px] leading-[30px] text-dark opacity-80
-                              max-phone:text-[20px] max-phone:leading-[30px]">
+                <p className="lead-copy text-dark">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,
                   scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause
@@ -47,7 +47,7 @@ export default function Hero() {
                   relationship, mitochondria, inner child, morning routine, and personal brand.
                 </p>
 
-                <Btn variant="hero" color="productBg" href="#contact" className="self-start">
+                <Btn color="productBg" href="#contact" className="self-start">
                   begin your inititation
                 </Btn>
               </div>

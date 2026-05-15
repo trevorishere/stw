@@ -1,4 +1,6 @@
 import Btn from './Btn'
+import SectionHeader from './SectionHeader'
+import TradeMark from './TradeMark'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -8,7 +10,7 @@ const OFFERINGS = [
     image: `${BASE}smw.png`,
     imageLeft: true,
     category: 'Life Optimization',
-    title: <>Seven Minute Wellness<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
+    title: <>Seven Minute Wellness<TradeMark /></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
@@ -17,7 +19,7 @@ const OFFERINGS = [
     image: `${BASE}rhwp.png`,
     imageLeft: false,
     category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
+    title: <>Rock Hard Wet Pussy<TradeMark /></>,
     description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
@@ -26,7 +28,7 @@ const OFFERINGS = [
     image: `${BASE}btb.png`,
     imageLeft: true,
     category: 'Power & Performance',
-    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
+    title: <>From Bogeys to Breakthroughs<TradeMark /></>,
     description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
     cta: 'unlock your swing',
   },
@@ -35,7 +37,7 @@ const OFFERINGS = [
     image: `${BASE}gdt.png`,
     imageLeft: false,
     category: 'Teamwork & Accomplishment',
-    title: <>Going Down Together<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
+    title: <>Going Down Together<TradeMark /></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
@@ -78,8 +80,8 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   return (
     <div className="flex gap-6 items-center p-6
                     max-tablet:flex-col max-tablet:items-stretch max-tablet:p-12 max-tablet:gap-6
-                    max-tablet:bg-[rgba(255,255,255,0.3)] max-tablet:border max-tablet:border-[#e8ebd5]
-                    max-phone:px-6 max-phone:pt-6 max-phone:pb-8">
+                    max-tablet:bg-[rgba(255,255,255,0.3)] max-tablet:border max-tablet:border-productBg
+                    max-phone:px-8 max-phone:pt-8 max-phone:pb-10">
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
@@ -87,17 +89,17 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
+    <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
       <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
                       max-tablet:px-16 max-tablet:py-16
                       max-phone:px-0 max-phone:pt-20 max-phone:pb-0 max-phone:gap-8">
 
         {/* Section header */}
-        <div className="flex flex-col gap-3 max-phone:px-6 max-phone:gap-1">
-          <h2 className="section-heading text-dark">Transformational Offerings</h2>
-          <p className="section-subheading">
-            Proprietary Frameworks Delivered Through Revolutionary Containers
-          </p>
+        <div className="max-phone:px-6">
+          <SectionHeader
+            title="Transformational Offerings"
+            subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
+          />
         </div>
 
         <div className="flex flex-col gap-[48px] max-phone:gap-8">
@@ -108,7 +110,7 @@ export default function Offerings() {
           </div>
 
           {/* Empire block — centered card, 798px desktop */}
-          <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]
+          <div id="empire" className="scroll-mt-nav max-phone:scroll-mt-navMobile
                                       flex justify-center max-phone:px-6">
             <div className="overflow-hidden w-[798px] max-tablet:w-full">
 
@@ -128,18 +130,18 @@ export default function Offerings() {
                               pt-[48px] px-[96px] pb-[64px]
                               max-tablet:px-12 max-tablet:py-12
                               max-phone:px-6 max-phone:py-8 max-phone:gap-2
-                              max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-[#e8ebd5]">
+                              max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-productBg">
 
                 {/* Eyebrow → title: 24px */}
                 <div className="flex flex-col gap-6 max-phone:gap-6">
                   <p className="eyebrow text-dark opacity-60">
-                    STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[7px]">©TM©</sup>
+                    STW's Signature Container<TradeMark size="xs" />
                   </p>
                   <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-dark
                                  max-tablet:text-[32px] max-tablet:leading-[40px]
                                  max-phone:text-[22px] max-phone:leading-[24px]">
-                    The STW<sup className="text-[26px] font-normal max-tablet:text-[21px] max-phone:text-[14px]">©TM©</sup>{' '}
-                    Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[26px] font-normal max-tablet:text-[21px] max-phone:text-[14px]">©TM©</sup>
+                    The STW<TradeMark size="empire" />{' '}
+                    Empire Builder &amp; Dependency Cultivation Accelerator<TradeMark size="empire" />
                   </h3>
                 </div>
 

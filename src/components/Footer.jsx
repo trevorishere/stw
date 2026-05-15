@@ -1,3 +1,5 @@
+import TradeMark from './TradeMark'
+
 const NAV_LINKS = [
   { href: '#offerings', label: 'Transformations' },
   { href: '#offerings', label: 'Embodiments' },
@@ -16,7 +18,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <p className="font-figtree font-extrabold text-[20px] leading-[22px] tracking-[2px] uppercase text-muted whitespace-nowrap
                           max-phone:text-[14px]">
-              Stein's Total Wellness<sup className="font-medium text-[12px] tracking-normal max-phone:text-[8px]">©TM©</sup>
+              Stein's Total Wellness<TradeMark size="footer" />
             </p>
             <p className="font-figtree font-medium text-[12px] leading-4 tracking-[0.3px] text-muted
                           max-phone:text-[11px] max-phone:leading-4">

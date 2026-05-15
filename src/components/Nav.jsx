@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import TradeMark from './TradeMark'
 
 const links = [
   { href: '#offerings', label: 'Transformations' },
@@ -14,7 +15,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-[100] bg-cream">
+      <nav className="sticky top-0 z-nav bg-cream">
         <div className="page-container flex items-center justify-between px-[80px] h-[72px] max-tablet:px-6 max-phone:h-[56px]">
 
           {/* Brand — Figtree Black, ©TM© inline on same baseline */}
@@ -23,7 +24,7 @@ export default function Nav() {
             className="font-figtree font-extrabold text-[20px] max-tablet:text-[16px] tracking-[1px] uppercase text-dark no-underline whitespace-nowrap"
           >
             <span className="max-phone:hidden">Stein's Total Wellness</span>
-            <span className="hidden max-phone:inline">STW</span><sup className="font-normal text-[12px] max-tablet:text-[10px]">©TM©</sup>
+            <span className="hidden max-phone:inline">STW</span><TradeMark size="sm" />
           </a>
 
           {/* Desktop nav links */}
@@ -54,7 +55,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       <div
-        className="tablet:hidden flex flex-col bg-cream fixed top-[72px] max-phone:top-[56px] left-0 w-full z-[99] overflow-hidden"
+        className="tablet:hidden flex flex-col bg-cream fixed top-[72px] max-phone:top-[56px] left-0 w-full z-navDrawer overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
           transition: 'max-height 200ms ease-in-out',
