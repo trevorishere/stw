@@ -8,6 +8,8 @@
 //          "cream"     → cream border + text, hover: bg-cream     / text-dark
 //          "white"     → white border + text, hover: bg-white     / text-dark
 //          "productBg" → filled productBg bg, subtle border, hover: bg-dark / text-cream
+//          "muted"       → muted border + dark text,  hover: bg-dark  / text-cream
+//          "mutedOnDark" → muted border + cream text, hover: bg-muted / text-dark  (use on dark/colored bg)
 //
 // hoverText  optional token override for hover text color only
 //            e.g. hoverText="purple" for the About CTA
@@ -19,6 +21,8 @@ const COLOR_PRESETS = {
   cream:     { base: 'border-cream text-cream',                            hoverBg: 'hover:bg-cream',     defaultHoverText: 'hover:text-dark'  },
   white:     { base: 'border-white text-white',                            hoverBg: 'hover:bg-white',     defaultHoverText: 'hover:text-dark'  },
   productBg: { base: 'bg-productBg border-[#d6d9c5] text-dark',           hoverBg: 'hover:bg-dark',      defaultHoverText: 'hover:text-cream' },
+  muted:     { base: 'border-muted text-dark',                             hoverBg: 'hover:bg-dark',      defaultHoverText: 'hover:text-cream' },
+  mutedOnDark: { base: 'border-muted text-cream',                          hoverBg: 'hover:bg-muted',     defaultHoverText: 'hover:text-dark'  },
 }
 
 // Explicit strings so Tailwind's scanner always includes every class.
@@ -43,7 +47,7 @@ export default function Btn({ variant = 'default', color = 'dark', hoverText, hr
     preset.base, preset.hoverBg, hoverTextClass,
     sizeClasses,
     // Mobile — identical for all variants
-    'max-phone:px-4 max-phone:py-[13px] max-phone:text-[12px] max-phone:leading-[14px] max-phone:tracking-[1px]',
+    'max-phone:px-5 max-phone:py-[17px] max-phone:text-[12px] max-phone:leading-[14px] max-phone:tracking-[1px]',
     className,
   ].filter(Boolean).join(' ')
 

@@ -7,8 +7,8 @@ const OFFERINGS = [
     id: 1,
     image: `${BASE}smw.png`,
     imageLeft: true,
-    category: 'Relationships & Intimacy',
-    title: <>Seven Minute Wellness<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
+    category: 'Life Optimization',
+    title: <>Seven Minute Wellness<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
@@ -17,7 +17,7 @@ const OFFERINGS = [
     image: `${BASE}rhwp.png`,
     imageLeft: false,
     category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
+    title: <>Rock Hard Wet Pussy<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
     description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
@@ -26,55 +26,60 @@ const OFFERINGS = [
     image: `${BASE}btb.png`,
     imageLeft: true,
     category: 'Power & Performance',
-    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
-    description: <>Unlock your leadership potential with this revolutionary quantum golf consciousness course powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. Because the only handicap holding you back is your belief system.</>,
-    cta: 'Unlock Your Swing',
+    title: <>From Bogeys to Breakthroughs<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
+    description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
+    cta: 'unlock your swing',
   },
   {
     id: 4,
     image: `${BASE}gdt.png`,
     imageLeft: false,
     category: 'Teamwork & Accomplishment',
-    title: <>Going Down Together<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
+    title: <>Going Down Together<sup className="font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]">©TM©</sup></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
 ]
 
-const empireImg = `${BASE}empire.png`
-const empireImgMobile = `${BASE}empire-mobile.png`
+const empireImg = `${BASE}empire.jpg`
 
 function OfferingRow({ image, imageLeft, category, title, description, cta }) {
-  const textBlock = (
-    <div className="flex-1 min-w-0 flex flex-col gap-8 pr-8 max-tablet:pr-0 max-tablet:order-last
-                    max-phone:gap-8 max-phone:order-last">
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-col gap-4 max-phone:gap-3">
-          <p className="eyebrow text-purple opacity-60">
-            {category}
-          </p>
-          <h3 className="card-heading text-dark">
-            {title}
-          </h3>
-        </div>
-        <p className="body-copy text-dark">
-          {description}
-        </p>
-      </div>
-      <Btn color="dark" href="#contact" className="self-start">{cta}</Btn>
+  // On tablet + mobile, image always stacks on top regardless of imageLeft.
+  // For imageLeft=false rows (text first in DOM), we reverse order via CSS.
+  const mobileOrderImg  = !imageLeft ? 'max-tablet:order-1' : ''
+  const mobileOrderText = !imageLeft ? 'max-tablet:order-2' : ''
+
+  const imageBlock = (
+    <div className={`flex-1 min-w-0 aspect-[596/480] overflow-hidden
+                     max-tablet:flex-none max-tablet:w-full max-tablet:aspect-[675/490]
+                     max-phone:aspect-[294/200] ${mobileOrderImg}`}>
+      <img src={image} alt="" className="w-full h-full object-cover block max-phone:object-contain" loading="lazy" />
     </div>
   )
 
-  const imageBlock = (
-    <div className="flex-1 min-w-0 overflow-hidden max-tablet:order-first
-                    max-phone:w-full max-phone:flex-none max-phone:order-first">
-      <img src={image} alt="" className="w-full h-full object-cover block aspect-[596/480] max-phone:h-auto" loading="lazy" />
+  const textBlock = (
+    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-phone:gap-6 ${mobileOrderText}`}>
+      {/* Text group: eyebrow+title → body */}
+      <div className="flex flex-col gap-4 max-phone:gap-2">
+        <div className="flex flex-col gap-6 max-phone:gap-4">
+          <p className="eyebrow text-dark opacity-60">{category}</p>
+          <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-dark
+                         max-tablet:text-[36px] max-tablet:leading-[40px]
+                         max-phone:text-[22px] max-phone:leading-[24px]">
+            {title}
+          </h3>
+        </div>
+        <p className="body-copy text-dark">{description}</p>
+      </div>
+      <Btn color="muted" href="#contact" className="self-start">{cta}</Btn>
     </div>
   )
 
   return (
-    <div className="flex gap-6 items-center py-[48px] max-tablet:flex-col max-tablet:py-8
-                    max-phone:py-0 max-phone:px-0 max-phone:gap-6">
+    <div className="flex gap-6 items-center p-6
+                    max-tablet:flex-col max-tablet:items-stretch max-tablet:p-12 max-tablet:gap-6
+                    max-tablet:bg-[rgba(255,255,255,0.3)] max-tablet:border max-tablet:border-[#e8ebd5]
+                    max-phone:px-6 max-phone:pt-6 max-phone:pb-8">
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
@@ -84,72 +89,75 @@ export default function Offerings() {
   return (
     <section id="offerings" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
       <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
-                      max-tablet:px-12 max-tablet:py-16
-                      max-phone:px-6 max-phone:pt-12 max-phone:pb-0 max-phone:gap-8">
+                      max-tablet:px-16 max-tablet:py-16
+                      max-phone:px-0 max-phone:pt-20 max-phone:pb-0 max-phone:gap-8">
 
-        <div className="flex flex-col gap-4">
-          <h2 className="section-heading">
-            <span className="text-purple">Transformational</span>
-            <br />
-            <span className="text-dark"> Offerings</span>
-          </h2>
-          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-60
-                        max-tablet:leading-[18px] max-phone:text-[12px] max-phone:leading-4">
-            Proprietary Frameworks Delivered
-            <span className="max-phone:block hidden"> </span>
-            {' '}Through Revolutionary Containers
+        {/* Section header */}
+        <div className="flex flex-col gap-3 max-phone:px-6 max-phone:gap-1">
+          <h2 className="section-heading text-dark">Transformational Offerings</h2>
+          <p className="section-subheading">
+            Proprietary Frameworks Delivered Through Revolutionary Containers
           </p>
         </div>
 
-        <div className="flex flex-col gap-[136px] max-tablet:gap-16 max-phone:gap-16">
+        <div className="flex flex-col gap-[48px] max-phone:gap-8">
 
-          <div className="flex flex-col gap-8 max-phone:gap-[64px] max-phone:pb-8">
-            {OFFERINGS.map(offering => (
-              <OfferingRow key={offering.id} {...offering} />
-            ))}
+          {/* Four offering rows */}
+          <div className="flex flex-col gap-0 max-tablet:gap-6 max-phone:gap-8 max-phone:px-6">
+            {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 
-          <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
-          <div className="overflow-hidden">
-            <div className="relative h-[707px] max-tablet:h-[420px] max-phone:h-[330px]">
-              <img
-                src={empireImg}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover object-top max-phone:hidden"
-                loading="lazy"
-              />
-              <img
-                src={empireImgMobile}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover object-top hidden max-phone:block"
-                loading="lazy"
-              />
-            </div>
+          {/* Empire block — centered card, 798px desktop */}
+          <div id="empire" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]
+                                      flex justify-center max-phone:px-6">
+            <div className="overflow-hidden w-[798px] max-tablet:w-full">
 
-            <div className="bg-dark px-28 py-24 flex flex-col gap-2
-                            max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:pt-6 max-phone:pb-8 max-phone:gap-2">
-              <div className="flex flex-col gap-4 max-phone:gap-3">
-                <p className="eyebrow text-pink">
-                  STW's Signature Container<sup className="font-normal text-[8px]">©TM©</sup>
-                </p>
-                <h3 className="card-heading text-cream">
-                  The STW<sup className="text-[24px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>{' '}
-                  Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[24px] font-normal max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup>
-                </h3>
+              {/* Image */}
+              <div className="relative h-[439px] max-tablet:h-[300px] max-phone:h-[203px]">
+                <img
+                  src={empireImg}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
               </div>
-              <div className="flex flex-col gap-8 max-phone:gap-8">
-                <p className="body-copy text-cream">
-                  Master the art of advanced dependency cultivation so your clients can't leave even if they
-                  want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
-                  transformation in others—all while building your own STW-certified coaching empire. Enrollment
-                  is limited to only 2 individuals who've completed 3 or more previous STW offerings. To apply,
-                  submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
-                  Act fast.
-                </p>
-                <Btn color="cream" href="#contact" className="self-start">APPLY NOW</Btn>
+
+              {/* Text area */}
+              {/* pt-48 px-96 pb-64 per Figma annotations */}
+              <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-6
+                              pt-[48px] px-[96px] pb-[64px]
+                              max-tablet:px-12 max-tablet:py-12
+                              max-phone:px-6 max-phone:py-8 max-phone:gap-2
+                              max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-[#e8ebd5]">
+
+                {/* Eyebrow → title: 24px */}
+                <div className="flex flex-col gap-6 max-phone:gap-6">
+                  <p className="eyebrow text-dark opacity-60">
+                    STW's Signature Container<sup className="font-normal text-[8px] max-phone:text-[7px]">©TM©</sup>
+                  </p>
+                  <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-dark
+                                 max-tablet:text-[32px] max-tablet:leading-[40px]
+                                 max-phone:text-[22px] max-phone:leading-[24px]">
+                    The STW<sup className="text-[26px] font-normal max-tablet:text-[21px] max-phone:text-[14px]">©TM©</sup>{' '}
+                    Empire Builder &amp; Dependency Cultivation Accelerator<sup className="text-[26px] font-normal max-tablet:text-[21px] max-phone:text-[14px]">©TM©</sup>
+                  </h3>
+                </div>
+
+                {/* Title → description: 24px (outer gap-6), description → btn: 48px */}
+                <div className="flex flex-col gap-12 max-phone:gap-6">
+                  <p className="body-copy text-dark">
+                    Master the art of advanced dependency cultivation so your clients can't leave even if they
+                    want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
+                    transformation in others—all while building your own STW-certified coaching empire. Enrollment
+                    is limited to only 2 individuals who've completed 3 or more previous STW offerings. To apply,
+                    submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
+                    Act fast.
+                  </p>
+                  <Btn color="muted" href="#contact" className="self-center">APPLY NOW</Btn>
+                </div>
+
               </div>
             </div>
-          </div>
           </div>
 
         </div>

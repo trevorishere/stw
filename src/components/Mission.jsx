@@ -2,13 +2,13 @@ export default function Mission() {
   return (
     <section className="bg-productBg">
       <div className="page-container px-28 pt-[112px] pb-[120px]
-                      max-tablet:px-12 max-tablet:py-16
+                      max-tablet:px-16 max-tablet:py-16
                       max-phone:px-6 max-phone:py-12">
 
         <div className="grid grid-cols-[1fr_2fr] gap-6
                         max-phone:grid-cols-1 max-phone:gap-8">
 
-          <h2 className="section-heading text-dark opacity-80">Mission</h2>
+          <h2 className="section-heading text-dark">Mission</h2>
 
           <div className="flex flex-col gap-1 body-copy text-dark">
             <p>

@@ -1,64 +1,50 @@
-import Btn from './Btn'
+import ProductCard from './ProductCard'
 
-const PRODUCTS = [
-  {
-    id: 1,
-    category: 'Empowering Product',
-    title: <>The Quantum Empowerment Black Card<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
-    description: `A premium metal card that certifies you have 'Done The Work' and grants you access to the VIP frequency of life. Use it to purchase your next level of consciousness. Or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine (the universe doesn't judge evolutionary medicine use when you're in integrity). Comes with a QR code linking to your personal Consciousness Portfolio and the quiet satisfaction of knowing you are further along than everyone else at the dinner party.`,
-    cta: 'apply now',
-  },
-  {
-    id: 2,
-    category: 'Divination & Clarity',
-    title: <>The STW Tarot<sup className="font-normal text-[24px] max-tablet:text-[20px] max-phone:text-[13px]">©TM©</sup></>,
-    description: `A secular divination deck featuring seventy-eight of Dr. Steinberg's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Functional Medicine for literally any question about your gut. Includes a 40-page guidebook written entirely in therapeutic jargon.`,
-    cta: 'read your future',
-  },
-]
+const BASE = import.meta.env.BASE_URL
 
 export default function Products() {
   return (
     <section id="products" className="scroll-mt-[72px] max-phone:scroll-mt-[56px]">
-      <div className="page-container px-28 pt-[48px] pb-[136px] flex flex-col gap-12
-                      max-tablet:px-12 max-tablet:py-16 max-phone:px-6 max-phone:py-12 max-phone:gap-8">
+      <div className="page-container px-28 pt-[48px] pb-[112px] flex flex-col gap-[48px]
+                      max-tablet:px-16 max-tablet:pt-12 max-tablet:pb-28
+                      max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 
-        <div className="flex flex-col gap-4">
-          <h2 className="section-heading">
-            <span className="text-purple">Transformational</span>
-            <br />
-            <span className="text-dark">Products</span>
-          </h2>
-          <p className="font-figtree font-bold text-[16px] leading-6 tracking-[1px] uppercase text-dark opacity-50
-                        max-tablet:leading-[18px] max-phone:text-[12px] max-phone:leading-4">
+        {/* Section header */}
+        <div className="flex flex-col gap-3 max-phone:gap-1">
+          <h2 className="section-heading text-dark">Transformational Products</h2>
+          <p className="section-subheading">
             Carry the Work With You
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 max-tablet:grid-cols-1">
-          {PRODUCTS.map(product => (
-            <article key={product.id} className="bg-productBg overflow-hidden flex flex-col">
-              <div className="w-full aspect-[596/480] bg-dark" />
-              <div className="flex flex-col gap-8 px-8 pb-10 pt-8 flex-1 max-phone:px-5 max-phone:pb-8 max-phone:pt-8 max-phone:gap-8">
-                <div className="flex flex-col gap-2 flex-1">
-                  <div className="flex flex-col gap-4 max-phone:gap-3">
-                    <p className="eyebrow text-dark">
-                      {product.category}
-                    </p>
-                    <h3 className="card-heading text-dark">
-                      {product.title}
-                    </h3>
-                  </div>
-                  <p className="body-copy text-dark">
-                    {product.description}
-                  </p>
-                </div>
-                <Btn color="dark" href="#contact" className="self-start">{product.cta}</Btn>
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* Cards — 4px gap */}
+        <div className="flex flex-col gap-1 max-phone:gap-6">
 
+          <ProductCard
+            className="bg-dark"
+            imageLeft={false}
+            image={`${BASE}card.png`}
+            imageClassName="object-center"
+            category="Empowering Product"
+            title={<>The Quantum Empowerment Black Card<sup className="font-normal text-[23px] max-phone:text-[22px]">©TM©</sup></>}
+            description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine (the universe doesn't judge evolutionary medicine use when you're in integrity) with a premium card that certifies you have 'Done The Work'. Link it with your personal Consciousness Portfolio and the quiet satisfaction of knowing you are further along than everyone else at the dinner party."
+            cta="apply now"
+            tabletPb="max-tablet:pb-16"
+          />
+
+          <ProductCard
+            style={{ background: 'linear-gradient(117.19deg, #5c3551 28.455%, #3e2137 98.062%)' }}
+            imageLeft={true}
+            image={`${BASE}tarot.png`}
+            imageClassName="object-right max-tablet:object-center"
+            category="Divination & Clarity"
+            title={<>The STW Tarot<sup className="font-normal text-[23px] max-phone:text-[22px]">©TM©</sup></>}
+            description="A secular divination deck featuring seventy-eight of Dr. Steinberg's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Functional Medicine for literally any question about your gut. Includes a 40-page guidebook written entirely in therapeutic jargon."
+            cta="read your future"
+            tabletPb="max-tablet:pb-12"
+          />
+
+        </div>
       </div>
     </section>
   )

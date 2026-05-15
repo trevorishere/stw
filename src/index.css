@@ -19,8 +19,8 @@
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
     @apply font-figtree font-black text-[64px] leading-[56px] tracking-[2px] uppercase
-           max-tablet:text-[44px] max-tablet:leading-[44px]
-           max-phone:text-[28px] max-phone:leading-[28px] max-phone:tracking-[1px];
+           max-tablet:text-[40px] max-tablet:leading-[40px] max-tablet:tracking-[1px]
+           max-phone:text-[28px] max-phone:leading-[28px];
   }
 
   /* Card / offering h3 */
@@ -33,8 +33,15 @@
   /* Small uppercase eyebrow label above card titles */
   .eyebrow {
     @apply font-figtree font-extrabold text-[13px] leading-5 tracking-[2px] uppercase
-           max-tablet:leading-5
-           max-phone:text-[11px] max-phone:leading-4;
+           max-tablet:text-[14px] max-tablet:font-medium
+           max-phone:text-[11px] max-phone:leading-4 max-phone:font-extrabold;
+  }
+
+  /* Section subheading — appears below .section-heading in Offerings and Products */
+  .section-subheading {
+    @apply font-figtree font-medium text-[28px] leading-[36px] tracking-[0.1px] text-dark opacity-60
+           max-tablet:text-[20px] max-tablet:leading-[24px]
+           max-phone:text-[16px] max-phone:leading-[22px];
   }
 
   /* Body copy in DM Sans — 18px desktop, 14px mobile */
@@ -54,11 +61,11 @@
  */
 
 :root {
-  /* Fluid scaling: 84px (min, ~611px vp) → 198px (cap, 1440px vp). */
-  --hero-fs: clamp(84px, 13.75vw, 190px);
-  --hero-lh: clamp(80px, 12.3vw, 170px);  /* proportional: 170px at 190px */
-  --hero-ls-fck:  3px;
-  --hero-ls-save: 3px;
+  /* Fluid scaling: 76px (600px vp) → 190px (1440px vp). */
+  --hero-fs: clamp(76px, calc(13.571vw - 5.43px), 190px);
+  --hero-lh: clamp(72px, calc(12.857vw - 5.14px), 180px);
+  --hero-ls-fck:  1.52px;
+  --hero-ls-save: 1.52px;
 }
 
 .hero-text-block {
@@ -71,7 +78,7 @@
 .hero-top-row {
   display: flex;
   align-items: flex-start;
-  column-gap: calc(var(--hero-fs) * 0.295);
+  column-gap: 48px;
   row-gap: 0;
   flex-wrap: nowrap;
 }
@@ -91,7 +98,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: rgba(32, 32, 32, 0.8);
+  color: #202020;
   white-space: nowrap;
 }
 
@@ -99,9 +106,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  /* SVG is 545px at 190px font-size → ratio ≈ 2.87 */
-  width: calc(var(--hero-fs) * 2.87);
-  height: auto;
+  height: var(--hero-lh); /* matches F*CK line-height exactly */
+  width: auto;
   pointer-events: none;
   display: block;
   z-index: 1;
@@ -129,16 +135,18 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: rgba(32, 32, 32, 0.8);
+  color: #202020;
   white-space: nowrap;
 }
 
 @media (max-width: 900px) {
   .hero-the-world { white-space: normal; }
+  .hero-top-row { column-gap: 24px; }
 }
 
 @media (max-width: 600px) {
-  .hero-top-row { flex-wrap: wrap; }
+  :root { --hero-fs: 76px; --hero-lh: 72px; }
+  .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
 @keyframes marquee {
@@ -154,17 +162,4 @@
 
 .blockquote-hanging { hanging-punctuation: first; }
 
-/* ── Hero responsive overrides ── */
-
-/* Mobile: stack F*CK above SAVE, Figma spec 80px / 76px lh */
-@media (max-width: 390px) {
-  :root {
-    --hero-fs: 84px;
-    --hero-lh: 80px;
-  }
-  .hero-top-row {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
-  }
-}
+/* ── Hero responsive overrides — see media queries above ── */
