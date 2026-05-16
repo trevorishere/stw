@@ -46,7 +46,7 @@
 
   /* Lead copy — Hero and Mission body text. DM Sans SemiBold, larger than body-copy. */
   .lead-copy {
-    @apply font-dmSans font-semibold text-[20px] leading-[30px]
+    @apply font-dmSans font-medium text-[20px] leading-[30px]
            max-tablet:text-[19px] max-tablet:leading-[28px];
   }
 
@@ -155,7 +155,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #202020;
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -192,7 +192,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #202020;
+  color: #ffffff;
   white-space: nowrap;
 }
 
