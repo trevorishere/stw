@@ -23,8 +23,8 @@ export default function Featured() {
                       max-phone:px-6">
 
         <p className="reveal-heading font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-white
-                      max-tablet:text-[18px] max-tablet:leading-[24px]
-                      max-phone:text-[14px] max-phone:leading-[20px] max-phone:tracking-[1px]">
+                      max-tablet:text-[24px] max-tablet:leading-[24px]
+                      max-phone:text-[24px] max-phone:leading-[24px] max-phone:tracking-[1px]">
           As Featured Manifesting In…
         </p>
 
