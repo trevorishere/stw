@@ -18,8 +18,8 @@ export default function Products() {
           <SectionHeader
             title="Transformational Products"
             subtitle="Carry the Work With You"
-            titleClassName="text-white"
-            subtitleClassName="text-white opacity-70"
+            titleClassName="text-cream"
+            subtitleClassName="text-cream opacity-70"
           />
         </div>
 
