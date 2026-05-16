@@ -37,7 +37,7 @@ export default function Nav() {
   return (
     <>
       <nav className="sticky top-0 z-nav bg-dark">
-        <div className="page-container flex items-center justify-between h-[80px] px-6 max-tablet:pl-16 max-tablet:pr-14 tablet:px-16 desktop:px-[80px]">
+        <div className="page-container flex items-center justify-between h-[80px] px-6 max-tablet:pl-16 max-tablet:pr-14 max-phone:px-6 tablet:px-16 desktop:px-[80px]">
 
           {/* Brand — Figtree Black, ©TM© inline on same baseline */}
           <a
