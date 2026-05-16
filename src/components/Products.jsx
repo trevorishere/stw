@@ -27,7 +27,7 @@ export default function Products() {
             description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine* with a premium card that certifies you have 'Done The Work'. Link it with your personal Consciousness Portfolio and the quiet satisfaction of knowing you are further along than everyone else at the dinner party."
             footnote="* the universe doesn't judge evolutionary medicine use when you're in integrity"
             cta="apply now"
-            tabletPb="max-tablet:pb-16"
+            tabletPb="max-tablet:pb-12"
           />
 
           <ProductCard
