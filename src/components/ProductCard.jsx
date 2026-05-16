@@ -25,6 +25,7 @@ export default function ProductCard({
   style,
   imageLeft = false,
   image,
+  imageMobile,
   imageClassName = '',
   imageContainerClassName = '',
   imageContainerStyle,
@@ -48,21 +49,22 @@ export default function ProductCard({
 
       {/* Image column
           Desktop : flex-1, fixed height via imageContainerClassName, object-cover.
-          Tablet/mobile : full-width, fixed h-[561px], object-cover. */}
+          Tablet/mobile : full-width, auto height (hugs image contents). */}
       <div
         className={`tablet:flex-1 tablet:min-w-0 tablet:overflow-hidden
-                     max-tablet:flex-none max-tablet:w-full max-tablet:h-[561px]
-                     max-phone:h-auto max-phone:aspect-[472/385]
+                     max-tablet:flex-none max-tablet:w-full
                      overflow-hidden ${imageContainerClassName} ${imgOrder}`}
         style={imageContainerStyle}
       >
-        <img
-          src={image}
-          alt=""
-          className={`block tablet:w-full tablet:h-full tablet:object-cover
-                      max-tablet:w-full max-tablet:h-full max-tablet:object-cover ${imageClassName}`}
-          loading="lazy"
-        />
+        <picture className="block w-full tablet:h-full">
+          {imageMobile && <source media="(max-width: 1024px)" srcSet={imageMobile} />}
+          <img
+            src={image}
+            alt=""
+            className={`block w-full tablet:h-full tablet:object-cover max-tablet:mx-auto ${imageClassName}`}
+            loading="lazy"
+          />
+        </picture>
       </div>
 
       {/* Text column

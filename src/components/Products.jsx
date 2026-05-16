@@ -21,6 +21,7 @@ export default function Products() {
             className="bg-dark"
             imageLeft={false}
             image={`${BASE}card.png`}
+            imageMobile={`${BASE}card_vertical.png`}
             imageContainerClassName="tablet:h-[580px]"
             category="Empowering Product"
             title={<>The Quantum Empowerment Black Card<TradeMark size="xl" /></>}
@@ -34,6 +35,7 @@ export default function Products() {
             style={{ background: 'linear-gradient(117.19deg, #5c3551 28.455%, #3e2137 98.062%)' }}
             imageLeft={true}
             image={`${BASE}tarot.png`}
+            imageMobile={`${BASE}tarot_vertical.png`}
             imageContainerClassName="tablet:h-[516px]"
             textClassName="tablet:pl-0 tablet:pr-[64px] tablet:py-[96px]"
             category="Divination & Clarity"
