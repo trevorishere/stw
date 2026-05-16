@@ -68,10 +68,10 @@ export default function ProductCard({
       {/* Text column
           Desktop : flex-1, padding via pl-16 py-16 default (override with textClassName).
           Tablet/mobile : stacked, px-12. */}
-      <div className={`flex flex-col gap-8 tablet:flex-1 tablet:min-w-0 tablet:justify-center
+      <div className={`flex flex-col gap-8 max-tablet:gap-10 tablet:flex-1 tablet:min-w-0 tablet:justify-center
                        pl-16 py-16
                        max-tablet:px-12 max-tablet:pt-0 ${tabletPb}
-                       max-phone:px-8 max-phone:pt-8 max-phone:pb-10
+                       max-phone:px-8 max-phone:pt-8 max-phone:pb-12
                        ${txtOrder} ${textClassName}`}>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">

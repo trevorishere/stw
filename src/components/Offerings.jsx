@@ -60,7 +60,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   )
 
   const textBlock = (
-    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-phone:gap-6 ${mobileOrderText}`}>
+    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-tablet:gap-10 ${mobileOrderText}`}>
       {/* Text group: eyebrow+title → body */}
       <div className="flex flex-col gap-4 max-phone:gap-2">
         <div className="flex flex-col gap-6 max-phone:gap-4">
@@ -73,7 +73,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
         </div>
         <p className="body-copy text-dark">{description}</p>
       </div>
-      <Btn color="muted" href="#contact" className="self-start">{cta}</Btn>
+      <Btn color="muted" href="#contact" className="self-start max-phone:self-center">{cta}</Btn>
     </div>
   )
 
@@ -81,7 +81,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
     <div className="flex gap-6 items-center p-6
                     max-tablet:flex-col max-tablet:items-stretch max-tablet:p-12 max-tablet:gap-6
                     max-tablet:bg-[rgba(255,255,255,0.3)] max-tablet:border max-tablet:border-productBg
-                    max-phone:px-8 max-phone:pt-8 max-phone:pb-10">
+                    max-phone:px-8 max-phone:pt-8 max-phone:pb-12">
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
@@ -129,7 +129,7 @@ export default function Offerings() {
               <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-6
                               pt-[48px] px-[96px] pb-[64px]
                               max-tablet:px-12 max-tablet:py-12
-                              max-phone:px-8 max-phone:pt-8 max-phone:pb-10 max-phone:gap-2
+                              max-phone:px-8 max-phone:pt-8 max-phone:pb-12 max-phone:gap-2
                               max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-productBg">
 
                 {/* Eyebrow → title: 24px */}
@@ -145,8 +145,8 @@ export default function Offerings() {
                   </h3>
                 </div>
 
-                {/* Title → description: 24px (outer gap-6), description → btn: 48px */}
-                <div className="flex flex-col gap-12 max-phone:gap-6">
+                {/* Title → description: 24px (outer gap-6), description → btn: 40px tablet/mobile */}
+                <div className="flex flex-col gap-12 max-tablet:gap-10">
                   <p className="body-copy text-dark">
                     Master the art of advanced dependency cultivation so your clients can't leave even if they
                     want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
