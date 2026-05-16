@@ -52,7 +52,7 @@ export default function Hero() {
             </div>
 
             <div className="hero-img">
-              <img src={heroImg} alt="" className="w-full h-full object-cover object-top" />
+              <img src={heroImg} alt="Dr. Aaron Steinberg" className="w-full h-full object-cover object-top" />
             </div>
 
           </div>
