@@ -25,7 +25,7 @@ export default function Featured() {
         <p className="reveal-heading font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-white
                       max-tablet:text-[24px] max-tablet:leading-[24px]
                       max-phone:text-[24px] max-phone:leading-[24px] max-phone:tracking-[1px]">
-          As Featured Manifesting In…
+          As Featured<br className="hidden max-phone:block" /> Manifesting In…
         </p>
 
         <div className="reveal-body overflow-hidden">
