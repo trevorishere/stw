@@ -8,7 +8,7 @@ export default function About() {
   const [ref, visible] = useReveal()
   return (
     <section ref={ref} id="about" className={`bg-[#ffa3a3] scroll-mt-nav max-phone:scroll-mt-navMobile${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 py-[112px] max-tablet:px-16 flex flex-col gap-[48px]
+      <div className="page-container px-24 py-[120px] max-tablet:px-16 flex flex-col gap-[48px]
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-16 max-phone:gap-8">
 
         {/* Photo — tablet/mobile only, sits above the title */}

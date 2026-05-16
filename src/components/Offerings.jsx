@@ -10,6 +10,7 @@ const OFFERINGS = [
     id: 1,
     image: `${BASE}smw.png`,
     imageLeft: true,
+    alt: 'Seven Minute Wellness program cover',
     category: 'Life Optimization',
     title: <>Seven Minute Wellness<TradeMark /></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
@@ -19,6 +20,7 @@ const OFFERINGS = [
     id: 2,
     image: `${BASE}rhwp.png`,
     imageLeft: false,
+    alt: 'Rock Hard Wet Pussy program cover',
     category: 'Relationships & Intimacy',
     title: <>Rock Hard Wet Pussy<TradeMark /></>,
     description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
@@ -28,6 +30,7 @@ const OFFERINGS = [
     id: 3,
     image: `${BASE}btb.png`,
     imageLeft: true,
+    alt: 'From Bogeys to Breakthroughs program cover',
     category: 'Power & Performance',
     title: <>From Bogeys to Breakthroughs<TradeMark /></>,
     description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
@@ -37,6 +40,7 @@ const OFFERINGS = [
     id: 4,
     image: `${BASE}gdt.png`,
     imageLeft: false,
+    alt: 'Going Down Together program cover',
     category: 'Teamwork & Accomplishment',
     title: <>Going Down Together<TradeMark /></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
@@ -46,7 +50,7 @@ const OFFERINGS = [
 
 const empireImg = `${BASE}empire.jpg`
 
-function OfferingRow({ image, imageLeft, category, title, description, cta }) {
+function OfferingRow({ image, imageLeft, alt = '', category, title, description, cta }) {
   const [ref, visible] = useReveal()
   // On tablet + mobile, image always stacks on top regardless of imageLeft.
   // For imageLeft=false rows (text first in DOM), we reverse order via CSS.
@@ -58,7 +62,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
     <div className={`flex-1 min-w-0 aspect-[596/480] overflow-hidden
                      max-tablet:flex-none max-tablet:w-full max-tablet:aspect-[675/490]
                      max-phone:aspect-[294/200] ${mobileOrderImg}`}>
-      <img src={image} alt="" className="w-full h-full object-cover block max-phone:object-contain max-phone:scale-110" loading="lazy" />
+      <img src={image} alt={alt} className="w-full h-full object-cover block max-phone:object-contain max-phone:scale-110" loading="lazy" />
     </div>
   )
 
@@ -94,9 +98,9 @@ export default function Offerings() {
   const [empireRef, empireVisible] = useReveal()
   return (
     <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
-      <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[64px]
-                      max-tablet:py-[104px]
-                      max-phone:px-0 max-phone:py-[104px] max-phone:gap-8">
+      <div className="page-container px-24 max-tablet:px-16 pt-[96px] pb-[280px] flex flex-col gap-[64px]
+                      max-tablet:pb-[220px]
+                      max-phone:px-0 max-phone:pt-[80px] max-phone:pb-[188px] max-phone:gap-8">
 
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading max-phone:px-6${headerVisible ? ' in-view' : ''}`}>
@@ -122,7 +126,7 @@ export default function Offerings() {
               <div className="relative h-[439px] max-tablet:h-[300px] max-phone:h-[203px]">
                 <img
                   src={empireImg}
-                  alt=""
+                  alt="STW Empire Builder group session"
                   className="absolute inset-0 w-full h-full object-cover object-top"
                   loading="lazy"
                 />

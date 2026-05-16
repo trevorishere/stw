@@ -8,6 +8,11 @@
   body {
     @apply bg-cream text-dark font-figtree min-w-[320px];
   }
+  :focus-visible {
+    outline: 2px solid theme('colors.accent');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 }
 
 @layer components {
@@ -274,6 +279,21 @@
   hanging-punctuation: first;  /* Safari */
   padding-left: 1rem;          /* 16px — body text starts here */
   text-indent: -1rem;          /* pulls " back to hang at the container's left edge */
+}
+
+/* Accessibility — respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .nav-item-in,
+  .nav-item-out  { animation: none; }
+  .marquee-track { animation: none; }
+  .reveal-heading,
+  .reveal-body {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .nav-hamburger,
+  .nav-hamburger-line { transition: none; }
 }
 
 /* ── Hero responsive overrides — see media queries above ── */

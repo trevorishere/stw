@@ -1,35 +1,26 @@
 import Btn from './Btn'
 import { useReveal } from '../hooks/useReveal'
 
-// Reusable product card — handles all three breakpoints.
+// Product card — offering-row layout at tablet+ (≥900px), stacked at mobile.
 //
-// imageLeft  true  → image LEFT at desktop (natural DOM order)
-//            false → image RIGHT at desktop (tablet:order-* swaps)
+// imageLeft  true  → image LEFT at tablet+ (natural DOM order)
+//            false → image RIGHT at tablet+ (tablet:order-* swaps)
 //
-// Desktop layout: side-by-side flex row. Image fills its column at a fixed
-// height (passed via imageContainerClassName, e.g. tablet:h-[580px]).
-// Tablet/mobile: image stacks on top, fixed h-[561px], object-cover.
-//
-// Props:
-//   imageContainerClassName  Extra classes on the image wrapper — use for
-//                            per-card desktop height (e.g. tablet:h-[580px]).
-//   imageContainerStyle      Inline style on the image container.
-//   imageClassName           Classes on <img> — object positioning overrides.
-//   textClassName            Extra classes on the text block (desktop padding
-//                            overrides, e.g. tablet:pl-0 tablet:pr-[64px]).
-//   tabletPb                 Tailwind class for tablet bottom padding on text.
-//   footnote                 Optional small-print line below the CTA button.
-//   className / style        Applied to the outer card div.
+// At tablet+ both columns are flex-1 (50/50).
+// Image container defaults to self-stretch (matches text height).
+// Pass imageContainerClassName to override (e.g. "tablet:h-[419px]" for fixed height).
+// imageFit controls object-fit on the img: "contain" (default) or "cover".
 
 export default function ProductCard({
   className = '',
   style,
   imageLeft = false,
   image,
+  alt = '',
   imageMobile,
+  imageFit = 'contain',
   imageClassName = '',
   imageContainerClassName = '',
-  imageContainerStyle,
   textClassName = '',
   category,
   title,
@@ -42,46 +33,47 @@ export default function ProductCard({
   const [ref, visible] = useReveal()
   const imgOrder = !imageLeft ? 'tablet:order-2' : ''
   const txtOrder = !imageLeft ? 'tablet:order-1' : ''
+  const fitClass = imageFit === 'cover' ? 'tablet:object-cover' : 'tablet:object-contain'
 
   return (
     <div
       ref={ref}
-      className={`reveal-heading tablet:flex tablet:items-start max-tablet:flex-col max-tablet:overflow-hidden ${className}${visible ? ' in-view' : ''}`}
+      className={`reveal-heading offering-card
+                  tablet:flex tablet:gap-6 tablet:items-start tablet:py-6
+                  max-tablet:flex-col max-tablet:gap-8 max-tablet:overflow-hidden max-tablet:px-12
+                  max-phone:px-8
+                  ${className}${visible ? ' in-view' : ''}`}
       style={style}
     >
 
-      {/* Image column
-          Desktop : flex-1, fixed height via imageContainerClassName, object-cover.
-          Tablet/mobile : full-width, auto height (hugs image contents). */}
+      {/* Image column — flex-1, self-stretch height (matches text column) at tablet+.
+          Image fills the container via absolute inset-0. */}
       <div
-        className={`tablet:flex-1 tablet:min-w-0 tablet:overflow-hidden
-                     max-tablet:flex-none max-tablet:w-full
+        className={`tablet:flex-1 tablet:min-w-0 tablet:self-stretch tablet:relative tablet:overflow-hidden
+                     max-tablet:flex-none max-tablet:w-full max-tablet:h-[420px]
                      overflow-hidden ${imageContainerClassName} ${imgOrder}`}
-        style={imageContainerStyle}
       >
-        <picture className="block w-full tablet:h-full">
-          {imageMobile && <source media="(max-width: 1024px)" srcSet={imageMobile} />}
+        <picture className="block w-full h-full tablet:absolute tablet:inset-0">
+          {imageMobile && <source media="(max-width: 899px)" srcSet={imageMobile} />}
           <img
             src={image}
-            alt=""
-            className={`block w-full tablet:h-full tablet:object-cover max-tablet:mx-auto ${imageClassName}`}
+            alt={alt}
+            className={`block w-full h-full object-contain ${fitClass} max-tablet:mx-auto ${imageClassName}`}
             loading="lazy"
           />
         </picture>
       </div>
 
-      {/* Text column
-          Desktop : flex-1, padding via pl-16 py-16 default (override with textClassName).
-          Tablet/mobile : stacked, px-12. */}
-      <div className={`flex flex-col gap-8 max-tablet:gap-10 tablet:flex-1 tablet:min-w-0 tablet:justify-center
-                       pl-16 py-16
-                       max-tablet:px-12 max-tablet:pt-0 ${tabletPb}
-                       max-phone:px-8 max-phone:pt-8 max-phone:pb-16
+      {/* Text column — flex-1, no extra desktop padding (matches offering pattern) */}
+      <div className={`flex flex-col gap-8 max-tablet:gap-10
+                       tablet:flex-1 tablet:min-w-0
+                       max-tablet:pt-0 ${tabletPb}
+                       max-phone:pt-0 max-phone:pb-16
                        ${txtOrder} ${textClassName}`}>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 max-phone:gap-2">
+          <div className="flex flex-col gap-6 max-phone:gap-4">
             <p className="eyebrow text-white opacity-70">{category}</p>
-            <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] tracking-[0.2px] text-white
+            <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-white
                            max-tablet:text-[36px] max-tablet:leading-[40px]
                            max-phone:text-[22px] max-phone:leading-[24px]">
               {title}
@@ -89,7 +81,7 @@ export default function ProductCard({
           </div>
           <p className="body-copy text-white">{description}</p>
         </div>
-        <Btn color="white" href={href} className="self-start">{cta}</Btn>
+        <Btn color="white" href={href} className="self-start max-tablet:self-center">{cta}</Btn>
         {footnote && (
           <p className="font-dmSans font-normal text-[14px] leading-[21px] text-white opacity-70
                         max-phone:text-[12px] max-phone:leading-[18px]">
