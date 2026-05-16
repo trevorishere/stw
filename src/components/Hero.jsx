@@ -38,7 +38,7 @@ export default function Hero() {
                 {' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
-              <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-[16px]">
+              <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-8">
                 <p className="lead-copy text-dark">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,

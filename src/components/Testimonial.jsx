@@ -7,7 +7,7 @@ export default function Testimonial() {
 
         <div className="bg-productBg px-24 py-[136px] flex flex-col gap-6
                         max-tablet:px-16 max-tablet:py-[112px]
-                        max-phone:px-12">
+                        max-phone:px-0">
 
           {/* Inner container — centered, 66% width, quote + attribution */}
           <div className="mx-auto max-w-[66%] max-phone:max-w-[80%] w-full flex flex-col gap-6">
