@@ -1,12 +1,6 @@
 import { useState } from 'react'
 import TradeMark from './TradeMark'
-
-const links = [
-  { href: '#offerings', label: 'Transformations' },
-  { href: '#empire',    label: 'Embodiments' },
-  { href: '#products',  label: 'Shop' },
-  { href: '#about',     label: 'About' },
-]
+import { navLinks as links } from '../data/navLinks'
 
 // Item animation durations (ms) — must match CSS
 const ITEM_OUT_MS   = 200
@@ -43,7 +37,7 @@ export default function Nav() {
   return (
     <>
       <nav className="sticky top-0 z-nav bg-cream">
-        <div className="page-container flex items-center justify-between px-[80px] h-[80px] max-tablet:pl-16 max-tablet:pr-14 max-phone:px-6">
+        <div className="page-container flex items-center justify-between h-[80px] px-6 max-tablet:pl-16 max-tablet:pr-14 tablet:px-16 desktop:px-[80px]">
 
           {/* Brand — Figtree Black, ©TM© inline on same baseline */}
           <a

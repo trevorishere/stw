@@ -10,8 +10,8 @@ export default function Hero() {
       className="[overflow-x:clip] relative"
       style={{ background: 'linear-gradient(to bottom, #96978D 23.62%, transparent 65.13%)' }}
     >
-      <div className="page-container px-28 pt-[104px] pb-4
-                      max-tablet:px-16 max-tablet:pt-[104px] max-tablet:pb-[80px]
+      <div className="page-container px-24 max-tablet:px-16 pt-[104px] pb-4
+                      max-tablet:pt-[104px] max-tablet:pb-[80px]
                       max-phone:px-6 max-phone:pt-[120px] max-phone:pb-4">
 
         <div className="flex flex-col gap-[64px] max-tablet:gap-12 max-phone:gap-[136px]">
@@ -39,7 +39,7 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-8">
-                <p className="lead-copy text-dark">
+                <p className="body-copy text-dark max-w-[760px]">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,
                   scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause
@@ -53,7 +53,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="w-[294px] h-[534px] shrink-0 max-tablet:w-[140px] max-tablet:h-[255px] max-phone:hidden">
+            <div className="hero-img">
               <img src={heroImg} alt="" className="w-full h-full object-cover object-top" />
             </div>
 
