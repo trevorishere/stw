@@ -31,7 +31,7 @@ export default function Featured() {
             {marqueeItems.map((logo, i) => (
               <span
                 key={i}
-                className="font-dmSans font-semibold text-[16px] leading-normal tracking-[3px] uppercase text-dark whitespace-nowrap flex-shrink-0 max-phone:text-[13px]"
+                className="font-dmSans font-semibold text-[16px] leading-normal tracking-[0.15em] uppercase text-dark whitespace-nowrap flex-shrink-0 max-phone:text-[13px]"
               >
                 {logo}
               </span>

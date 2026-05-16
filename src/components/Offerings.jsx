@@ -105,7 +105,7 @@ export default function Offerings() {
         <div className="flex flex-col gap-[48px] max-phone:gap-8">
 
           {/* Four offering rows */}
-          <div className="flex flex-col gap-0 max-tablet:gap-6 max-phone:gap-8 max-phone:px-6">
+          <div className="flex flex-col gap-0 max-tablet:gap-6 max-phone:gap-6 max-phone:px-6">
             {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 
@@ -129,7 +129,7 @@ export default function Offerings() {
               <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-6
                               pt-[48px] px-[96px] pb-[64px]
                               max-tablet:px-12 max-tablet:py-12
-                              max-phone:px-6 max-phone:py-8 max-phone:gap-2
+                              max-phone:px-8 max-phone:pt-8 max-phone:pb-10 max-phone:gap-2
                               max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-productBg">
 
                 {/* Eyebrow → title: 24px */}

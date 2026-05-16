@@ -38,7 +38,7 @@ export default function Btn({ color = 'dark', hoverText, href, children, classNa
 
   const classes = [
     'inline-flex items-center justify-center',
-    'border font-figtree font-extrabold uppercase whitespace-nowrap no-underline transition-colors',
+    'border font-figtree font-bold uppercase whitespace-nowrap no-underline transition-colors',
     'rounded-[32px] px-[28px] py-[19px] text-[14px] leading-[16px] tracking-[0.75px]',
     preset.base, preset.hoverBg, hoverTextClass,
     'max-phone:rounded-[24px] max-phone:py-[16px] max-phone:text-[12px] max-phone:leading-[14px] max-phone:tracking-[0.7px]',
