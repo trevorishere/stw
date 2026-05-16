@@ -50,7 +50,7 @@ export default function ProductCard({
           Image fills the container via absolute inset-0. */}
       <div
         className={`tablet:flex-1 tablet:min-w-0 tablet:self-stretch tablet:relative tablet:overflow-hidden
-                     max-tablet:flex-none max-tablet:w-full max-tablet:h-[420px]
+                     max-tablet:flex-none max-tablet:w-full max-tablet:h-[360px]
                      overflow-hidden ${imageContainerClassName} ${imgOrder}`}
       >
         <picture className="block w-full h-full tablet:absolute tablet:inset-0">
@@ -79,7 +79,7 @@ export default function ProductCard({
               {title}
             </h3>
           </div>
-          <p className="body-copy text-white">{description}</p>
+          <p className="body-copy text-cream">{description}</p>
         </div>
         <Btn color="white" href={href} className="self-start max-tablet:self-center">{cta}</Btn>
         {footnote && (
