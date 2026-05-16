@@ -8,20 +8,47 @@ const links = [
   { href: '#about',     label: 'About' },
 ]
 
-export default function Nav() {
-  const [open, setOpen] = useState(false)
+// Item animation durations (ms) — must match CSS
+const ITEM_OUT_MS   = 200
+const ITEM_STAGGER  = 50
 
-  function close() { setOpen(false) }
+export default function Nav() {
+  const [open,    setOpen]    = useState(false)
+  const [closing, setClosing] = useState(false)
+
+  function openDrawer()  { setOpen(true) }
+
+  function closeDrawer() {
+    setClosing(true)
+    setOpen(false) // roll up immediately — drawer hides items as it closes
+    setTimeout(() => setClosing(false), 350)
+  }
+
+  function toggle() { open ? closeDrawer() : openDrawer() }
+  function close()  { if (open) closeDrawer() }
+
+  // Item animation class + delay
+  function itemProps(i) {
+    if (open && !closing) {
+      // Open: top → bottom, index order
+      return { className: 'nav-item-in', delay: i * ITEM_STAGGER }
+    }
+    if (closing) {
+      // Close: bottom → top, reverse index order
+      return { className: 'nav-item-out', delay: (links.length - 1 - i) * ITEM_STAGGER }
+    }
+    return { className: '', delay: 0 }
+  }
 
   return (
     <>
       <nav className="sticky top-0 z-nav bg-cream">
-        <div className="page-container flex items-center justify-between px-[80px] h-[72px] max-tablet:px-6 max-phone:h-[56px]">
+        <div className="page-container flex items-center justify-between px-[80px] h-[80px] max-tablet:pl-16 max-tablet:pr-14 max-phone:px-6">
 
           {/* Brand — Figtree Black, ©TM© inline on same baseline */}
           <a
             href="#"
-            className="font-figtree font-extrabold text-[20px] max-tablet:text-[16px] tracking-[1px] uppercase text-dark no-underline whitespace-nowrap"
+            className="font-figtree font-extrabold text-[18px] tracking-[1px] uppercase text-dark no-underline whitespace-nowrap"
           >
             <span className="max-phone:hidden">Stein's Total Wellness</span>
             <span className="hidden max-phone:inline">STW</span><TradeMark size="sm" />
@@ -43,34 +70,48 @@ export default function Nav() {
 
           {/* Hamburger */}
           <button
-            className="tablet:hidden bg-transparent border-none text-2xl leading-none cursor-pointer text-dark p-1"
+            className="tablet:hidden bg-transparent border-none cursor-pointer text-dark p-1 flex items-center justify-center"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            onClick={() => setOpen(o => !o)}
+            onClick={toggle}
           >
-            {open ? '✕' : '☰'}
+            <span className={`nav-hamburger opacity-70${open ? ' is-open' : ''}`}>
+              <span className="nav-hamburger-line nav-hamburger-line-top" />
+              <span className="nav-hamburger-line nav-hamburger-line-mid" />
+              <span className="nav-hamburger-line nav-hamburger-line-bot" />
+            </span>
           </button>
         </div>
       </nav>
 
       {/* Mobile drawer */}
       <div
-        className="tablet:hidden flex flex-col bg-cream fixed top-[72px] max-phone:top-[56px] left-0 w-full z-navDrawer overflow-hidden"
+        className="tablet:hidden bg-cream fixed top-[80px] left-0 w-full z-navDrawer overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
-          transition: 'max-height 200ms ease-in-out',
+          transition: open
+            ? 'max-height 300ms cubic-bezier(0.34, 1.4, 0.64, 1)'
+            : closing
+              ? 'max-height 200ms cubic-bezier(0.42, 0, 0.58, 1)'
+              : 'none',
         }}
       >
-        {links.map(link => (
-          <a
-            key={link.label}
-            href={link.href}
-            onClick={close}
-            className="block px-6 py-[18px] font-figtree font-semibold text-base tracking-[1px] uppercase text-dark no-underline text-right"
-          >
-            {link.label}
-          </a>
-        ))}
+        <div className="flex flex-col pb-16">
+          {links.map((link, i) => {
+            const { className, delay } = itemProps(i)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={close}
+                className={`block px-16 max-phone:px-6 py-[18px] font-figtree font-semibold text-base tracking-[1px] uppercase text-dark no-underline text-right ${className}`}
+                style={className ? { animationDelay: `${delay}ms` } : {}}
+              >
+                {link.label}
+              </a>
+            )
+          })}
+        </div>
       </div>
     </>
   )

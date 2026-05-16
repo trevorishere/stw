@@ -22,16 +22,16 @@ export default {
         site: '1440px',
       },
       scrollMargin: {
-        nav:       '72px',
-        navMobile: '56px',
+        nav:       '80px',
+        navMobile: '80px',
       },
       zIndex: {
         nav:       '100',
         navDrawer: '99',
       },
       screens: {
-        tablet:       '900px',
-        'max-tablet': { max: '900px' },
+        tablet:       '1024px',
+        'max-tablet': { max: '1024px' },
         'max-phone':  { max: '600px' },
       },
     },
