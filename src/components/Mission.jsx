@@ -7,12 +7,12 @@ export default function Mission() {
                       max-tablet:px-16
                       max-phone:px-6 max-phone:py-[88px]">
 
-        <div className="grid grid-cols-[1fr_2fr] gap-6
-                        max-phone:grid-cols-1 max-phone:gap-6">
+        <div className="grid grid-cols-1 gap-y-6
+                        tablet:grid-cols-[23fr_11fr_66fr] tablet:gap-y-0">
 
           <h2 className="section-heading text-dark">Mission</h2>
 
-          <div className="flex flex-col gap-1 lead-copy text-dark">
+          <div className="tablet:col-start-3 flex flex-col gap-1 lead-copy text-dark max-tablet:pl-12 max-phone:pl-8">
             <p>
               <strong className="font-bold">True wellness isn't about doing the work.</strong>
               {' '}It's about embodying the work. And then monetizing the embodiment. And then

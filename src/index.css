@@ -53,6 +53,64 @@
 }
 
 /*
+ * Nav drawer item bounce-in
+ */
+@keyframes navItemIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.nav-item-in {
+  animation: navItemIn 0.2s cubic-bezier(0.42, 2.0, 0.58, 1) both;
+}
+@keyframes navItemOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+.nav-item-out {
+  animation: navItemOut 0.2s cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+/*
+ * Nav hamburger ↔ X morph
+ * Container spins 180° while top/bottom bars translate to centre and rotate
+ * into an X; middle bar fades out. Net angles: top = 180°+45° = 225° = 45°,
+ * bottom = 180°−45° = 135° → perpendicular, forming a clean X.
+ */
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.nav-hamburger.is-open {
+  transform: rotate(180deg);
+}
+.nav-hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1),
+              opacity 0.15s ease;
+}
+/* top line: slides down 7px (gap+line = 5+2) then rotates 45° */
+.nav-hamburger.is-open .nav-hamburger-line-top {
+  transform: translateY(7px) rotate(45deg);
+}
+/* mid line: fades and collapses */
+.nav-hamburger.is-open .nav-hamburger-line-mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+/* bottom line: slides up 7px then rotates −45° */
+.nav-hamburger.is-open .nav-hamburger-line-bot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/*
  * Hero typography — uses a flex-row layout so F*CK and SAVE are
  * always side-by-side at every viewport width. The crossout SVG
  * is absolutely positioned inside .hero-fck-wrapper and scales
