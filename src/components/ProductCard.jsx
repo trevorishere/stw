@@ -1,4 +1,5 @@
 import Btn from './Btn'
+import { useReveal } from '../hooks/useReveal'
 
 // Reusable product card — handles all three breakpoints.
 //
@@ -38,12 +39,14 @@ export default function ProductCard({
   href = '#contact',
   tabletPb = 'max-tablet:pb-16',
 }) {
+  const [ref, visible] = useReveal()
   const imgOrder = !imageLeft ? 'tablet:order-2' : ''
   const txtOrder = !imageLeft ? 'tablet:order-1' : ''
 
   return (
     <div
-      className={`tablet:flex tablet:items-start max-tablet:flex-col max-tablet:overflow-hidden ${className}`}
+      ref={ref}
+      className={`reveal-heading tablet:flex tablet:items-start max-tablet:flex-col max-tablet:overflow-hidden ${className}${visible ? ' in-view' : ''}`}
       style={style}
     >
 

@@ -1,16 +1,18 @@
 import TradeMark from './TradeMark'
 import { navLinks as NAV_LINKS } from '../data/navLinks'
+import { useReveal } from '../hooks/useReveal'
 
 const crossout = `${import.meta.env.BASE_URL}crossout-pink.svg`
 
 export default function Footer() {
+  const [ref, visible] = useReveal()
   return (
-    <footer className="bg-dark [overflow-x:clip]">
+    <footer ref={ref} className={`bg-dark [overflow-x:clip]${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[80px]
                       max-tablet:py-16 max-phone:px-6 max-phone:py-12">
 
         {/* Hero header — F*CK SAVE / THE WORLD in footer colors */}
-        <div className="footer-hero">
+        <div className="reveal-heading footer-hero">
           <div className="hero-text-block relative">
             <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
             <div className="hero-top-row">
@@ -24,7 +26,7 @@ export default function Footer() {
         </div>
 
         {/* Logo, nav links, copyright */}
-        <div className="flex flex-col gap-[48px]">
+        <div className="reveal-body flex flex-col gap-[48px]">
 
         <div className="flex items-start justify-between gap-8 max-tablet:flex-col max-phone:gap-12">
           <div className="flex flex-col gap-2">

@@ -206,6 +206,27 @@
   .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
+/* Scroll-reveal — base state: invisible, shifted down 100px */
+.reveal-heading,
+.reveal-body {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+/* Body copy follows heading by 100ms */
+.reveal-body { transition-delay: 100ms; }
+/* Triggered by parent .in-view (sections) */
+.in-view .reveal-heading,
+.in-view .reveal-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Triggered on self — for cards that observe themselves */
+.reveal-heading.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Section heading — 48px/48lh at expanded (900–1199px) only */
 @media (min-width: 900px) and (max-width: 1199px) {
   .section-heading { font-size: 48px; line-height: 48px; }

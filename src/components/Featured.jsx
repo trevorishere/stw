@@ -1,3 +1,5 @@
+import { useReveal } from '../hooks/useReveal'
+
 const logos = [
   'Yahoo!',
   'Goop.blogspot',
@@ -13,19 +15,20 @@ const logos = [
 const marqueeItems = [...logos, ...logos]
 
 export default function Featured() {
+  const [ref, visible] = useReveal()
   return (
-    <section className="bg-[#262626]">
+    <section ref={ref} className={`bg-[#262626]${visible ? ' in-view' : ''}`}>
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
       <div className="page-container px-24 max-tablet:px-16 py-[112px] flex flex-col gap-4
                       max-phone:px-6">
 
-        <p className="font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-white
+        <p className="reveal-heading font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-white
                       max-tablet:text-[18px] max-tablet:leading-[24px]
                       max-phone:text-[14px] max-phone:leading-[20px] max-phone:tracking-[1px]">
           As Featured Manifesting In…
         </p>
 
-        <div className="overflow-hidden">
+        <div className="reveal-body overflow-hidden">
           <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
             {marqueeItems.map((logo, i) => (
               <span
