@@ -1,10 +1,12 @@
 import ProductCard from './ProductCard'
 import SectionHeader from './SectionHeader'
 import TradeMark from './TradeMark'
+import { useReveal } from '../hooks/useReveal'
 
 const BASE = import.meta.env.BASE_URL
 
 export default function Products() {
+  const [headerRef, headerVisible] = useReveal()
   return (
     <section id="products" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
       <div className="page-container px-24 max-tablet:px-16 pt-[48px] pb-[112px] flex flex-col gap-[48px]
@@ -12,7 +14,9 @@ export default function Products() {
                       max-phone:px-6 max-phone:py-12 max-phone:gap-8">
 
         {/* Section header */}
-        <SectionHeader title="Transformational Products" subtitle="Carry the Work With You" />
+        <div ref={headerRef} className={`reveal-heading${headerVisible ? ' in-view' : ''}`}>
+          <SectionHeader title="Transformational Products" subtitle="Carry the Work With You" />
+        </div>
 
         {/* Cards — 4px gap */}
         <div className="flex flex-col gap-1">

@@ -1,17 +1,19 @@
 import TradeMark from './TradeMark'
+import { useReveal } from '../hooks/useReveal'
 
 export default function Mission() {
+  const [ref, visible] = useReveal()
   return (
-    <section className="bg-[#2c2c2c]">
+    <section ref={ref} className={`bg-[#2c2c2c]${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 max-tablet:px-16 pt-[112px] pb-[120px]
                       max-phone:px-6 max-phone:py-[88px]">
 
         <div className="grid grid-cols-1 gap-y-6
                         tablet:grid-cols-[23fr_11fr_66fr] tablet:gap-y-0">
 
-          <h2 className="section-heading text-white">Mission</h2>
+          <h2 className="reveal-heading section-heading text-white">Mission</h2>
 
-          <div className="tablet:col-start-3 flex flex-col gap-1 text-cream max-tablet:pl-12 max-phone:pl-8">
+          <div className="reveal-body tablet:col-start-3 flex flex-col gap-1 text-cream max-tablet:pl-12 max-phone:pl-8">
             <p className="font-dmSans font-semibold text-[24px] leading-[32px] mb-2">
               True wellness isn't about doing the work. It's about embodying the work. And then
               monetizing the embodiment. And then disrupting the monetization. Sustainably.

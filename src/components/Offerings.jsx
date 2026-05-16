@@ -1,6 +1,7 @@
 import Btn from './Btn'
 import SectionHeader from './SectionHeader'
 import TradeMark from './TradeMark'
+import { useReveal } from '../hooks/useReveal'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -46,6 +47,7 @@ const OFFERINGS = [
 const empireImg = `${BASE}empire.jpg`
 
 function OfferingRow({ image, imageLeft, category, title, description, cta }) {
+  const [ref, visible] = useReveal()
   // On tablet + mobile, image always stacks on top regardless of imageLeft.
   // For imageLeft=false rows (text first in DOM), we reverse order via CSS.
   const mobileOrderImg  = !imageLeft ? 'max-tablet:order-1' : ''
@@ -79,15 +81,17 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   )
 
   return (
-    <div className="offering-card flex gap-6 items-start py-6
+    <div ref={ref} className={`reveal-heading offering-card flex gap-6 items-start py-6
                     max-tablet:flex-col max-tablet:items-stretch max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16 max-tablet:gap-6
-max-phone:px-8 max-phone:pt-8 max-phone:pb-16">
+                    max-phone:px-8 max-phone:pt-8 max-phone:pb-16${visible ? ' in-view' : ''}`}>
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
 }
 
 export default function Offerings() {
+  const [headerRef, headerVisible] = useReveal()
+  const [empireRef, empireVisible] = useReveal()
   return (
     <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
       <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[64px]
@@ -95,7 +99,7 @@ export default function Offerings() {
                       max-phone:px-0 max-phone:py-[104px] max-phone:gap-8">
 
         {/* Section header */}
-        <div className="max-phone:px-6">
+        <div ref={headerRef} className={`reveal-heading max-phone:px-6${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
             title="Transformational Offerings"
             subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
@@ -110,8 +114,8 @@ export default function Offerings() {
           </div>
 
           {/* Empire block — centered card, 798px desktop */}
-          <div id="empire" className="scroll-mt-nav max-phone:scroll-mt-navMobile
-                                      flex justify-center max-phone:px-6">
+          <div ref={empireRef} id="empire" className={`reveal-heading scroll-mt-nav max-phone:scroll-mt-navMobile
+                                      flex justify-center max-phone:px-6${empireVisible ? ' in-view' : ''}`}>
             <div className="overflow-hidden w-[798px] max-tablet:w-full">
 
               {/* Image */}

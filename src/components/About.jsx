@@ -1,11 +1,13 @@
 import Btn from './Btn'
 import { CREDS } from '../constants'
+import { useReveal } from '../hooks/useReveal'
 
 const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
 
 export default function About() {
+  const [ref, visible] = useReveal()
   return (
-    <section id="about" className="bg-productBg scroll-mt-nav max-phone:scroll-mt-navMobile">
+    <section ref={ref} id="about" className={`bg-[#ffa3a3] scroll-mt-nav max-phone:scroll-mt-navMobile${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 py-[112px] max-tablet:px-16 flex flex-col gap-[48px]
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-16 max-phone:gap-8">
 
@@ -22,7 +24,7 @@ export default function About() {
         <div className="flex flex-col gap-6 tablet:gap-[48px]">
 
           {/* Title block */}
-          <div className="flex flex-col gap-2">
+          <div className="reveal-heading flex flex-col gap-2">
             <h2 className="section-heading text-dark">
               about<br />dr. aaron steinberg
             </h2>
@@ -33,7 +35,7 @@ export default function About() {
           </div>
 
           {/* Main row — bio left, photo right at desktop only */}
-          <div className="flex gap-6 items-start">
+          <div className="reveal-body flex gap-6 items-start">
 
             {/* Bio + button */}
             <div className="flex-1 min-w-0 flex flex-col gap-[48px] max-phone:gap-8">
@@ -65,7 +67,7 @@ export default function About() {
                   to laugh about it. Sustainably.
                 </p>
               </div>
-              <Btn color="muted" href="#contact" className="self-start">
+              <Btn color="dark" href="#contact" className="self-start">
                 Book Your Free Discovery Session
               </Btn>
             </div>

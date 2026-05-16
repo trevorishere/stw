@@ -1,18 +1,20 @@
 import Btn from './Btn'
 import TradeMark from './TradeMark'
+import { useReveal } from '../hooks/useReveal'
 
 const crossout = `${import.meta.env.BASE_URL}crossout.svg`
 const heroImg  = `${import.meta.env.BASE_URL}hero.png`
 
 export default function Hero() {
+  const [ref, visible] = useReveal()
   return (
-    <section className="[overflow-x:clip] relative bg-dark">
+    <section ref={ref} className={`[overflow-x:clip] relative bg-dark${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 max-tablet:px-16 py-[104px]
                       max-phone:px-6">
 
         <div className="flex flex-col gap-[64px] max-tablet:gap-12 max-phone:gap-[136px]">
 
-          <div className="hero-text-block relative">
+          <div className="reveal-heading hero-text-block relative">
             <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
             <div className="hero-top-row">
               <div className="hero-fck-wrapper">
@@ -23,7 +25,7 @@ export default function Hero() {
             <div className="hero-the-world">THE WORLD</div>
           </div>
 
-          <div className="flex items-start gap-14 max-tablet:gap-8 max-phone:flex-col max-phone:gap-8">
+          <div className="reveal-body flex items-start gap-14 max-tablet:gap-8 max-phone:flex-col max-phone:gap-8">
 
             <div className="flex flex-col gap-4 flex-1 min-w-0 pt-8 max-phone:pt-0">
 
