@@ -2,7 +2,7 @@ import TradeMark from './TradeMark'
 
 export default function Mission() {
   return (
-    <section className="bg-productBg">
+    <section className="bg-[#DEE0CC]">
       <div className="page-container px-24 max-tablet:px-16 pt-[112px] pb-[120px]
                       max-phone:px-6 max-phone:py-[88px]">
 

@@ -90,9 +90,9 @@ max-phone:px-8 max-phone:pt-8 max-phone:pb-16">
 export default function Offerings() {
   return (
     <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
-      <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[48px]
-                      max-tablet:py-16
-                      max-phone:px-0 max-phone:pt-20 max-phone:pb-0 max-phone:gap-8">
+      <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[64px]
+                      max-tablet:py-[104px]
+                      max-phone:px-0 max-phone:py-[104px] max-phone:gap-8">
 
         {/* Section header */}
         <div className="max-phone:px-6">
@@ -105,7 +105,7 @@ export default function Offerings() {
         <div className="flex flex-col gap-[88px] max-phone:gap-8">
 
           {/* Four offering rows */}
-          <div className="flex flex-col gap-[80px] max-tablet:gap-1 max-phone:px-6">
+          <div className="flex flex-col gap-[64px] max-tablet:gap-1 max-phone:px-6">
             {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 

@@ -14,7 +14,7 @@ const marqueeItems = [...logos, ...logos]
 
 export default function Featured() {
   return (
-    <section className="bg-cream">
+    <section className="bg-[#E8EBD5]">
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
       <div className="page-container px-24 max-tablet:px-16 py-[112px] flex flex-col gap-4
                       max-phone:px-6">
