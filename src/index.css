@@ -206,6 +206,33 @@
   .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
+/* Footer hero header — same layout/scale as hero, different colors */
+.footer-hero .hero-fck       { color: #eff2dd; }
+.footer-hero .hero-save      { color: #ffa3a3; }
+.footer-hero .hero-the-world { color: #eff2dd; }
+
+/* Hero right-side image — responsive sizing via raw media queries */
+.hero-img {
+  width: 294px;
+  height: 534px;
+  flex-shrink: 0;
+}
+@media (max-width: 1199px) {
+  .hero-img { width: 140px; height: 255px; }
+}
+@media (max-width: 600px) {
+  .hero-img { display: none; }
+}
+
+/* Offering card — 24px sides at desktop, 0px at expanded (900–1199px) only */
+.offering-card {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .offering-card { padding-left: 0; padding-right: 0; }
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

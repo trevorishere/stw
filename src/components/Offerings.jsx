@@ -50,6 +50,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   // For imageLeft=false rows (text first in DOM), we reverse order via CSS.
   const mobileOrderImg  = !imageLeft ? 'max-tablet:order-1' : ''
   const mobileOrderText = !imageLeft ? 'max-tablet:order-2' : ''
+  const textPaddingRight = !imageLeft ? 'desktop:pr-8' : ''
 
   const imageBlock = (
     <div className={`flex-1 min-w-0 aspect-[596/480] overflow-hidden
@@ -60,7 +61,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
   )
 
   const textBlock = (
-    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-tablet:gap-10 ${mobileOrderText}`}>
+    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-tablet:gap-10 ${mobileOrderText} ${textPaddingRight}`}>
       {/* Text group: eyebrow+title → body */}
       <div className="flex flex-col gap-4 max-phone:gap-2">
         <div className="flex flex-col gap-6 max-phone:gap-4">
@@ -73,15 +74,14 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
         </div>
         <p className="body-copy text-dark">{description}</p>
       </div>
-      <Btn color="muted" href="#contact" className="self-start max-phone:self-center">{cta}</Btn>
+      <Btn color="muted" href="#contact" className="self-start max-tablet:self-center">{cta}</Btn>
     </div>
   )
 
   return (
-    <div className="flex gap-6 items-center p-6
-                    max-tablet:flex-col max-tablet:items-stretch max-tablet:p-12 max-tablet:gap-6
-                    max-tablet:bg-[rgba(255,255,255,0.3)] max-tablet:border max-tablet:border-productBg
-                    max-phone:px-8 max-phone:pt-8 max-phone:pb-12">
+    <div className="offering-card flex gap-6 items-start py-6
+                    max-tablet:flex-col max-tablet:items-stretch max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16 max-tablet:gap-6
+max-phone:px-8 max-phone:pt-8 max-phone:pb-16">
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
     </div>
   )
@@ -90,8 +90,8 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
 export default function Offerings() {
   return (
     <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
-      <div className="page-container px-28 py-[120px] flex flex-col gap-[48px]
-                      max-tablet:px-16 max-tablet:py-16
+      <div className="page-container px-24 max-tablet:px-16 py-[120px] flex flex-col gap-[48px]
+                      max-tablet:py-16
                       max-phone:px-0 max-phone:pt-20 max-phone:pb-0 max-phone:gap-8">
 
         {/* Section header */}
@@ -102,10 +102,10 @@ export default function Offerings() {
           />
         </div>
 
-        <div className="flex flex-col gap-[48px] max-phone:gap-8">
+        <div className="flex flex-col gap-[88px] max-phone:gap-8">
 
           {/* Four offering rows */}
-          <div className="flex flex-col gap-0 max-tablet:gap-6 max-phone:gap-6 max-phone:px-6">
+          <div className="flex flex-col gap-[80px] max-tablet:gap-1 max-phone:px-6">
             {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 
@@ -128,9 +128,9 @@ export default function Offerings() {
               {/* pt-48 px-96 pb-64 per Figma annotations */}
               <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-6
                               pt-[48px] px-[96px] pb-[64px]
-                              max-tablet:px-12 max-tablet:py-12
-                              max-phone:px-8 max-phone:pt-8 max-phone:pb-12 max-phone:gap-2
-                              max-phone:bg-[rgba(255,255,255,0.3)] max-phone:border max-phone:border-productBg">
+                              max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16
+                              max-phone:px-8 max-phone:pt-8 max-phone:pb-16 max-phone:gap-2
+                              max-phone:border max-phone:border-productBg">
 
                 {/* Eyebrow → title: 24px */}
                 <div className="flex flex-col gap-6 max-phone:gap-6">

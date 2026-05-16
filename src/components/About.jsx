@@ -6,8 +6,7 @@ const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
 export default function About() {
   return (
     <section id="about" className="bg-productBg scroll-mt-nav max-phone:scroll-mt-navMobile">
-      <div className="page-container p-[112px] flex flex-col gap-[48px]
-                      max-tablet:px-16 max-tablet:py-[112px]
+      <div className="page-container px-24 py-[112px] max-tablet:px-16 flex flex-col gap-[48px]
                       max-phone:px-6 max-phone:pt-12 max-phone:pb-16 max-phone:gap-8">
 
         {/* Photo — tablet/mobile only, sits above the title */}
