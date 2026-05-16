@@ -47,7 +47,7 @@ export default function Hero() {
                   relationship, mitochondria, inner child, morning routine, and personal brand.
                 </p>
 
-                <Btn color="productBg" href="#contact" className="self-start">
+                <Btn color="muted" href="#contact" className="self-start">
                   begin your inititation
                 </Btn>
               </div>
