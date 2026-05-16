@@ -98,7 +98,7 @@ export default function Offerings() {
   const [empireRef, empireVisible] = useReveal()
   return (
     <section id="offerings" className="scroll-mt-nav max-phone:scroll-mt-navMobile">
-      <div className="page-container px-24 max-tablet:px-16 pt-[96px] pb-[280px] flex flex-col gap-[64px]
+      <div className="page-container px-24 max-tablet:px-16 pt-[96px] tablet:pt-[120px] pb-[280px] flex flex-col gap-[64px]
                       max-tablet:pb-[220px]
                       max-phone:px-0 max-phone:pt-[80px] max-phone:pb-[188px] max-phone:gap-8">
 

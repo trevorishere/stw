@@ -5,8 +5,8 @@ export default function Mission() {
   const [ref, visible] = useReveal()
   return (
     <section ref={ref} className={`bg-[#2c2c2c]${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 max-tablet:px-16 pt-[112px] pb-[120px]
-                      max-phone:px-6 max-phone:py-[88px]">
+      <div className="page-container px-24 max-tablet:px-16 pt-[120px] pb-[136px]
+                      max-phone:px-6 max-phone:pt-[104px] max-phone:pb-[120px]">
 
         <div className="grid grid-cols-1 gap-y-6
                         tablet:grid-cols-[23fr_11fr_66fr] tablet:gap-y-0">
