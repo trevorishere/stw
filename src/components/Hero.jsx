@@ -10,9 +10,8 @@ export default function Hero() {
       className="[overflow-x:clip] relative"
       style={{ background: 'linear-gradient(to bottom, #96978D 23.62%, transparent 65.13%)' }}
     >
-      <div className="page-container px-24 max-tablet:px-16 pt-[104px] pb-4
-                      max-tablet:pt-[104px] max-tablet:pb-[80px]
-                      max-phone:px-6 max-phone:pt-[120px] max-phone:pb-4">
+      <div className="page-container px-24 max-tablet:px-16 py-[104px]
+                      max-phone:px-6">
 
         <div className="flex flex-col gap-[64px] max-tablet:gap-12 max-phone:gap-[136px]">
 

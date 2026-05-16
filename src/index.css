@@ -206,6 +206,11 @@
   .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
+/* Section heading — 48px/48lh at expanded (900–1199px) only */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .section-heading { font-size: 48px; line-height: 48px; }
+}
+
 /* Footer hero header — same layout/scale as hero, different colors */
 .footer-hero .hero-fck       { color: #eff2dd; }
 .footer-hero .hero-save      { color: #ffa3a3; }
