@@ -47,7 +47,7 @@
   /* Lead copy — Hero and Mission body text. DM Sans SemiBold, larger than body-copy. */
   .lead-copy {
     @apply font-dmSans font-semibold text-[20px] leading-[30px]
-           max-phone:text-[16px] max-phone:leading-[24px];
+           max-tablet:text-[19px] max-tablet:leading-[28px];
   }
 
 }

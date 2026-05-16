@@ -55,7 +55,7 @@ function OfferingRow({ image, imageLeft, category, title, description, cta }) {
     <div className={`flex-1 min-w-0 aspect-[596/480] overflow-hidden
                      max-tablet:flex-none max-tablet:w-full max-tablet:aspect-[675/490]
                      max-phone:aspect-[294/200] ${mobileOrderImg}`}>
-      <img src={image} alt="" className="w-full h-full object-cover block max-phone:object-contain" loading="lazy" />
+      <img src={image} alt="" className="w-full h-full object-cover block max-phone:object-contain max-phone:scale-110" loading="lazy" />
     </div>
   )
 

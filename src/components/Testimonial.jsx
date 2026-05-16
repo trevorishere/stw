@@ -5,9 +5,9 @@ export default function Testimonial() {
                       max-tablet:px-16 max-tablet:pb-16
                       max-phone:px-6 max-phone:pb-12">
 
-        <div className="bg-productBg px-24 py-[136px] flex flex-col gap-6
-                        max-tablet:px-16 max-tablet:py-[112px]
-                        max-phone:px-0">
+        <div className="bg-productBg py-[136px] flex flex-col gap-6
+                        max-tablet:py-[112px]
+                        max-phone:py-[80px]">
 
           {/* Inner container — centered, 66% width, quote + attribution */}
           <div className="mx-auto max-w-[66%] max-phone:max-w-[80%] w-full flex flex-col gap-6">

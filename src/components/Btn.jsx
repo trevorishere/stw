@@ -1,7 +1,7 @@
 // Two-state button — one size for desktop/tablet, one for mobile.
 //
-// Desktop/tablet: px-[28px] py-[20px], rounded-[32px], ExtraBold 14px/16lh/0.75ls
-// Mobile:         px-[28px] py-[17px], rounded-[24px], ExtraBold 12px/14lh/0.5ls
+// Desktop/tablet: px-[28px] py-[19px], rounded-[32px], Bold 14px/16lh/0.75ls
+// Mobile:         px-[28px] py-[16px], rounded-[24px], Bold 12px/14lh/0.7ls
 //
 // color    "dark"        → dark border + text, hover: bg-dark      / text-cream
 //          "cream"       → cream border + text, hover: bg-cream     / text-dark
