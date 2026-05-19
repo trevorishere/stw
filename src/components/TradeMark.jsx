@@ -10,10 +10,10 @@
 //        "xs"      8px desktop+tablet / 7px mobile           — eyebrow-level
 
 const SIZES = {
-  xl:      'font-normal text-[26px] max-tablet:text-[23px] max-phone:text-[14px]',
-  empire:  'font-normal text-[26px] max-tablet:text-[21px] max-phone:text-[14px]',
+  xl:      'font-semibold text-[20px] max-phone:text-[13px]',
+  empire:  'font-semibold text-[22px] max-tablet:text-[18px] max-phone:text-[13px]',
   product: 'font-normal text-[23px] max-phone:text-[22px]',
-  lg:      'font-normal not-italic text-[26px] max-tablet:text-[17px] max-phone:text-[18px]',
+  lg:      'font-semibold not-italic text-[22px] max-tablet:text-[14px] max-phone:text-[16px]',
   body:    'font-normal text-[11px] max-phone:text-[10px]',
   sm:      'font-normal text-[12px] max-tablet:text-[10px]',
   footer:  'font-medium text-[12px] tracking-normal max-phone:text-[8px]',
