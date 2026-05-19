@@ -169,7 +169,7 @@
   top: 0;
   left: 0;
   height: var(--hero-lh); /* matches F*CK line-height exactly */
-  width: auto;
+  width: calc(var(--hero-lh) * (568 / 198));
   pointer-events: none;
   display: block;
   z-index: 1;

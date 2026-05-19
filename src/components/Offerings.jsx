@@ -70,10 +70,9 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
     <div className={`flex-1 min-w-0 flex flex-col gap-8 max-tablet:gap-10 ${mobileOrderText} ${textPaddingRight}`}>
       {/* Text group: eyebrow+title → body */}
       <div className="flex flex-col gap-4 max-phone:gap-2">
-        <div className="flex flex-col gap-6 max-phone:gap-4">
+        <div className="flex flex-col gap-4">
           <p className="eyebrow text-dark opacity-60">{category}</p>
-          <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-dark
-                         max-tablet:text-[36px] max-tablet:leading-[40px]
+          <h3 className="font-figtree font-extrabold text-[36px] leading-[40px] text-dark
                          max-phone:text-[22px] max-phone:leading-[24px]">
             {title}
           </h3>
