@@ -9,7 +9,7 @@ const OFFERINGS = [
   {
     id: 1,
     image: `${BASE}smw.png`,
-    imageLeft: true,
+    imageLeft: false,
     alt: 'Seven Minute Wellness program cover',
     category: 'Life Optimization',
     title: <>Seven Minute <TradeMark word="Wellness" /></>,
@@ -19,7 +19,7 @@ const OFFERINGS = [
   {
     id: 2,
     image: `${BASE}rhwp.png`,
-    imageLeft: false,
+    imageLeft: true,
     alt: 'Rock Hard Wet Pussy program cover',
     category: 'Relationships & Intimacy',
     title: <>Rock Hard Wet <TradeMark word="Pussy" /></>,
@@ -29,7 +29,7 @@ const OFFERINGS = [
   {
     id: 3,
     image: `${BASE}btb.png`,
-    imageLeft: true,
+    imageLeft: false,
     alt: 'From Bogeys to Breakthroughs program cover',
     category: 'Power & Performance',
     title: <>From Bogeys to <TradeMark word="Breakthroughs" /></>,
@@ -39,7 +39,7 @@ const OFFERINGS = [
   {
     id: 4,
     image: `${BASE}gdt.png`,
-    imageLeft: false,
+    imageLeft: true,
     alt: 'Going Down Together program cover',
     category: 'Teamwork & Accomplishment',
     title: <>Going Down <TradeMark word="Together" /></>,
@@ -117,29 +117,30 @@ export default function Offerings() {
             {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 
-          {/* Empire block — centered card, 800px desktop */}
-          <div ref={empireRef} id="empire" className={`reveal-heading scroll-mt-nav max-phone:scroll-mt-navMobile
-                                      flex justify-center max-phone:px-6${empireVisible ? ' in-view' : ''}`}>
-            <div className="overflow-hidden w-[800px] max-tablet:w-full">
+          {/* Empire block — image 800px centered, text box full width */}
+          <div ref={empireRef} id="empire" className={`reveal-heading scroll-mt-nav max-phone:scroll-mt-navMobile${empireVisible ? ' in-view' : ''}`}>
 
-              {/* Image — 800×465 at desktop/expanded, aspect-ratio preserves proportions at smaller sizes */}
-              <div className="w-full aspect-[800/465]">
-                <img
-                  src={empireImg}
-                  alt="STW Empire Builder group session"
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
+            {/* Image — 800px centered, full width at tablet- */}
+            <div className="flex justify-center max-phone:px-6">
+              <div className="w-[800px] max-tablet:w-full overflow-hidden">
+                <div className="w-full aspect-[800/465]">
+                  <img
+                    src={empireImg}
+                    alt="STW Empire Builder group session"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
               </div>
+            </div>
 
-              {/* Text area — py-64 px-80 at desktop/expanded; smaller at tablet and mobile */}
-              <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-4
-                              py-[64px] px-[80px]
-                              max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16
-                              max-phone:px-8 max-phone:pt-8 max-phone:pb-16 max-phone:gap-2
-                              max-phone:border max-phone:border-productBg">
+            {/* Text area — full width, 1px dark outline, no bg */}
+            <div className="border border-dark px-[64px] max-tablet:px-12 max-phone:px-8 max-phone:mx-6">
+              <div className="w-full mx-auto max-w-[800px] min-w-[608px] py-[64px] flex flex-col gap-4
+                              max-tablet:min-w-0 max-tablet:max-w-none max-tablet:pt-12 max-tablet:pb-16
+                              max-phone:pt-8 max-phone:pb-16 max-phone:gap-2">
 
-                {/* Eyebrow → title: 24px */}
+                {/* Eyebrow → title */}
                 <div className="flex flex-col gap-6 max-phone:gap-6">
                   <p className="eyebrow text-dark opacity-70">
                     STW's Signature <TradeMark size="xs" word="Container" />
@@ -152,21 +153,29 @@ export default function Offerings() {
                   </h3>
                 </div>
 
-                {/* Title → description: 24px (outer gap-6), description → btn: 40px tablet/mobile */}
+                {/* Description → btn */}
                 <div className="flex flex-col gap-12 max-tablet:gap-10">
                   <p className="body-copy text-dark">
+                    Dr. Steinberg's signature, most high-touch, deepest, most exclusive, most expensive, and most
+                    transformational container. This is not a course. This is not coaching. This is a 12-month
+                    embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate
+                    transformation in others—and build your own STW-certified coaching empire while doing it.
                     Master the art of advanced dependency cultivation so your clients can't leave even if they
-                    want to. A 12-month embodied leadership lineage transmission where you'll learn to facilitate
-                    transformation in others—all while building your own STW-certified coaching empire. Enrollment
-                    is limited to only 2 individuals who've completed 3 or more previous STW offerings. To apply,
-                    submit a 500-word essay on why you deserve to evolve, but hurry there are only 2 spots left!
-                    Act fast.
+                    want to. Graduate as a Certified Steinberg STW <TradeMark size="body" word="Method" /> Practitioner
+                    with the authority to recruit, train, and certify your own practitioners beneath you in an
+                    infinitely scalable hierarchy. Includes unlimited Voxer access, quarterly hot seats, a private
+                    retreat in a LUSCIOUS location where you'll be soaked in pleasure, your own STW Black Card,
+                    and a certificate of spiritual rank within the STW lineage (belts available for purchase
+                    separately). Dr. Steinberg only accepts 2 people per year and there are only 2 spots left.
+                    Act fast. You cannot apply unless you have completed at least 3 other STW offerings and
+                    submitted a 500-word essay on why you deserve to evolve.
                   </p>
                   <Btn color="muted" href="#contact" className="self-center">APPLY NOW</Btn>
                 </div>
 
               </div>
             </div>
+
           </div>
 
         </div>
