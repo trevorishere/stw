@@ -23,7 +23,7 @@ const OFFERINGS = [
     alt: 'Rock Hard Wet Pussy program cover',
     category: 'Relationships & Intimacy',
     title: <>Rock Hard Wet Pussy<TradeMark /></>,
-    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play™ framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
+    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play<TradeMark size="body" /> framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
   {
@@ -48,7 +48,7 @@ const OFFERINGS = [
   },
 ]
 
-const empireImg = `${BASE}empire.jpg`
+const empireImg = `${BASE}empire.png`
 
 function OfferingRow({ image, imageLeft, alt = '', category, title, description, cta }) {
   const [ref, visible] = useReveal()
@@ -59,20 +59,21 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
   const textPaddingRight = !imageLeft ? 'desktop:pr-8' : ''
 
   const imageBlock = (
-    <div className={`flex-1 min-w-0 aspect-[596/480] overflow-hidden
-                     max-tablet:flex-none max-tablet:w-full max-tablet:aspect-[675/490]
+    <div className={`flex-none w-[45%] min-w-0 aspect-[596/480] overflow-hidden
+                     max-tablet:w-full max-tablet:aspect-[675/490]
                      max-phone:aspect-[294/200] ${mobileOrderImg}`}>
       <img src={image} alt={alt} className="w-full h-full object-cover block max-phone:object-contain max-phone:scale-110" loading="lazy" />
     </div>
   )
 
   const textBlock = (
-    <div className={`flex-1 min-w-0 flex flex-col gap-8 max-tablet:gap-10 ${mobileOrderText} ${textPaddingRight}`}>
+    <div className={`flex-none w-[55%] min-w-0 flex flex-col gap-8 max-tablet:w-full max-tablet:gap-10 ${mobileOrderText} ${textPaddingRight}`}>
       {/* Text group: eyebrow+title → body */}
       <div className="flex flex-col gap-4 max-phone:gap-2">
         <div className="flex flex-col gap-4">
-          <p className="eyebrow text-dark opacity-60">{category}</p>
-          <h3 className="font-figtree font-extrabold text-[36px] leading-[40px] text-dark
+          <p className="eyebrow text-dark opacity-70">{category}</p>
+          <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-dark
+                         desktop:text-[36px] desktop:leading-[40px]
                          max-phone:text-[22px] max-phone:leading-[24px]">
             {title}
           </h3>
@@ -84,7 +85,7 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
   )
 
   return (
-    <div ref={ref} className={`reveal-heading offering-card flex gap-6 items-start py-6
+    <div ref={ref} className={`reveal-heading offering-card flex gap-6 items-center py-6
                     max-tablet:flex-col max-tablet:items-stretch max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16 max-tablet:gap-6
                     max-phone:px-8 max-phone:pt-8 max-phone:pb-16${visible ? ' in-view' : ''}`}>
       {imageLeft ? <>{imageBlock}{textBlock}</> : <>{textBlock}{imageBlock}</>}
@@ -116,36 +117,35 @@ export default function Offerings() {
             {OFFERINGS.map(o => <OfferingRow key={o.id} {...o} />)}
           </div>
 
-          {/* Empire block — centered card, 798px desktop */}
+          {/* Empire block — centered card, 800px desktop */}
           <div ref={empireRef} id="empire" className={`reveal-heading scroll-mt-nav max-phone:scroll-mt-navMobile
                                       flex justify-center max-phone:px-6${empireVisible ? ' in-view' : ''}`}>
-            <div className="overflow-hidden w-[798px] max-tablet:w-full">
+            <div className="overflow-hidden w-[800px] max-tablet:w-full">
 
-              {/* Image */}
-              <div className="relative h-[439px] max-tablet:h-[300px] max-phone:h-[203px]">
+              {/* Image — 800×465 at desktop/expanded, aspect-ratio preserves proportions at smaller sizes */}
+              <div className="w-full aspect-[800/465]">
                 <img
                   src={empireImg}
                   alt="STW Empire Builder group session"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
 
-              {/* Text area */}
-              {/* pt-48 px-96 pb-64 per Figma annotations */}
-              <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-6
-                              pt-[48px] px-[96px] pb-[64px]
+              {/* Text area — py-64 px-80 at desktop/expanded; smaller at tablet and mobile */}
+              <div className="bg-[rgba(255,255,255,0.6)] flex flex-col gap-4
+                              py-[64px] px-[80px]
                               max-tablet:px-12 max-tablet:pt-12 max-tablet:pb-16
                               max-phone:px-8 max-phone:pt-8 max-phone:pb-16 max-phone:gap-2
                               max-phone:border max-phone:border-productBg">
 
                 {/* Eyebrow → title: 24px */}
                 <div className="flex flex-col gap-6 max-phone:gap-6">
-                  <p className="eyebrow text-dark opacity-60">
+                  <p className="eyebrow text-dark opacity-70">
                     STW's Signature Container<TradeMark size="xs" />
                   </p>
-                  <h3 className="font-figtree font-extrabold text-[40px] leading-[44px] text-dark
-                                 max-tablet:text-[32px] max-tablet:leading-[40px]
+                  <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-dark
+                                 desktop:text-[40px] desktop:leading-[44px]
                                  max-phone:text-[22px] max-phone:leading-[24px]">
                     The STW<TradeMark size="empire" />{' '}
                     Empire Builder &amp; Dependency Cultivation Accelerator<TradeMark size="empire" />

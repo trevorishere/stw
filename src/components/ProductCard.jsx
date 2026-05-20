@@ -39,17 +39,17 @@ export default function ProductCard({
     <div
       ref={ref}
       className={`reveal-heading offering-card
-                  tablet:flex tablet:gap-6 tablet:items-start tablet:py-6
+                  tablet:flex tablet:gap-6 tablet:items-center tablet:py-6
                   max-tablet:flex-col max-tablet:gap-8 max-tablet:overflow-hidden max-tablet:px-12
                   max-phone:px-8
                   ${className}${visible ? ' in-view' : ''}`}
       style={style}
     >
 
-      {/* Image column — flex-1, self-stretch height (matches text column) at tablet+.
+      {/* Image column — 45% width at tablet+, self-stretch height (matches text column).
           Image fills the container via absolute inset-0. */}
       <div
-        className={`tablet:flex-1 tablet:min-w-0 tablet:self-stretch tablet:relative tablet:overflow-hidden
+        className={`tablet:flex-none tablet:w-[45%] tablet:min-w-0 tablet:self-stretch tablet:relative tablet:overflow-hidden
                      max-tablet:flex-none max-tablet:w-full max-tablet:h-[360px] max-phone:h-[300px]
                      overflow-hidden ${imageContainerClassName} ${imgOrder}`}
       >
@@ -64,16 +64,17 @@ export default function ProductCard({
         </picture>
       </div>
 
-      {/* Text column — flex-1, no extra desktop padding (matches offering pattern) */}
+      {/* Text column — 55% width at tablet+ */}
       <div className={`flex flex-col gap-8 max-tablet:gap-10
-                       tablet:flex-1 tablet:min-w-0
+                       tablet:flex-none tablet:w-[55%] tablet:min-w-0
                        max-tablet:pt-0 ${tabletPb}
                        max-phone:pt-0 max-phone:pb-16
                        ${txtOrder} ${textClassName}`}>
         <div className="flex flex-col gap-4 max-phone:gap-2">
           <div className="flex flex-col gap-4">
             <p className="eyebrow text-white opacity-70">{category}</p>
-            <h3 className="font-figtree font-extrabold text-[36px] leading-[40px] text-white
+            <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-white
+                           desktop:text-[36px] desktop:leading-[40px]
                            max-phone:text-[22px] max-phone:leading-[24px]">
               {title}
             </h3>

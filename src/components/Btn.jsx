@@ -16,12 +16,12 @@
 // Pass href for <a>, omit for <button>.
 
 const COLOR_PRESETS = {
-  dark:        { base: 'border-dark text-dark',                         hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
-  cream:       { base: 'border-cream text-cream',                       hoverBg: 'hover:bg-cream',   defaultHoverText: 'hover:text-dark'  },
-  white:       { base: 'border-white text-white',                       hoverBg: 'hover:bg-white',   defaultHoverText: 'hover:text-dark'  },
-  productBg:   { base: 'bg-productBg border-productBgBorder text-dark', hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
-  muted:       { base: 'border-muted text-dark',                        hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
-  mutedOnDark: { base: 'border-muted text-cream',                       hoverBg: 'hover:bg-muted',   defaultHoverText: 'hover:text-dark'  },
+  dark:        { base: 'border-dark/70 text-dark',                      hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
+  cream:       { base: 'border-white/70 text-cream',                    hoverBg: 'hover:bg-cream',   defaultHoverText: 'hover:text-dark'  },
+  white:       { base: 'border-white/70 text-white',                    hoverBg: 'hover:bg-white',   defaultHoverText: 'hover:text-dark'  },
+  productBg:   { base: 'bg-productBg border-dark/70 text-dark',         hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
+  muted:       { base: 'border-dark/70 text-dark',                      hoverBg: 'hover:bg-dark',    defaultHoverText: 'hover:text-cream' },
+  mutedOnDark: { base: 'border-white/70 text-cream',                    hoverBg: 'hover:bg-muted',   defaultHoverText: 'hover:text-dark'  },
 }
 
 // Explicit strings so Tailwind's scanner always includes every class.
