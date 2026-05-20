@@ -23,9 +23,9 @@
 
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
-    @apply font-figtree font-black text-[64px] leading-[64px] tracking-[2px] uppercase
-           max-tablet:text-[40px] max-tablet:leading-[40px] max-tablet:tracking-[1px]
-           max-phone:text-[30px] max-phone:leading-[30px] max-phone:tracking-[0.5px];
+    @apply font-figtree font-black text-[48px] leading-[52px] tracking-[1px] uppercase
+           max-tablet:text-[40px] max-tablet:leading-[44px] max-tablet:tracking-[1px]
+           max-phone:text-[32px] max-phone:leading-[36px] max-phone:tracking-[0.5px];
   }
 
   /* Small uppercase eyebrow label above card titles */
@@ -46,7 +46,7 @@
   .body-copy {
     @apply font-dmSans text-[18px] leading-[28px] tracking-[0.1px]
            max-tablet:leading-[28px]
-           max-phone:text-[16px] max-phone:leading-[24px];
+           max-phone:text-[16px] max-phone:leading-[24px] max-phone:tracking-normal;
   }
 
   /* Lead copy — Hero and Mission body text. DM Sans SemiBold, larger than body-copy. */
@@ -230,11 +230,6 @@
 .reveal-heading.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Section heading — 48px/48lh at expanded (900–1199px) only */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .section-heading { font-size: 48px; line-height: 48px; }
 }
 
 /* Footer hero header — same layout/scale as hero, different colors */
