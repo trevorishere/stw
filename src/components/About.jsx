@@ -2,44 +2,49 @@ import Btn from './Btn'
 import { CREDS } from '../constants'
 import { useReveal } from '../hooks/useReveal'
 
-const aaronImg = `${import.meta.env.BASE_URL}aaron.png`
+const BASE = import.meta.env.BASE_URL
+const aaronBgImg = `${BASE}aaron_bg.png`
 
 export default function About() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} id="about" className={`bg-[#ffa3a3] scroll-mt-nav max-phone:scroll-mt-navMobile${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 py-[120px] max-tablet:px-16 flex flex-col gap-[48px]
-                      max-phone:px-6 max-phone:pt-[104px] max-phone:pb-[120px] max-phone:gap-8">
+    <section ref={ref} id="about" className={`bg-productBg scroll-mt-nav max-phone:scroll-mt-navMobile${visible ? ' in-view' : ''}`}>
+      <div className="page-container px-24 max-tablet:px-16 pt-[112px] pb-[144px]
+                      max-phone:px-6 max-phone:pt-[80px] max-phone:pb-[120px]">
 
-        {/* Photo — tablet/mobile only, sits above the title */}
-        <img
-          src={aaronImg}
-          alt="Dr. Aaron Steinberg"
-          className="tablet:hidden w-[193px] h-[193px] object-cover object-bottom rounded-full shrink-0
-                     max-phone:w-[112px] max-phone:h-[112px] max-phone:object-top"
-          loading="lazy"
-        />
+        <div className="flex flex-col gap-8 max-tablet:gap-10">
 
-        {/* Title + content: 24px gap at tablet/mobile, 48px at desktop */}
-        <div className="flex flex-col gap-6 tablet:gap-[48px]">
-
-          {/* Title block */}
-          <div className="reveal-heading flex flex-col gap-2">
+          {/* Title + credentials — spans left 45% at desktop, full width at tablet- */}
+          <div className="reveal-heading w-[45%] flex flex-col gap-2 max-tablet:w-full">
             <h2 className="section-heading text-dark">
-              about<br />dr. aaron steinberg
+              about<br />dr. aaron<br />steinberg
             </h2>
-            <p className="font-figtree font-semibold text-[14px] leading-[22px] tracking-[1px] text-dark opacity-60
-                          max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-[0.5px]">
+            <p className="font-figtree font-semibold text-[14px] leading-[22px] tracking-[0.5px] text-dark opacity-60
+                          max-w-[90%] max-tablet:max-w-[80%] max-phone:max-w-full
+                          max-phone:text-[12px] max-phone:leading-[18px]">
               {CREDS}
             </p>
           </div>
 
-          {/* Main row — bio left, photo right at desktop only */}
-          <div className="reveal-body flex gap-6 items-start">
+          {/* Image + text row — top-aligned */}
+          <div className="flex gap-6 items-start max-tablet:flex-col max-tablet:gap-8">
 
-            {/* Bio + button */}
-            <div className="flex-1 min-w-0 flex flex-col gap-[48px] max-phone:gap-8">
-              <div className="about-bio-text body-copy text-dark max-phone:text-[16px] max-phone:leading-[24px]">
+            {/* Left — image, 45%, fixed 300px height at desktop/expanded */}
+            <div className="flex-none w-[45%] min-w-0 pl-6 h-[320px]
+                            max-tablet:w-full max-tablet:h-[300px] max-phone:h-[240px]">
+              <img
+                src={aaronBgImg}
+                alt="Dr. Aaron Steinberg"
+                className="h-full w-full object-contain object-left"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Right — bio + CTA, 55%, 24px right padding */}
+            <div className="reveal-body flex-none w-[55%] min-w-0 flex flex-col gap-[48px] pr-6
+                            max-tablet:w-full max-tablet:pr-0 max-phone:gap-8">
+
+              <div className="about-bio-text body-copy text-dark">
                 <p>
                   After his last breakdown, Dr. Steinberg knew that he HAD to help people and become a coach so
                   that they didn't have to experience the trauma he experienced in the corporate world. For over
@@ -67,24 +72,16 @@ export default function About() {
                   to laugh about it. Sustainably.
                 </p>
               </div>
-              <Btn color="dark" href="#contact" className="self-start">
+
+              <Btn color="dark" href="#contact" className="self-start max-tablet:self-center">
                 Book Your Free Discovery Session
               </Btn>
-            </div>
 
-            {/* Photo — desktop only, right column */}
-            <div className="hidden tablet:flex flex-1 min-w-0 justify-center">
-              <img
-                src={aaronImg}
-                alt="Dr. Aaron Steinberg"
-                className="w-[323px] h-[323px] object-cover object-bottom rounded-full shrink-0"
-                loading="lazy"
-              />
             </div>
 
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   )

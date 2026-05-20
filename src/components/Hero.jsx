@@ -9,10 +9,10 @@ export default function Hero() {
   const [ref, visible] = useReveal()
   return (
     <section ref={ref} className={`[overflow-x:clip] relative bg-dark${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 max-tablet:px-16 py-[104px]
+      <div className="page-container px-24 max-tablet:px-16 py-[88px]
                       max-phone:px-6">
 
-        <div className="flex flex-col gap-[64px] max-tablet:gap-12 max-phone:gap-[136px]">
+        <div className="flex flex-col gap-[48px] max-phone:gap-[136px]">
 
           <div className="reveal-heading hero-text-block relative">
             <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
@@ -27,14 +27,14 @@ export default function Hero() {
 
           <div className="reveal-body flex items-start gap-14 max-tablet:gap-8 max-phone:flex-col max-phone:gap-8">
 
-            <div className="flex flex-col gap-4 flex-1 min-w-0 pt-8 max-phone:pt-0">
+            <div className="flex flex-col gap-6 flex-1 min-w-0 pt-8 max-phone:pt-0 max-phone:gap-4">
 
               <p className="font-figtree font-black text-[40px] leading-[48px] tracking-[1px] uppercase text-cream
                             max-tablet:text-[26px] max-tablet:leading-[30px] max-phone:text-[28px] max-phone:leading-[34px] max-phone:tracking-[0.75px]">
                 Step Into Your Optimized Embodied Legacy of Radical <TradeMark size="lg" word="Alignment" />{' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
-              <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-8">
+              <div className="flex flex-col gap-[48px] max-phone:gap-8">
                 <p className="body-copy text-cream max-w-[760px]">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,

@@ -23,14 +23,14 @@
 
   /* Primary section h2 — large display heading with responsive sizes */
   .section-heading {
-    @apply font-figtree font-black text-[48px] leading-[52px] tracking-[1px] uppercase
+    @apply font-figtree font-black text-[56px] leading-[60px] tracking-[1px] uppercase
            max-tablet:text-[40px] max-tablet:leading-[44px] max-tablet:tracking-[1px]
            max-phone:text-[32px] max-phone:leading-[36px] max-phone:tracking-[0.5px];
   }
 
   /* Small uppercase eyebrow label above card titles */
   .eyebrow {
-    @apply font-figtree font-medium text-[13px] leading-5 tracking-[2px] uppercase
+    @apply font-figtree font-semibold text-[13px] leading-5 tracking-[2px] uppercase
            max-tablet:text-[14px]
            max-phone:text-[11px] max-phone:leading-4;
   }
