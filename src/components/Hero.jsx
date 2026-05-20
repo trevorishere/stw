@@ -31,9 +31,7 @@ export default function Hero() {
 
               <p className="font-figtree font-black text-[40px] leading-[48px] tracking-[1px] uppercase text-cream
                             max-tablet:text-[26px] max-tablet:leading-[30px] max-phone:text-[28px] max-phone:leading-[34px] max-phone:tracking-[0.75px]">
-                Step Into Your Optimized Embodied Legacy of Radical Alignment
-                <TradeMark size="lg" />
-                {' '}And Unlock Your Highest-Potential Purpose-Driven Self
+                Step Into Your Optimized Embodied Legacy of Radical <TradeMark size="lg" word="Alignment" />{' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
               <div className="flex flex-col gap-10 max-tablet:gap-8 max-phone:gap-8">

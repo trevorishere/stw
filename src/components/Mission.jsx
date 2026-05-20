@@ -14,14 +14,14 @@ export default function Mission() {
           <h2 className="reveal-heading section-heading text-white">Mission</h2>
 
           <div className="reveal-body tablet:col-start-3 flex flex-col gap-1 text-cream max-tablet:pl-12 max-phone:pl-8">
-            <p className="font-dmSans font-semibold text-[24px] leading-[32px] mb-2">
+            <p className="font-dmSans font-semibold text-[24px] leading-[32px] tracking-[0.1px] max-phone:tracking-normal mb-2">
               True wellness isn't about doing the work. It's about embodying the work. And then
               monetizing the embodiment. And then disrupting the monetization. Sustainably.
             </p>
             <p className="body-copy">
               When you claim your thought leadership—when you own your mission, articulate your
               vision, resource your nervous system, optimize your protocols, scale your containers,
-              stop eating <em>dangerous</em> seed oils, and cross-post about it with a photo of
+              and cross-post about it with a photo of
               yourself staring into the middle distance on a cliff—everything begins to align.
             </p>
             <p className="body-copy">
@@ -30,8 +30,7 @@ export default function Mission() {
               plant medicine. This what we help you claim.
             </p>
             <p className="body-copy font-bold">
-              We won't stop until we Save The World.
-              <TradeMark size="body" />
+              We won't stop until we Save The <TradeMark size="body" word="World." />
             </p>
           </div>
 

@@ -30,11 +30,13 @@ const SIZES = {
 // Adjust the em value up/down to fine-tune alignment.
 const HEADER_SIZES = new Set(['xl', 'empire', 'lg'])
 
-export default function TradeMark({ size = 'xl' }) {
-  if (HEADER_SIZES.has(size)) {
-    return (
-      <span className={`inline-block leading-none align-[1em] ${SIZES[size]}`}>©TM©</span>
-    )
+export default function TradeMark({ size = 'xl', word }) {
+  const mark = HEADER_SIZES.has(size)
+    ? <span className={`inline-block leading-none align-[1em] ${SIZES[size]}`}>©TM©</span>
+    : <sup className={SIZES[size]}>©TM©</sup>
+
+  if (word) {
+    return <span className="whitespace-nowrap">{word}{mark}</span>
   }
-  return <sup className={SIZES[size]}>©TM©</sup>
+  return mark
 }

@@ -12,7 +12,7 @@ const OFFERINGS = [
     imageLeft: true,
     alt: 'Seven Minute Wellness program cover',
     category: 'Life Optimization',
-    title: <>Seven Minute Wellness<TradeMark /></>,
+    title: <>Seven Minute <TradeMark word="Wellness" /></>,
     description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
     cta: 'start your seven minutes',
   },
@@ -22,8 +22,8 @@ const OFFERINGS = [
     imageLeft: false,
     alt: 'Rock Hard Wet Pussy program cover',
     category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet Pussy<TradeMark /></>,
-    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary Chore Play<TradeMark size="body" /> framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
+    title: <>Rock Hard Wet <TradeMark word="Pussy" /></>,
+    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary <TradeMark size="body" word="Chore Play" /> framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
     cta: 'Recalibrate Your Intimacy',
   },
   {
@@ -32,7 +32,7 @@ const OFFERINGS = [
     imageLeft: true,
     alt: 'From Bogeys to Breakthroughs program cover',
     category: 'Power & Performance',
-    title: <>From Bogeys to Breakthroughs<TradeMark /></>,
+    title: <>From Bogeys to <TradeMark word="Breakthroughs" /></>,
     description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
     cta: 'unlock your swing',
   },
@@ -42,7 +42,7 @@ const OFFERINGS = [
     imageLeft: false,
     alt: 'Going Down Together program cover',
     category: 'Teamwork & Accomplishment',
-    title: <>Going Down Together<TradeMark /></>,
+    title: <>Going Down <TradeMark word="Together" /></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
@@ -105,7 +105,7 @@ export default function Offerings() {
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading max-phone:px-6${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
-            title="Transformational Offerings"
+            title={<>Transformational<br />Offerings</>}
             subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
           />
         </div>
@@ -142,13 +142,13 @@ export default function Offerings() {
                 {/* Eyebrow → title: 24px */}
                 <div className="flex flex-col gap-6 max-phone:gap-6">
                   <p className="eyebrow text-dark opacity-70">
-                    STW's Signature Container<TradeMark size="xs" />
+                    STW's Signature <TradeMark size="xs" word="Container" />
                   </p>
                   <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-dark
                                  desktop:text-[40px] desktop:leading-[44px]
                                  max-phone:text-[22px] max-phone:leading-[24px]">
-                    The STW<TradeMark size="empire" />{' '}
-                    Empire Builder &amp; Dependency Cultivation Accelerator<TradeMark size="empire" />
+                    <TradeMark size="empire" word="The STW" />{' '}
+                    Empire Builder &amp; Dependency Cultivation <TradeMark size="empire" word="Accelerator" />
                   </h3>
                 </div>
 

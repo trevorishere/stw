@@ -80,14 +80,14 @@ export default function ProductCard({
             </h3>
           </div>
           <p className="body-copy text-cream">{description}</p>
+          {footnote && (
+            <p className="font-dmSans font-normal text-[14px] leading-[21px] tracking-[0.1px] text-white opacity-70
+                          max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-normal">
+              {footnote}
+            </p>
+          )}
         </div>
         <Btn color="white" href={href} className="self-start max-tablet:self-center">{cta}</Btn>
-        {footnote && (
-          <p className="font-dmSans font-normal text-[14px] leading-[21px] text-white opacity-70
-                        max-phone:text-[12px] max-phone:leading-[18px]">
-            {footnote}
-          </p>
-        )}
       </div>
 
     </div>
