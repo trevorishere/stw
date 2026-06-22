@@ -28,7 +28,7 @@ export default function Products() {
 
           <ProductCard
             imageLeft={false}
-            image={`${BASE}card_bg.png`}
+            image={`${BASE}card_black.png`}
             alt="Quantum Empowerment Black Card"
             imageFit="contain"
             imageContainerClassName="tablet:p-[10px]"

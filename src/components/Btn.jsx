@@ -1,7 +1,7 @@
 // Two-state button — one size for desktop/tablet, one for mobile.
 //
-// Desktop/tablet: px-[28px] py-[19px], rounded-[32px], Bold 14px/16lh/0.75ls
-// Mobile:         px-[28px] py-[16px], rounded-[24px], Bold 12px/14lh/0.7ls
+// Desktop/tablet: px-[28px] h-[56px], rounded-[32px], Bold 14px/16lh/0.75ls
+// Mobile:         px-[28px] h-[48px], rounded-[24px], Bold 12px/14lh/0.7ls
 //
 // color    "dark"        → dark border + text, hover: bg-dark      / text-cream
 //          "cream"       → cream border + text, hover: bg-cream     / text-dark
@@ -39,9 +39,9 @@ export default function Btn({ color = 'dark', hoverText, href, children, classNa
   const classes = [
     'inline-flex items-center justify-center',
     'border font-figtree font-bold uppercase whitespace-nowrap no-underline transition-colors duration-200',
-    'rounded-[32px] px-[28px] py-[19px] text-[14px] leading-[16px] tracking-[0.75px]',
+    'rounded-btn px-[28px] h-[56px] text-[14px] leading-[16px] tracking-[0.75px]',
     preset.base, preset.hoverBg, hoverTextClass,
-    'max-phone:rounded-[24px] max-phone:py-[16px] max-phone:text-[12px] max-phone:leading-[14px] max-phone:tracking-[0.7px]',
+    'max-phone:rounded-btn-sm max-phone:h-[48px] max-phone:text-[12px] max-phone:leading-[14px] max-phone:tracking-[0.7px]',
     className,
   ].filter(Boolean).join(' ')
 

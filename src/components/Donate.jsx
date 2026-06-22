@@ -5,7 +5,7 @@ import { useReveal } from '../hooks/useReveal'
 export default function Donate() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} className={`bg-[#5c3551]${visible ? ' in-view' : ''}`}>
+    <section ref={ref} className={`bg-purple${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 max-tablet:px-16 pt-[120px] pb-[136px]
                       max-phone:px-6 max-phone:pt-[104px] max-phone:pb-[120px]">
 

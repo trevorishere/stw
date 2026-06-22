@@ -73,16 +73,13 @@ export default function ProductCard({
         <div className="flex flex-col gap-4 max-phone:gap-2">
           <div className="flex flex-col gap-4">
             <p className="eyebrow text-white opacity-70">{category}</p>
-            <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-white
-                           desktop:text-[36px] desktop:leading-[40px]
-                           max-phone:text-[22px] max-phone:leading-[24px]">
+            <h3 className="card-heading text-white">
               {title}
             </h3>
           </div>
           <p className="body-copy text-cream">{description}</p>
           {footnote && (
-            <p className="font-dmSans font-normal text-[14px] leading-[21px] tracking-[0.1px] text-white opacity-70
-                          max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-normal">
+            <p className="footnote text-white opacity-70">
               {footnote}
             </p>
           )}

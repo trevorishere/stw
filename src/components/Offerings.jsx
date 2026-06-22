@@ -72,11 +72,7 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
       <div className="flex flex-col gap-4 max-phone:gap-2">
         <div className="flex flex-col gap-4">
           <p className="eyebrow text-dark opacity-70">{category}</p>
-          <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-dark
-                         desktop:text-[36px] desktop:leading-[40px]
-                         max-phone:text-[22px] max-phone:leading-[24px]">
-            {title}
-          </h3>
+          <h3 className="card-heading text-dark">{title}</h3>
         </div>
         <p className="body-copy text-dark">{description}</p>
       </div>
@@ -145,9 +141,7 @@ export default function Offerings() {
                   <p className="eyebrow text-dark opacity-70">
                     STW's Signature <TradeMark size="xs" word="Container" />
                   </p>
-                  <h3 className="font-figtree font-extrabold text-[32px] leading-[34px] text-dark
-                                 desktop:text-[40px] desktop:leading-[44px]
-                                 max-phone:text-[22px] max-phone:leading-[24px]">
+                  <h3 className="card-heading text-dark desktop:text-[40px] desktop:leading-[44px]">
                     <TradeMark size="empire" word="The STW" />{' '}
                     Empire Builder &amp; Dependency Cultivation <TradeMark size="empire" word="Accelerator" />
                   </h3>

@@ -4,7 +4,7 @@ import { useReveal } from '../hooks/useReveal'
 export default function Mission() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} className={`bg-[#2c2c2c]${visible ? ' in-view' : ''}`}>
+    <section ref={ref} className={`bg-surface-dark${visible ? ' in-view' : ''}`}>
       <div className="page-container px-24 max-tablet:px-16 pt-[120px] pb-[136px]
                       max-phone:px-6 max-phone:pt-[104px] max-phone:pb-[120px]">
 

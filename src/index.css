@@ -55,6 +55,26 @@
            max-tablet:text-[19px] max-tablet:leading-[28px];
   }
 
+  /* Card / offering h3 — shared by OfferingRow, ProductCard, and Empire h3.
+     Empire desktop overrides to 40px/44lh via desktop:text-[40px] at the call site. */
+  .card-heading {
+    @apply font-figtree font-extrabold text-[32px] leading-[34px]
+           desktop:text-[36px] desktop:leading-[40px]
+           max-phone:text-[22px] max-phone:leading-[24px];
+  }
+
+  /* Credentials / small label — About section, could extend to bios elsewhere */
+  .credentials {
+    @apply font-figtree font-semibold text-[14px] leading-[22px] tracking-[0.5px]
+           max-phone:text-[12px] max-phone:leading-[18px];
+  }
+
+  /* Footnote — small DM Sans below product card body copy */
+  .footnote {
+    @apply font-dmSans font-normal text-[14px] leading-[21px] tracking-[0.1px]
+           max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-normal;
+  }
+
 }
 
 /*
@@ -65,14 +85,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 .nav-item-in {
-  animation: navItemIn 0.2s cubic-bezier(0.42, 2.0, 0.58, 1) both;
+  animation: navItemIn var(--duration-nav-item) var(--ease-overshoot) both;
 }
 @keyframes navItemOut {
   from { opacity: 1; transform: translateY(0); }
   to   { opacity: 0; transform: translateY(-10px); }
 }
 .nav-item-out {
-  animation: navItemOut 0.2s cubic-bezier(0.42, 0, 0.58, 1) both;
+  animation: navItemOut var(--duration-nav-item) var(--ease-out) both;
 }
 
 /*
@@ -86,7 +106,7 @@
   flex-direction: column;
   gap: 5px;
   width: 20px;
-  transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+  transition: transform var(--duration-nav) var(--ease-bounce);
 }
 .nav-hamburger.is-open {
   transform: rotate(180deg);
@@ -98,7 +118,7 @@
   background: currentColor;
   border-radius: 1px;
   transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1),
+  transition: transform var(--duration-nav) var(--ease-bounce),
               opacity 0.15s ease;
 }
 /* top line: slides down 7px (gap+line = 5+2) then rotates 45° */
@@ -123,6 +143,21 @@
  */
 
 :root {
+  /* ── Animation durations ──────────────────────────────────────── */
+  --duration-fast:   200ms;  /* button hover, footer link hover */
+  --duration-reveal: 500ms;  /* scroll-reveal fade+slide */
+  --duration-nav:    300ms;  /* hamburger morph, drawer open */
+  --duration-nav-close: 200ms; /* drawer close */
+  --duration-nav-item: 0.2s; /* staggered drawer item in/out */
+  --delay-body:      100ms;  /* reveal-body follows reveal-heading */
+
+  /* ── Easing curves ───────────────────────────────────────────── */
+  --ease-out:        cubic-bezier(0.42, 0, 0.58, 1);       /* standard decel */
+  --ease-bounce:     cubic-bezier(0.34, 1.2, 0.64, 1);     /* hamburger morph */
+  --ease-spring:     cubic-bezier(0.34, 1.4, 0.64, 1);     /* drawer open */
+  --ease-overshoot:  cubic-bezier(0.42, 2.0, 0.58, 1);     /* nav item bounce-in */
+
+  /* ── Hero display type ───────────────────────────────────────── */
   /* Fluid scaling: 76px (600px vp) → 190px (1440px vp). */
   --hero-fs: clamp(76px, calc(13.571vw - 5.43px), 190px);
   --hero-lh: clamp(72px, calc(12.857vw - 5.14px), 180px);
@@ -216,10 +251,10 @@
 .reveal-body {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+  transition: opacity var(--duration-reveal) ease-in-out, transform var(--duration-reveal) ease-in-out;
 }
 /* Body copy follows heading by 100ms */
-.reveal-body { transition-delay: 100ms; }
+.reveal-body { transition-delay: var(--delay-body); }
 /* Triggered by parent .in-view (sections) */
 .in-view .reveal-heading,
 .in-view .reveal-body {

@@ -16,7 +16,7 @@ export default function Testimonial() {
       <div className="page-container px-24 max-tablet:px-16 max-phone:px-6
                       max-phone:py-12">
 
-        <div className="bg-[#2c2c2c] py-[136px] max-tablet:py-24 max-phone:py-16 flex flex-col gap-6">
+        <div className="bg-surface-dark py-[136px] max-tablet:py-24 max-phone:py-16 flex flex-col gap-6">
 
           {/* Inner container — centered, 66% width, quote + attribution */}
           <div className="mx-auto max-w-[66%] max-phone:max-w-[80%] w-full flex flex-col gap-6">
