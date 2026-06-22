@@ -54,7 +54,7 @@ export default function Nav() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="flex items-center font-figtree font-semibold text-[14px] tracking-[1px] uppercase text-[#c6c6c6] no-underline hover:text-white transition-colors"
+                  className="flex items-center font-figtree font-semibold text-[14px] tracking-[1px] uppercase text-nav-link no-underline hover:text-white transition-colors"
                 >
                   {link.label}
                 </a>

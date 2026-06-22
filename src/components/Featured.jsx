@@ -17,7 +17,7 @@ const marqueeItems = [...logos, ...logos]
 export default function Featured() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} className={`bg-[#262626]${visible ? ' in-view' : ''}`}>
+    <section ref={ref} className={`bg-surface-darker${visible ? ' in-view' : ''}`}>
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
       <div className="page-container px-24 max-tablet:px-16 py-[112px] flex flex-col gap-4
                       max-phone:px-6">

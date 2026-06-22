@@ -19,9 +19,8 @@ export default function About() {
             <h2 className="section-heading text-dark">
               about<br />dr. aaron<br />steinberg
             </h2>
-            <p className="font-figtree font-semibold text-[14px] leading-[22px] tracking-[0.5px] text-dark opacity-60
-                          max-w-[90%] max-tablet:max-w-[80%] max-phone:max-w-full
-                          max-phone:text-[12px] max-phone:leading-[18px]">
+            <p className="credentials text-dark opacity-60
+                          max-w-[90%] max-tablet:max-w-[80%] max-phone:max-w-full">
               {CREDS}
             </p>
           </div>
