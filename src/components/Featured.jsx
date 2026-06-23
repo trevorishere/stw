@@ -19,21 +19,20 @@ export default function Featured() {
   return (
     <section ref={ref} className={`bg-surface-darker${visible ? ' in-view' : ''}`}>
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
-      <div className="page-container px-24 max-tablet:px-16 py-[112px] flex flex-col gap-4
-                      max-phone:px-6">
+      <div className="page-container px-6 py-[112px] flex flex-col gap-4 tablet:px-16 expanded:px-24 desktop:px-24">
 
-        <p className="reveal-heading font-figtree font-extrabold text-[24px] leading-[32px] tracking-[2px] uppercase text-white
-                      max-tablet:text-[24px] max-tablet:leading-[24px]
-                      max-phone:text-[24px] max-phone:leading-[24px] max-phone:tracking-[1px]">
+        <p className="reveal-heading font-figtree font-extrabold text-24 leading-1 tracking-md uppercase text-white
+                      tablet:tracking-lg
+                      expanded:leading-1-2 expanded:tracking-lg desktop:leading-1-2 desktop:tracking-lg">
           As Featured<br className="hidden max-phone:block" /> Manifesting In…
         </p>
 
         <div className="reveal-body overflow-hidden">
-          <div className="marquee-track flex gap-12 max-phone:gap-10 w-max">
+          <div className="marquee-track flex gap-10 tablet:gap-12 w-max">
             {marqueeItems.map((logo, i) => (
               <span
                 key={i}
-                className="font-dmSans font-normal text-[16px] leading-normal tracking-[0.15em] uppercase text-accent whitespace-nowrap flex-shrink-0 max-phone:text-[13px]"
+                className="font-dmSans font-normal text-13 leading-1-5 tracking-caps uppercase text-yellow whitespace-nowrap flex-shrink-0 tablet:text-16 expanded:text-16 desktop:text-16"
               >
                 {logo}
               </span>

@@ -3,47 +3,44 @@ import { CREDS } from '../constants'
 import { useReveal } from '../hooks/useReveal'
 
 const BASE = import.meta.env.BASE_URL
-const aaronBgImg = `${BASE}aaron_bg.png`
+const aaronBgImg = `${BASE}aaron.png`
 
 export default function About() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} id="about" className={`bg-productBg scroll-mt-nav max-phone:scroll-mt-navMobile${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 max-tablet:px-16 pt-[112px] pb-[144px]
-                      max-phone:px-6 max-phone:pt-[80px] max-phone:pb-[120px]">
+    <section ref={ref} id="about" className={`bg-olive-dark scroll-mt-nav${visible ? ' in-view' : ''}`}>
+      <div className="page-container px-6 pt-[80px] pb-[120px] tablet:px-16 tablet:pt-[112px] tablet:pb-[144px] expanded:px-24 expanded:pt-[112px] expanded:pb-[144px] desktop:px-24 desktop:pt-[112px] desktop:pb-[144px]">
 
-        <div className="flex flex-col gap-8 max-tablet:gap-10">
+        <div className="flex flex-col gap-10 expanded:gap-8 desktop:gap-8">
 
           {/* Title + credentials — spans left 45% at desktop, full width at tablet- */}
-          <div className="reveal-heading w-[45%] flex flex-col gap-2 max-tablet:w-full">
-            <h2 className="section-heading text-dark">
+          <div className="reveal-heading w-full flex flex-col gap-2 expanded:w-[45%] desktop:w-[45%]">
+            <h2 className="section-heading text-cobalt-dark">
               about<br />dr. aaron<br />steinberg
             </h2>
-            <p className="credentials text-dark opacity-60
-                          max-w-[90%] max-tablet:max-w-[80%] max-phone:max-w-full">
+            <p className="credentials text-cobalt-dark opacity-60
+                          max-w-full tablet:max-w-[80%] expanded:max-w-[90%] desktop:max-w-[90%]">
               {CREDS}
             </p>
           </div>
 
           {/* Image + text row — top-aligned */}
-          <div className="flex gap-6 items-start max-tablet:flex-col max-tablet:gap-8">
+          <div className="flex flex-col gap-8 items-start expanded:flex-row expanded:gap-6 desktop:flex-row desktop:gap-6">
 
             {/* Left — image, 45%, fixed 300px height at desktop/expanded */}
-            <div className="flex-none w-[45%] min-w-0 pl-6 h-[320px]
-                            max-tablet:w-full max-tablet:h-[300px] max-phone:h-[240px]">
+            <div className="flex-none w-full h-[240px] min-w-0 tablet:h-[300px] expanded:w-[45%] expanded:pl-6 expanded:h-[320px] expanded:order-2 desktop:w-[45%] desktop:pl-6 desktop:h-[320px] desktop:order-2">
               <img
                 src={aaronBgImg}
                 alt="Dr. Aaron Steinberg"
-                className="h-full w-full object-contain object-left"
+                className="h-full w-full object-contain object-left expanded:object-center desktop:object-center"
                 loading="lazy"
               />
             </div>
 
             {/* Right — bio + CTA, 55%, 24px right padding */}
-            <div className="reveal-body flex-none w-[55%] min-w-0 flex flex-col gap-[48px] pr-6
-                            max-tablet:w-full max-tablet:pr-0 max-phone:gap-8">
+            <div className="reveal-body flex-none w-full min-w-0 pr-0 flex flex-col gap-8 tablet:gap-12 expanded:w-[55%] expanded:pr-6 expanded:gap-12 expanded:order-1 desktop:w-[55%] desktop:pr-6 desktop:gap-12 desktop:order-1">
 
-              <div className="about-bio-text body-copy text-dark">
+              <div className="about-bio-text body-copy text-cobalt-dark">
                 <p>
                   After his last breakdown, Dr. Steinberg knew that he HAD to help people and become a coach so
                   that they didn't have to experience the trauma he experienced in the corporate world. For over
@@ -72,7 +69,7 @@ export default function About() {
                 </p>
               </div>
 
-              <Btn color="dark" href="#contact" className="self-start max-tablet:self-center">
+              <Btn color="dark" href="#contact" className="self-center expanded:self-start desktop:self-start">
                 Book Your Free Discovery Session
               </Btn>
 

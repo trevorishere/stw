@@ -1,16 +1,6 @@
 import Btn from './Btn'
 import { useReveal } from '../hooks/useReveal'
 
-// Product card — offering-row layout at tablet+ (≥900px), stacked at mobile.
-//
-// imageLeft  true  → image LEFT at tablet+ (natural DOM order)
-//            false → image RIGHT at tablet+ (tablet:order-* swaps)
-//
-// At tablet+ both columns are flex-1 (50/50).
-// Image container defaults to self-stretch (matches text height).
-// Pass imageContainerClassName to override (e.g. "tablet:h-[419px]" for fixed height).
-// imageFit controls object-fit on the img: "contain" (default) or "cover".
-
 export default function ProductCard({
   className = '',
   style,
@@ -28,65 +18,60 @@ export default function ProductCard({
   footnote,
   cta,
   href = '#contact',
-  tabletPb = 'max-tablet:pb-16',
 }) {
   const [ref, visible] = useReveal()
-  const imgOrder = !imageLeft ? 'tablet:order-2' : ''
-  const txtOrder = !imageLeft ? 'tablet:order-1' : ''
-  const fitClass = imageFit === 'cover' ? 'tablet:object-cover' : 'tablet:object-contain'
+
+  const textOrder = imageLeft
+    ? 'order-2'
+    : 'order-2 expanded:order-1 desktop:order-1'
+
+  const imageDesktopOrder = imageLeft
+    ? 'expanded:order-1 desktop:order-1'
+    : 'expanded:order-2 desktop:order-2'
+
+  const fitClass = imageFit === 'cover' ? 'object-cover' : 'object-contain'
 
   return (
     <div
       ref={ref}
-      className={`reveal-heading offering-card
-                  tablet:flex tablet:gap-6 tablet:items-center tablet:py-6
-                  max-tablet:flex-col max-tablet:gap-8 max-tablet:overflow-hidden max-tablet:px-12
-                  max-phone:px-8
-                  ${className}${visible ? ' in-view' : ''}`}
+      className={`reveal-heading flex flex-col gap-6 px-8 max-phone:px-4
+        max-phone:max-w-[664px] max-phone:mx-auto
+        tablet:px-12 tablet:max-w-[696px] tablet:mx-auto
+        expanded:flex-row expanded:items-center expanded:gap-8 expanded:px-0 expanded:w-full expanded:max-w-[1144px] expanded:mx-auto
+        desktop:flex-row desktop:items-center desktop:gap-8 desktop:px-0 desktop:w-full desktop:max-w-[1144px] desktop:mx-auto
+        ${className}${visible ? ' in-view' : ''}`}
       style={style}
     >
-
-      {/* Image column — 45% width at tablet+, self-stretch height (matches text column).
-          Image fills the container via absolute inset-0. */}
-      <div
-        className={`tablet:flex-none tablet:w-[45%] tablet:min-w-0 tablet:self-stretch tablet:relative tablet:overflow-hidden
-                     max-tablet:flex-none max-tablet:w-full max-tablet:h-[360px] max-phone:h-[300px]
-                     overflow-hidden ${imageContainerClassName} ${imgOrder}`}
-      >
-        <picture className="block w-full h-full tablet:absolute tablet:inset-0">
+      {/* Mobile/tablet image — stacks on top, hidden at expanded/desktop */}
+      <div className="order-1 w-full h-[280px] tablet:h-[340px] flex items-end justify-center expanded:hidden desktop:hidden">
+        <picture className="h-full">
           {imageMobile && <source media="(max-width: 899px)" srcSet={imageMobile} />}
-          <img
-            src={image}
-            alt={alt}
-            className={`block w-full h-full object-contain ${fitClass} max-tablet:mx-auto ${imageClassName}`}
-            loading="lazy"
-          />
+          <img src={image} alt={alt} className={`h-full w-auto max-w-full object-contain ${imageClassName}`} loading="lazy" />
         </picture>
       </div>
 
-      {/* Text column — 55% width at tablet+ */}
-      <div className={`flex flex-col gap-8 max-tablet:gap-10
-                       tablet:flex-none tablet:w-[55%] tablet:min-w-0
-                       max-tablet:pt-0 ${tabletPb}
-                       max-phone:pt-0 max-phone:pb-16
-                       ${txtOrder} ${textClassName}`}>
-        <div className="flex flex-col gap-4 max-phone:gap-2">
+      {/* Text block */}
+      <div className={`${textOrder} flex flex-col gap-6 pb-16 expanded:flex-1 expanded:max-w-[600px] expanded:pb-0 desktop:flex-1 desktop:max-w-[600px] desktop:pb-0 ${textClassName}`}>
+        <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-4">
             <p className="eyebrow text-white opacity-70">{category}</p>
-            <h3 className="card-heading text-white">
-              {title}
-            </h3>
+            <h3 className="card-heading text-white">{title}</h3>
           </div>
-          <p className="body-copy text-cream">{description}</p>
-          {footnote && (
-            <p className="footnote text-white opacity-70">
-              {footnote}
-            </p>
-          )}
+          <p className="body-copy text-olive-light">{description}</p>
+          {footnote && <p className="footnote text-white opacity-70">{footnote}</p>}
         </div>
-        <Btn color="white" href={href} className="self-start max-tablet:self-center">{cta}</Btn>
+        <Btn color="white" href={href} className="self-center expanded:self-start desktop:self-start">{cta}</Btn>
       </div>
 
+      {/* Image — expanded/desktop only */}
+      <div className={`hidden expanded:block expanded:flex-1 expanded:max-w-[512px] desktop:block desktop:flex-1 desktop:max-w-[512px] relative expanded:aspect-[512/440] desktop:aspect-[512/440] ${imageDesktopOrder} ${imageContainerClassName}`}>
+        <img
+          src={image}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full ${fitClass} ${imageClassName}`}
+          loading="lazy"
+        />
+      </div>
     </div>
   )
 }

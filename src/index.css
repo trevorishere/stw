@@ -1,3 +1,5 @@
+@import './tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +8,10 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    @apply bg-cream text-dark font-figtree min-w-[320px];
+    @apply bg-olive-light text-cobalt-dark font-figtree min-w-[320px];
   }
   :focus-visible {
-    outline: 2px solid theme('colors.accent');
+    outline: 2px solid theme('colors.yellow');
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -21,58 +23,68 @@
     @apply max-w-site mx-auto w-full;
   }
 
-  /* Primary section h2 — large display heading with responsive sizes */
+  /* Primary section h2 — 32px phone, 40px tablet, 56px expanded/desktop */
   .section-heading {
-    @apply font-figtree font-black text-[56px] leading-[60px] tracking-[1px] uppercase
-           max-tablet:text-[40px] max-tablet:leading-[44px] max-tablet:tracking-[1px]
-           max-phone:text-[32px] max-phone:leading-[36px] max-phone:tracking-[0.5px];
+    @apply font-figtree font-black text-32 tracking-sm uppercase
+           tablet:text-40
+           expanded:text-56 desktop:text-56;
+    line-height: 1;
   }
 
-  /* Small uppercase eyebrow label above card titles */
+  /* Small uppercase eyebrow label — 11px phone, 14px tablet, 13px expanded/desktop */
   .eyebrow {
-    @apply font-figtree font-semibold text-[13px] leading-5 tracking-[2px] uppercase
-           max-tablet:text-[14px]
-           max-phone:text-[11px] max-phone:leading-4;
+    @apply font-figtree font-semibold text-11 tracking-caps uppercase
+           tablet:text-13
+           expanded:text-13 desktop:text-13;
+    line-height: 1.5;
   }
 
-  /* Section subheading — appears below .section-heading in Offerings and Products */
+  /* Section subheading — 18px phone/tablet, 20px expanded/desktop */
   .section-subheading {
-    @apply font-figtree font-medium text-[24px] leading-[28px] tracking-[0.1px] text-dark opacity-60
-           max-tablet:text-[18px] max-tablet:leading-[20px]
-           max-phone:text-[18px] max-phone:leading-[22px];
+    @apply font-figtree font-semibold text-16 text-text-muted
+           tablet:text-18 expanded:text-20 desktop:text-20;
+    line-height: 1.2;
   }
 
-  /* Body copy in DM Sans — 18px desktop, 16px mobile */
+  /* Body copy in DM Sans — 16px phone/tablet, 18px expanded/desktop */
   .body-copy {
-    @apply font-dmSans text-[18px] leading-[28px] tracking-[0.1px]
-           max-tablet:leading-[28px]
-           max-phone:text-[16px] max-phone:leading-[24px] max-phone:tracking-normal;
+    @apply font-dmSans text-16 max-w-[600px]
+           expanded:text-18 desktop:text-18;
+    line-height: 1.5;
   }
 
-  /* Lead copy — Hero and Mission body text. DM Sans SemiBold, larger than body-copy. */
+  /* Lead copy — Hero and Mission body text. DM Sans medium, 20px all sizes. */
   .lead-copy {
-    @apply font-dmSans font-medium text-[20px] leading-[30px]
-           max-tablet:text-[19px] max-tablet:leading-[28px];
+    @apply font-dmSans font-medium text-20;
+    line-height: 1.5;
   }
 
-  /* Card / offering h3 — shared by OfferingRow, ProductCard, and Empire h3.
-     Empire desktop overrides to 40px/44lh via desktop:text-[40px] at the call site. */
+  /* Card / offering h3 — 20px phone, 32px tablet/expanded, 36px desktop.
+     Empire heading overrides to 40px via desktop:text-40 at the call site. */
   .card-heading {
-    @apply font-figtree font-extrabold text-[32px] leading-[34px]
-           desktop:text-[36px] desktop:leading-[40px]
-           max-phone:text-[22px] max-phone:leading-[24px];
+    @apply font-figtree font-extrabold text-24 max-w-[600px]
+           tablet:text-32 expanded:text-32 desktop:text-36;
+    line-height: 1;
   }
 
-  /* Credentials / small label — About section, could extend to bios elsewhere */
+  /* Credentials / small label — 12px phone, 14px tablet/expanded/desktop */
   .credentials {
-    @apply font-figtree font-semibold text-[14px] leading-[22px] tracking-[0.5px]
-           max-phone:text-[12px] max-phone:leading-[18px];
+    @apply font-figtree font-semibold text-12 tracking-sm
+           tablet:text-14 expanded:text-14 desktop:text-14;
+    line-height: 1.5;
   }
 
-  /* Footnote — small DM Sans below product card body copy */
+  /* Footnote — 12px phone, 14px tablet/expanded/desktop */
   .footnote {
-    @apply font-dmSans font-normal text-[14px] leading-[21px] tracking-[0.1px]
-           max-phone:text-[12px] max-phone:leading-[18px] max-phone:tracking-normal;
+    @apply font-dmSans font-normal text-12
+           tablet:text-14 expanded:text-14 desktop:text-14;
+    line-height: 1.5;
+  }
+
+  /* Text-link CTA — Figtree extrabold 14px, small tracking, uppercase */
+  .text-cta {
+    @apply font-figtree font-extrabold text-14 tracking-sm uppercase;
+    line-height: 1.1;
   }
 
 }
@@ -85,14 +97,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 .nav-item-in {
-  animation: navItemIn var(--duration-nav-item) var(--ease-overshoot) both;
+  animation: navItemIn var(--duration-200) var(--ease-overshoot) both;
 }
 @keyframes navItemOut {
   from { opacity: 1; transform: translateY(0); }
   to   { opacity: 0; transform: translateY(-10px); }
 }
 .nav-item-out {
-  animation: navItemOut var(--duration-nav-item) var(--ease-out) both;
+  animation: navItemOut var(--duration-200) var(--ease-out) both;
 }
 
 /*
@@ -106,7 +118,7 @@
   flex-direction: column;
   gap: 5px;
   width: 20px;
-  transition: transform var(--duration-nav) var(--ease-bounce);
+  transition: transform var(--duration-300) var(--ease-bounce);
 }
 .nav-hamburger.is-open {
   transform: rotate(180deg);
@@ -118,7 +130,7 @@
   background: currentColor;
   border-radius: 1px;
   transform-origin: center;
-  transition: transform var(--duration-nav) var(--ease-bounce),
+  transition: transform var(--duration-300) var(--ease-bounce),
               opacity 0.15s ease;
 }
 /* top line: slides down 7px (gap+line = 5+2) then rotates 45° */
@@ -142,28 +154,6 @@
  * with it, so it always covers the text at any size.
  */
 
-:root {
-  /* ── Animation durations ──────────────────────────────────────── */
-  --duration-fast:   200ms;  /* button hover, footer link hover */
-  --duration-reveal: 500ms;  /* scroll-reveal fade+slide */
-  --duration-nav:    300ms;  /* hamburger morph, drawer open */
-  --duration-nav-close: 200ms; /* drawer close */
-  --duration-nav-item: 0.2s; /* staggered drawer item in/out */
-  --delay-body:      100ms;  /* reveal-body follows reveal-heading */
-
-  /* ── Easing curves ───────────────────────────────────────────── */
-  --ease-out:        cubic-bezier(0.42, 0, 0.58, 1);       /* standard decel */
-  --ease-bounce:     cubic-bezier(0.34, 1.2, 0.64, 1);     /* hamburger morph */
-  --ease-spring:     cubic-bezier(0.34, 1.4, 0.64, 1);     /* drawer open */
-  --ease-overshoot:  cubic-bezier(0.42, 2.0, 0.58, 1);     /* nav item bounce-in */
-
-  /* ── Hero display type ───────────────────────────────────────── */
-  /* Fluid scaling: 76px (600px vp) → 190px (1440px vp). */
-  --hero-fs: clamp(76px, calc(13.571vw - 5.43px), 190px);
-  --hero-lh: clamp(72px, calc(12.857vw - 5.14px), 180px);
-  --hero-ls-fck:  1.52px;
-  --hero-ls-save: 1.52px;
-}
 
 .hero-text-block {
   display: flex;
@@ -195,7 +185,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: white;
   white-space: nowrap;
 }
 
@@ -219,7 +209,7 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-save);
   text-transform: uppercase;
-  color: theme('colors.accent');
+  color: theme('colors.yellow');
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -232,16 +222,16 @@
   line-height: var(--hero-lh);
   letter-spacing: var(--hero-ls-fck);
   text-transform: uppercase;
-  color: #ffffff;
+  color: white;
   white-space: nowrap;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .hero-the-world { white-space: normal; }
   .hero-top-row { column-gap: 24px; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   :root { --hero-fs: 76px; --hero-lh: 72px; }
   .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
@@ -251,10 +241,10 @@
 .reveal-body {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity var(--duration-reveal) ease-in-out, transform var(--duration-reveal) ease-in-out;
+  transition: opacity var(--duration-500) ease-in-out, transform var(--duration-500) ease-in-out;
 }
 /* Body copy follows heading by 100ms */
-.reveal-body { transition-delay: var(--delay-body); }
+.reveal-body { transition-delay: var(--duration-100); }
 /* Triggered by parent .in-view (sections) */
 .in-view .reveal-heading,
 .in-view .reveal-body {
@@ -268,9 +258,9 @@
 }
 
 /* Footer hero header — same layout/scale as hero, different colors */
-.footer-hero .hero-fck       { color: #eff2dd; }
-.footer-hero .hero-save      { color: #ffa3a3; }
-.footer-hero .hero-the-world { color: #eff2dd; }
+.footer-hero .hero-fck       { color: theme('colors.olive-light'); }
+.footer-hero .hero-save      { color: theme('colors.pink'); }
+.footer-hero .hero-the-world { color: theme('colors.olive-light'); }
 
 /* Hero right-side image — responsive sizing via raw media queries */
 .hero-img {
@@ -278,21 +268,16 @@
   height: 534px;
   flex-shrink: 0;
 }
-@media (max-width: 1199px) {
+@media (min-width: 900px) and (max-width: 1199px) {
+  .hero-img { width: 180px; height: 328px; }
+}
+@media (min-width: 600px) and (max-width: 899px) {
   .hero-img { width: 140px; height: 255px; }
 }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .hero-img { display: none; }
 }
 
-/* Offering card — 24px sides at desktop, 0px at expanded (900–1199px) only */
-.offering-card {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .offering-card { padding-left: 0; padding-right: 0; }
-}
 
 @keyframes marquee {
   from { transform: translateX(0); }
