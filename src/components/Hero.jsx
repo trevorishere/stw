@@ -34,7 +34,7 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-col gap-8 tablet:gap-12 expanded:gap-12 desktop:gap-12">
-                <p className="body-copy font-light text-olive-light">
+                <p className="body-copy font-light text-olive-lighter">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,
                   scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause
