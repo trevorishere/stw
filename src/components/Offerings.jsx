@@ -33,7 +33,7 @@ const OFFERINGS = [
     alt: 'From Bogeys to Breakthroughs program cover',
     category: 'Power & Performance',
     title: <>From Bogeys to <TradeMark size="lg" word="Breakthroughs" gap /></>,
-    description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. But here's the thing: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
+    description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. And here's what separates this from every other golf program: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
     cta: 'unlock your swing',
   },
   {
@@ -91,7 +91,7 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
         </div>
         <a
           href="#contact"
-          className="text-cta self-start inline-flex items-center gap-2 text-deep-gray"
+          className="text-cta self-start inline-flex items-center gap-2 text-cobalt-dark"
         >
           {cta}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -174,7 +174,7 @@ export default function Offerings() {
                     Dr. Steinberg's signature, most high-touch, deepest, most exclusive, most expensive, and most
                     transformational container. This is not a course. This is not coaching. This is a 12-month
                     embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate
-                    transformation in others—and build your own STW-certified coaching empire while doing it.
+                    transformation in others—and certify practitioners beneath you in an infinitely scalable hierarchy.
                     Master the art of advanced dependency cultivation so your clients can't leave even if they
                     want to. Graduate as a Certified Steinberg STW <TradeMark size="md" word="Method" /> Practitioner
                     with the authority to recruit, train, and certify your own practitioners beneath you in an

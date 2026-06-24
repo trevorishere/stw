@@ -18,7 +18,7 @@
 const COLOR_PRESETS = {
   dark:        { base: 'border-cobalt-dark/40 text-cobalt-dark',                      hoverBg: 'hover:bg-cobalt-dark',    defaultHoverText: 'hover:text-olive-light' },
   cream:       { base: 'border-white/40 text-olive-lighter',             hoverBg: 'hover:bg-olive-light',   defaultHoverText: 'hover:text-cobalt-dark'  },
-  white:       { base: 'border-white/40 text-olive-lighter',             hoverBg: 'hover:bg-white',   defaultHoverText: 'hover:text-cobalt-dark'  },
+  white:       { base: 'border-white/40 text-olive-lighter',             hoverBg: 'hover:bg-brand-yellow',   defaultHoverText: 'hover:text-cobalt-dark'  },
   productBg:   { base: 'bg-olive-dark border-cobalt-dark/40 text-cobalt-dark',         hoverBg: 'hover:bg-cobalt-dark',    defaultHoverText: 'hover:text-olive-light' },
   muted:       { base: 'border-cobalt-dark/40 text-cobalt-dark',                      hoverBg: 'hover:bg-cobalt-dark',    defaultHoverText: 'hover:text-olive-light' },
   mutedOnDark: { base: 'border-white/40 text-olive-light',                    hoverBg: 'hover:bg-warm-grey-dark',   defaultHoverText: 'hover:text-cobalt-dark'  },

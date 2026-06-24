@@ -13,7 +13,7 @@ export default {
         'deep-gray':     '#4B4B4B',
         yellow:          '#ffe52c',
         purple:          '#5c3551',
-        'warm-grey-light': '#65665E',
+        'warm-grey-light': '#7E8076',
         'warm-grey-dark':  '#98998D',
         pink:            '#ffa3a3',
         'olive-dark':    '#e8ebd5',
