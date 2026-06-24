@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Brand + tagline + copyright */}
           <div className="flex flex-col gap-1">
-            <p className="font-figtree font-extrabold text-20 leading-1-1 tracking-md uppercase text-warm-grey-dark whitespace-nowrap">
+            <p className="font-figtree font-extrabold text-20 max-phone:text-18 leading-1-1 tracking-md uppercase text-warm-grey-dark whitespace-nowrap">
               Stein's Total Wellness<TradeMark size="md" />
             </p>
             <p className="font-figtree font-medium text-14 leading-1-5 tracking-xs text-warm-grey-dark
