@@ -52,7 +52,7 @@ export default function Footer() {
                           tablet:text-12 tablet:leading-1-2">
               A Dr. Aaron Steinberg Joint
             </p>
-            <p className="font-figtree font-normal text-12 leading-1-2 tracking-xs text-warm-grey-dark tablet:text-11 mt-3">
+            <p className="font-figtree font-normal text-12 leading-1-2 tracking-xs text-warm-grey-dark tablet:text-11 mt-4">
               ©TM© 2026 Stein's Total Wellness. All rights reserved. All lefts reserved. All frequencies aligned.
             </p>
           </div>
