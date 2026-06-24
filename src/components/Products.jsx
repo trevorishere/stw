@@ -14,7 +14,7 @@ export default function Products() {
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
-            title={<>Transformational<br />Products</>}
+            title={<><span className="max-phone:text-24">Transformational</span><br />Products</>}
             subtitle="Carry the Work With You"
             titleClassName="text-olive-lighter"
             subtitleClassName="text-warm-grey-dark"

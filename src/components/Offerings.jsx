@@ -123,7 +123,7 @@ export default function Offerings() {
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading w-full max-phone:px-6${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
-            title={<>Transformational<br />Offerings</>}
+            title={<><span className="max-phone:text-24">Transformational</span><br />Offerings</>}
             subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
             subtitleClassName="text-warm-grey-light"
           />
