@@ -8,7 +8,7 @@ export default function Footer() {
   const [ref, visible] = useReveal()
   return (
     <footer ref={ref} className={`bg-cobalt-dark [overflow-x:clip]${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-6 py-20 flex flex-col gap-20 tablet:px-16 tablet:py-20 expanded:px-24 expanded:py-[136px] desktop:px-24 desktop:py-[136px]">
+      <div className="page-container px-6 py-20 flex flex-col gap-16 tablet:px-16 tablet:py-20 expanded:px-24 expanded:py-[136px] desktop:px-24 desktop:py-[136px]">
 
         {/* Hero header — F*CK SAVE / THE WORLD in footer colors */}
         <div className="reveal-heading footer-hero">
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         {/* Logo, nav links, copyright */}
-        <div className="reveal-body flex flex-col gap-8">
+        <div className="reveal-body flex flex-col gap-16">
 
           {/* Nav links — horizontal row at tablet+ */}
           <ul className="flex flex-col gap-6 list-none tablet:flex-row tablet:flex-wrap tablet:gap-x-8 tablet:gap-y-4 expanded:flex-row expanded:flex-wrap expanded:gap-x-8 desktop:flex-row desktop:flex-wrap desktop:gap-x-8">
@@ -52,7 +52,7 @@ export default function Footer() {
                           tablet:text-12 tablet:leading-1-2">
               A Dr. Aaron Steinberg Joint
             </p>
-            <p className="font-figtree font-normal text-12 leading-1-2 tracking-xs text-warm-grey-dark tablet:text-11 mt-2">
+            <p className="font-figtree font-normal text-12 leading-1-2 tracking-xs text-warm-grey-dark tablet:text-11 mt-3">
               ©TM© 2026 Stein's Total Wellness. All rights reserved. All lefts reserved. All frequencies aligned.
             </p>
           </div>
