@@ -26,10 +26,10 @@ export default function Mission() {
             <p className="body-copy font-light max-w-none">
               Your legacy is more than the organic, fresh-squeezed, green juice you drink; it's the
               field you generate when you walk into a room and everyone can just feel that you've done
-              plant medicine. This what we help you claim.
+              plant medicine. This is what we help you claim.
             </p>
-            <p className="body-copy font-light max-w-none font-bold">
-              We won't stop until we Save The <TradeMark size="md" word="World." />
+            <p className="body-copy max-w-none font-bold">
+              We won't stop until we SAVE THE <TradeMark size="md" word="WORLD." />
             </p>
           </div>
 

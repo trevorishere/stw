@@ -102,8 +102,8 @@
     transition: transform var(--duration-200) var(--ease-overshoot);
   }
 
-  .text-cta-olive         { color: theme('colors.olive'); }
-  .text-cta-olive:hover   { color: theme('colors.olive-lighter'); }
+  .text-cta-olive         { color: theme('colors.olive-lighter'); }
+  .text-cta-olive:hover   { color: theme('colors.brand-yellow'); }
 
 }
 
