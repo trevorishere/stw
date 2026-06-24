@@ -9,19 +9,19 @@ export default function Products() {
   const [headerRef, headerVisible] = useReveal()
   return (
     <section id="products" className="bg-cobalt-dark scroll-mt-nav">
-      <div className="page-container px-6 pt-[224px] pb-[48px] flex flex-col gap-8 tablet:px-16 tablet:pt-[280px] tablet:pb-28 tablet:gap-12 expanded:px-24 expanded:pt-[280px] expanded:pb-[136px] expanded:gap-20 desktop:px-24 desktop:pt-[280px] desktop:pb-[136px] desktop:gap-20">
+      <div className="page-container px-6 pt-[120px] pb-[48px] flex flex-col gap-8 tablet:px-16 tablet:pt-[120px] tablet:pb-28 tablet:gap-12 expanded:px-24 expanded:pt-[120px] expanded:pb-[136px] expanded:gap-16 desktop:px-24 desktop:pt-[120px] desktop:pb-[136px] desktop:gap-16">
 
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
             title={<>Transformational<br />Products</>}
             subtitle="Carry the Work With You"
-            titleClassName="text-olive-light"
-            subtitleClassName="text-olive-light opacity-70"
+            titleClassName="text-olive-lighter"
+            subtitleClassName="text-warm-grey-dark"
           />
         </div>
 
-        <div className="flex flex-col gap-8 expanded:gap-20 desktop:gap-20">
+        <div className="flex flex-col gap-8 expanded:gap-16 desktop:gap-16">
 
           <ProductCard
             imageLeft={false}

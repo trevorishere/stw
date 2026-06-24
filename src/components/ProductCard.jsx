@@ -1,4 +1,3 @@
-import Btn from './Btn'
 import { useReveal } from '../hooks/useReveal'
 
 export default function ProductCard({
@@ -54,13 +53,21 @@ export default function ProductCard({
       <div className={`${textOrder} flex flex-col gap-6 pb-16 expanded:flex-1 expanded:max-w-[600px] expanded:pb-0 desktop:flex-1 desktop:max-w-[600px] desktop:pb-0 ${textClassName}`}>
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-4">
-            <p className="eyebrow text-white opacity-70">{category}</p>
-            <h3 className="card-heading text-white">{title}</h3>
+            <p className="eyebrow text-warm-grey-dark">{category}</p>
+            <h3 className="card-heading text-olive-lighter">{title}</h3>
           </div>
-          <p className="body-copy text-olive-light">{description}</p>
+          <p className="body-copy text-olive">{description}</p>
           {footnote && <p className="footnote text-white opacity-70">{footnote}</p>}
         </div>
-        <Btn color="white" href={href} className="self-center expanded:self-start desktop:self-start">{cta}</Btn>
+        <a
+          href={href}
+          className="text-cta text-cta-olive self-start inline-flex items-center gap-2"
+        >
+          {cta}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </div>
 
       {/* Image — expanded/desktop only */}

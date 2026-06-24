@@ -5,34 +5,31 @@ export default {
     extend: {
       colors: {
         // ── Palette tokens ──────────────────────────────────────────────
-        cream:           '#eff2dd',
-        dark:            '#202020',
-        accent:          '#ffe52c',
+        'olive-light':   '#eff2dd',
+        'olive-lighter': '#F4F6EA',
+        'cobalt-light':  '#2c2c2c',
+        cobalt:          '#262626',
+        'cobalt-dark':   '#202020',
+        'deep-gray':     '#4B4B4B',
+        yellow:          '#ffe52c',
         purple:          '#5c3551',
-        muted:           '#b0b2a5',
+        'warm-grey-light': '#65665E',
+        'warm-grey-dark':  '#98998D',
         pink:            '#ffa3a3',
-        productBg:       '#e8ebd5',
-        productBgBorder: '#d6d9c5',
-
-        // ── Section background tokens ────────────────────────────────────
-        // Dark hero/nav/products
-        'surface-darkest': '#202020', // = dark — hero, nav, products
-        // Featured section bg (near-black warm)
-        'surface-darker':  '#262626', // featured
-        // Mission + Testimonial section bg (warm charcoal)
-        'surface-dark':    '#2c2c2c', // mission, testimonial
-
-        // ── UI state tokens ──────────────────────────────────────────────
-        'nav-link':        '#c6c6c6', // inactive desktop nav link
+        'olive-dark':    '#e8ebd5',
+        olive:           '#d6d9c5',
 
         // ── Semantic aliases — intent over palette name ──────────────────
-        'color-bg':          '#eff2dd', // page background
-        'color-surface':     '#e8ebd5', // card / section surface
-        'color-text':        '#202020', // primary text
-        'color-text-muted':  '#b0b2a5', // subdued labels, captions
-        'color-interactive': '#ffe52c', // CTAs, highlights
-        'color-brand':       '#5c3551', // brand accent
-        'color-highlight':   '#ffa3a3', // about / footer accent
+        'surface-bg':       '#eff2dd', // = olive-light — page background
+        'surface-card':     '#e8ebd5', // = olive-dark — about, product cards
+        'surface-dark':     '#2c2c2c', // = cobalt-light — mission, testimonial
+        'surface-darker':   '#262626', // = cobalt — featured
+        'surface-darkest':  '#202020', // = cobalt-dark — hero, nav, products
+        'text-dark':     '#202020', // primary text on dark or high-contrast surfaces
+        'text-muted':    '#b0b2a5', // subdued labels, captions
+        'brand-yellow':  '#ffe52c', // CTAs, highlights
+        'brand-purple':  '#5c3551', // brand accent
+        'brand-pink':    '#ffa3a3', // about / footer accent
       },
 
       fontFamily: {
@@ -41,14 +38,44 @@ export default {
         dmSans:  ['"DM Sans"', 'sans-serif'],
       },
 
+      fontSize: {
+        11: 'var(--text-11)',
+        12: 'var(--text-12)',
+        13: 'var(--text-13)',
+        14: 'var(--text-14)',
+        16: 'var(--text-16)',
+        18: 'var(--text-18)',
+        20: 'var(--text-20)',
+        24: 'var(--text-24)',
+        32: 'var(--text-32)',
+        36: 'var(--text-36)',
+        40: 'var(--text-40)',
+        56: 'var(--text-56)',
+      },
+
       maxWidth: {
         site: '1440px',
       },
 
+      lineHeight: {
+        '1':   '1',
+        '1-1': '1.1',
+        '1-2': '1.2',
+        '1-3': '1.3',
+        '1-5': '1.5',
+      },
+
+      letterSpacing: {
+        xs:   'var(--ls-xs)',
+        sm:   'var(--ls-sm)',
+        md:   'var(--ls-md)',
+        lg:   'var(--ls-lg)',
+        caps: 'var(--ls-caps)',
+      },
+
       borderRadius: {
-        // Button pill radii
-        btn:        '32px', // desktop/tablet button
-        'btn-sm':   '24px', // mobile button
+        'btn-desktop': 'var(--radius-full)',
+        'btn-mobile':  'var(--radius-full)',
       },
 
       spacing: {
@@ -62,8 +89,8 @@ export default {
         'section-y-2xl': '144px', // about pb
 
         // ── Nav heights ──────────────────────────────────────────────────
-        'nav-h':         '80px',  // mobile nav height
-        'nav-h-tablet':  '96px',  // desktop/expanded/tablet nav height
+        'nav-mobile':    '80px',  // mobile nav height
+        nav:             '96px',  // desktop/expanded/tablet nav height
 
         // ── Content gaps ─────────────────────────────────────────────────
         'gap-content':   '48px',  // standard between-element gap (bio→cta, header→body, etc.)
@@ -82,12 +109,10 @@ export default {
       },
 
       screens: {
-        tablet:         '900px',
-        'max-tablet':   { max: '899px' },
-        expanded:       { min: '900px', max: '1199px' },
-        desktop:        '1200px',
-        'max-expanded': { max: '1199px' },
-        'max-phone':    { max: '600px' },
+        'max-phone': { max: '599px' },
+        tablet:      { min: '600px', max: '899px' },
+        expanded:    { min: '900px', max: '1199px' },
+        desktop:     '1200px',
       },
     },
   },

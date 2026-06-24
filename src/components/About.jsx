@@ -18,7 +18,7 @@ export default function About() {
             <h2 className="section-heading text-cobalt-dark">
               about<br />dr. aaron<br />steinberg
             </h2>
-            <p className="credentials text-cobalt-dark opacity-60
+            <p className="credentials text-warm-grey-light
                           max-w-full tablet:max-w-[80%] expanded:max-w-[90%] desktop:max-w-[90%]">
               {CREDS}
             </p>
@@ -40,7 +40,7 @@ export default function About() {
             {/* Right — bio + CTA, 55%, 24px right padding */}
             <div className="reveal-body flex-none w-full min-w-0 pr-0 flex flex-col gap-8 tablet:gap-12 expanded:w-[55%] expanded:pr-6 expanded:gap-12 expanded:order-1 desktop:w-[55%] desktop:pr-6 desktop:gap-12 desktop:order-1">
 
-              <div className="about-bio-text body-copy text-cobalt-dark">
+              <div className="about-bio-text body-copy text-deep-gray">
                 <p>
                   After his last breakdown, Dr. Steinberg knew that he HAD to help people and become a coach so
                   that they didn't have to experience the trauma he experienced in the corporate world. For over

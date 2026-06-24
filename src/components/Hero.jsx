@@ -8,11 +8,10 @@ const heroImg  = `${import.meta.env.BASE_URL}hero.png`
 export default function Hero() {
   const [ref, visible] = useReveal()
   return (
-    <section ref={ref} className={`[overflow-x:clip] relative bg-dark${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-24 max-tablet:px-16 py-[88px]
-                      max-phone:px-6">
+    <section ref={ref} className={`[overflow-x:clip] relative bg-cobalt-dark${visible ? ' in-view' : ''}`}>
+      <div className="page-container px-6 pt-[88px] pb-[64px] tablet:px-16 expanded:px-24 desktop:px-24">
 
-        <div className="flex flex-col gap-[48px] max-phone:gap-[136px]">
+        <div className="flex flex-col gap-[136px] tablet:gap-12 expanded:gap-12 desktop:gap-12">
 
           <div className="reveal-heading hero-text-block relative">
             <img src={crossout} className="hero-scratchout" aria-hidden="true" alt="" />
@@ -25,17 +24,17 @@ export default function Hero() {
             <div className="hero-the-world">THE WORLD</div>
           </div>
 
-          <div className="reveal-body flex items-start gap-14 max-tablet:gap-8 max-phone:flex-col max-phone:gap-8">
+          <div className="reveal-body flex flex-col gap-8 items-start tablet:flex-row tablet:gap-8 expanded:flex-row expanded:gap-14 desktop:flex-row desktop:gap-14">
 
-            <div className="flex flex-col gap-6 flex-1 min-w-0 pt-8 max-phone:pt-0 max-phone:gap-4">
+            <div className="flex flex-col gap-4 flex-1 min-w-0 tablet:pt-8 tablet:gap-4 expanded:pt-8 expanded:gap-4 desktop:pt-8 desktop:gap-4">
 
-              <p className="font-figtree font-black text-[40px] leading-[48px] tracking-[1px] uppercase text-cream
-                            max-tablet:text-[26px] max-tablet:leading-[30px] max-phone:text-[28px] max-phone:leading-[34px] max-phone:tracking-[0.75px]">
+              <p className="font-figtree font-black text-24 leading-1-2 tracking-sm uppercase text-olive-lighter
+                            expanded:text-32 desktop:text-40">
                 Step Into Your Optimized Embodied Legacy of Radical <TradeMark size="lg" word="Alignment" />{' '}And Unlock Your Highest-Potential Purpose-Driven Self
               </p>
 
-              <div className="flex flex-col gap-[48px] max-phone:gap-8">
-                <p className="body-copy text-cream max-w-[760px]">
+              <div className="flex flex-col gap-8 tablet:gap-12 expanded:gap-12 desktop:gap-12">
+                <p className="body-copy font-light text-olive-light">
                   We help high-performing visionaries (and normies who think wellness means meditating
                   for three days and saying you 'tried everything') optimize their quantum potential,
                   scale their purpose-driven entrepreneurial legacy, and finally achieve root-cause

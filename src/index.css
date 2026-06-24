@@ -41,7 +41,7 @@
 
   /* Section subheading — 18px phone/tablet, 20px expanded/desktop */
   .section-subheading {
-    @apply font-figtree font-semibold text-16 text-text-muted
+    @apply font-figtree font-medium text-16 tracking-xs
            tablet:text-18 expanded:text-20 desktop:text-20;
     line-height: 1.2;
   }
@@ -64,7 +64,7 @@
   .card-heading {
     @apply font-figtree font-extrabold text-24 max-w-[600px]
            tablet:text-32 expanded:text-32 desktop:text-36;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   /* Credentials / small label — 12px phone, 14px tablet/expanded/desktop */
@@ -83,9 +83,27 @@
 
   /* Text-link CTA — Figtree extrabold 14px, small tracking, uppercase */
   .text-cta {
-    @apply font-figtree font-extrabold text-14 tracking-sm uppercase;
-    line-height: 1.1;
+    @apply font-figtree font-extrabold text-16 tracking-sm uppercase py-2;
+    line-height: 1.5;
   }
+  /* Chevron slides right + color shifts to purple on hover (bounce in, ease-out on leave) */
+  .text-cta {
+    transition: color var(--duration-200) var(--ease-out);
+  }
+  .text-cta svg {
+    transition: transform var(--duration-200) var(--ease-out);
+  }
+  .text-cta:hover {
+    color: theme('colors.purple');
+    transition: color var(--duration-200) var(--ease-bounce);
+  }
+  .text-cta:hover svg {
+    transform: translateX(4px);
+    transition: transform var(--duration-200) var(--ease-overshoot);
+  }
+
+  .text-cta-olive         { color: theme('colors.olive'); }
+  .text-cta-olive:hover   { color: theme('colors.olive-lighter'); }
 
 }
 
@@ -258,9 +276,9 @@
 }
 
 /* Footer hero header — same layout/scale as hero, different colors */
-.footer-hero .hero-fck       { color: theme('colors.olive-light'); }
+.footer-hero .hero-fck       { color: theme('colors.olive-lighter'); }
 .footer-hero .hero-save      { color: theme('colors.pink'); }
-.footer-hero .hero-the-world { color: theme('colors.olive-light'); }
+.footer-hero .hero-the-world { color: theme('colors.olive-lighter'); }
 
 /* Hero right-side image — responsive sizing via raw media queries */
 .hero-img {
@@ -291,9 +309,9 @@
 .about-bio-text p + p { margin-top: 12px; }
 
 .blockquote-hanging {
-  hanging-punctuation: first;  /* Safari */
-  padding-left: 1rem;          /* 16px — body text starts here */
-  text-indent: -1rem;          /* pulls " back to hang at the container's left edge */
+  hanging-punctuation: first;  /* Safari — handles it natively */
+  padding-left: 0.45em;        /* scales with font size */
+  text-indent: -0.45em;        /* pulls only the " to the left */
 }
 
 /* Accessibility — respect reduced-motion preference */
