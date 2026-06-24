@@ -30,7 +30,7 @@ export default function Donate() {
                 bottom of our collectively resourced nervous systems: thank you.
               </p>
             </div>
-            <Btn color="cream" href="#contact" className="self-center expanded:self-start desktop:self-start">
+            <Btn color="cream" href="#contact" className="self-start">
               Donate Now
             </Btn>
           </div>

@@ -54,7 +54,7 @@ export default function Nav() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="flex items-center font-figtree font-semibold text-14 tracking-lg uppercase text-warm-grey-dark no-underline hover:text-olive-lighter transition-colors"
+                  className="flex items-center font-figtree font-semibold text-14 tracking-lg uppercase text-warm-grey-dark no-underline hover:text-olive-lighter transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -64,12 +64,12 @@ export default function Nav() {
 
           {/* Hamburger */}
           <button
-            className="expanded:hidden desktop:hidden bg-transparent border-none cursor-pointer text-white p-1 flex items-center justify-center"
+            className="expanded:hidden desktop:hidden bg-transparent border-none cursor-pointer p-1 flex items-center justify-center nav-hamburger-btn"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={toggle}
           >
-            <span className={`nav-hamburger opacity-70${open ? ' is-open' : ''}`}>
+            <span className={`nav-hamburger${open ? ' is-open' : ''}`}>
               <span className="nav-hamburger-line nav-hamburger-line-top" />
               <span className="nav-hamburger-line nav-hamburger-line-mid" />
               <span className="nav-hamburger-line nav-hamburger-line-bot" />
@@ -98,7 +98,7 @@ export default function Nav() {
                 key={link.label}
                 href={link.href}
                 onClick={close}
-                className={`block px-6 tablet:px-16 py-[18px] font-figtree font-semibold text-16 tracking-lg uppercase text-white no-underline text-right ${className}`}
+                className={`block px-6 tablet:px-16 py-[18px] font-figtree font-semibold text-16 tracking-lg uppercase text-warm-grey-dark no-underline text-right hover:text-olive-lighter transition-colors duration-200 ${className}`}
                 style={className ? { animationDelay: `${delay}ms` } : {}}
               >
                 {link.label}
