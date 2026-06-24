@@ -71,8 +71,8 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
       className={`reveal-heading flex flex-col gap-6 px-8 max-phone:px-4
         max-phone:max-w-[664px] max-phone:mx-auto
         tablet:px-12 tablet:max-w-[696px] tablet:mx-auto
-        expanded:flex-row expanded:items-center expanded:gap-8 expanded:px-0 expanded:w-full expanded:max-w-[1144px] expanded:mx-auto
-        desktop:flex-row desktop:items-center desktop:gap-8 desktop:px-0 desktop:w-full desktop:max-w-[1144px] desktop:mx-auto
+        expanded:flex-row expanded:items-start expanded:gap-8 expanded:px-0 expanded:w-full expanded:max-w-[1144px] expanded:mx-auto
+        desktop:flex-row desktop:items-start desktop:gap-8 desktop:px-0 desktop:w-full desktop:max-w-[1144px] desktop:mx-auto
         ${visible ? ' in-view' : ''}`}
     >
       {/* Mobile/tablet image — always stacks on top */}
