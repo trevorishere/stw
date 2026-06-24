@@ -9,7 +9,7 @@ export default function Hero() {
   const [ref, visible] = useReveal()
   return (
     <section ref={ref} className={`[overflow-x:clip] relative bg-cobalt-dark${visible ? ' in-view' : ''}`}>
-      <div className="page-container px-6 pt-[88px] pb-[64px] tablet:px-16 expanded:px-24 desktop:px-24">
+      <div className="page-container px-6 pt-[88px] pb-[96px] tablet:px-16 expanded:px-24 desktop:px-24">
 
         <div className="flex flex-col gap-[136px] tablet:gap-12 expanded:gap-12 desktop:gap-12">
 
