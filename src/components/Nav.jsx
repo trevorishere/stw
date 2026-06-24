@@ -36,25 +36,25 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-nav bg-dark">
-        <div className="page-container flex items-center justify-between h-[80px] tablet:h-[96px] px-6 max-tablet:pl-16 max-tablet:pr-14 max-phone:px-6 tablet:px-16 desktop:px-[80px]">
+      <nav className="sticky top-0 z-nav bg-cobalt-dark">
+        <div className="page-container flex items-center justify-between h-[80px] px-6 tablet:pl-16 tablet:pr-14 expanded:h-[96px] expanded:px-16 desktop:h-[96px] desktop:px-[80px]">
 
           {/* Brand — Figtree Black, ©TM© inline on same baseline */}
           <a
             href="#"
-            className="font-figtree font-extrabold text-[18px] tracking-[1px] uppercase text-white no-underline whitespace-nowrap"
+            className="font-figtree font-extrabold text-18 tracking-md uppercase text-olive-lighter no-underline whitespace-nowrap"
           >
             <span className="max-phone:hidden">Stein's Total Wellness</span>
-            <span className="hidden max-phone:inline">STW</span><TradeMark size="sm" />
+            <span className="hidden max-phone:inline">STW</span><TradeMark size="md" />
           </a>
 
           {/* Desktop nav links */}
-          <ul className="hidden tablet:flex items-center gap-6 list-none h-full">
+          <ul className="hidden expanded:flex desktop:flex items-center gap-6 list-none h-full">
             {links.map(link => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="flex items-center font-figtree font-semibold text-[14px] tracking-[1px] uppercase text-nav-link no-underline hover:text-white transition-colors"
+                  className="flex items-center font-figtree font-semibold text-14 tracking-lg uppercase text-warm-grey-dark no-underline hover:text-olive-lighter transition-colors"
                 >
                   {link.label}
                 </a>
@@ -64,7 +64,7 @@ export default function Nav() {
 
           {/* Hamburger */}
           <button
-            className="tablet:hidden bg-transparent border-none cursor-pointer text-white p-1 flex items-center justify-center"
+            className="expanded:hidden desktop:hidden bg-transparent border-none cursor-pointer text-white p-1 flex items-center justify-center"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={toggle}
@@ -80,7 +80,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       <div
-        className="tablet:hidden bg-dark fixed top-[80px] left-0 w-full z-navDrawer overflow-hidden"
+        className="expanded:hidden desktop:hidden bg-cobalt-dark fixed top-[80px] left-0 w-full z-navDrawer overflow-hidden"
         style={{
           maxHeight: open ? '400px' : '0',
           transition: open
@@ -98,7 +98,7 @@ export default function Nav() {
                 key={link.label}
                 href={link.href}
                 onClick={close}
-                className={`block px-16 max-phone:px-6 py-[18px] font-figtree font-semibold text-base tracking-[1px] uppercase text-white no-underline text-right ${className}`}
+                className={`block px-6 tablet:px-16 py-[18px] font-figtree font-semibold text-16 tracking-lg uppercase text-white no-underline text-right ${className}`}
                 style={className ? { animationDelay: `${delay}ms` } : {}}
               >
                 {link.label}

@@ -27,6 +27,8 @@ Four non-overlapping named ranges defined in `tailwind.config.js` under `screens
 
 **Coding pattern:** base styles = phone values. Override per range with `tablet:`, `expanded:`, `desktop:`. Use `max-phone:` when a value is phone-specific but the base is set to a non-phone default.
 
+**Important:** Because `tablet:`, `expanded:`, and `desktop:` are all bounded ranges (not open-ended min-widths), every breakpoint must be explicitly declared if you want a value to persist across ranges. For example, `tablet:text-16` only fires at 600–899px — you must also add `expanded:text-16 desktop:text-16` to carry the value forward.
+
 ---
 
 ### Colors
@@ -36,18 +38,21 @@ The palette is defined at two layers: raw palette tokens and semantic aliases. P
 #### Raw Palette
 
 
-| Token        | Tailwind Key   | Hex       | Notes                 |
-| ------------ | -------------- | --------- | --------------------- |
-| Cobalt Dark  | `cobalt-dark`  | `#202020` | Near-black            |
-| Cobalt       | `cobalt`       | `#262626` | Mid dark              |
-| Cobalt Light | `cobalt-light` | `#2c2c2c` | Dark charcoal         |
-| Olive        | `olive`        | `#d6d9c5` | Muted green-grey      |
-| Olive Dark   | `olive-dark`   | `#e8ebd5` | Slightly darker cream |
-| Olive Light  | `olive-light`  | `#eff2dd` | Warm off-white        |
-| Pink         | `pink`         | `#ffa3a3` | Soft coral            |
-| Purple       | `purple`       | `#5c3551` | Deep plum             |
-| Warm Grey    | `warm-grey`    | `#b0b2a5` | Warm grey             |
-| Yellow       | `yellow`       | `#ffe52c` | High-energy yellow    |
+| Token            | Tailwind Key       | Hex       | Notes                       |
+| ---------------- | ------------------ | --------- | --------------------------- |
+| Cobalt Dark      | `cobalt-dark`      | `#202020` | Near-black                  |
+| Cobalt           | `cobalt`           | `#262626` | Mid dark                    |
+| Cobalt Light     | `cobalt-light`     | `#2c2c2c` | Dark charcoal               |
+| Deep Gray        | `deep-gray`        | `#4B4B4B` | Dark gray for body on light |
+| Olive            | `olive`            | `#d6d9c5` | Muted green-grey            |
+| Olive Dark       | `olive-dark`       | `#e8ebd5` | Slightly darker cream       |
+| Olive Light      | `olive-light`      | `#eff2dd` | Warm off-white              |
+| Olive Lighter    | `olive-lighter`    | `#F4F6EA` | Bright off-white            |
+| Pink             | `pink`             | `#ffa3a3` | Soft coral                  |
+| Purple           | `purple`           | `#5c3551` | Deep plum                   |
+| Warm Grey Light  | `warm-grey-light`  | `#65665E` | Warm grey for light bg use  |
+| Warm Grey Dark   | `warm-grey-dark`   | `#98998D` | Warm grey for dark bg use   |
+| Yellow           | `yellow`           | `#ffe52c` | High-energy yellow          |
 
 
 #### Semantic Aliases
@@ -55,34 +60,38 @@ The palette is defined at two layers: raw palette tokens and semantic aliases. P
 Use these in components instead of raw palette names wherever possible.
 
 
-| Semantic Token    | Maps To        | Hex       | Intended Use                  |
-| ----------------- | -------------- | --------- | ----------------------------- |
-| `surface-bg`      | `olive-light`  | `#eff2dd` | Page background               |
-| `surface-card`    | `olive-dark`   | `#e8ebd5` | About section, product cards  |
-| `surface-dark`    | `cobalt-light` | `#2c2c2c` | Mission, Testimonial          |
-| `surface-darker`  | `cobalt`       | `#262626` | Featured marquee              |
-| `surface-darkest` | `cobalt-dark`  | `#202020` | Hero, nav, products           |
-| `text-primary`    | `cobalt-dark`  | `#202020` | Primary body text             |
-| `text-muted`      | `warm-grey`    | `#b0b2a5` | Subdued labels, captions      |
-| `brand-yellow`    | `yellow`       | `#ffe52c` | CTAs, highlights, focus rings |
-| `brand-purple`    | `purple`       | `#5c3551` | Brand accent moments          |
-| `brand-pink`      | `pink`         | `#ffa3a3` | About / footer accent         |
+| Semantic Token    | Maps To        | Hex       | Intended Use                       |
+| ----------------- | -------------- | --------- | ---------------------------------- |
+| `surface-bg`      | `olive-light`  | `#eff2dd` | Page background                    |
+| `surface-card`    | `olive-dark`   | `#e8ebd5` | About section, product cards       |
+| `surface-dark`    | `cobalt-light` | `#2c2c2c` | (reserved — no longer used)        |
+| `surface-darker`  | `cobalt`       | `#262626` | (reserved — no longer used)        |
+| `surface-darkest` | `cobalt-dark`  | `#202020` | Hero, nav, products, featured      |
+| `text-dark`       | `cobalt-dark`  | `#202020` | Primary text on light/yellow bg    |
+| `text-muted`      | `#b0b2a5`      | `#b0b2a5` | Subdued labels, captions           |
+| `brand-yellow`    | `yellow`       | `#ffe52c` | Mission, Testimonial bg; CTAs      |
+| `brand-purple`    | `purple`       | `#5c3551` | Donate bg; `.text-cta` hover color |
+| `brand-pink`      | `pink`         | `#ffa3a3` | Footer SAVE word accent            |
 
 
-`purple` (`#5c3551`) is used as the Donate section background but is a brand color, not a structural surface — see Raw Palette and Key Color Pairings.
+#### Color conventions: light vs. dark background
+
+- **Light backgrounds** (Offerings `olive-light`, About `olive-dark`): use `text-warm-grey-light` for eyebrows and muted labels; `text-deep-gray` for body copy.
+- **Dark backgrounds** (Hero, Products, Footer `cobalt-dark`; Donate `purple`; Mission/Testimonial `brand-yellow`): use `text-warm-grey-dark` for eyebrows and muted labels; `text-olive-lighter` for headings.
+- The naming convention "light/dark" in token names refers to the **background** the color is used on, not the color value itself.
 
 #### Key Color Pairings
 
 
-| Background                        | Foreground            | Context                      |
-| --------------------------------- | --------------------- | ---------------------------- |
-| `surface-bg` / `olive-light`      | `cobalt-dark`         | Primary reading surface      |
-| `surface-card` / `olive-dark`     | `cobalt-dark`         | Product cards, About section |
-| `surface-darkest` / `cobalt-dark` | `olive-light`         | Hero, nav, footer            |
-| `surface-dark` / `cobalt-light`   | `olive-light`         | Mission, Testimonial         |
-| `surface-darker` / `cobalt`       | `yellow`              | Featured (accent text)       |
-| `purple`                          | `olive-light`         | Donate section               |
-| `surface-darkest` / `cobalt-dark` | `pink` / `brand-pink` | Footer hero SAVE word        |
+| Background                         | Heading              | Body / Muted            | Context                       |
+| ---------------------------------- | -------------------- | ----------------------- | ----------------------------- |
+| `surface-bg` / `olive-light`       | `cobalt-dark`        | `deep-gray` / `warm-grey-light` | Offerings                |
+| `surface-card` / `olive-dark`      | `cobalt-dark`        | `deep-gray` / `warm-grey-light` | About section            |
+| `surface-darkest` / `cobalt-dark`  | `olive-lighter`      | `olive` / `warm-grey-dark`      | Hero, Nav, Products      |
+| `brand-yellow`                     | `cobalt-dark`        | `cobalt-dark` / `warm-grey-dark` | Mission, Testimonial    |
+| `surface-darkest` / `cobalt-dark`  | `olive-lighter`      | `warm-grey-dark`        | Featured                      |
+| `purple`                           | `olive-lighter`      | `olive-lighter` (light) | Donate section                |
+| `cobalt-dark`                      | `olive-lighter`      | `pink` (SAVE word)      | Footer hero                   |
 
 
 ---
@@ -106,17 +115,17 @@ Fonts are loaded from Google Fonts in `index.html`. The body default is `font-fi
 Defined in `src/index.css` under `@layer components`. Always use these instead of ad-hoc size utilities. All font sizes use the `text-`* token utilities from the Font Size table (no raw `px` values).
 
 
-| Class                 | Desktop (≥1200px)                                         | Expanded (900–1199px)                                     | Tablet (600–899px)                                        | Phone (≤599px)                                            | Font                  |
-| --------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------- |
-| `.eyebrow`            | `text-13` / `leading-1-5` / `tracking-caps` / upper      | `text-13` / `leading-1-5`                                 | `text-13` / `leading-1-5`                                 | `text-11` / `leading-1-5`                                 | Figtree 600           |
+| Class                 | Desktop (≥1200px)                                          | Expanded (900–1199px)                                      | Tablet (600–899px)                                        | Phone (≤599px)                                            | Font                  |
+| --------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------- |
+| `.eyebrow`            | `text-13` / `leading-1-5` / `tracking-caps` / upper       | `text-13` / `leading-1-5`                                 | `text-13` / `leading-1-5`                                 | `text-11` / `leading-1-5`                                 | Figtree 600           |
 | `.footnote`           | `text-14` / `leading-1-5`                                 | `text-14` / `leading-1-5`                                 | `text-14` / `leading-1-5`                                 | `text-12` / `leading-1-5`                                 | DM Sans 400           |
 | `.credentials`        | `text-14` / `leading-1-5` / `tracking-sm`                 | `text-14` / `leading-1-5` / `tracking-sm`                 | `text-14` / `leading-1-5` / `tracking-sm`                 | `text-12` / `leading-1-5` / `tracking-sm`                 | Figtree 600           |
 | `.body-copy`          | `text-18` / `leading-1-5` / `max-w-[600px]`               | `text-18` / `leading-1-5` / `max-w-[600px]`               | `text-16` / `leading-1-5` / `max-w-[600px]`               | `text-16` / `leading-1-5` / `max-w-[600px]`               | DM Sans 400           |
 | `.lead-copy`          | `text-20` / `leading-1-5`                                 | `text-20` / `leading-1-5`                                 | `text-20` / `leading-1-5`                                 | `text-20` / `leading-1-5`                                 | DM Sans 500           |
-| `.section-subheading` | `text-20` / `leading-1-2` / 50% opacity                   | `text-20` / `leading-1-2` / 50% opacity                   | `text-18` / `leading-1-2` / 50%                           | `text-16` / `leading-1-2` / 50%                           | Figtree 600           |
-| `.card-heading`       | `text-36` / `leading-1` / `max-w-[600px]`                 | `text-32` / `leading-1` / `max-w-[600px]`                 | `text-32` / `leading-1` / `max-w-[600px]`                 | `text-24` / `leading-1` / `max-w-[600px]`                 | Figtree 800           |
+| `.section-subheading` | `text-20` / `leading-1-2` / `tracking-xs`                 | `text-20` / `leading-1-2` / `tracking-xs`                 | `text-18` / `leading-1-2` / `tracking-xs`                 | `text-16` / `leading-1-2` / `tracking-xs`                 | Figtree 500           |
+| `.card-heading`       | `text-36` / `leading-1-1` / `max-w-[600px]`               | `text-32` / `leading-1-1` / `max-w-[600px]`               | `text-32` / `leading-1-1` / `max-w-[600px]`               | `text-24` / `leading-1-1` / `max-w-[600px]`               | Figtree 800           |
 | `.section-heading`    | `text-56` / `leading-1` / `tracking-sm` / upper           | `text-56` / `leading-1` / `tracking-sm` / upper           | `text-40` / `leading-1` / `tracking-sm` / upper           | `text-32` / `leading-1` / `tracking-sm` / upper           | Figtree 900 uppercase |
-| `.text-cta`           | `text-14` / `leading-1-1` / `tracking-sm` / upper         | same                                                      | same                                                      | same                                                      | Figtree 800           |
+| `.text-cta`           | `text-16` / `leading-1-5` / `tracking-sm` / upper / `py-2` | same                                                      | same                                                      | same                                                      | Figtree 800           |
 
 
 **Notes:**
@@ -124,7 +133,30 @@ Defined in `src/index.css` under `@layer components`. Always use these instead o
 - `.card-heading` at Empire h3 overrides to `text-40 / leading-1-1` on desktop via inline `desktop:text-40 desktop:leading-1-1` at the call site.
 - `.credentials` used in About; intended for bio attribution and credential strings.
 - `.footnote` used below product card body copy; white at 70% opacity on dark cards.
-- `.text-cta` used for text-link CTAs (OfferingRow). Pair with an inline SVG chevron (14×14) and `inline-flex items-center gap-2`. Not used on `<Btn>` — that has its own internal sizing.
+- `.body-copy` font weight: **300 (light)** on dark backgrounds (Hero, Mission, Offerings OfferingRow, Donate) — add `font-light` at call site. Default 400 on light backgrounds (About).
+- `.section-subheading` color is **not baked into the class** — always pass `subtitleClassName` at each `<SectionHeader>` call site.
+
+#### `.text-cta` — Text-link CTA
+
+Used for inline text CTAs. Pair with a 14×14 SVG chevron and `inline-flex items-center gap-2`.
+
+```jsx
+<a href="#contact" className="text-cta self-start inline-flex items-center gap-2 text-deep-gray">
+  Start your seven minutes
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+    <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+</a>
+```
+
+**Default color:** set via utility class at call site (e.g. `text-deep-gray` on light bg, `text-cobalt-dark` on cream).
+
+**Hover animation:** chevron slides right 4px; text and chevron color shifts to `purple`. Bounce easing in (`--ease-bounce` / `--ease-overshoot`), ease-out on leave. All at `--duration-200`.
+
+**Color variant `.text-cta-olive`:** for use on dark backgrounds (Products). Default `olive`, hover `olive-lighter`. Apply alongside `.text-cta`:
+```jsx
+<a className="text-cta text-cta-olive self-start inline-flex items-center gap-2">…</a>
+```
 
 #### Hero Display Type
 
@@ -138,12 +170,13 @@ The hero uses fluid CSS custom properties set in `:root`:
 
 At phone breakpoint (`max-width: 599px`) these are clamped to their minimums: `76px / 72px`.
 
-Hero tagline (subheadline below display type): `text-40` desktop/expanded · `text-24` tablet/phone · `leading-1-3` · `tracking-sm` — all viewports.
+Hero tagline: `text-24` phone/tablet · `text-32` expanded · `text-40` desktop · `leading-1-2` · `tracking-sm` · `text-olive-lighter` · Figtree 900.  
+Gap between tagline and body copy: `gap-4` (16px) all viewports.
 
 Hero image (`.hero-img`): `294×534px` desktop / `180×328px` expanded / `140×255px` tablet / hidden phone.
 
-Hero word colors: **FCK** = white, **SAVE** = `yellow`, **THE WORLD** = white.  
-Footer reuse: **FCK** = `olive-light`, **SAVE** = `pink`, **THE WORLD** = `olive-light`.
+Hero word colors: **F\*CK** = white, **SAVE** = `yellow`, **THE WORLD** = white.  
+Footer reuse: **F\*CK** = `olive-lighter`, **SAVE** = `pink`, **THE WORLD** = `olive-lighter`.
 
 ---
 
@@ -157,13 +190,26 @@ Custom spacing tokens for consistent section rhythm. Apply via `py-`* / `pt-`* /
 | Token           | Value   | Typical Usage                                            |
 | --------------- | ------- | -------------------------------------------------------- |
 | `section-y-2xs` | `80px`  | Mobile hero pt, mobile About pt                          |
-| `section-y-xs`  | `88px`  | Hero py (all breakpoints)                                |
+| `section-y-xs`  | `88px`  | Hero pt (all breakpoints)                                |
 | `section-y-sm`  | `104px` | Offerings tablet/mobile, Donate mobile pt                |
-| `section-y`     | `112px` | Featured, Mission top, About pt                          |
-| `section-y-lg`  | `120px` | Mission pb, Offerings desktop, Footer desktop, Donate pt |
-| `section-y-xl`  | `136px` | Testimonial py, Donate pb, Products pb                   |
+| `section-y`     | `112px` | About pt                                                 |
+| `section-y-lg`  | `120px` | Mission pt, Offerings desktop pt, Products pt, Donate pt |
+| `section-y-xl`  | `136px` | Offerings pb (all), Products pb, Donate pb               |
 | `section-y-2xl` | `144px` | About pb                                                 |
 
+
+#### Section Padding Reference
+
+| Section       | pt                        | pb                         | Notes                                    |
+| ------------- | ------------------------- | -------------------------- | ---------------------------------------- |
+| Hero          | `88px` (all)              | `64px` (all)               | —                                        |
+| Featured      | `8px` (all)               | `120px` (all)              | Tight top — sits flush below Hero        |
+| Mission       | `104px` phone / `120px`+  | `120px` phone / `136px`+   | —                                        |
+| Offerings     | `80px` phone / `120px`+   | `136px` all                | —                                        |
+| Testimonial   | `160px` all               | `160px` all                | No negative margins — standalone section |
+| Products      | `120px` all               | `48px` phone / `136px`+    | —                                        |
+| About         | `80px` phone / `112px`+   | `120px` phone / `144px`+   | —                                        |
+| Donate        | `104px` phone / `120px`+  | `120px` phone / `136px`+   | —                                        |
 
 #### Nav Heights
 
@@ -197,7 +243,7 @@ Custom spacing tokens for consistent section rhythm. Apply via `py-`* / `pt-`* /
 Always wrap section inner content in `.page-container` for centering:
 
 ```jsx
-<section className="bg-surface-dark">
+<section className="bg-brand-yellow">
   <div className="page-container py-section-y px-6 tablet:px-16 expanded:px-24 desktop:px-24">
     {/* content */}
   </div>
@@ -213,9 +259,9 @@ Defined as CSS custom properties in `:root` and exposed as Tailwind `tracking-*`
 
 | CSS Variable | Value     | Tailwind Class  | Usage                                              |
 | ------------ | --------- | --------------- | -------------------------------------------------- |
-| `--ls-xs`    | `0.02em`  | `tracking-xs`   | Footer tagline, copyright, testimonial attribution |
-| `--ls-sm`    | `0.04em`  | `tracking-sm`   | `.credentials`, `.section-heading`                 |
-| `--ls-md`    | `0.06em`  | `tracking-md`   | Nav brand, footer brand, hero tagline, buttons     |
+| `--ls-xs`    | `0.02em`  | `tracking-xs`   | Footer tagline, copyright, `.section-subheading`   |
+| `--ls-sm`    | `0.04em`  | `tracking-sm`   | `.credentials`, `.section-heading`, `.text-cta`    |
+| `--ls-md`    | `0.06em`  | `tracking-md`   | Nav brand, footer brand, buttons                   |
 | `--ls-lg`    | `0.09em`  | `tracking-lg`   | Nav links, footer nav links                        |
 | `--ls-caps`  | `0.125em` | `tracking-caps` | `.eyebrow`, uppercase labels, marquee ticker       |
 
@@ -229,11 +275,11 @@ Defined as CSS custom properties in `:root` and registered as explicit utilities
 
 | CSS Variable | Value | Tailwind Class | Usage                                                                                       |
 | ------------ | ----- | -------------- | ------------------------------------------------------------------------------------------- |
-| `--lh-1`     | `1`   | `leading-1`    | Hero display type, `.section-heading`, `.card-heading`                                      |
-| `--lh-1-1`   | `1.1` | `leading-1-1`  | Empire h3 (desktop), buttons (all sizes)                                                    |
+| `--lh-1`     | `1`   | `leading-1`    | Hero display type, `.section-heading`                                                       |
+| `--lh-1-1`   | `1.1` | `leading-1-1`  | `.card-heading`, Empire h3 (desktop), buttons (all sizes)                                   |
 | `--lh-1-2`   | `1.2` | `leading-1-2`  | `.section-subheading` (all), Featured heading, Footer tagline/nav                           |
 | `--lh-1-3`   | `1.3` | `leading-1-3`  | Hero tagline, Mission quote                                                                 |
-| `--lh-1-5`   | `1.5` | `leading-1-5`  | `.body-copy`, `.lead-copy`, `.eyebrow`, `.footnote`, `.credentials`, testimonial            |
+| `--lh-1-5`   | `1.5` | `leading-1-5`  | `.body-copy`, `.lead-copy`, `.eyebrow`, `.footnote`, `.credentials`, `.text-cta`, testimonial |
 
 
 > Hero display type (`--hero-lh`) is excluded from the token system — it uses fluid `clamp()` values defined directly in `:root`.
@@ -251,11 +297,11 @@ Defined as CSS custom properties in `:root` and exposed as Tailwind `text-*` uti
 | `--text-12`  | `12px` | `text-12`      | `.footnote` (phone), `.credentials` (phone), button (phone), footer copyright (phone), footer tagline (tablet/expanded/desktop) |
 | `--text-13`  | `13px` | `text-13`      | `.eyebrow` (expanded/desktop), footer nav links (tablet/expanded/desktop)                                                       |
 | `--text-14`  | `14px` | `text-14`      | `.footnote` (tablet+), `.credentials` (tablet+), button (tablet+), footer nav links (phone), footer tagline (phone)             |
-| `--text-16`  | `16px` | `text-16`      | `.body-copy` (phone), nav links (mobile drawer), Featured marquee                                                               |
+| `--text-16`  | `16px` | `text-16`      | `.body-copy` (phone), `.text-cta` (all), nav links (mobile drawer)                                                              |
 | `--text-18`  | `18px` | `text-18`      | `.body-copy` (tablet+), `.section-subheading` (tablet)                                                                          |
 | `--text-20`  | `20px` | `text-20`      | `.lead-copy` (all), `.section-subheading` (expanded/desktop), footer brand name (all)                                           |
 | `--text-24`  | `24px` | `text-24`      | `.card-heading` (phone), Mission quote, Featured heading, hero tagline (tablet/phone)                                           |
-| `--text-32`  | `32px` | `text-32`      | `.section-heading` (phone), `.card-heading` (tablet/expanded), Testimonial blockquote (tablet)                                  |
+| `--text-32`  | `32px` | `text-32`      | `.section-heading` (phone), `.card-heading` (tablet/expanded), Testimonial blockquote (expanded/desktop)                        |
 | `--text-36`  | `36px` | `text-36`      | `.card-heading` (desktop)                                                                                                       |
 | `--text-40`  | `40px` | `text-40`      | `.section-heading` (tablet), Empire h3 (desktop), hero tagline (expanded/desktop)                                               |
 | `--text-56`  | `56px` | `text-56`      | `.section-heading` (expanded/desktop)                                                                                           |
@@ -291,12 +337,12 @@ Defined as CSS custom properties in `:root` and exposed as Tailwind `text-*` uti
 #### Easing Curves (CSS variables in `:root`)
 
 
-| Variable           | Curve                              | Usage                                |
-| ------------------ | ---------------------------------- | ------------------------------------ |
-| `--ease-out`       | `cubic-bezier(0.42, 0, 0.58, 1)`   | Standard deceleration (nav item out) |
-| `--ease-bounce`    | `cubic-bezier(0.34, 1.2, 0.64, 1)` | Hamburger morph                      |
-| `--ease-spring`    | `cubic-bezier(0.34, 1.4, 0.64, 1)` | Drawer open                          |
-| `--ease-overshoot` | `cubic-bezier(0.42, 2.0, 0.58, 1)` | Nav item bounce-in                   |
+| Variable           | Curve                              | Usage                                         |
+| ------------------ | ---------------------------------- | --------------------------------------------- |
+| `--ease-out`       | `cubic-bezier(0.42, 0, 0.58, 1)`   | Standard deceleration; `.text-cta` leave      |
+| `--ease-bounce`    | `cubic-bezier(0.34, 1.2, 0.64, 1)` | Hamburger morph; `.text-cta` color enter      |
+| `--ease-spring`    | `cubic-bezier(0.34, 1.4, 0.64, 1)` | Drawer open                                   |
+| `--ease-overshoot` | `cubic-bezier(0.42, 2.0, 0.58, 1)` | Nav item bounce-in; `.text-cta` chevron enter |
 
 
 ---
@@ -329,19 +375,19 @@ Polymorphic CTA button. Renders as `<a>` when `href` is provided, `<button type=
 | Phone (`max-phone`)         | `h-[48px]` | `px-8` (32px)      | `rounded-btn-mobile` (`9999px`)  | `12px`    | `leading-1-1` | `tracking-md` |
 
 
-Font: Figtree Bold, uppercase, no wrap. No vertical padding — height is set explicitly.
+Font: Figtree Bold, uppercase, no wrap. Border opacity: `0.4`. No vertical padding — height is set explicitly.
 
 #### Color Presets
 
 
-| Preset        | Default state                                                   | Hover state                       |
-| ------------- | --------------------------------------------------------------- | --------------------------------- |
-| `dark`        | `border-cobalt-dark/70 text-cobalt-dark` (outline)              | `bg-cobalt-dark text-olive-light` |
-| `cream`       | `border-white/70 text-olive-light` (outline)                    | `bg-olive-light text-cobalt-dark` |
-| `white`       | `border-white/70 text-white` (outline)                          | `bg-white text-cobalt-dark`       |
-| `productBg`   | `bg-olive-dark border-cobalt-dark/70 text-cobalt-dark` (filled) | `bg-cobalt-dark text-olive-light` |
-| `muted`       | `border-cobalt-dark/70 text-cobalt-dark` (outline)              | `bg-cobalt-dark text-olive-light` |
-| `mutedOnDark` | `border-white/70 text-olive-light` (outline)                    | `bg-warm-grey text-cobalt-dark`   |
+| Preset        | Default state                                                          | Hover state                             |
+| ------------- | ---------------------------------------------------------------------- | --------------------------------------- |
+| `dark`        | `border-cobalt-dark/40 text-cobalt-dark` (outline)                     | `bg-cobalt-dark text-olive-light`       |
+| `cream`       | `border-white/40 text-olive-lighter` (outline)                         | `bg-olive-light text-cobalt-dark`       |
+| `white`       | `border-white/40 text-olive-lighter` (outline)                         | `bg-white text-cobalt-dark`             |
+| `productBg`   | `bg-olive-dark border-cobalt-dark/40 text-cobalt-dark` (filled)        | `bg-cobalt-dark text-olive-light`       |
+| `muted`       | `border-cobalt-dark/40 text-cobalt-dark` (outline)                     | `bg-cobalt-dark text-olive-light`       |
+| `mutedOnDark` | `border-white/40 text-olive-light` (outline)                           | `bg-warm-grey-dark text-cobalt-dark`    |
 
 
 #### Props
@@ -367,9 +413,6 @@ Font: Figtree Bold, uppercase, no wrap. No vertical padding — height is set ex
 
 // Override hover text (e.g. About CTA)
 <Btn color="dark" hoverText="purple">Work with Aaron</Btn>
-
-// Product card CTA (already rendered inside ProductCard)
-<Btn color="white" href="#contact" className="self-start">Learn more</Btn>
 ```
 
 ---
@@ -425,8 +468,18 @@ Mirrors `OfferingRow` layout exactly — see **Offering Card Layout** pattern fo
 - **Row container** — `gap-6 px-8 max-phone:px-4 max-phone:max-w-[664px] max-phone:mx-auto tablet:px-12 tablet:max-w-[696px] tablet:mx-auto`. At expanded/desktop: `flex-row items-center gap-8 px-0 w-full max-w-[1144px] mx-auto`.
 - **Mobile/tablet image** — stacks above text (`order-1`). Height `h-[280px]` phone / `h-[340px]` tablet. `items-end justify-center`. Hidden at expanded/desktop.
 - **Expanded/desktop image** — `flex-1 max-w-[512px] aspect-[512/440] object-contain`, fills absolute inset. `imageLeft` controls column order via `expanded:order-`*.
-- **Text column** — `flex-1 max-w-[600px]`, `gap-6` all viewports, `pb-16` at phone/tablet, `pb-0` at expanded/desktop. CTA: `<Btn color="white">` left-aligned at expanded/desktop (`self-center` → `expanded:self-start`).
+- **Text column** — `flex-1 max-w-[600px]`, `gap-6` all viewports, `pb-16` at phone/tablet, `pb-0` at expanded/desktop. CTA: `.text-cta-olive` text-link with chevron, `self-start`.
 - Uses `<picture>` element with optional `imageMobile` source at mobile breakpoint. Images are lazy-loaded.
+
+#### Typography in ProductCard
+
+| Element    | Class / Style                      | Color             |
+| ---------- | ---------------------------------- | ----------------- |
+| Eyebrow    | `.eyebrow`                         | `text-warm-grey-dark` |
+| Title      | `.card-heading`                    | `text-olive-lighter`  |
+| Body copy  | `.body-copy`                       | `text-olive`          |
+| Footnote   | `.footnote opacity-70`             | `text-white`          |
+| CTA        | `.text-cta .text-cta-olive` + chevron | olive → olive-lighter on hover |
 
 #### Props
 
@@ -438,14 +491,14 @@ Mirrors `OfferingRow` layout exactly — see **Offering Card Layout** pattern fo
 | `imageMobile`             | string                | —            | Optional mobile-specific `srcSet` image                                |
 | `alt`                     | string                | `''`         | Image alt text                                                         |
 | `imageFit`                | `'contain' | 'cover'` | `'contain'`  | Object-fit at expanded+                                                |
-| `imageContainerClassName` | string                | `''`         | Override image container height/sizing (e.g. `expanded:h-[419px]`)     |
+| `imageContainerClassName` | string                | `''`         | Override image container height/sizing                                 |
 | `imageClassName`          | string                | `''`         | Additional classes on `<img>`                                          |
 | `textClassName`           | string                | `''`         | Additional classes on text column                                      |
-| `category`                | ReactNode             | —            | Eyebrow label (`.eyebrow`, white, 70% opacity)                         |
-| `title`                   | ReactNode             | —            | Heading (`.card-heading`, white)                                       |
-| `description`             | ReactNode             | —            | Body copy (`.body-copy`, olive-light)                                  |
-| `footnote`                | ReactNode             | —            | Optional small print below body copy (`.footnote`, white, 70% opacity) |
-| `cta`                     | string                | —            | CTA button label (renders `<Btn color="white">`)                       |
+| `category`                | ReactNode             | —            | Eyebrow label                                                          |
+| `title`                   | ReactNode             | —            | Heading                                                                |
+| `description`             | ReactNode             | —            | Body copy                                                              |
+| `footnote`                | ReactNode             | —            | Optional small print below body copy                                   |
+| `cta`                     | string                | —            | CTA label (renders as `.text-cta` link)                                |
 | `href`                    | string                | `'#contact'` | CTA link target                                                        |
 | `className`               | string                | `''`         | Additional classes on root element                                     |
 
@@ -466,14 +519,14 @@ Standardised heading + subheading stack used to open most sections.
 | `title`             | ReactNode | —                    | Section heading (`.section-heading`) |
 | `subtitle`          | ReactNode | —                    | Subheading (`.section-subheading`)   |
 | `titleClassName`    | string    | `'text-cobalt-dark'` | Color override for heading           |
-| `subtitleClassName` | string    | `''`                 | Additional classes for subheading    |
+| `subtitleClassName` | string    | `''`                 | Color class for subheading (required — no default color in class) |
 
 
 ```jsx
 <SectionHeader
   title={<>Transformational<br />Offerings</>}
   subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
-  titleClassName="text-olive-light"
+  subtitleClassName="text-warm-grey-light"
 />
 ```
 
@@ -490,10 +543,10 @@ These section components are not intended for arbitrary reuse — each maps to a
 | ------------- | ----------------- | ----------------------- | --------------------------------- | -------------------------------------------------------------------- |
 | `Nav`         | `Nav.jsx`         | —                       | `cobalt-dark` / `surface-darkest` | Sticky bar (`z-nav: 100`) + mobile drawer (`z-navDrawer: 99`)        |
 | `Hero`        | `Hero.jsx`        | —                       | `cobalt-dark` / `surface-darkest` | Fluid display headline, crossout SVG overlay, hero image             |
-| `Featured`    | `Featured.jsx`    | —                       | `surface-darker`                  | Marquee ticker strip                                                 |
-| `Mission`     | `Mission.jsx`     | —                       | `surface-dark`                    | Brand mission statement                                              |
+| `Featured`    | `Featured.jsx`    | —                       | `cobalt-dark` / `surface-darkest` | Marquee ticker strip                                                 |
+| `Mission`     | `Mission.jsx`     | —                       | `brand-yellow`                    | Brand mission statement                                              |
 | `Offerings`   | `Offerings.jsx`   | `#offerings`, `#empire` | `olive-light`                     | Four alternating offering cards + Empire Builder block               |
-| `Testimonial` | `Testimonial.jsx` | —                       | `surface-dark`                    | Social proof block (overlaps adjacent sections via negative margins) |
+| `Testimonial` | `Testimonial.jsx` | —                       | `brand-yellow`                    | Social proof block — standalone section, no overlap                  |
 | `Products`    | `Products.jsx`    | `#products`             | `cobalt-dark` / `surface-darkest` | ProductCard grid (transformational products + shop)                  |
 | `About`       | `About.jsx`       | `#about`                | `olive-dark`                      | Dr. Aaron Steinberg bio + credentials                                |
 | `Donate`      | `Donate.jsx`      | —                       | `purple`                          | Donation CTA with mission copy                                       |
@@ -547,6 +600,8 @@ The mobile nav drawer animates link items in/out and morphs the hamburger icon.
 | `.nav-item-in`           | Link bounces in from `translateY(−10px)`, opacity 0→1                                                                                              | `--duration-200` / `--ease-overshoot` |
 | `.nav-item-out`          | Link fades to `translateY(−10px)`                                                                                                                  | `--duration-200` / `--ease-out`       |
 
+
+Nav brand text: `text-olive-lighter`. Desktop nav link rollovers: `hover:text-olive-lighter`.
 
 Z-index: nav bar `z-nav` (100), drawer `z-navDrawer` (99) — drawer slides under bar.
 
@@ -603,13 +658,12 @@ Inner structure:
 
 #### Typography in row
 
-| Element | Class | Color |
-|---|---|---|
-| Eyebrow | `.eyebrow` | `text-cobalt-dark opacity-70` (OfferingRow) / `text-white opacity-70` (ProductCard) |
-| Title | `.card-heading` | `text-cobalt-dark` / `text-white` |
-| Body | `.body-copy` | `text-cobalt-dark` / `text-olive-light` |
-| CTA (OfferingRow) | `.text-cta` + chevron SVG | `text-cobalt-dark`, `self-start` all viewports |
-| CTA (ProductCard) | `<Btn color="white">` | `self-center` → `expanded:self-start` |
+| Element | Class | Color (OfferingRow) | Color (ProductCard) |
+|---|---|---|---|
+| Eyebrow | `.eyebrow` | `text-warm-grey-light` | `text-warm-grey-dark` |
+| Title | `.card-heading` | `text-cobalt-dark` | `text-olive-lighter` |
+| Body | `.body-copy font-light` | `text-deep-gray` | `text-olive` |
+| CTA | `.text-cta` + chevron | `text-deep-gray` → purple hover | `.text-cta-olive` → olive-lighter hover |
 
 #### Empire card
 
@@ -622,7 +676,20 @@ Sibling structure — image and text box are separate elements. Image: `800px` c
 | Max-width | `max-w-[680px]` | `max-w-[712px]` | `max-w-[840px]` | `max-w-[896px]` |
 | Padding Y | `pt-12 pb-16` | same | `pt-[64px] pb-[80px]` | `pt-[64px] pb-[100px]` |
 
-Content is centered within the border container; text is left-aligned.
+---
+
+### Testimonial Layout
+
+`Testimonial.jsx` is a standalone yellow section with no negative margins.
+
+- **Background:** `bg-brand-yellow`
+- **Padding:** `py-[160px]` all viewports; `px-12` phone / `px-16` tablet / `px-24` expanded+
+- **Text wrapper:** `mx-auto max-w-[680px]` desktop/expanded · `max-w-[540px]` tablet · `w-full`
+- **Blockquote:** Bitter 300, `text-20` phone / `text-24` tablet / `text-32` expanded/desktop · `leading-1-5` · `text-cobalt-dark`
+- **Hanging punctuation:** `padding-left: 0.45em; text-indent: -0.45em` (em scales with font size). `hanging-punctuation: first` for Safari.
+- **Attribution margin-left:** `9px` phone / `11px` tablet / `14px` expanded+  (matches `0.45em` at blockquote's font-size at each breakpoint)
+- **Source name:** Figtree Bold, `text-14` phone / `text-16` tablet+ · `text-cobalt-dark`
+- **Source credentials:** Figtree Normal/Medium, `text-13` phone / `text-14` tablet+ · `text-cobalt-dark`
 
 ---
 
@@ -630,13 +697,13 @@ Content is centered within the border container; text is left-aligned.
 
 ```css
 .blockquote-hanging {
-  hanging-punctuation: first;  /* Safari */
-  padding-left: 1rem;
-  text-indent: -1rem;
+  hanging-punctuation: first;  /* Safari — handles natively */
+  padding-left: 0.45em;        /* scales with font size */
+  text-indent: -0.45em;        /* pulls only the " to the left */
 }
 ```
 
-Apply to `<blockquote>` or `<p>` elements that open with `"` to optically hang the quote mark.
+Apply to `<blockquote>` or `<p>` elements that open with `"`. The `em` value scales with the element's font size so the indent matches the `"` width at any size. For the attribution below, use pixel values that match the computed `0.45em` at the blockquote's font-size (not the attribution's own font-size).
 
 ---
 
@@ -645,17 +712,17 @@ Apply to `<blockquote>` or `<p>` elements that open with `"` to optically hang t
 All images live in `/public/` and are referenced via `import.meta.env.BASE_URL` + filename.
 
 
-| File                                        | Usage                                       |
-| ------------------------------------------- | ------------------------------------------- |
-| `hero.png`                                                                  | Hero section background                     |
-| `sevenminutes.png`, `rockhard.png`, `bogeys.png`, `goingdown2.png`          | Offering section card images (528×454 RGBA PNGs, transparent bg) |
-| `empire.png`                                                                | Empire Builder section image                |
-| `card_black.png`                                                            | Quantum Empowerment Black Card product card |
-| `tarot_bg.png`                                                              | STW Tarot product card                      |
-| `aaron.png`                                                                 | Dr. Aaron Steinberg image (About section, circular crop) |
-| `crossout.svg`                                                              | Hero FCK strikethrough overlay (white)      |
-| `crossout-pink.svg`                                                         | Footer FCK strikethrough overlay (pink)     |
-| `gradients.svg`                                                             | Decorative background gradients             |
+| File                                                                        | Usage                                                             |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `hero.png`                                                                  | Hero section background                                           |
+| `sevenminutes.png`, `rockhard.png`, `bogeys.png`, `goingdown2.png`          | Offering section card images (528×454 RGBA PNGs, transparent bg)  |
+| `empire.png`                                                                | Empire Builder section image                                      |
+| `card.png`                                                                  | Quantum Empowerment Black Card product card                       |
+| `tarot.png`                                                                 | STW Tarot product card                                            |
+| `aaron.png`                                                                 | Dr. Aaron Steinberg image (About section)                         |
+| `crossout.svg`                                                              | Hero F\*CK strikethrough overlay (white)                          |
+| `crossout-pink.svg`                                                         | Footer F\*CK strikethrough overlay (pink)                         |
+| `gradients.svg`                                                             | Decorative background gradients                                   |
 
 
 For `ProductCard`, pass both `image` (desktop) and `imageMobile` (portrait/mobile) when a mobile-specific crop exists.
@@ -712,28 +779,24 @@ Apply `scroll-mt-nav` (80px) to any element that is an `id` anchor target, so th
 
 ### Changelog (recent)
 
-- **`.eyebrow` tablet size** — Corrected to `text-13` (was `text-14`). Now `text-11` phone / `text-13` tablet/expanded/desktop.
-- **`.text-cta` class** — New component class for text-link CTAs: Figtree 800, `text-14`, `tracking-sm`, uppercase, `leading-1-1`. Used in `OfferingRow` CTA link. Pair with 14×14 chevron SVG.
-- **OfferingRow layout** — Full spec update: row `gap-6` base → `gap-8` expanded/desktop; `max-w-[1144px]` centering; separate mobile (`h-[280px]`/`h-[340px]`) and desktop (`flex-1 max-w-[512px] aspect-[512/440]`) image elements; text block `flex-1 max-w-[600px]`; between-rows `gap-8` → `gap-20`.
-- **ProductCard** — Restructured to match OfferingRow layout exactly (was 45%/55% fixed-width; now `flex-1` columns matching OfferingRow image and text max-widths). `imageContainerClassName` for Tarot height override removed.
-- **Empire container** — Border/fill color `olive-dark`. Desktop px `136px`, max-w `896px` (= 624px content + 2×136px). Expanded px `120px`, max-w `840px`. Documented expanded and desktop separately.
-- **Offering images** — Renamed to `sevenminutes.png`, `rockhard.png`, `bogeys.png`, `goingdown2.png`.
-- **Aaron image** — Replaced `aaron_bg.png` with `aaron.png` (circular crop, no background circle).
-- **About layout** — At expanded/desktop: image and bio copy swapped; bio (55%) is now left column, image (45%) is right column. Image is `object-center` at expanded/desktop (was `object-left`).
-- **Breakpoints** — Replaced 6-breakpoint system with 4 clean non-overlapping ranges: `max-phone` (≤599), `tablet` (600–899), `expanded` (900–1199), `desktop` (≥1200). Removed `max-tablet` and `max-expanded`.
-- **Typography classes** — Rewrote all `@layer components` utilities mobile-first. See updated table above.
-- **TradeMark sizes** — Renamed variants: `xs` → `sm`, `sm` → `md`. Default remains `lg`.
-- **Footer mobile sizes** — Brand name: 20px (all), tagline: 14px (phone) / 12px (tablet+), nav links: 14px (phone) / 13px (tablet+), copyright: 12px (phone) / 11px (tablet+).
-- **Offering card padding** — Removed `.offering-card` CSS class; padding is now explicit Tailwind range classes per row.
-- **ProductCard** — Removed `tabletPb` prop; stacked-layout bottom padding is hardcoded. Updated `imageContainerClassName` convention to use `expanded:` prefix.
-- **Footer TradeMark** — Brand name now uses `size="md"` (uniform at all breakpoints). Empire h3 call-site note corrected: uses `desktop:text-40` token, not arbitrary `text-[40px]`.
-- **Line-height tokens renamed** — Tokens now use numeric values: `--lh-1`, `--lh-1-1`, `--lh-1-2`, `--lh-1-3`, `--lh-1-5`. Tailwind classes updated accordingly (`leading-1`, `leading-1-1`, etc.). Added `leading-1-3` (value 1.3) for hero tagline. Named aliases (`tight`, `snug`, `compact`, `normal`) removed.
-- `**card-heading` line-height** — Changed from `leading-1-1` to `leading-1` (value 1) for tighter heading pairs.
-- **Body copy tablet** — `.body-copy` at tablet (600–899px) updated to `text-16` (was `text-18`). Expanded/desktop remain `text-18`.
-- **Hero tagline line-height** — Set to `leading-1-3` at all sizes.
-- **Mission quote line-height** — Large `text-24` quote paragraph updated to `leading-1-3`.
-- **TradeMark — all sizes inline-block** — `sm` and `md` variants changed from `<sup>` to `inline-block leading-none align-[1em]`, matching `lg`. Consistent cap-height alignment across all sizes.
-- **TradeMark `gap` prop** — New boolean prop adds `ml-1` (4px) between the word and mark. Applied to offering/product title call sites only (not hero tagline or inline body text).
-- **Footer nav links** — Added `expanded:flex-row desktop:flex-row` to fix vertical stacking at expanded/desktop. Removed `expanded:justify-end desktop:justify-end` for left-aligned layout.
-- **Mission / Donate indent** — Removed `pl-8 tablet:pl-12` from body copy wrapper; content now aligns flush-left with the section heading at phone/tablet.
-
+- **Color tokens** — Added `olive-lighter` (#F4F6EA), `deep-gray` (#4B4B4B). Renamed `warm-grey` → `warm-grey-light` (#65665E), added `warm-grey-dark` (#98998D). Renamed semantic `text-primary` → `text-dark`. Removed `text-light` semantic (use `text-deep-gray` utility directly).
+- **Eyebrow colors by background** — `text-warm-grey-light` on light backgrounds (Offerings), `text-warm-grey-dark` on dark backgrounds (Products, Footer, Nav).
+- **`olive-lighter` rollout** — Applied to nav brand, nav rollover, Featured heading, Mission heading, Products heading, product card headings, Donate heading/btn, footer hero F\*CK + THE WORLD text. Btn `cream` and `white` presets updated to `text-olive-lighter` default.
+- **`deep-gray` rollout** — Applied to body copy on light backgrounds: Offerings OfferingRow, About, Empire block.
+- **Body copy weight on dark bg** — `font-light` (300) applied at call sites in Hero, Mission, Offerings (OfferingRow), Donate. Light-bg body copy (About) remains 400.
+- **`.section-subheading`** — Font-weight 600 → 500 (medium). Tracking → `tracking-xs`. Color removed from class — pass `subtitleClassName` at every call site.
+- **`.card-heading` line-height** — Changed from `leading-1` to `leading-1-1` (1.1).
+- **`.text-cta` class** — Updated: `text-16` (was `text-14`), `leading-1-5` (was `leading-1-1`), `py-2` added, `gap-2` chevron gap. Hover color: `purple`. Asymmetric animation: bounce in / ease-out on leave.
+- **`.text-cta-olive` variant** — New class for ProductCard CTAs: default `olive`, hover `olive-lighter`. Declared after `.text-cta:hover` in component layer.
+- **Btn border opacity** — Changed from `0.7` to `0.4` across all presets.
+- **ProductCard CTA** — Changed from `<Btn color="white">` to `.text-cta .text-cta-olive` text-link (matches OfferingRow pattern).
+- **Featured section** — Background changed from `surface-darker` to `surface-darkest`. Padding: `pt-[8px] pb-[120px]`.
+- **Mission section** — Background changed from `surface-dark` to `brand-yellow`. All text → `cobalt-dark`.
+- **Testimonial section** — Background changed from `surface-dark` to `brand-yellow`. Removed negative margin overlap — now a standalone section. Padding `py-[160px]`. Text wrapper `max-w-[680px]` desktop / `max-w-[540px]` tablet. Mobile px: `48px`. Attribution margin uses px values matched to blockquote em-based indent.
+- **Hanging punctuation** — Updated from fixed `1rem` to `0.45em` (em-based, scales with font size).
+- **Hero padding** — `py-[88px]` → `pt-[88px] pb-[64px]`. Tagline color → `text-olive-lighter`. Gap tagline→body: `gap-4` all viewports.
+- **Offerings pb** — Changed from 188/220/280px → `136px` all breakpoints.
+- **Products pt** — Changed from 224/280px → `120px` all breakpoints. Header→cards gap and between-cards gap: both `gap-16` (64px) at expanded/desktop.
+- **Mission body copy** — Removed individual max-widths; wrapper constrained to `max-w-[640px]`.
+- **Footer hero** — F\*CK and THE WORLD: `olive-light` → `olive-lighter`.
+- **Donate body copy** — Consolidated two `<p>` tags into one text block with `[&>p+p]:mt-4` paragraph spacing.

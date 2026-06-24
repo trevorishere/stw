@@ -84,18 +84,18 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
       <div className={`${textOrder} flex flex-col gap-6 pb-16 expanded:flex-1 expanded:max-w-[600px] expanded:pb-0 desktop:flex-1 desktop:max-w-[600px] desktop:pb-0`}>
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-4">
-            <p className="eyebrow text-cobalt-dark opacity-70">{category}</p>
+            <p className="eyebrow text-warm-grey-light">{category}</p>
             <h3 className="card-heading text-cobalt-dark">{title}</h3>
           </div>
-          <p className="body-copy text-cobalt-dark">{description}</p>
+          <p className="body-copy font-light text-deep-gray">{description}</p>
         </div>
         <a
           href="#contact"
-          className="text-cta self-start inline-flex items-center gap-2 text-cobalt-dark"
+          className="text-cta self-start inline-flex items-center gap-2 text-deep-gray"
         >
           {cta}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
       </div>
@@ -118,13 +118,14 @@ export default function Offerings() {
   const [empireRef, empireVisible] = useReveal()
   return (
     <section id="offerings" className="scroll-mt-nav">
-      <div className="page-container px-0 pt-[80px] pb-[188px] gap-8 flex flex-col items-center tablet:px-16 tablet:pt-[96px] tablet:pb-[220px] tablet:gap-16 expanded:px-24 expanded:pt-[120px] expanded:pb-[280px] expanded:gap-16 desktop:px-24 desktop:pt-[120px] desktop:pb-[280px] desktop:gap-16">
+      <div className="page-container px-0 pt-[80px] pb-[136px] gap-8 flex flex-col items-center tablet:px-16 tablet:pt-[96px] tablet:pb-[136px] tablet:gap-16 expanded:px-24 expanded:pt-[120px] expanded:pb-[136px] expanded:gap-16 desktop:px-24 desktop:pt-[120px] desktop:pb-[136px] desktop:gap-16">
 
         {/* Section header */}
         <div ref={headerRef} className={`reveal-heading w-full max-phone:px-6${headerVisible ? ' in-view' : ''}`}>
           <SectionHeader
             title={<>Transformational<br />Offerings</>}
             subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
+            subtitleClassName="text-warm-grey-light"
           />
         </div>
 
@@ -158,7 +159,7 @@ export default function Offerings() {
 
                 {/* Eyebrow → title */}
                 <div className="flex flex-col gap-6">
-                  <p className="eyebrow text-cobalt-dark opacity-70">
+                  <p className="eyebrow text-warm-grey-light">
                     STW's Signature <TradeMark size="sm" word="Container" />
                   </p>
                   <h3 className="card-heading text-cobalt-dark desktop:text-40 desktop:leading-1-1">
@@ -169,7 +170,7 @@ export default function Offerings() {
 
                 {/* Description → btn */}
                 <div className="flex flex-col gap-10 expanded:gap-12 desktop:gap-12">
-                  <p className="body-copy text-cobalt-dark">
+                  <p className="body-copy text-deep-gray">
                     Dr. Steinberg's signature, most high-touch, deepest, most exclusive, most expensive, and most
                     transformational container. This is not a course. This is not coaching. This is a 12-month
                     embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate
