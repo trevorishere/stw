@@ -176,9 +176,7 @@ export default function Offerings() {
                     embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate
                     transformation in others—and certify practitioners beneath you in an infinitely scalable hierarchy.
                     Master the art of advanced dependency cultivation so your clients can't leave even if they
-                    want to. Graduate as a Certified Steinberg STW <TradeMark size="md" word="Method" /> Practitioner
-                    with the authority to recruit, train, and certify your own practitioners beneath you in an
-                    infinitely scalable hierarchy. Includes unlimited Voxer access, quarterly hot seats, a private
+                    want to. Includes unlimited Voxer access, quarterly hot seats, a private
                     retreat in a LUSCIOUS location where you'll be soaked in pleasure, your own STW Black Card,
                     and a certificate of spiritual rank within the STW lineage (belts available for purchase
                     separately). Dr. Steinberg only accepts 2 people per year and there are only 2 spots left.
