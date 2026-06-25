@@ -6,7 +6,7 @@
 
 @layer base {
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: auto; }
   body {
     @apply bg-olive-light text-cobalt-dark font-figtree min-w-[320px];
   }
