@@ -15,7 +15,7 @@ export default function Testimonial() {
           <blockquote className="reveal-heading blockquote-hanging font-bitter font-light text-20 leading-1-5 text-cobalt-dark
                                  tablet:text-24
                                  expanded:text-32 desktop:text-32">
-            "I came for the golf jokes and stayed because I actually learned how to talk to my wife without us both
+            "I thought this was a joke, but I actually learned how to talk to my wife without us both
             wanting to die. Five stars."
           </blockquote>
 

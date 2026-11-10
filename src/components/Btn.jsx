@@ -32,7 +32,7 @@ const HOVER_TEXT = {
   purple: 'hover:text-purple',
 }
 
-export default function Btn({ color = 'dark', hoverText, href, children, className = '' }) {
+export default function Btn({ color = 'dark', hoverText, href, type = 'button', children, className = '' }) {
   const preset = COLOR_PRESETS[color]
   const hoverTextClass = hoverText ? HOVER_TEXT[hoverText] : preset.defaultHoverText
 
@@ -46,5 +46,5 @@ export default function Btn({ color = 'dark', hoverText, href, children, classNa
   ].filter(Boolean).join(' ')
 
   if (href) return <a href={href} className={classes}>{children}</a>
-  return <button type="button" className={classes}>{children}</button>
+  return <button type={type} className={classes}>{children}</button>
 }

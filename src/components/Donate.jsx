@@ -27,7 +27,7 @@ export default function Donate() {
                 This work simply could not exist without the generosity of people like you. The
                 future of personal development is being built right here, right now, and it is only
                 possible because of your support. We are so deeply, profoundly grateful. From the
-                bottom of our collectively resourced nervous systems: thank you.
+                bottom of our heart-centered and collectively resourced nervous systems: thank you.
               </p>
             </div>
             <Btn color="cream" href="#contact" className="self-start">

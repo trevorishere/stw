@@ -29,9 +29,10 @@ export default function Products() {
             alt="Quantum Empowerment Black Card"
             category="Empowering Product"
             title={<>The Quantum Empowerment Black <TradeMark size="lg" word="Card" gap /></>}
-            description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine* with a premium card that certifies you have 'Done The Work'. Link it with your personal Consciousness Portfolio and the quiet satisfaction of knowing you are further along than everyone else at the dinner party."
+            description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine* with a premium card that certifies you have 'Done The Work'. You could have the quiet satisfaction of knowing you are further along than everyone else at the dinner party, but sometimes the attention feels much better, and we don’t reject our true selves here."
             footnote="* the universe doesn't judge evolutionary medicine use when you're in integrity"
             cta="apply now"
+            href="#coming-soon"
           />
 
           <ProductCard
@@ -40,8 +41,9 @@ export default function Products() {
             alt="STW Tarot deck"
             category="Divination & Clarity"
             title={<>The STW <TradeMark size="lg" word="Tarot" gap /></>}
-            description="A secular divination deck featuring seventy-eight of Dr. Steinberg's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Functional Medicine for literally any question about your gut. Includes a 40-page guidebook written entirely in therapeutic jargon."
+            description="Most tarot is bullshit, but this is a secular divination deck featuring seventy-eight of Dr. Stein's proprietary psychological archetypes. Pull the Nine of Hogs for clarity on creative blocks. Draw the Tower of Agnostic Spirituality for literally any question about the nature of reality. Includes a 40-page master guidebook for advanced practitioners only."
             cta="read your future"
+            href="#coming-soon"
           />
 
         </div>

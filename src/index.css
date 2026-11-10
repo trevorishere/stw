@@ -258,6 +258,41 @@
   .hero-top-row { flex-direction: column; flex-wrap: nowrap; gap: 0; }
 }
 
+/* Hero slogan — placeholder styling for MAXIMIZE / MONETIZE headline */
+.hero-slogan {
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7.2vw, 112px);
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: white;
+}
+
+/* As Featured — fake outlet marks (mockups; original designs, not real logos) */
+.featured-mark { height: 56px; display: flex; align-items: center; white-space: nowrap; line-height: 1; }
+.featured-mark small { display: block; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; }
+.mark-icon { flex: none; }
+.mark-stack { display: inline-flex; flex-direction: column; gap: 3px; }
+.mark-yahoo { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 34px; letter-spacing: 0.01em; }
+.mark-goop { font-family: 'Space Mono', ui-monospace, monospace; font-size: 17px; }
+.mark-goop b { font-weight: 700; }
+.mark-goop-cursor { margin-left: 2px; }
+.mark-sauna { display: inline-flex; align-items: center; gap: 8px; }
+.mark-sauna small { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 8px; }
+.mark-sauna .mark-stack > span { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 32px; letter-spacing: 0.06em; }
+.mark-life { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 20px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; padding: 6px 2px; }
+.mark-playgirl small { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 8px; }
+.mark-playgirl > span { font-family: 'Shrikhand', Georgia, serif; font-size: 26px; text-transform: uppercase; letter-spacing: 0.02em; }
+.mark-wsb { display: inline-flex; align-items: baseline; gap: 8px; font-family: 'VT323', ui-monospace, monospace; font-size: 28px; text-transform: uppercase; }
+.mark-wsb small { font-family: 'VT323', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: none; }
+.mark-green { display: inline-flex; align-items: center; gap: 8px; font-family: 'Quicksand', sans-serif; }
+.mark-green small { font-weight: 400; font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase; }
+.mark-green .mark-stack > span { font-weight: 600; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; }
+.mark-geo { font-family: 'Press Start 2P', ui-monospace, monospace; }
+.mark-geo > span { font-size: 11px; }
+.mark-geo small { font-family: 'Press Start 2P', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.04em; text-transform: none; }
+
 /* Scroll-reveal — base state: invisible, shifted down 100px */
 .reveal-heading,
 .reveal-body {

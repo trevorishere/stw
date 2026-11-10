@@ -1,4 +1,3 @@
-import Btn from './Btn'
 import { CREDS } from '../constants'
 import { useReveal } from '../hooks/useReveal'
 
@@ -49,29 +48,20 @@ export default function About() {
                 </p>
                 <p>
                   After expanding to business leadership coaching, he's worked with over 75,000 of the top
-                  leaders in entrepreneurship to business leadership to entrepreneurial business in the last 3
-                  years alone. Does this sound like you? He has over 15 certifications with 10s more on the
-                  way, including a purchased Doctor of Divinity, an actually legitimate Master's in Psychology,
-                  and other real therapy trainings. He's been meditating since he was five—not originally by
-                  choice.
+                  leaders in entrepreneurship to executive business leadership to visionary legacy in the last
+                  3 years alone. Does this sound like you? He has over 15 certifications with 10s more on the
+                  way, including a Doctor of Divinity, a Master's in Integral Counseling Psychology, and many
+                  other therapy trainings. He's been meditating since he was five—not originally by choice, but
+                  is a mindfulness master nonetheless.
                 </p>
                 <p>
-                  He's a purple belt in Brazilian Jiu-Jitsu. He's spent tens of thousands of dollars on
-                  thousands of hours of workshops, therapy, retreats, and trainings, and probably (definitely)
-                  became a practitioner more to work out his own shit than anything else.
-                </p>
-                <p>
-                  Everything he makes comes out of a genuine obsession with psychology, spirituality, and
-                  wellbeing, thinking about who we are, why we do what we do, and how to close the gap between
-                  where we are and where we want to be. This is for people who are tired of being over-promised
-                  the answer and want to grapple with the questions—sincerely, but without losing the ability
-                  to laugh about it. Sustainably.
+                  He's a purple belt in Brazilian Jiu-Jitsu. He's spent tens of thousands of dollars – maybe the
+                  most trained of any coach – on thousands of hours of workshops, therapy, retreats, and
+                  trainings. While he originally became a practitioner more to work out his own shit than
+                  anything else, he’s considered to be one of, if not the best coaches and wellness
+                  practitioners in the world.
                 </p>
               </div>
-
-              <Btn color="dark" href="#contact" className="self-center expanded:self-start desktop:self-start">
-                Book Your Free Discovery Session
-              </Btn>
 
             </div>
 

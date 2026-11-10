@@ -18,15 +18,14 @@ export default function Mission() {
               monetizing the embodiment. And then disrupting the monetization. Sustainably.
             </p>
             <p className="body-copy font-light max-w-none">
-              When you claim your thought leadership—when you own your mission, articulate your
-              vision, resource your nervous system, optimize your protocols, scale your containers,
-              and cross-post about it with a photo of
-              yourself staring into the middle distance on a cliff—everything begins to align.
+              When you tend to what's deepest and most authentically underneath — when you meet your
+              own pain, regulate your nervous system, and come home to be and become all of who you
+              actually are — everything begins to align.
             </p>
             <p className="body-copy font-light max-w-none">
-              Your legacy is more than the organic, fresh-squeezed, green juice you drink; it's the
-              field you generate when you walk into a room and everyone can just feel that you've done
-              plant medicine. This is what we help you claim.
+              Your legacy is more than your business; it's the field you generate when you walk into a
+              room and everyone can just feel that you've resourced your nervous system through 30+
+              years of doing the work and regularly done plant medicine. This is what we help you claim.
             </p>
             <p className="body-copy max-w-none font-bold">
               We won't stop until we SAVE THE <TradeMark size="md" word="WORLD." />

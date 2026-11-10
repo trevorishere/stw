@@ -13,28 +13,10 @@ const OFFERINGS = [
     alt: 'Seven Minute Wellness program cover',
     category: 'Life Optimization',
     title: <>Seven Minute <TradeMark size="lg" word="Wellness" gap /></>,
-    description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, maybe.`,
+    description: `Total life transformation in seven minutes. That's not a typo. We've compressed decades of therapeutic wisdom into a format shorter than your morning doom scroll. Will it change your life? Statistically, most things don't really go anywhere. But also, you could be the one.`,
     cta: 'start your seven minutes',
-  },
-  {
-    id: 2,
-    image: `${BASE}rockhard.png`,
-    imageLeft: true,
-    alt: 'Rock Hard Wet Pussy program cover',
-    category: 'Relationships & Intimacy',
-    title: <>Rock Hard Wet <TradeMark size="lg" word="Pussy" gap /></>,
-    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary <TradeMark size="md" word="Chore Play" /> framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
-    cta: 'Recalibrate Your Intimacy',
-  },
-  {
-    id: 3,
-    image: `${BASE}bogeys.png`,
-    imageLeft: false,
-    alt: 'From Bogeys to Breakthroughs program cover',
-    category: 'Power & Performance',
-    title: <>From Bogeys to <TradeMark size="lg" word="Breakthroughs" gap /></>,
-    description: <>Unlock your leadership potential with quantum golf consciousness powered by the ancient wisdom of the back nine, including HRV-tracked swing analysis, and a breathwork protocol for the putting green. And here's what separates this from every other golf program: you'll also gain real relationship skills so powerful that your wife will actually be excited when you leave for the course. You'll come back a better golfer <em>and</em> a better partner, and she'll never complain about your tee time again. The only handicap holding you back is your belief system.</>,
-    cta: 'unlock your swing',
+    href: `${BASE}seven-minute-wellness.pdf`,
+    download: 'Seven Minute Wellness.pdf',
   },
   {
     id: 4,
@@ -46,11 +28,22 @@ const OFFERINGS = [
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
   },
+  {
+    id: 2,
+    image: `${BASE}rockhard.png`,
+    imageLeft: false,
+    alt: 'Rock Hard Wet Pussy program cover',
+    category: 'Relationships & Intimacy',
+    title: <>Rock Hard Wet <TradeMark size="lg" word="Pussy" gap /></>,
+    description: <>If you thought this was porn, we sincerely apologize. This is a groundbreaking embodied intimacy recalibration protocol for couples who have replaced passion with arguments about the dishwasher. This revolutionary STW <TradeMark size="md" word="Chore Play" /> framework will completely disrupt your negative patterns and you'll get an extra special <em>bonus chapter</em> (a $1,297 value!!) on whether your attachment style is ruining your orgasms (it is).</>,
+    cta: 'Recalibrate Your Intimacy',
+    href: '#coming-soon',
+  },
 ]
 
 const empireImg = `${BASE}empire.png`
 
-function OfferingRow({ image, imageLeft, alt = '', category, title, description, cta }) {
+function OfferingRow({ image, imageLeft, alt = '', category, title, description, cta, href = '#contact', download }) {
   const [ref, visible] = useReveal()
 
   // At mobile/tablet: image always stacks on top (order-1), text below (order-2).
@@ -90,7 +83,8 @@ function OfferingRow({ image, imageLeft, alt = '', category, title, description,
           <p className="body-copy font-light text-deep-gray">{description}</p>
         </div>
         <a
-          href="#contact"
+          href={href}
+          download={download}
           className="text-cta self-start inline-flex items-center gap-2 text-cobalt-dark"
         >
           {cta}
@@ -127,6 +121,13 @@ export default function Offerings() {
             subtitle="Proprietary Frameworks Delivered Through Revolutionary Containers"
             subtitleClassName="text-warm-grey-light"
           />
+          <p className="body-copy font-light text-deep-gray mt-6 max-w-[760px]">
+            After decades of <TradeMark size="md" word="Hyper-Gold-Standard" /> clinical research, twelve-week
+            containers, incountable certifications, cold plunge protocols, and mastermind facilitation,
+            and so on, Dr. Stein has distilled the entire human experience into a proprietary framework that will
+            disrupt your collective nervous system, shatter your limiting beliefs, monetize your trauma, resource
+            your somatic intelligence, and optimize your leadership capacity — sustainably.
+          </p>
         </div>
 
         <div className="flex flex-col w-full gap-8 tablet:gap-[88px] expanded:gap-[88px] desktop:gap-[88px]">
@@ -164,26 +165,27 @@ export default function Offerings() {
                   </p>
                   <h3 className="card-heading text-cobalt-dark desktop:text-40 desktop:leading-1-1">
                     <TradeMark size="lg" word="The STW" gap />{' '}
-                    Empire Builder &amp; Dependency Cultivation <TradeMark size="lg" word="Accelerator" gap />
+                    Empire Builder &amp; Enmeshment Cultivation <TradeMark size="lg" word="Accelerator" gap />
                   </h3>
                 </div>
 
                 {/* Description → btn */}
                 <div className="flex flex-col gap-10 expanded:gap-12 desktop:gap-12">
                   <p className="body-copy text-deep-gray">
-                    Dr. Steinberg's signature, most high-touch, deepest, most exclusive, most expensive, and most
-                    transformational container. This is not a course. This is not coaching. This is a 12-month
-                    embodied leadership lineage transmission in which you will learn to coach, heal, and facilitate
-                    transformation in others—and certify practitioners beneath you in an infinitely scalable hierarchy.
-                    Master the art of advanced dependency cultivation so your clients can't leave even if they
-                    want to. Includes unlimited Voxer access, quarterly hot seats, a private
-                    retreat in a LUSCIOUS location where you'll be soaked in pleasure, your own STW Black Card,
-                    and a certificate of spiritual rank within the STW lineage (belts available for purchase
-                    separately). Dr. Steinberg only accepts 2 people per year and there are only 2 spots left.
-                    Act fast. You cannot apply unless you have completed at least 3 other STW offerings and
-                    submitted a 500-word essay on why you deserve to evolve.
+                    Dr. Stein’s signature container — his most high-touch, most exclusive, most expensive, and
+                    most transformational. This is not a course. This is not coaching. It's a 12-month embodied
+                    leadership lineage transmission: you'll learn to coach, heal, and facilitate the highest
+                    caliber, world-class transformation in others — and certify practitioners beneath you in an
+                    infinitely scalable empire. Master the art of advanced business seduction cultivation so your
+                    clients continue to work with you infinitely, since you’ll be the only one who can truly help
+                    them. Most therapists and coaches think you shouldn’t get too close but they’re just
+                    unsophisticated. Includes unlimited Voxer access, quarterly hot seats, your own STW Black Card,
+                    and a certificate of spiritual rank within the lineage. Dr. Stein accepts only 2 people per
+                    year, and there’s only a couple spots left – act fast! You cannot apply unless you've
+                    completed at least 3 other STW offerings and submitted a 500-word essay on why you long for
+                    this exclusive chance to grow into your highest most echelon of yourself.
                   </p>
-                  <Btn color="muted" href="#contact" className="self-center">APPLY NOW</Btn>
+                  <Btn color="muted" href="#apply" className="self-center">APPLY NOW</Btn>
                 </div>
 
               </div>

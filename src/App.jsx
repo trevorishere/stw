@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Featured from './components/Featured'
@@ -9,6 +9,12 @@ import Testimonial from './components/Testimonial'
 import About from './components/About'
 import Donate from './components/Donate'
 import Footer from './components/Footer'
+import ComingSoon from './components/ComingSoon'
+import Apply from './components/Apply'
+
+// Hash routes for the two stand-alone pages; any other hash shows the home page.
+const PAGES = { 'coming-soon': ComingSoon, apply: Apply }
+const currentRoute = () => window.location.hash.slice(1)
 
 function easeInOut(t) {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
@@ -27,11 +33,32 @@ function smoothScrollTo(targetY, duration) {
 }
 
 export default function App() {
+  const [route, setRoute] = useState(currentRoute)
+
+  useEffect(() => {
+    const onHash = () => setRoute(currentRoute())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+
+  // Pages open at the top; a section hash (e.g. #offerings) scrolls to that section once home renders.
+  useEffect(() => {
+    if (PAGES[route]) { window.scrollTo(0, 0); return }
+    const target = route ? document.getElementById(route) : null
+    if (target) {
+      const navHeight = window.innerWidth >= 900 ? 96 : 80
+      window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - navHeight)
+    }
+  }, [route])
+
   useEffect(() => {
     function handleClick(e) {
       const a = e.target.closest('a[href^="#"]')
       if (!a) return
       const id = a.getAttribute('href').slice(1)
+      if (PAGES[id]) return
+      // Leaving a page: the brand link goes back to the top of home
+      if (!id && PAGES[currentRoute()]) { e.preventDefault(); window.location.hash = ''; return }
       const target = id ? document.getElementById(id) : null
       if (id && !target) return
       e.preventDefault()
@@ -49,14 +76,18 @@ export default function App() {
     <>
       <Nav />
       <main>
-        <Hero />
-        <Featured />
-        <Mission />
-        <Offerings />
-        <Testimonial />
-        <Products />
-        <About />
-        <Donate />
+        {PAGES[route] ? (() => { const Page = PAGES[route]; return <Page /> })() : (
+          <>
+            <Hero />
+            <Featured />
+            <Mission />
+            <Offerings />
+            <Testimonial />
+            <Products />
+            <About />
+            <Donate />
+          </>
+        )}
       </main>
       <Footer />
     </>
