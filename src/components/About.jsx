@@ -2,7 +2,11 @@ import { CREDS } from '../constants'
 import { useReveal } from '../hooks/useReveal'
 
 const BASE = import.meta.env.BASE_URL
-const aaronBgImg = `${BASE}aaron.png`
+const PHOTOS = [
+  { cls: 'is-shades',    src: `${BASE}about-shades.jpg`,    alt: 'Dr. Aaron Steinberg in sunglasses' },
+  { cls: 'is-bjj',       src: `${BASE}about-bjj.jpg`,       alt: 'Dr. Aaron Steinberg with a jiu-jitsu gold medal' },
+  { cls: 'is-underwear', src: `${BASE}about-underwear.jpg`, alt: 'Dr. Aaron Steinberg in his underwear' },
+]
 
 export default function About() {
   const [ref, visible] = useReveal()
@@ -26,14 +30,14 @@ export default function About() {
           {/* Bio + image row — top-aligned, 64px gap */}
           <div className="flex flex-col gap-8 items-start expanded:flex-row expanded:items-start expanded:justify-center expanded:gap-16 desktop:flex-row desktop:items-start desktop:justify-center desktop:gap-16">
 
-            {/* Image — 400×400 fixed at expanded/desktop, stacked at phone/tablet */}
-            <div className="flex-none w-full h-[240px] min-w-0 tablet:h-[300px] expanded:[flex:0_1_400px] expanded:max-w-[400px] expanded:h-auto expanded:aspect-square expanded:order-2 desktop:[flex:0_1_400px] desktop:max-w-[400px] desktop:h-auto desktop:aspect-square desktop:order-2">
-              <img
-                src={aaronBgImg}
-                alt="Dr. Aaron Steinberg"
-                className="h-full w-full object-contain object-center"
-                loading="lazy"
-              />
+            {/* Photo collage — three overlapping circles (.about-collage in index.css).
+                Up to 480px wide beside the bio at expanded/desktop, centered above it at phone/tablet */}
+            <div className="flex-none w-full max-w-[480px] min-w-0 mx-auto expanded:mx-0 expanded:[flex:0_1_480px] expanded:min-w-[300px] expanded:order-2 desktop:mx-0 desktop:[flex:0_1_480px] desktop:order-2">
+              <div className="about-collage">
+                {PHOTOS.map(p => (
+                  <img key={p.cls} className={p.cls} src={p.src} alt={p.alt} loading="lazy" />
+                ))}
+              </div>
             </div>
 
             {/* Bio + CTA — flex-1 max-w-[600px] at expanded/desktop */}

@@ -9,20 +9,24 @@ export default function Testimonial() {
       ref={ref}
       className={`bg-brand-yellow${visible ? ' in-view' : ''}`}
     >
-      <div className="page-container px-12 py-[160px] tablet:px-16 expanded:px-24 desktop:px-24">
+      <div className="page-container px-6 py-[160px] tablet:px-16 expanded:px-24 desktop:px-24">
 
-        {/* Inner container — centered, 66% width, quote + attribution */}
-        <div className="mx-auto max-w-[680px] tablet:max-w-[540px] w-full flex flex-col gap-6">
+        {/* Inner container — centered column: big quote mark, quote, attribution, all on one left edge */}
+        <div className="mx-auto max-w-[720px] tablet:max-w-[540px] w-full flex flex-col gap-6">
 
-          <blockquote className="reveal-heading blockquote-hanging font-bitter font-light text-20 leading-1-5 text-cobalt-dark
-                                 tablet:text-24
-                                 expanded:text-32 desktop:text-32">
-            "I thought this was a joke, but I actually learned how to talk to my wife without us both
-            wanting to die. Five stars."
+          {/* The big mark stands in for the inline quote marks (.testimonial-* in index.css) */}
+          <blockquote className="reveal-heading text-cobalt-dark">
+            <svg className="testimonial-mark" viewBox="0 0 96 69" aria-hidden="true" focusable="false">
+              <path d="M0 46C0 21 14 5 37 0l4 9C29 13 23 21 22 29a20 20 0 1 1-22 17Z" />
+              <path d="M53 46C53 21 67 5 90 0l4 9C82 13 76 21 75 29a20 20 0 1 1-22 17Z" />
+            </svg>
+            <p className="testimonial-quote">
+              I thought this was a joke, but I actually learned how to talk to my wife without us both
+              wanting to die. Five stars.
+            </p>
           </blockquote>
 
-          {/* ml-4 (1rem) matches blockquote padding-left so attribution aligns with quote text, not the " */}
-          <div className="reveal-body flex items-center gap-4 ml-[9px] tablet:ml-[11px] expanded:ml-[14px] desktop:ml-[14px]">
+          <div className="reveal-body flex items-center gap-4">
             <img src={steveImg} alt="Steve B." className="w-[88px] h-[88px] tablet:w-[120px] tablet:h-[120px] expanded:w-[120px] expanded:h-[120px] desktop:w-[120px] desktop:h-[120px] rounded-full object-cover shrink-0" />
             <div className="flex flex-col">
               <p className="font-figtree font-bold text-14 leading-1-5 tracking-xs text-cobalt-dark

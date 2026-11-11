@@ -327,18 +327,40 @@
 
 /* Hero right-side image — responsive sizing via raw media queries */
 .hero-img {
-  width: 356px;
-  height: 400px;
+  width: 360px;
+  height: 480px;
   flex-shrink: 0;
 }
 @media (min-width: 900px) and (max-width: 1199px) {
-  .hero-img { width: 219px; height: 246px; }
+  .hero-img { width: 240px; height: 320px; }
 }
 @media (min-width: 600px) and (max-width: 899px) {
-  .hero-img { width: 170px; height: 191px; }
+  .hero-img { width: 180px; height: 240px; }
 }
 @media (max-width: 599px) {
-  .hero-img { width: 100%; height: auto; aspect-ratio: 768 / 864; }
+  .hero-img { width: 100%; height: auto; aspect-ratio: 3 / 4; }
+}
+
+/* About — three overlapping circular photos. Sizes are % of the collage width, so it scales as one piece.
+   Sunglasses sits on top; the BJJ and underwear circles overlap in front of it. */
+.about-collage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 100 / 96;
+}
+.about-collage img {
+  position: absolute;
+  width: 56%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0 0 0 6px theme('colors.olive-dark');
+}
+.about-collage .is-shades    { left: 22%; top: 0;      z-index: 1; }
+.about-collage .is-bjj       { left: 0;   top: 41.67%; z-index: 2; }
+.about-collage .is-underwear { left: 44%; top: 41.67%; z-index: 3; }
+@media (max-width: 599px) {
+  .about-collage img { box-shadow: 0 0 0 4px theme('colors.olive-dark'); }
 }
 
 
@@ -353,10 +375,31 @@
 
 .about-bio-text p + p { margin-top: 12px; }
 
-.blockquote-hanging {
-  hanging-punctuation: first;  /* Safari — handles it natively */
-  padding-left: 0.45em;        /* scales with font size */
-  text-indent: -0.45em;        /* pulls only the " to the left */
+/* Testimonial — one big opening quote mark above a heavy quote.
+   (Replaces .blockquote-hanging, whose hanging-punctuation + negative text-indent both applied
+   in Safari and pushed the first line left of the rest.) */
+.testimonial-mark {           /* inline SVG, drawn in Testimonial.jsx */
+  display: block;
+  width: 84px;
+  height: auto;
+  margin-bottom: 20px;
+  fill: currentColor;
+}
+.testimonial-quote {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+@media (min-width: 600px) {
+  .testimonial-mark  { width: 104px; margin-bottom: 24px; }
+  .testimonial-quote { font-size: 30px; }
+}
+@media (min-width: 900px) {
+  .testimonial-mark  { width: 128px; margin-bottom: 28px; }
+  .testimonial-quote { font-size: 40px; }
 }
 
 /* Accessibility — respect reduced-motion preference */

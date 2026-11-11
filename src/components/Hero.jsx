@@ -1,7 +1,7 @@
 import TradeMark from './TradeMark'
 import { useReveal } from '../hooks/useReveal'
 
-const heroImg  = `${import.meta.env.BASE_URL}hero-aaron.jpg`
+const heroImg  = `${import.meta.env.BASE_URL}hero-aaron-jeans.jpg`
 
 export default function Hero() {
   const [ref, visible] = useReveal()
