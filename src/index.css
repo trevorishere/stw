@@ -338,7 +338,7 @@
   .hero-img { width: 170px; height: 191px; }
 }
 @media (max-width: 599px) {
-  .hero-img { display: none; }
+  .hero-img { width: 100%; height: auto; aspect-ratio: 768 / 864; }
 }
 
 
