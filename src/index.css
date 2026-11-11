@@ -267,6 +267,12 @@
   line-height: 1;
   letter-spacing: 0.005em;
   color: white;
+  container-type: inline-size;
+}
+/* Each half of the slogan stays on one line: sized to the column (longest line ≈ 12.2em) */
+.hero-slogan > span {
+  white-space: nowrap;
+  font-size: min(112px, calc((100cqw - 48px) / 12.2));
 }
 
 /* As Featured — fake outlet marks (mockups; original designs, not real logos) */
@@ -321,15 +327,15 @@
 
 /* Hero right-side image — responsive sizing via raw media queries */
 .hero-img {
-  width: 294px;
+  width: 400px;
   height: 534px;
   flex-shrink: 0;
 }
 @media (min-width: 900px) and (max-width: 1199px) {
-  .hero-img { width: 180px; height: 328px; }
+  .hero-img { width: 246px; height: 328px; }
 }
 @media (min-width: 600px) and (max-width: 899px) {
-  .hero-img { width: 140px; height: 255px; }
+  .hero-img { width: 191px; height: 255px; }
 }
 @media (max-width: 599px) {
   .hero-img { display: none; }

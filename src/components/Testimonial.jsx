@@ -1,5 +1,7 @@
 import { useReveal } from '../hooks/useReveal'
 
+const steveImg = `${import.meta.env.BASE_URL}steve-b.jpg`
+
 export default function Testimonial() {
   const [ref, visible] = useReveal()
   return (
@@ -20,15 +22,18 @@ export default function Testimonial() {
           </blockquote>
 
           {/* ml-4 (1rem) matches blockquote padding-left so attribution aligns with quote text, not the " */}
-          <div className="reveal-body flex flex-col ml-[9px] tablet:ml-[11px] expanded:ml-[14px] desktop:ml-[14px]">
-            <p className="font-figtree font-bold text-14 leading-1-5 tracking-xs text-cobalt-dark
-                          tablet:text-16 expanded:text-16 desktop:text-16">
-              Steve B.
-            </p>
-            <p className="font-figtree font-normal text-13 leading-1-5 tracking-md text-cobalt-dark
-                          tablet:font-medium tablet:text-14 expanded:font-medium expanded:text-14 desktop:font-medium desktop:text-14">
-              Verified Client, Entrepreneur, Thought Leader, and Speaker
-            </p>
+          <div className="reveal-body flex items-center gap-4 ml-[9px] tablet:ml-[11px] expanded:ml-[14px] desktop:ml-[14px]">
+            <img src={steveImg} alt="Steve B." className="w-[88px] h-[88px] tablet:w-[120px] tablet:h-[120px] expanded:w-[120px] expanded:h-[120px] desktop:w-[120px] desktop:h-[120px] rounded-full object-cover shrink-0" />
+            <div className="flex flex-col">
+              <p className="font-figtree font-bold text-14 leading-1-5 tracking-xs text-cobalt-dark
+                            tablet:text-16 expanded:text-16 desktop:text-16">
+                Steve B.
+              </p>
+              <p className="font-figtree font-normal text-13 leading-1-5 tracking-md text-cobalt-dark
+                            tablet:font-medium tablet:text-14 expanded:font-medium expanded:text-14 desktop:font-medium desktop:text-14">
+                Verified Client, Entrepreneur, Thought Leader, and Speaker
+              </p>
+            </div>
           </div>
 
         </div>
