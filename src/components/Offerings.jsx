@@ -183,7 +183,7 @@ export default function Offerings() {
                     unsophisticated. Includes unlimited Voxer access, quarterly hot seats, your own STW Black Card,
                     and a certificate of spiritual rank within the lineage. Dr. Stein accepts only 2 people per
                     year, and there’s only a couple spots left – act fast! You cannot apply unless you've
-                    completed at least 3 other STW offerings and submitted a 500-word essay on why you long for
+                    completed at least 2 other STW offerings and submitted a 500-word essay on why you long for
                     this exclusive chance to grow into your highest most echelon of yourself.
                   </p>
                   <Btn color="muted" href="#apply" className="self-center">APPLY NOW</Btn>

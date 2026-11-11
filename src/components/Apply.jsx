@@ -8,8 +8,6 @@ const OFFERINGS = [
   { id: 'smw',   name: 'Seven Minute',              word: 'Wellness' },
   { id: 'gdt',   name: 'Going Down',                word: 'Together' },
   { id: 'rhwp',  name: 'Rock Hard Wet',             word: 'Pussy' },
-  { id: 'card',  name: 'The Quantum Empowerment Black', word: 'Card' },
-  { id: 'tarot', name: 'The STW',                   word: 'Tarot' },
 ]
 
 const label = 'font-figtree font-bold text-14 leading-1-5 tracking-md uppercase text-cobalt-dark'
@@ -74,7 +72,7 @@ export default function Apply() {
 
                 <fieldset className="flex flex-col gap-3 border-0 p-0 m-0">
                   <legend className={`${label} mb-3`}>
-                    Which STW<TradeMark size="sm" /> offerings have you completed? (Choose at least 3.)
+                    Which STW<TradeMark size="sm" /> offerings have you completed? (Choose at least 2.)
                   </legend>
                   {OFFERINGS.map(o => (
                     <label key={o.id} htmlFor={`apply-offering-${o.id}`} className="flex items-center gap-3 body-copy text-deep-gray cursor-pointer">
@@ -84,7 +82,7 @@ export default function Apply() {
                   ))}
                 </fieldset>
 
-                <p className="body-copy text-deep-gray">Dr. Stein reviews every application personally.</p>
+                <p className="body-copy text-deep-gray">Dr. Stein reviews every application personally so make sure to be your most transparent, authentic version of yourself.</p>
 
                 <div className="flex flex-col gap-2">
                   <label htmlFor="apply-essay" className={label}>
