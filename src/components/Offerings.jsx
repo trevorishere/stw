@@ -27,6 +27,7 @@ const OFFERINGS = [
     title: <>Going Down <TradeMark size="lg" word="Together" gap /></>,
     description: `The world is fucked. Your relationship shouldn't be. A couples course for navigating the apocalypse without killing each other. You thought this was a course for oral sex, but it's not. Well it might be. Well it's not. Is it? Well. It's not not about oral sex. Covers functional communication, nervous system co-regulation, and how to split household labor without developing a substance abuse problem.`,
     cta: 'Go Down Together',
+    href: '#coming-soon',
   },
   {
     id: 2,

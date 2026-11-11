@@ -1,7 +1,7 @@
 import Btn from './Btn'
 import TradeMark from './TradeMark'
 
-// Coming Soon — where Rock Hard Wet Pussy, the Black Card and the Tarot buttons land.
+// Coming Soon — where Going Down Together, Rock Hard Wet Pussy, the Black Card and the Tarot buttons land.
 export default function ComingSoon() {
   return (
     <section id="coming-soon-page" className="bg-brand-yellow">
