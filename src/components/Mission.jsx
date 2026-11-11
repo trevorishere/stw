@@ -10,7 +10,11 @@ export default function Mission() {
         <div className="grid grid-cols-1 gap-y-6
                         expanded:grid-cols-[23fr_11fr_66fr] expanded:gap-y-0 desktop:grid-cols-[23fr_11fr_66fr] desktop:gap-y-0">
 
-          <h2 className="reveal-heading section-heading text-cobalt-dark">Mission</h2>
+          <h2 className="reveal-heading section-heading text-cobalt-dark expanded:self-center desktop:self-center">
+            <span className="block"><TradeMark size="lg" word="STW" /></span>
+            <span className="block">Mission</span>
+            <span className="block">Statement</span>
+          </h2>
 
           <div className="reveal-body flex flex-col gap-1 text-cobalt-dark max-w-[640px] expanded:col-start-3 desktop:col-start-3">
             <p className="font-dmSans font-semibold text-24 leading-1-3 mb-2">
@@ -21,17 +25,12 @@ export default function Mission() {
               We help you actualize the fullest, most resourced expression of your life by guiding you
               to tend to what's deepest and most authentically underneath.
             </p>
-            <p className="body-copy font-light max-w-none">
+            <p className="body-copy font-light max-w-none mt-2">
               When you meet your own pain, regulate your nervous system, and come home to be and become
               all of who you actually are — everything begins to align. And then you can translate all of
               that into a category-defining thought-leadership legacy and personal brand dynasty.
             </p>
-            <p className="body-copy font-light max-w-none">
-              Your legacy is more than your business; it's the field you generate when you walk into a
-              room and everyone can just feel that you've resourced your nervous system through 30+
-              years of doing the work and regularly done plant medicine. This is what we help you claim.
-            </p>
-            <p className="body-copy max-w-none font-bold">
+            <p className="body-copy max-w-none font-bold mt-2">
               We won't stop until we SAVE THE <TradeMark size="md" word="WORLD." />
             </p>
           </div>
