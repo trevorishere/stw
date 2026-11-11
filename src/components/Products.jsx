@@ -31,7 +31,7 @@ export default function Products() {
             title={<>The Quantum Empowerment Black <TradeMark size="lg" word="Card" gap /></>}
             description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine* with a premium card that certifies you have 'Done The Work'. You could have the quiet satisfaction of knowing you are further along than everyone else at the dinner party, but sometimes the attention feels much better, and we don’t reject our true selves here."
             footnote="* the universe doesn't judge evolutionary medicine use when you're in integrity"
-            cta="apply now"
+            cta="request your invitation"
             href="#coming-soon"
           />
 
