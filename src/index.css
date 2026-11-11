@@ -327,15 +327,15 @@
 
 /* Hero right-side image — responsive sizing via raw media queries */
 .hero-img {
-  width: 400px;
-  height: 534px;
+  width: 356px;
+  height: 400px;
   flex-shrink: 0;
 }
 @media (min-width: 900px) and (max-width: 1199px) {
-  .hero-img { width: 246px; height: 328px; }
+  .hero-img { width: 219px; height: 246px; }
 }
 @media (min-width: 600px) and (max-width: 899px) {
-  .hero-img { width: 191px; height: 255px; }
+  .hero-img { width: 170px; height: 191px; }
 }
 @media (max-width: 599px) {
   .hero-img { display: none; }
