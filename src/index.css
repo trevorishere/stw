@@ -275,6 +275,17 @@
   font-size: min(112px, calc((100cqw - 48px) / 12.2));
 }
 
+/* Hero tagline — expanded/desktop only. It grows with the window so it fills the space beside the photo
+   instead of leaving gaps above and below it. Phone and tablet keep 24px.
+   expanded (photo 320px tall): 32px at 900px wide, up to 40px at 1199px
+   desktop  (photo 480px tall): 44px at 1200px wide, up to 54px at 1440px and wider */
+@media (min-width: 900px) {
+  .hero-tagline { font-size: clamp(32px, calc(32px + (100vw - 900px) * 0.026756), 40px); }
+}
+@media (min-width: 1200px) {
+  .hero-tagline { font-size: clamp(44px, calc(44px + (100vw - 1200px) * 0.041667), 54px); }
+}
+
 /* As Featured — fake outlet marks (mockups; original designs, not real logos) */
 .featured-mark { height: 56px; display: flex; align-items: center; white-space: nowrap; line-height: 1; }
 .featured-mark small { display: block; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; }

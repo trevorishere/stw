@@ -46,9 +46,11 @@ export default function Featured() {
       {/* Single padded container — overflow-hidden clips the ticker at the padding edge */}
       <div className="page-container px-6 pt-2 pb-[120px] flex flex-col gap-4 tablet:px-16 expanded:px-24 desktop:px-24">
 
+        {/* Bigger and heavier at expanded/desktop so it reads as a heading; phone and tablet are unchanged */}
         <p className="reveal-heading font-figtree font-extrabold text-24 leading-1 tracking-md uppercase text-olive-lighter
                       tablet:tracking-lg
-                      expanded:leading-1-2 expanded:tracking-lg desktop:leading-1-2 desktop:tracking-lg">
+                      expanded:font-black expanded:text-32 expanded:leading-1-2 expanded:tracking-lg
+                      desktop:font-black desktop:text-40 desktop:leading-1-2 desktop:tracking-lg">
           As Featured<br className="hidden max-phone:block" /> Manifesting In…
         </p>
 
