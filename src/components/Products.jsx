@@ -25,7 +25,7 @@ export default function Products() {
 
           <ProductCard
             imageLeft={false}
-            image={`${BASE}card.png`}
+            image={`${BASE}black-card.jpg`}
             alt="Quantum Empowerment Black Card"
             category="Empowering Product"
             title={<>The Quantum Empowerment Black <TradeMark size="lg" word="Card" gap /></>}
