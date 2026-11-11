@@ -31,7 +31,7 @@ export default function Mission() {
               that into a category-defining, thought-leadership legacy and personal brand dynasty.
             </p>
             <p className="body-copy font-light max-w-none mt-2">
-              Then, you guide other souls to a higher frequency of optimization, who guide others, who
+              Then, you guide other souls to a higher frequency of optimization. They guide others, who
               guide others, in a regenerative feedback loop of leveling up that ripples outward through
               all of society until there is no one left to guide.
             </p>
