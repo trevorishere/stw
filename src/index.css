@@ -370,6 +370,14 @@
   .title-one-line { font-size: min(36px, calc((100cqw - 53px) / 18.7)); }
 }
 
+/* About title and credentials — expanded/desktop only: one line each, sized to fit the full content width
+   (100cqw = their wrapper, via container-type on it). The title is 56px once there's room (about 1090px wide),
+   the credentials 14px (about 1065px wide); below that they scale down, to about 44px and 11px at 900px wide. */
+@media (min-width: 900px) {
+  .about-title { white-space: nowrap; font-size: min(56px, calc(100cqw / 16.05)); }
+  .about-creds { white-space: nowrap; font-size: min(14px, calc(100cqw / 62.4)); }
+}
+
 /* About — three overlapping circular photos. Sizes are % of the collage width, so it scales as one piece.
    Sunglasses sits on top; the BJJ and underwear circles overlap in front of it. */
 .about-collage {

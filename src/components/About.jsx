@@ -16,12 +16,13 @@ export default function About() {
 
         <div className="flex flex-col gap-10 expanded:gap-16 desktop:gap-16">
 
-          {/* Title + credentials — max-w-[680px] at expanded/desktop */}
-          <div className="reveal-heading w-full flex flex-col gap-2 expanded:max-w-[680px] desktop:max-w-[680px]">
-            <h2 className="section-heading text-cobalt-dark">
-              about<br />dr. aaron steinberg
+          {/* Title + credentials. Up to tablet the title is two lines and the credentials wrap.
+              From 900px wide each is one line, sized to fit the full width (.about-title / .about-creds in index.css) */}
+          <div className="reveal-heading w-full flex flex-col gap-2 expanded:[container-type:inline-size] desktop:[container-type:inline-size]">
+            <h2 className="section-heading about-title text-cobalt-dark">
+              about<br className="expanded:hidden desktop:hidden" /> dr. aaron steinberg
             </h2>
-            <p className="credentials text-warm-grey-light
+            <p className="credentials about-creds text-warm-grey-light
                           max-w-full tablet:max-w-[80%] expanded:max-w-full desktop:max-w-full">
               {CREDS}
             </p>
