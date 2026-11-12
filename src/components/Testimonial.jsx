@@ -32,11 +32,6 @@ const TESTIMONIALS = [
     title: 'Verified Client, Speaker',
   },
   {
-    quote: <>I don't drive anymore. I just arrive.</>,
-    name: 'Chad W.',
-    title: 'Verified Client, Fully Embodied',
-  },
-  {
     quote: <>My wife and I hadn't spoken in eleven years. Now we finish each other's sentences. Last week she finished one I won't start until 2031.</>,
     name: 'Rob & Tina M.',
     title: 'Verified Couple',
@@ -57,7 +52,7 @@ const TESTIMONIALS = [
     title: 'Verified Client, Seven-Figure Healer',
   },
   {
-    quote: <>I can't make a single decision without Dr. Stein anymore, which he says is how I know it's working. He also told me to write this.</>,
+    quote: <>I can't make a single decision without Dr. Stein anymore, which he says is how I know it's working.</>,
     name: 'Mike D.',
     title: 'Verified Client, Empire Builder Cohort 3',
   },
