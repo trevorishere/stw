@@ -54,7 +54,7 @@ const TESTIMONIALS = [
     photo: `${BASE}testimonial-brent-a.jpg`,
   },
   {
-    quote: <>Seven Minute Wellness gave me back seven minutes a day. Not freed up. <em>Gave back.</em> My days are 24 hours and 7 minutes now, and my watch can't keep up.</>,
+    quote: <>Seven Minute Wellness gave me back seven minutes a day. Not freed up. <em>Gave back.</em> My days are 24 hours and 7 minutes now, because I'm operating on a quantum level that normies can only dream of.</>,
     name: 'Dana R.',
     title: 'Verified Client & Early Adopter',
     photo: `${BASE}testimonial-dana-r.jpg`,
