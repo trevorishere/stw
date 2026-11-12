@@ -3,22 +3,25 @@ import { useReveal } from '../hooks/useReveal'
 
 const BASE = import.meta.env.BASE_URL
 
-// Carousel order. `photo` is optional; without one the name and title stand alone.
+// Carousel order. `photo` is optional; without one the name and title stand alone. Portraits are 480px squares.
 const TESTIMONIALS = [
   {
     quote: <>Seven Minute Wellness gave me back seven minutes a day. Not freed up. <em>Gave back.</em> My days are 24 hours and 7 minutes now, and my watch can't keep up.</>,
     name: 'Dana R.',
     title: 'Verified Client & Early Adopter',
+    photo: `${BASE}testimonial-dana-r.jpg`,
   },
   {
     quote: <>One breathwork session with Dr. Stein and my credit score went up 140 points. My bank has no explanation.</>,
     name: 'Marcus T.',
     title: 'Verified Client, Founder',
+    photo: `${BASE}testimonial-marcus-t.jpg`,
   },
   {
     quote: <>I was 5'9" before STW. I'm 6'1" now. I'm not saying it's related, but I'm not saying it isn't.</>,
     name: 'Kevin L.',
     title: 'Verified Client, Thought Leader',
+    photo: `${BASE}testimonial-kevin-l.jpg`,
   },
   {
     quote: <>I thought this was a joke, but I actually learned how to talk to my wife without us both wanting to die. Five stars.</>,
@@ -30,36 +33,48 @@ const TESTIMONIALS = [
     quote: <>After one Voxer from Dr. Stein, my estranged brother called to apologize. I'm an only child.</>,
     name: 'Priya S.',
     title: 'Verified Client, Speaker',
+    photo: `${BASE}testimonial-priya-s.jpg`,
   },
   {
-    quote: <>My wife and I hadn't spoken in eleven years. Now we finish each other's sentences. Last week she finished one I won't start until 2031.</>,
+    quote: <>ROB: We hadn't spoken in eleven years. TINA: Now we finish each other's sentences. ROB: Last week she finished one⁠— TINA: —⁠he won't start until 2031.</>,
     name: 'Rob & Tina M.',
     title: 'Verified Couple',
+    photo: `${BASE}testimonial-rob-tina-m.jpg`,
   },
   {
     quote: <>I pulled the Nine of Hogs and woke up fluent in Portuguese.</>,
     name: 'Lauren K.',
     title: 'Verified Client, Divination Practitioner (Level 2)',
+    photo: `${BASE}testimonial-lauren-k.jpg`,
   },
   {
     quote: <>I tapped my Black Card at a restaurant that doesn't open until next spring. They seated me immediately.</>,
     name: 'Brent A.',
     title: "Black Card Member, Evolved Since '26",
+    photo: `${BASE}testimonial-brent-a.jpg`,
   },
   {
     quote: <>My trauma used to cost me $300 a week in therapy. Now it makes me $40,000 a month. Honestly, I could use more trauma.</>,
     name: 'Jess P.',
     title: 'Verified Client, Seven-Figure Healer',
+    photo: `${BASE}testimonial-jess-p.jpg`,
   },
   {
     quote: <>I can't make a single decision without Dr. Stein anymore, which he says is how I know it's working.</>,
     name: 'Mike D.',
     title: 'Verified Client, Empire Builder Cohort 3',
+    photo: `${BASE}testimonial-mike-d.jpg`,
   },
   {
     quote: <>I've certified 40 practitioners beneath me, and each of them certified 40 more. I've never met any of them, but they all pay me. My mom is in it now.</>,
     name: 'Tara V.',
     title: 'Lineage Holder (Tier 4)',
+    photo: `${BASE}testimonial-tara-v.jpg`,
+  },
+  {
+    quote: <>We used to fight about the dishwasher every night. Now the dishwasher does itself. We don't know how, and we don't ask.</>,
+    name: 'Dev & Hannah R.',
+    title: 'Verified Couple, RHWP Graduates',
   },
 ]
 
@@ -124,7 +139,7 @@ export default function Testimonial() {
                     </blockquote>
                     <figcaption className="flex items-center gap-4">
                       {t.photo && (
-                        <img src={t.photo} alt={t.name} className="w-[88px] h-[88px] tablet:w-[120px] tablet:h-[120px] expanded:w-[120px] expanded:h-[120px] desktop:w-[120px] desktop:h-[120px] rounded-full object-cover shrink-0" />
+                        <img src={t.photo} alt={t.name} className="w-[112px] h-[112px] tablet:w-[160px] tablet:h-[160px] expanded:w-[160px] expanded:h-[160px] desktop:w-[160px] desktop:h-[160px] rounded-full object-cover shrink-0" />
                       )}
                       <div className="flex flex-col">
                         <p className="font-figtree font-bold text-14 leading-1-5 tracking-xs text-cobalt-dark
