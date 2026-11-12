@@ -6,12 +6,6 @@ const BASE = import.meta.env.BASE_URL
 // Carousel order. `photo` is optional; without one the name and title stand alone.
 const TESTIMONIALS = [
   {
-    quote: <>I thought this was a joke, but I actually learned how to talk to my wife without us both wanting to die. Five stars.</>,
-    name: 'Steve B.',
-    title: 'Verified Client, Entrepreneur, Thought Leader, and Speaker',
-    photo: `${BASE}steve-b.jpg`,
-  },
-  {
     quote: <>Seven Minute Wellness gave me back seven minutes a day. Not freed up. <em>Gave back.</em> My days are 24 hours and 7 minutes now, and my watch can't keep up.</>,
     name: 'Dana R.',
     title: 'Verified Client & Early Adopter',
@@ -25,6 +19,12 @@ const TESTIMONIALS = [
     quote: <>I was 5'9" before STW. I'm 6'1" now. I'm not saying it's related, but I'm not saying it isn't.</>,
     name: 'Kevin L.',
     title: 'Verified Client, Thought Leader',
+  },
+  {
+    quote: <>I thought this was a joke, but I actually learned how to talk to my wife without us both wanting to die. Five stars.</>,
+    name: 'Steve B.',
+    title: 'Verified Client, Entrepreneur, Thought Leader, and Speaker',
+    photo: `${BASE}steve-b.jpg`,
   },
   {
     quote: <>After one Voxer from Dr. Stein, my estranged brother called to apologize. I'm an only child.</>,
