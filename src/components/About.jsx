@@ -56,12 +56,12 @@ export default function About() {
                   leaders in entrepreneurship to executive business leadership to visionary legacy in the last
                   3 years alone. Does this sound like you? He has over 15 certifications with 10s more on the
                   way, including a Doctor of Divinity, a Master's in Integral Counseling Psychology, and many
-                  other therapy trainings. He's been meditating since he was five—not originally by choice, but
+                  other therapy trainings. He's been meditating since he was five—not originally by choice—but
                   is a mindfulness master nonetheless.
                 </p>
                 <p>
-                  He's a purple belt in Brazilian Jiu-Jitsu. He's spent tens of thousands of dollars – maybe the
-                  most trained of any coach – on thousands of hours of workshops, therapy, retreats, and
+                  He's a purple belt in Brazilian Jiu-Jitsu. He's spent tens of thousands of dollars—maybe the
+                  most trained of any coach—on thousands of hours of workshops, therapy, retreats, and
                   trainings. While he originally became a practitioner more to work out his own shit than
                   anything else, he’s considered to be one of, if not the best coaches and wellness
                   practitioners in the world.
