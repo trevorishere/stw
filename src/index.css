@@ -274,6 +274,11 @@
   white-space: nowrap;
   font-size: min(112px, calc((100cqw - 48px) / 12.2));
 }
+/* Phone: each half breaks after its first word (Hero.jsx), so the slogan is four lines and can be about
+   twice as big — sized so the longest line ("Your Trauma." plus its ©TM©, ≈ 7.2em) fits the column */
+@media (max-width: 599px) {
+  .hero-slogan > span { font-size: min(56px, calc(100cqw / 7.3)); }
+}
 
 /* Hero tagline — expanded/desktop only. Four fixed lines, broken at the phrases, with the type sized so the
    text of the longest line ("Purpose-Driven Alignment" ≈ 15.92em) fills the column beside the photo

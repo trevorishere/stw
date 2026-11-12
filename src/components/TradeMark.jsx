@@ -1,7 +1,7 @@
 // ©TM© superscript component — centralises all size variants.
 // All sizes render as inline-block with vertical-align: 1em for consistent positioning.
 //
-// size   "xl"      0.3em of the headline at expanded/desktop / 12px tablet / 10px mobile — hero headline only
+// size   "xl"      0.3em of the headline at expanded/desktop and mobile / 12px tablet — hero headline only
 //        "tagline" 0.48em of the tagline (about half the letter height, so it sits above the top of the
 //                  letters) plus a small gap at expanded/desktop / 12px tablet / 10px mobile — hero tagline only
 //        "lg"      16px desktop / 13px expanded / 12px tablet / 10px mobile — offering & product h3
@@ -10,7 +10,7 @@
 //        "sm"      7px all viewports                                  — eyebrow-level
 
 const SIZES = {
-  xl: 'font-semibold text-[10px] tablet:text-[12px] expanded:text-[0.3em] desktop:text-[0.3em]',
+  xl: 'font-semibold text-[0.3em] tablet:text-[12px]',
   tagline: 'font-semibold text-[10px] tablet:text-[12px] expanded:text-[0.48em] expanded:ml-[0.17em] desktop:text-[0.48em] desktop:ml-[0.17em]',
   lg: 'font-semibold text-[10px] tablet:text-[12px] expanded:text-[13px] desktop:text-[16px]',
   nav: 'font-normal text-[10px] expanded:text-[11px] desktop:text-[11px]',

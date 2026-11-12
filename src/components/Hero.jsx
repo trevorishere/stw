@@ -12,9 +12,10 @@ export default function Hero() {
         {/* At expanded/desktop the photo row sits right under the headline (the photo has its own head room) */}
         <div className="flex flex-col gap-8 tablet:gap-8 expanded:gap-0 desktop:gap-0">
 
+          {/* Two lines from tablet up; on phone each half breaks after its first word, making four bigger lines */}
           <h1 className="reveal-heading hero-slogan">
-            <span className="block">MAXIMIZE Your Life.</span>{' '}
-            <span className="block">MONETIZE Your <TradeMark size="xl" word="Trauma." className="text-brand-yellow" /></span>
+            <span className="block">MAXIMIZE<br className="hidden max-phone:block" /> Your Life.</span>{' '}
+            <span className="block">MONETIZE<br className="hidden max-phone:block" /> Your <TradeMark size="xl" word="Trauma." className="text-brand-yellow" /></span>
           </h1>
 
           <div className="reveal-body flex flex-col gap-6 items-start tablet:flex-row tablet:items-center tablet:gap-8 expanded:flex-row expanded:items-center expanded:gap-14 desktop:flex-row desktop:items-center desktop:gap-14">
