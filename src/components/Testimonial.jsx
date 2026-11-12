@@ -75,6 +75,7 @@ const TESTIMONIALS = [
     quote: <>We used to fight about the dishwasher every night. Now the dishwasher does itself. We don't know how, and we don't ask.</>,
     name: 'Dev & Hannah R.',
     title: 'Verified Couple, RHWP Graduates',
+    photo: `${BASE}testimonial-dev-hannah-r.jpg`,
   },
 ]
 
