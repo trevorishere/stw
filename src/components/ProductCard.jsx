@@ -11,6 +11,7 @@ export default function ProductCard({
   imageClassName = '',
   imageContainerClassName = '',
   textClassName = '',
+  descriptionClassName = '',
   category,
   title,
   description,
@@ -56,7 +57,7 @@ export default function ProductCard({
             <p className="eyebrow text-warm-grey-dark">{category}</p>
             <h3 className="card-heading text-olive-lighter">{title}</h3>
           </div>
-          <p className="body-copy text-olive-lighter">{description}</p>
+          <p className={`body-copy text-olive-lighter${descriptionClassName ? ` ${descriptionClassName}` : ''}`}>{description}</p>
           {footnote && <p className="footnote text-white opacity-70">{footnote}</p>}
         </div>
         <a

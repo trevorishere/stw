@@ -30,6 +30,7 @@ export default function Products() {
             category="Empowering Product"
             title={<span className="title-one-line">The Quantum Empowerment Black <TradeMark size="lg" word="Card" gap /></span>}
             textClassName="expanded:[container-type:inline-size] desktop:[container-type:inline-size]"
+            descriptionClassName="expanded:tracking-[-0.01em] desktop:tracking-[-0.01em]" /* lets "selves here." finish on the line above at full column width */
             description="Gain access to the VIP frequency of life, purchase your next level of consciousness, or cut your 98% pure 'spiritual guide-quality Dark Shaman certified' cocaine* with a premium card that certifies you have 'Done The Work'. You could have the quiet satisfaction of knowing you are further along than everyone else at the dinner party, but sometimes the attention feels much better, and we don’t reject our true selves here."
             footnote="* the universe doesn't judge evolutionary medicine use when you're in integrity"
             cta="request your invitation"
