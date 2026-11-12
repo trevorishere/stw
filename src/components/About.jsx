@@ -63,7 +63,7 @@ export default function About() {
                   He's a purple belt in Brazilian Jiu-Jitsu. He's spent tens of thousands of dollars—maybe the
                   most trained of any coach—on thousands of hours of workshops, therapy, retreats, and
                   trainings. While he originally became a practitioner more to work out his own shit than
-                  anything else, he’s considered to be one of, if not the best coaches and wellness
+                  anything else, he's considered to be one of, if not the best coaches and wellness
                   practitioners in the world.
                 </p>
               </div>

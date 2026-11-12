@@ -444,6 +444,40 @@
   .testimonial-quote { font-size: 40px; }
 }
 
+/* Testimonial carousel — every slide sits in the same grid cell, so the box is as tall as the longest
+   quote and the page doesn't jump when the slide changes. Only the active slide is visible; it fades in. */
+.testimonial-slides { display: grid; }
+.testimonial-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 0s linear 300ms;
+}
+.testimonial-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms ease;
+}
+.testimonial-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  border: 2px solid currentColor;
+  color: theme('colors.cobalt-dark');
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.testimonial-nav:hover,
+.testimonial-nav:focus-visible { background: theme('colors.cobalt-dark'); color: theme('colors.brand-yellow'); }
+.testimonial-nav:focus-visible { outline: 2px solid theme('colors.cobalt-dark'); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-slide, .testimonial-slide.is-active { transition: none; }
+}
+
 /* Accessibility — respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .nav-item-in,
