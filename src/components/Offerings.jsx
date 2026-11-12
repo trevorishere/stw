@@ -165,8 +165,9 @@ export default function Offerings() {
                     STW's Signature <TradeMark size="sm" word="Container" />
                   </p>
                   <h3 className="card-heading text-cobalt-dark desktop:text-40 desktop:leading-1-1">
-                    <TradeMark size="lg" word="The STW" gap />{' '}
-                    Empire Builder &amp; Enmeshment Cultivation <TradeMark size="lg" word="Accelerator" gap />
+                    {/* One flowing title up to tablet; from 900px the name is line one and the rest a smaller line under it (.empire-* in index.css) */}
+                    <span className="empire-name"><TradeMark size="lg" word="The STW" gap />{' '}Empire Builder</span>{' '}
+                    <span className="empire-sub">&amp; Enmeshment Cultivation <TradeMark size="lg" word="Accelerator" gap /></span>
                   </h3>
                 </div>
 

@@ -45,7 +45,7 @@ export default function Nav() {
             className="font-figtree font-extrabold text-18 tracking-md uppercase text-olive-lighter no-underline whitespace-nowrap"
           >
             <span className="max-phone:hidden">Stein's Total Wellness</span>
-            <span className="hidden max-phone:inline">STW</span><TradeMark size="md" />
+            <span className="hidden max-phone:inline">STW</span><TradeMark size="nav" markClassName="text-brand-yellow" />
           </a>
 
           {/* Desktop nav links */}

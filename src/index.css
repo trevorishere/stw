@@ -275,15 +275,24 @@
   font-size: min(112px, calc((100cqw - 48px) / 12.2));
 }
 
-/* Hero tagline — expanded/desktop only. It grows with the window so it fills the space beside the photo
-   instead of leaving gaps above and below it. Phone and tablet keep 24px.
-   expanded (photo 320px tall): 32px at 900px wide, up to 40px at 1199px
-   desktop  (photo 480px tall): 44px at 1200px wide, up to 54px at 1440px and wider */
+/* Hero tagline — expanded/desktop only. Four fixed lines, broken at the phrases, with the type sized so the
+   text of the longest line ("Purpose-Driven Alignment" ≈ 15.92em) fills the column beside the photo
+   (100cqw = that column, via container-type on it). That line's ©TM© hangs past the column: across the
+   56px gap and, on the widest screens, about 31px into the photo's dark left edge (still about 35px short
+   of the figure), so the tagline is stacked above the photo. Phone and tablet keep 24px and wrap freely.
+   expanded: about 26px at 900px wide, up to 40px · desktop: about 37px at 1200px wide, up to 52px at 1440px+ */
 @media (min-width: 900px) {
-  .hero-tagline { font-size: clamp(32px, calc(32px + (100vw - 900px) * 0.026756), 40px); }
+  .hero-tagline-line { display: block; white-space: nowrap; }
+  .hero-tagline { position: relative; z-index: 1; font-size: min(40px, calc(100cqw / 15.95)); }
 }
 @media (min-width: 1200px) {
-  .hero-tagline { font-size: clamp(44px, calc(44px + (100vw - 1200px) * 0.041667), 54px); }
+  .hero-tagline { font-size: min(54px, calc(100cqw / 15.95)); }
+}
+
+/* Empire Builder title — expanded/desktop only: the name on line one, the rest as a smaller line under it */
+@media (min-width: 900px) {
+  .empire-name, .empire-sub { display: block; }
+  .empire-sub { font-size: 0.7em; }
 }
 
 /* As Featured — fake outlet marks (mockups; original designs, not real logos) */
@@ -350,6 +359,15 @@
 }
 @media (max-width: 599px) {
   .hero-img { width: 100%; height: auto; aspect-ratio: 3 / 4; }
+}
+
+/* Black Card title — one line from 900px wide, sized to fill its text column (100cqw = that column,
+   via container-type on the text block). The px subtracted is the ©TM© mark, which keeps its fixed size. */
+@media (min-width: 900px) {
+  .title-one-line { display: block; white-space: nowrap; font-size: min(32px, calc((100cqw - 44px) / 18.7)); }
+}
+@media (min-width: 1200px) {
+  .title-one-line { font-size: min(36px, calc((100cqw - 53px) / 18.7)); }
 }
 
 /* About — three overlapping circular photos. Sizes are % of the collage width, so it scales as one piece.
