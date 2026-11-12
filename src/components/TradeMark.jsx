@@ -3,7 +3,7 @@
 //
 // size   "xl"      0.3em of the headline at expanded/desktop and mobile / 12px tablet — hero headline only
 //        "tagline" 0.48em of the tagline (about half the letter height, so it sits above the top of the
-//                  letters) plus a small gap at expanded/desktop / 12px tablet / 10px mobile — hero tagline only
+//                  letters) plus a small gap at phone and expanded/desktop / 12px tablet — hero tagline only
 //        "lg"      16px desktop / 13px expanded / 12px tablet / 10px mobile — offering & product h3
 //        "nav"     11px desktop+expanded / 10px tablet+mobile        — nav brand
 //        "md"      9px desktop+expanded / 8px tablet+mobile          — inline in text, footer brand
@@ -11,7 +11,7 @@
 
 const SIZES = {
   xl: 'font-semibold text-[0.3em] tablet:text-[12px]',
-  tagline: 'font-semibold text-[10px] tablet:text-[12px] expanded:text-[0.48em] expanded:ml-[0.17em] desktop:text-[0.48em] desktop:ml-[0.17em]',
+  tagline: 'font-semibold text-[0.48em] ml-[0.17em] tablet:text-[12px] tablet:ml-0 expanded:text-[0.48em] expanded:ml-[0.17em] desktop:text-[0.48em] desktop:ml-[0.17em]',
   lg: 'font-semibold text-[10px] tablet:text-[12px] expanded:text-[13px] desktop:text-[16px]',
   nav: 'font-normal text-[10px] expanded:text-[11px] desktop:text-[11px]',
   md: 'font-normal text-[8px] expanded:text-[9px] desktop:text-[9px]',

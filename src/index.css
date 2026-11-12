@@ -294,6 +294,13 @@
   .hero-tagline { font-size: min(54px, calc(100cqw / 15.95)); }
 }
 
+/* Hero tagline on phone — the same four lines as desktop, sized so the longest line ("Purpose-Driven
+   Alignment" plus its ©TM©, ≈ 17.75em) fits the column: about 19px on a 390px-wide phone */
+@media (max-width: 599px) {
+  .hero-tagline-line { display: block; white-space: nowrap; }
+  .hero-tagline { font-size: min(40px, calc(100cqw / 17.75)); }
+}
+
 /* Empire Builder title — expanded/desktop only: the name on line one, the rest as a smaller line under it */
 @media (min-width: 900px) {
   .empire-name, .empire-sub { display: block; }
@@ -471,8 +478,12 @@
   cursor: pointer;
   transition: background-color 150ms ease, color 150ms ease;
 }
-.testimonial-nav:hover,
+/* Filled on keyboard focus, and on hover only where there's a real mouse — on touch screens a tap would
+   otherwise leave the button stuck filled after the slide moves */
 .testimonial-nav:focus-visible { background: theme('colors.cobalt-dark'); color: theme('colors.brand-yellow'); }
+@media (hover: hover) and (pointer: fine) {
+  .testimonial-nav:hover { background: theme('colors.cobalt-dark'); color: theme('colors.brand-yellow'); }
+}
 .testimonial-nav:focus-visible { outline: 2px solid theme('colors.cobalt-dark'); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .testimonial-slide, .testimonial-slide.is-active { transition: none; }
