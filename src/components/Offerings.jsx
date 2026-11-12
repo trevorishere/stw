@@ -127,7 +127,7 @@ export default function Offerings() {
             containers, incountable certifications, cold plunge protocols, and mastermind facilitation,
             and so on, Dr. Stein has distilled the entire human experience into a proprietary framework that will
             disrupt your collective nervous system, shatter your limiting beliefs, monetize your trauma, resource
-            your somatic intelligence, and optimize your leadership capacity — sustainably.
+            your somatic intelligence, and optimize your leadership capacity. Sustainably.
           </p>
         </div>
 
