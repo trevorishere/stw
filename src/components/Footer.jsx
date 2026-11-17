@@ -55,6 +55,16 @@ export default function Footer() {
             <p className="font-figtree font-normal text-12 leading-1-2 tracking-xs text-warm-grey-dark tablet:text-11 mt-4">
               ©TM© 2026 Stein's Total Wellness. All rights reserved. All lefts reserved. All frequencies aligned.
             </p>
+
+            {/* Disclaimer — a note in Dr. Stein's voice, then the plain version */}
+            <div className="flex flex-col gap-2 mt-4 max-w-[640px]">
+              <p className="font-figtree font-normal text-12 leading-1-5 tracking-xs text-warm-grey-dark tablet:text-11">
+                A note from Dr. Stein: Everything on this site came to me in a state of total alignment, and I stand behind every word of it. My lawyer, who has not done the work, asked me to add the following.
+              </p>
+              <p className="font-figtree font-normal text-12 leading-1-5 tracking-xs text-warm-grey-dark tablet:text-11">
+                This site is parody and satire. Testimonials and client names are fictional, and photos are AI-generated. Aaron Steinberg is not a medical doctor, psychologist or licensed therapist, and nothing here is medical, mental health, legal or financial advice. No illegal products are offered.
+              </p>
+            </div>
           </div>
 
         </div>{/* end logo/nav/copyright block */}
